@@ -50,7 +50,7 @@ censo2010_limpio["Cobertura"] = censo2010_limpio["Cobertura"].ffill()
 censo2010_limpio = censo2010_limpio[(censo2010_limpio["Edad"].astype(str).str.strip().str.lower() != "total") & (censo2010_limpio["Cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
 
 censo2010_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
-censo2010_limpio
+censo2010_limpio.to_csv('../TP1/data/procesada/censo2010_tabla.csv')
 
 #%%Emprolijamos la tabla del censo 2022
 censo2022_limpio = censo2022.drop(columns =0)
@@ -70,6 +70,20 @@ censo2022_limpio["Cobertura"] = censo2022_limpio["Cobertura"].ffill()
 censo2022_limpio = censo2022_limpio[(censo2022_limpio["Edad"].astype(str).str.strip().str.lower() != "total") & (censo2022_limpio["Cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
 
 censo2022_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
-censo2022_limpio
+censo2022_limpio.to_csv('../TP1/data/procesada/censo2022_tabla.csv')
 
 #%%Emprolijamos la tabla de nacidos de 2022
+#Aca podemos ver que no es tan obvio lo que nos quiere expresar el csv
+#Entonces deberiamos preguntarnos, que significan PROVRES? -> codigos de provincia
+#Como se de que tipo de parto me esta hablando
+#Como se de que sexo me esta hablando
+nacidos2022.isna().value_counts()
+#No hay ningun null, pero
+nacidos2022['IPESONAC'].value_counts() #Tiene 445 sin especificar
+nacidos2022['SEXO'].value_counts() #Tiene 1, 2 y 9? 
+nacidos2022['IMEDAD'].value_counts() #Tiene 202 sin especificar
+nacidos2022['ITIEMGEST'].value_counts() #Tiene 613 sin especificar
+nacidos2022['IMINSTRUC'].value_counts() #Tiene 1354 sin especificar
+#En todos estos apareces un numero n y n.Sin especificar 
+#Despues hay que preguntarnos, sirve de algo tener datos vacios en este caso? Los puedo eliminar? 
+#Ademas de que las columnas no son muy declarativas, no se leen muy bien
