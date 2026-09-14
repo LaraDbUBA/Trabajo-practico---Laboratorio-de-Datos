@@ -172,3 +172,20 @@ for columna in columnas_a_limpiar:
 #    9: "Sin especificar"
 #})
 
+#%% Analziamos la tabla de establecimientos
+print('Columnas de tabla ========= \n')
+print(establecimientos.columns + "\n")
+print("\nInformación ======== \n")
+print(establecimientos.info)
+print("\nCantidad de datos vacios por columna =======\n")
+print(establecimientos.isna().sum()) #Aca vemos que en la oclumna de codent hay 816 Nan y en el sitioweb 33188, cosa que no aporta mucha informacion de lo que nos interesa
+#establecimientos[establecimientos['sitio_web'] =='<br>']
+
+print("\nHay duplicados? =======\n")
+print(establecimientos[establecimientos.duplicated(keep=False)]) #No hay repetidos
+print("\nValores de financiamiento =======\n")
+print(establecimientos["origen_financiamiento"].value_counts(dropna=False)) #Se ve bien
+print("\nValores de siglas de tipologia =====\n")
+print(establecimientos["tipologia_sigla"].value_counts(dropna=False))
+print("\nValores de nombres de tipologia =======\n")
+print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
