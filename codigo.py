@@ -246,4 +246,27 @@ porcentaje = (
     / len(establecimientos)
     * 100
 )
-porcentaje
+print("Porcentaje de vacios de sitios web: ", porcentaje)
+
+establecimientos.groupby(
+    ["provincia_id", "departamento_id"]
+)["departamento_nombre"].nunique().value_counts()
+
+departamentos = establecimientos[['provincia_id', 'departamento_id', 'departamento_nombre']].drop_duplicates()
+establecimientos[
+    establecimientos["tipologia_id"] == 4
+][["tipologia_id", "tipologia_sigla", "tipologia_nombre"]].drop_duplicates()
+#%%
+#Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
+#De la tabla solo me interesa el codigo y el nombre de la provincia asi que
+provincias.columns
+provincias[(provincias['Código UTA 2010'] != provincias['Código UTA 2020'])] #son los mismos codigos
+provincias_tabla = provincias[['Nombre', 'Código UTA 2010']]
+provincias_tabla = provincias_tabla.rename(columns ={
+    'Nombre': 'provincia',
+    'Código UTA 2010': 'codigo'
+    })
+
+provincias_tabla.to_csv('../TP1/data/TablasModelo/provincias.csv')
+
+#%%
