@@ -29,6 +29,7 @@ establecimientos = pd.read_excel(carpeta + "establecimientos-asistenciales-asent
 
 #%% Subimos archivos adicionales
 provincias = pd.read_excel(carpeta + "Listado De Provincias - 11-09-2026.xlsx")
+
 #%% Emprolijamos la tabla del censo 2010
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
@@ -52,7 +53,7 @@ censo2010_limpio["cobertura"] = censo2010_limpio["cobertura"].ffill()
 censo2010_limpio = censo2010_limpio[(censo2010_limpio["edad"].astype(str).str.strip().str.lower() != "total") & (censo2010_limpio["cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
 
 censo2010_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
-censo2010_limpio.to_csv('../TP1/data/TablasModelo/censo2010_tabla.csv')
+censo2010_limpio.to_csv('../TP1/data/TablasLimpias/censo2010_tabla.csv')
 
 #%%Emprolijamos la tabla del censo 2022
 censo2022_limpio = censo2022.drop(columns =0)
@@ -72,14 +73,15 @@ censo2022_limpio["cobertura"] = censo2022_limpio["cobertura"].ffill()
 censo2022_limpio = censo2022_limpio[(censo2022_limpio["edad"].astype(str).str.strip().str.lower() != "total") & (censo2022_limpio["cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
 
 censo2022_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
-censo2022_limpio.to_csv('../TP1/data/TablasModelo/censo2022_tabla.csv')
+censo2022_limpio.to_csv('../TP1/data/TablasLimpias/censo2022_tabla.csv')
 
 #%%Analizamos la tabla de nacidos de 2022
 #Aca podemos ver que no es tan obvio lo que nos quiere expresar el csv
 #Entonces deberiamos preguntarnos, que significan PROVRES? -> codigos de provincia
 #Como se de que tipo de parto me esta hablando
 #Como se de que sexo me esta hablando
-nacidos2022.isna().value_counts()
+print("\nCantidad de datos vacios por columna =======\n")
+print(nacidos2022.isna().value_counts())
 #No hay ningun null, pero
 nacidos2022['IPESONAC'].value_counts() #Tiene 445 sin especificar
 nacidos2022['SEXO'].value_counts() #Tiene 1, 2 y 9? 
@@ -117,7 +119,31 @@ for columna in columnas_a_limpiar:
     nacidos2022_limpio[columna] = nacidos2022_limpio[columna].str.replace(
         r"^\d+\.", "", regex=True
     ).str.strip()
+
+#Analisis de calidad de los datos sin especificar
+variables_calidad = [
+    "peso_nacimiento",
+    "grupo_edad_madre",
+    "grupo_semanas_gestacion",
+    "nivel_educativo_madre"
+]
+
+for variable in variables_calidad:
     
+    sin_especificar = nacidos2022_limpio.loc[
+        nacidos2022_limpio[variable] == "Sin especificar",
+        "cantidad"
+    ].sum()
+    
+    total = nacidos2022_limpio["cantidad"].sum()
+    
+    porcentaje = sin_especificar / total * 100
+    
+    print("Columna: ", variable)
+    print("Nacimientos sin especificar:", sin_especificar)
+    print("Porcentaje:", porcentaje)
+
+nacidos2022_limpio.to_csv('../TP1/data/TablasLimpias/nacidos2022.csv')
 
 #%%Analizamos la tabla de nacidos de 2010
 nacidos2010.isna().value_counts() #Aca vemos de vuelta que no hay ningun na, pero puede haber sin especificar
@@ -172,6 +198,31 @@ for columna in columnas_a_limpiar:
 #    9: "Sin especificar"
 #})
 
+#Analisis de calidad de los datos sin especificar
+variables_calidad = [
+    "peso_nacimiento",
+    "grupo_edad_madre",
+    "grupo_semanas_gestacion",
+    "nivel_educativo_madre"
+]
+
+for variable in variables_calidad:
+    
+    sin_especificar = nacidos2010_limpio.loc[
+        nacidos2010_limpio[variable] == "Sin especificar",
+        "cantidad"
+    ].sum()
+    
+    total = nacidos2010_limpio["cantidad"].sum()
+    
+    porcentaje = sin_especificar / total * 100
+    
+    print("Columna: ", variable)
+    print("Nacimientos sin especificar:", sin_especificar)
+    print("Porcentaje:", porcentaje)
+
+nacidos2010_limpio.to_csv('../TP1/data/TablasLimpias/nacidos2010.csv')
+
 #%% Analziamos la tabla de establecimientos
 print('Columnas de tabla ========= \n')
 print(establecimientos.columns + "\n")
@@ -189,3 +240,10 @@ print("\nValores de siglas de tipologia =====\n")
 print(establecimientos["tipologia_sigla"].value_counts(dropna=False))
 print("\nValores de nombres de tipologia =======\n")
 print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
+
+porcentaje = (
+    establecimientos["sitio_web"].isna().sum()
+    / len(establecimientos)
+    * 100
+)
+porcentaje
