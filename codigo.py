@@ -193,8 +193,8 @@ for columna in columnas_a_limpiar:
 #    9: "Sin especificar"
 #})
 #nacidos2010_limpio["tipo_parto"] = nacidos2010_limpio["tipo_parto"].replace({
-#    1: "Vaginal",
-#    2: "Cesárear",
+#    1: "Simple",
+#    2: "Múltiple",
 #    9: "Sin especificar"
 #})
 
