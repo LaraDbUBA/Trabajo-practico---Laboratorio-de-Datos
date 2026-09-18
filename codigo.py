@@ -2,29 +2,32 @@
 """
 Created on Fri Sep 11 10:23:09 2026
 
-Integrantes: Ayala Ignacio, Della Bonzana Lara
+Integrantes: Ayala Ignacio, Della Bonzana Lara, Mile, Lu (completar)
 
 Descripcion: En el presente archivo se muestra el código realizado para limpiar datos, visualizarlos y 
 generar consultas 
 
-Otros datos: 
+Otros datos:  :)
 """
 
-import sys 
-print(sys.executable)
+#import sys 
+#print(sys.executable)
 import pandas as pd
 import duckdb as dd
 
-import os
-os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
+#Ignoren esto es de un problema de mi carpeta local
+#import os
+#os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
+
+#Observacion: Todo lo que esta escrito de lo que se decidio hacer con los datos tiene que figurar en el informe (Nacho o Lu)
 
 #%% Subimos archivos
-carpeta = "~/OneDrive/Documents/labo_datos/TP1/data/TablasOriginales/"
+carpeta = "~/OneDrive/Documents/labo_datos/TP1/data/TablasOriginales/" #Fijense el tema de la carpeta, descarguense los archivos
 
-censo2010 = pd.read_excel(carpeta + "censo2010.xlsx", header= None, skiprows= 15)
-censo2022 = pd.read_excel(carpeta + "censo2022.xlsx", header= None, skiprows= 15)
-nacidos2010 = pd.read_csv(carpeta + "nacweb10.csv" , encoding= 'latin-1')
-nacidos2022 = pd.read_csv(carpeta + "nacweb22_0.csv", sep= ";")
+censo2010 = pd.read_excel(carpeta + "censo2010.xlsx", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
+censo2022 = pd.read_excel(carpeta + "censo2022.xlsx", header= None, skiprows= 15) #Lo mismo
+nacidos2010 = pd.read_csv(carpeta + "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona asi que dejenlo asi
+nacidos2022 = pd.read_csv(carpeta + "nacweb22_0.csv", sep= ";") #Tiene distinta separacion
 establecimientos = pd.read_excel(carpeta + "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
 
 #%% Subimos archivos adicionales
@@ -39,6 +42,8 @@ provincias = pd.read_excel(carpeta + "Listado De Provincias - 11-09-2026.xlsx")
 #eliminarla
 censo2010_limpio = censo2010.drop(columns= 0) # eliminamos la primera columna que eran todos Nan
 censo2010_limpio.columns =['cobertura', 'edad', 'varon', 'mujer', 'total'] # Definimos las columnas con los valores que queremos
+
+#HAY QUE HACER UNA FUNCION PARA MODULARIZAR, por ej: agregar_columna_provincia
 censo2010_limpio['provincia'] = None #Iniciamos una nueva columna cuyos valores son NaN
 provincia_actual = None 
 
@@ -49,16 +54,22 @@ for i in range(len(censo2010_limpio)):
         provincia_actual = fila.iloc[1] #Nos quedamos con el nombre de la provincia
 
     censo2010_limpio.loc[i, "provincia"] = provincia_actual #Agregamos 
+    
+#Aca llenamos los espacios vacios que aparecian en cobertura
 censo2010_limpio["cobertura"] = censo2010_limpio["cobertura"].ffill()
+
+#Sacamos la pseudo tablita de los totales (la podemos calcular nosotros a mano, es redundante)
 censo2010_limpio = censo2010_limpio[(censo2010_limpio["edad"].astype(str).str.strip().str.lower() != "total") & (censo2010_limpio["cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
 
 censo2010_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
 censo2010_limpio.to_csv('../TP1/data/TablasLimpias/censo2010_tabla.csv')
 
 #%%Emprolijamos la tabla del censo 2022
+#No comento nada proque es el mismo proceso que la anterior
 censo2022_limpio = censo2022.drop(columns =0)
 censo2022_limpio.columns = ['cobertura', 'edad', 'varon', 'mujer', 'total']
 
+#agregar_columna_provincia
 censo2022_limpio['provincia'] = None #Iniciamos una nueva columna cuyos valores son NaN
 provincia_actual = None 
 
@@ -75,26 +86,34 @@ censo2022_limpio = censo2022_limpio[(censo2022_limpio["edad"].astype(str).str.st
 censo2022_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
 censo2022_limpio.to_csv('../TP1/data/TablasLimpias/censo2022_tabla.csv')
 
+
+#Comentario: En alguna de las dos tablas del censo hay que cambiar "Ciudad Autonoma de Buenos Aires" por "Caba" o viceversa
 #%%Analizamos la tabla de nacidos de 2022
 #Aca podemos ver que no es tan obvio lo que nos quiere expresar el csv
-#Entonces deberiamos preguntarnos, que significan PROVRES? -> codigos de provincia
-#Como se de que tipo de parto me esta hablando
+#Como se de que tipo de parto me esta hablando -> Lo encontramos con la profe el jueves
 #Como se de que sexo me esta hablando
+
+#Podriamos meter otra funcion porque hacemos lo mismo en la otra. Por ej: ver_valores_nacidos
 print("\nCantidad de datos vacios por columna =======\n")
 print(nacidos2022.isna().value_counts())
 #No hay ningun null, pero
-nacidos2022['IPESONAC'].value_counts() #Tiene 445 sin especificar
-nacidos2022['SEXO'].value_counts() #Tiene 1, 2 y 9? 
-nacidos2022['IMEDAD'].value_counts() #Tiene 202 sin especificar
-nacidos2022['ITIEMGEST'].value_counts() #Tiene 613 sin especificar
-nacidos2022['IMINSTRUC'].value_counts() #Tiene 1354 sin especificar
+print("Valores de los pesos en gramos: ")
+print(nacidos2022['IPESONAC'].value_counts()) #Tiene 445 sin especificar
+print("Valores de sexo: ")
+print(nacidos2022['SEXO'].value_counts()) #Tiene 1, 2 y 9? 
+print("Valores de grupo de edad de la madre: ")
+print(nacidos2022['IMEDAD'].value_counts()) #Tiene 202 sin especificar
+print("Tiempo de gestacion: ")
+print(nacidos2022['ITIEMGEST'].value_counts()) #Tiene 613 sin especificar
+print("Valores de niveles de educacion de madre: ")
+print(nacidos2022['IMINSTRUC'].value_counts()) #Tiene 1354 sin especificar
 #En todos estos apareces un numero n y n.Sin especificar 
 #Despues hay que preguntarnos, sirve de algo tener datos vacios en este caso? Los puedo eliminar? 
 #Ademas de que las columnas no son muy declarativas, no se leen muy bien
 
 #Para saber de que provincia esta hablando, encontramos una lista de provincias con los codigos de cada una
 
-#Renombramos columnas
+#Renombramos columnas: renombrar_columnas
 nacidos2022_limpio = nacidos2022.rename(columns={
     "PROVRES": "provincia_residencia",
     "TIPPARTO": "tipo_parto",
@@ -120,7 +139,19 @@ for columna in columnas_a_limpiar:
         r"^\d+\.", "", regex=True
     ).str.strip()
 
-#Analisis de calidad de los datos sin especificar
+#Cambiamos los valores que no se entienden
+nacidos2022_limpio["sexo"] = nacidos2022_limpio["sexo"].replace({
+    1: "Varón",
+    2: "Mujer",
+    9: "Sin especificar"
+})
+nacidos2022_limpio["tipo_parto"] = nacidos2022_limpio["tipo_parto"].replace({
+    1: "Simple",
+    2: "Múltiple",
+    9: "Sin especificar"
+})
+
+#Analisis de calidad de los datos sin especificar -- Esto es para el punto de análisis de calidad
 variables_calidad = [
     "peso_nacimiento",
     "grupo_edad_madre",
@@ -146,6 +177,9 @@ for variable in variables_calidad:
 nacidos2022_limpio.to_csv('../TP1/data/TablasLimpias/nacidos2022.csv')
 
 #%%Analizamos la tabla de nacidos de 2010
+
+#Se hace exactamente lo mismo que en la otra, si quieren le agregan los prints
+
 nacidos2010.isna().value_counts() #Aca vemos de vuelta que no hay ningun na, pero puede haber sin especificar
 nacidos2010.columns #Mismo problema de columnas no muy declarativas
 nacidos2010['PROVRES'].value_counts() #provincias en codigos
@@ -186,17 +220,17 @@ for columna in columnas_a_limpiar:
         r"^\d+\.", "", regex=True
     ).str.strip()
 
-#Dejamos comentado los tipos que no sabemos que significa
-#nacidos2010_limpio["sexo"] = nacidos2010_limpio["sexo"].replace({
-#    1: "Varón",
-#    2: "Mujer",
-#    9: "Sin especificar"
-#})
-#nacidos2010_limpio["tipo_parto"] = nacidos2010_limpio["tipo_parto"].replace({
-#    1: "Simple",
-#    2: "Múltiple",
-#    9: "Sin especificar"
-#})
+
+nacidos2010_limpio["sexo"] = nacidos2010_limpio["sexo"].replace({
+    1: "Varón",
+    2: "Mujer",
+    9: "Sin especificar"
+})
+nacidos2010_limpio["tipo_parto"] = nacidos2010_limpio["tipo_parto"].replace({
+    1: "Simple",
+    2: "Múltiple",
+    9: "Sin especificar"
+})
 
 #Analisis de calidad de los datos sin especificar
 variables_calidad = [
@@ -241,6 +275,8 @@ print(establecimientos["tipologia_sigla"].value_counts(dropna=False))
 print("\nValores de nombres de tipologia =======\n")
 print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
 
+
+#Análisis de calidad : porcentaje de null (Mile si queres cambia el null por lo que pusiste, pero tenes que cambiar esta parte tambien)
 porcentaje = (
     establecimientos["sitio_web"].isna().sum()
     / len(establecimientos)
@@ -248,15 +284,9 @@ porcentaje = (
 )
 print("Porcentaje de vacios de sitios web: ", porcentaje)
 
-establecimientos.groupby(
-    ["provincia_id", "departamento_id"]
-)["departamento_nombre"].nunique().value_counts()
+#Hacer el análisis de la otra variable que aparece null
 
-departamentos = establecimientos[['provincia_id', 'departamento_id', 'departamento_nombre']].drop_duplicates()
-establecimientos[
-    establecimientos["tipologia_id"] == 4
-][["tipologia_id", "tipologia_sigla", "tipologia_nombre"]].drop_duplicates()
-#%%
+#%% Armo tabla de la provincia y los codigos
 #Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
 #De la tabla solo me interesa el codigo y el nombre de la provincia asi que
 provincias.columns
