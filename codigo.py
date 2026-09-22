@@ -22,7 +22,7 @@ import duckdb as dd
 #Observacion: Todo lo que esta escrito de lo que se decidio hacer con los datos tiene que figurar en el informe (Nacho o Lu)
 
 #%% Subimos archivos
-carpeta = "~/Documents/TP1/data/TablasOriginales/" #Fijense el tema de la carpeta, descarguense los archivos
+carpeta = "~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasOriginales/" #Fijense el tema de la carpeta, descarguense los archivos
 
 censo2010 = pd.read_excel(carpeta + "censo2010.xlsx", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
 censo2022 = pd.read_excel(carpeta + "censo2022.xlsx", header= None, skiprows= 15) #Lo mismo
@@ -42,6 +42,55 @@ provincias = pd.read_excel(carpeta + "Listado De Provincias - 11-09-2026.xlsx")
 #eliminarla
 
 
+# normalizar los archivos de censo
+
+def normalizar_datos_censo(censo):
+    datos_limpios = []
+    area_actual = None
+    cobertura_actual = None
+
+    for i, fila in censo.iterrows():
+        valores_fila = [str(val).strip() for val in fila.values if pd.notna(val)]
+        if not valores_fila:
+            continue
+    
+        fila_texto = " ".join(valores_fila)
+    
+        # --- A. Detectar el ÁREA GEOGRÁFICA ---
+        if "AREA #" in fila_texto:
+            area_actual = fila_texto.split("AREA #")[1].strip()
+            continue
+        
+        opciones = ["Obra social", "Programas o planes", "No tiene", "Total"]
+        if any(term in fila_texto for term in opciones) and not valores_fila[0].isdigit():
+            if "Edad" not in fila_texto and "Sexo" not in fila_texto:
+                cobertura_actual = valores_fila[0] 
+                continue
+
+        primer_val = valores_fila[0]
+        if not pd.isna(primer_val) and primer_val.isdigit():
+            edad = int(primer_val)
+            varon = censo.iloc[i,3]
+            mujer = censo.iloc[i,4]
+            total = censo.iloc[i,5]
+                
+        
+            datos_limpios.append({
+                'Area': area_actual,
+                'Cobertura de salud': cobertura_actual,
+                'Edad': edad,
+                'Varón': varon,
+                'Mujer': mujer,
+                'Total': total
+            })
+
+    df_censo_final = pd.DataFrame(datos_limpios)
+    return df_censo_final
+
+dfcenso2022_limpio = normalizar_datos_censo(censo2022)
+dfcenso2022_limpio.to_csv('~/Documents/TP1/data/TablasLimpias/nacidos2022.csv')
+dfcenso2010_limpio = normalizar_datos_censo(censo2010)
+dfcenso2010_limpio.to_csv('~/Documents/TP1/data/TablasLimpias/nacidos2022.csv')
 
 
 #%%Analizamos la tabla de nacidos de 2022 y nacidos 2010
@@ -200,6 +249,6 @@ provincias_tabla = provincias_tabla.rename(columns ={
     'Código UTA 2010': 'codigo'
     })
 
-provincias_tabla.to_csv('~/Documents/TP1/data/TablasModelo/provincias.csv')
+provincias_tabla.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasModelo/provincias.csv')
 
 #%%
