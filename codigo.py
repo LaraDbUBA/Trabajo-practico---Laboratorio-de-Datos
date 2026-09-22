@@ -59,6 +59,8 @@ def normalizar_datos_censo(censo):
         # --- A. Detectar el ÁREA GEOGRÁFICA ---
         if "AREA #" in fila_texto:
             area_actual = fila_texto.split("AREA #")[1].strip()
+            if "caba" in area_actual.lower():
+                area_actual = area_actual.replace("Caba","Ciudad Autónoma de Buenos Aires")
             continue
         
         opciones = ["Obra social", "Programas o planes", "No tiene", "Total"]
@@ -87,10 +89,12 @@ def normalizar_datos_censo(censo):
     df_censo_final = pd.DataFrame(datos_limpios)
     return df_censo_final
 
+
+
 dfcenso2022_limpio = normalizar_datos_censo(censo2022)
-dfcenso2022_limpio.to_csv('~/Documents/TP1/data/TablasLimpias/nacidos2022.csv')
+dfcenso2022_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2022.csv')
 dfcenso2010_limpio = normalizar_datos_censo(censo2010)
-dfcenso2010_limpio.to_csv('~/Documents/TP1/data/TablasLimpias/nacidos2022.csv')
+dfcenso2010_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2022.csv')
 
 
 #%%Analizamos la tabla de nacidos de 2022 y nacidos 2010
@@ -193,11 +197,11 @@ def analizar_variables_calidad(variables_calidad, censo):
         print()
 
 nacidos2022_limpio = modificar_censo(columnas_a_limpiar, nacidos2022)
-nacidos2022_limpio.to_csv('~/Documents/TP1/data/TablasLimpias/nacidos2022.csv')
+nacidos2022_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2022.csv')
 analizar_variables_calidad(variables_calidad, nacidos2022_limpio )
 
 nacidos2010_limpio = modificar_censo(columnas_a_limpiar, nacidos2010)
-nacidos2010_limpio.to_csv('~/Documents/TP1/data/TablasLimpias/nacidos2010.csv')
+nacidos2010_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2010.csv')
 analizar_variables_calidad(variables_calidad, nacidos2010_limpio )
 
 #%% Analziamos la tabla de establecimientos
