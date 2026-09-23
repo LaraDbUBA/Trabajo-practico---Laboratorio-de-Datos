@@ -33,6 +33,19 @@ establecimientos = pd.read_excel(carpeta + "establecimientos-asistenciales-asent
 #%% Subimos archivos adicionales
 provincias = pd.read_excel(carpeta + "Listado De Provincias - 11-09-2026.xlsx")
 
+#%% Armo tabla de la provincia y los codigos
+#Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
+#De la tabla solo me interesa el codigo y el nombre de la provincia asi que
+provincias.columns
+provincias[(provincias['Código UTA 2010'] != provincias['Código UTA 2020'])] #son los mismos codigos
+provincias_tabla = provincias[['Nombre', 'Código UTA 2010']]
+provincias_tabla = provincias_tabla.rename(columns ={
+    'Nombre': 'provincia',
+    'Código UTA 2010': 'codigo'
+    })
+
+
+provincias_tabla.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/provincias.csv')
 #%% Emprolijamos la tabla del censo 2010
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
@@ -70,6 +83,10 @@ def normalizar_datos_censo(censo):
         "CIUDAD AUTÓNOMA DE BUENOS AIRES": "CIUDAD DE BUENOS AIRES"
     })
     
+    censo_limpio = censo_limpio[
+    ~censo_limpio["cobertura"].astype(str).str.startswith("AREA")
+]
+    
     #Hacemos merge con el dataframe de provincias para sacar los codigos
     
     censo_limpio = censo_limpio.merge(provincias[["provincia", "codigo"]]
@@ -90,11 +107,12 @@ def normalizar_datos_censo(censo):
     #Hay que ver si es valida para la materia
     
     #Sacamos la pseudo tablita de los totales (la podemos calcular nosotros a mano, es redundante)
-    censo_limpio = censo_limpio[(censo_limpio["edad"].astype(str).str.strip().str.lower() != "total") & (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
-    
-    censo_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
-
-    
+    censo_limpio = censo_limpio[
+    (censo_limpio["edad"].astype(str).str.strip().str.lower() != "total") &
+    (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "total") &
+    (censo_limpio["edad"].astype(str).str.strip().str.lower() != "edad")
+]
+ 
     return censo_limpio
     
 
@@ -108,9 +126,14 @@ dfcenso2010_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpia
 dfcenso2022_limpio["año"] = 2022
 dfcenso2010_limpio["año"] = 2010
 
+
 dffinal = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
 dffinal = dffinal.drop(columns = ["varon", "mujer"]) #Sacamos la columna de total que era redundante
 dffinal.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/censos.csv')
+
+#Chequeamos dependencias funcionales
+dffinal.groupby(["cobertura",  "edad", "provincia_id", "año"])["total"].nunique()
+#Queda una clave primaria compuesta de: cobertura, edad, provincia_id, año
 
 
 #%%Analizamos la tabla de nacidos de 2022 y nacidos 2010
@@ -224,9 +247,11 @@ analizar_variables_calidad(variables_calidad, nacidos2010_limpio )
 
 
 dffinal = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
+
 dffinal.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/nacidos.csv')
 
-
+dffinal.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_edad_madre", "grupo_semanas_gestacion", "nivel_educativo_madre",  "peso_nacimiento", "año"])["cantidad"].nunique().loc[lambda x : x>1]
+#Todas las columnas son una clave
 #%% Analziamos la tabla de establecimientos
 print('Columnas de tabla ========= \n')
 print(establecimientos.columns + "\n")
@@ -265,18 +290,25 @@ print("Porcentaje de vacios de sitio web:", porcentaje_web)
 porcentaje_codent = analisis_calidad_porcnull_establecimientos("codent", establecimientos)
 print("Porcentaje de vacios de codent:", porcentaje_codent)
 
-#%% Armo tabla de la provincia y los codigos
-#Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
-#De la tabla solo me interesa el codigo y el nombre de la provincia asi que
-provincias.columns
-provincias[(provincias['Código UTA 2010'] != provincias['Código UTA 2020'])] #son los mismos codigos
-provincias_tabla = provincias[['Nombre', 'Código UTA 2010']]
-provincias_tabla = provincias_tabla.rename(columns ={
-    'Nombre': 'provincia',
-    'Código UTA 2010': 'codigo'
-    })
+#Anlizamos las dependencias funcionales
+establecimientos.groupby(["provincia_id", "departamento_id"])["departamento_nombre"].nunique() #Aca da que cada combinacion es unica, entonces (departamento_id, provincia_id) -> departamento_nombre
+establecimientos.groupby('localidad_id')[["departamento_id", "provincia_id", "localidad_nombre"]].nunique() #Lo mismo (localidad_id) -> (departamento_id, provincia_id, localidad_nombre)
+establecimientos.groupby("establecimiento_id")[["provincia_id", "departamento_id"]].nunique() # (establecimiento_id) -> (provincia_id, departamento_id)
+#Sobre tipologia: Esto lo repetimos con cada uno y lo unico que vimos es que la sigla determina el id
+#El resto no se relaciona
+#El estableimiento id determina todos individualmente
+#Luego, podemos quedarnos solo con el nombre que es lo que nos interesa
+establecimientos.groupby(["tipologia_nombre"])["tipologia_id"].nunique().loc[lambda x: x>1]
+
+#localidad = establecimientos[["localidad_id", "departamento_id", "provincia_id", "localidad_nombre"]]
+#localidad.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/localidad.csv')
+departamentos = establecimientos[["departamento_id", "departamento_nombre", "provincia_id"]]
+establecimientos_limpio = establecimientos[["establecimiento_id", "establecimiento_nombre", "origen_financiamiento", "departamento_id", "provincia_id" ,"tipologia_nombre"]]
+departamentos.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/departamentos.csv')
+establecimientos_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/establecimientos.csv')
 
 
-provincias_tabla.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/provincias.csv')
 
-#%%
+#%% Consultas
+
+
