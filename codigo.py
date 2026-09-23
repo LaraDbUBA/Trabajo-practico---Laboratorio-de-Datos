@@ -14,24 +14,28 @@ Otros datos:  :)
 #print(sys.executable)
 import pandas as pd
 import duckdb as dd
+from pathlib import Path
 
 #Ignoren esto es de un problema de mi carpeta local
-import os
-os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
+#import os
+#os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
 
 #Observacion: Todo lo que esta escrito de lo que se decidio hacer con los datos tiene que figurar en el informe (Nacho o Lu)
 
 #%% Subimos archivos
-carpeta = "~/OneDrive/Documents/labo_datos/TP1/data/TablasOriginales/" #Fijense el tema de la carpeta, descarguense los archivos
+raiz = Path(__file__).parent
+carpetaOriginales = raiz / "data" / "TablasOriginales" #Fijense el tema de la carpeta, descarguense los archivos
+carpetaLimpias = raiz / "data" / "TablasLimpias"
+carpetaModelos = raiz /"data" / "TablasModelo"
 
-censo2010 = pd.read_excel(carpeta + "censo2010.xlsx", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
-censo2022 = pd.read_excel(carpeta + "censo2022.xlsx", header= None, skiprows= 15) #Lo mismo
-nacidos2010 = pd.read_csv(carpeta + "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona asi que dejenlo asi
-nacidos2022 = pd.read_csv(carpeta + "nacweb22_0.csv", sep= ";") #Tiene distinta separacion
-establecimientos = pd.read_excel(carpeta + "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
+censo2010 = pd.read_excel(carpetaOriginales / "censo2010.xlsx", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
+censo2022 = pd.read_excel(carpetaOriginales / "censo2022.xlsx", header= None, skiprows= 15) #Lo mismo
+nacidos2010 = pd.read_csv(carpetaOriginales /  "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona asi que dejenlo asi
+nacidos2022 = pd.read_csv(carpetaOriginales / "nacweb22_0.csv", sep= ";") #Tiene distinta separacion
+establecimientos = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
 
 #%% Subimos archivos adicionales
-provincias = pd.read_excel(carpeta + "Listado De Provincias - 11-09-2026.xlsx")
+provincias = pd.read_excel(carpetaOriginales / "Listado De Provincias - 11-09-2026.xlsx")
 
 #%% Armo tabla de la provincia y los codigos
 #Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
@@ -45,7 +49,7 @@ provincias_tabla = provincias_tabla.rename(columns ={
     })
 
 
-provincias_tabla.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/provincias.csv')
+provincias_tabla.to_csv(carpetaModelos /'provincias.csv')
 #%% Emprolijamos la tabla del censo 2010
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
@@ -56,7 +60,7 @@ provincias_tabla.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/p
 
 
 # normalizar los archivos de censo
-provincias = pd.read_csv("~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/provincias.csv")
+provincias = pd.read_csv(carpetaModelos / "provincias.csv")
 def normalizar_datos_censo(censo):
     censo_limpio = censo.drop(columns= 0) # eliminamos la primera columna que eran todos Nan
     censo_limpio.columns =['cobertura', 'edad', 'varon', 'mujer', 'total'] # Definimos las columnas con los valores que queremos
@@ -118,9 +122,9 @@ def normalizar_datos_censo(censo):
 
 
 dfcenso2022_limpio = normalizar_datos_censo(censo2022)
-dfcenso2022_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/censo2022.csv')
+dfcenso2022_limpio.to_csv(carpetaLimpias / "censo2022.csv")
 dfcenso2010_limpio = normalizar_datos_censo(censo2010)
-dfcenso2010_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/censo2010.csv')
+dfcenso2010_limpio.to_csv(carpetaLimpias / "censo2010.csv")
 
 #Ahora agregamos la columna de año a cada uno y los juntamos en una misma tabla
 dfcenso2022_limpio["año"] = 2022
@@ -129,7 +133,7 @@ dfcenso2010_limpio["año"] = 2010
 
 dffinal = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
 dffinal = dffinal.drop(columns = ["varon", "mujer"]) #Sacamos la columna de total que era redundante
-dffinal.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/censos.csv')
+dffinal.to_csv(carpetaModelos / "censos.csv")
 
 #Chequeamos dependencias funcionales
 dffinal.groupby(["cobertura",  "edad", "provincia_id", "año"])["total"].nunique()
@@ -236,19 +240,19 @@ def analizar_variables_calidad(variables_calidad, censo):
 
 nacidos2022_limpio = modificar_censo(columnas_a_limpiar, nacidos2022)
 nacidos2022_limpio["año"] = 2022
-nacidos2022_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/nacidos2022.csv')
+nacidos2022_limpio.to_csv(carpetaLimpias / "nacidos2022.csv")
 analizar_variables_calidad(variables_calidad, nacidos2022_limpio )
 
 
 nacidos2010_limpio = modificar_censo(columnas_a_limpiar, nacidos2010)
 nacidos2010_limpio["año"] = 2010
-nacidos2010_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/nacidos2010.csv')
+nacidos2010_limpio.to_csv(carpetaLimpias / "nacidos2010.csv")
 analizar_variables_calidad(variables_calidad, nacidos2010_limpio )
 
 
 dffinal = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
 
-dffinal.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/nacidos.csv')
+dffinal.to_csv(carpetaModelos / "nacidos.csv")
 
 dffinal.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_edad_madre", "grupo_semanas_gestacion", "nivel_educativo_madre",  "peso_nacimiento", "año"])["cantidad"].nunique().loc[lambda x : x>1]
 #Todas las columnas son una clave
@@ -304,8 +308,8 @@ establecimientos.groupby(["tipologia_nombre"])["tipologia_id"].nunique().loc[lam
 #localidad.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/localidad.csv')
 departamentos = establecimientos[["departamento_id", "departamento_nombre", "provincia_id"]]
 establecimientos_limpio = establecimientos[["establecimiento_id", "establecimiento_nombre", "origen_financiamiento", "departamento_id", "provincia_id" ,"tipologia_nombre"]]
-departamentos.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/departamentos.csv')
-establecimientos_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/establecimientos.csv')
+departamentos.to_csv(carpetaModelos / "departamentos.csv")
+establecimientos_limpio.to_csv(carpetaModelos / "establecimientos.csv")
 
 
 
