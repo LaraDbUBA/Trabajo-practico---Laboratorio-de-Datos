@@ -1,6 +1,6 @@
 # Notas
 ## Ideas de gráficos adicionales
-1. Proporción de nacimientos por tipo de parte en cada provincia
+1. Proporción de nacimientos por tipo de parto en cada provincia
 2. Distribución de nacimientos por sexo
 3. Evolución del tipo de parto entre 2010 y 2022
 

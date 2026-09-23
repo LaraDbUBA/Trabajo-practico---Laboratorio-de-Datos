@@ -16,13 +16,13 @@ import pandas as pd
 import duckdb as dd
 
 #Ignoren esto es de un problema de mi carpeta local
-#import os
-#os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
+import os
+os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
 
 #Observacion: Todo lo que esta escrito de lo que se decidio hacer con los datos tiene que figurar en el informe (Nacho o Lu)
 
 #%% Subimos archivos
-carpeta = "~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasOriginales/" #Fijense el tema de la carpeta, descarguense los archivos
+carpeta = "~/OneDrive/Documents/labo_datos/TP1/data/TablasOriginales/" #Fijense el tema de la carpeta, descarguense los archivos
 
 censo2010 = pd.read_excel(carpeta + "censo2010.xlsx", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
 censo2022 = pd.read_excel(carpeta + "censo2022.xlsx", header= None, skiprows= 15) #Lo mismo
@@ -43,58 +43,74 @@ provincias = pd.read_excel(carpeta + "Listado De Provincias - 11-09-2026.xlsx")
 
 
 # normalizar los archivos de censo
-
+provincias = pd.read_csv("~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/provincias.csv")
 def normalizar_datos_censo(censo):
-    datos_limpios = []
-    area_actual = None
-    cobertura_actual = None
-
-    for i, fila in censo.iterrows():
-        valores_fila = [str(val).strip() for val in fila.values if pd.notna(val)]
-        if not valores_fila:
-            continue
+    censo_limpio = censo.drop(columns= 0) # eliminamos la primera columna que eran todos Nan
+    censo_limpio.columns =['cobertura', 'edad', 'varon', 'mujer', 'total'] # Definimos las columnas con los valores que queremos
     
-        fila_texto = " ".join(valores_fila)
+    censo_limpio['provincia'] = None #Iniciamos una nueva columna cuyos valores son NaN
+    provincia_actual = None 
     
-        # --- A. Detectar el ÁREA GEOGRÁFICA ---
-        if "AREA #" in fila_texto:
-            area_actual = fila_texto.split("AREA #")[1].strip()
-            if "caba" in area_actual.lower():
-                area_actual = area_actual.replace("Caba","Ciudad Autónoma de Buenos Aires")
-            continue
-        
-        opciones = ["Obra social", "Programas o planes", "No tiene", "Total"]
-        if any(term in fila_texto for term in opciones) and not valores_fila[0].isdigit():
-            if "Edad" not in fila_texto and "Sexo" not in fila_texto:
-                cobertura_actual = valores_fila[0] 
-                continue
+    for i in range(len(censo_limpio)):
+        fila = censo_limpio.iloc[i] 
+    
+        if str(fila.iloc[0]).startswith("AREA"): #En este punto sabemos que las provincias estaban separadas por "Area" en la columna de cobertura, y el nombre de la privncia en la columna de Edad
+            provincia_actual = fila.iloc[1] #Nos quedamos con el nombre de la provincia
+    
+        censo_limpio.loc[i, "provincia"] = provincia_actual #Agregamos 
+    
+    #print(censo_limpio["provincia"].unique())
+    
+    censo_limpio["provincia"] = censo_limpio["provincia"].str.upper()
 
-        primer_val = valores_fila[0]
-        if not pd.isna(primer_val) and primer_val.isdigit():
-            edad = int(primer_val)
-            varon = censo.iloc[i,3]
-            mujer = censo.iloc[i,4]
-            total = censo.iloc[i,5]
-                
-        
-            datos_limpios.append({
-                'Area': area_actual,
-                'Cobertura de salud': cobertura_actual,
-                'Edad': edad,
-                'Varón': varon,
-                'Mujer': mujer,
-                'Total': total
-            })
+    #Notamos que en el censo de 2022 aparece Caba en vez de Ciudad Autonoma de Buenos Aires
+    #Lo pasamos a mayuscula para poder usar el DataFrame de provincias
+    censo_limpio["provincia"] = censo_limpio["provincia"].replace({
+        "CABA": "CIUDAD DE BUENOS AIRES",
+        "CIUDAD AUTÓNOMA DE BUENOS AIRES": "CIUDAD DE BUENOS AIRES"
+    })
+    
+    #Hacemos merge con el dataframe de provincias para sacar los codigos
+    
+    censo_limpio = censo_limpio.merge(provincias[["provincia", "codigo"]]
+    .rename(columns={"codigo": "provincia_id"}),
+    on="provincia",
+    how="left"
+    )
+    
+    #El merge dejo valor en float
+    censo_limpio["provincia_id"] = censo_limpio["provincia_id"].astype("Int64") #Lo cambio a int por las dudas
+    
+    #Ya no me interesa tener la columna de provincia
+    
+    censo_limpio = censo_limpio.drop(columns = 'provincia')
+    
+    #Aca llenamos los espacios vacios que aparecian en cobertura
+    censo_limpio["cobertura"] = censo_limpio["cobertura"].ffill() 
+    #Hay que ver si es valida para la materia
+    
+    #Sacamos la pseudo tablita de los totales (la podemos calcular nosotros a mano, es redundante)
+    censo_limpio = censo_limpio[(censo_limpio["edad"].astype(str).str.strip().str.lower() != "total") & (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "total")] #Eliminamos el resumen de "total" que aparecen en las columnas de cobertura y edad
+    
+    censo_limpio.drop(index = [0,1,2,3], axis = 0, inplace = True) #Eliminamos las primeras filas que no continen informacion
 
-    df_censo_final = pd.DataFrame(datos_limpios)
-    return df_censo_final
-
+    
+    return censo_limpio
+    
 
 
 dfcenso2022_limpio = normalizar_datos_censo(censo2022)
-dfcenso2022_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2022.csv')
+dfcenso2022_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/censo2022.csv')
 dfcenso2010_limpio = normalizar_datos_censo(censo2010)
-dfcenso2010_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2022.csv')
+dfcenso2010_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/censo2010.csv')
+
+#Ahora agregamos la columna de año a cada uno y los juntamos en una misma tabla
+dfcenso2022_limpio["año"] = 2022
+dfcenso2010_limpio["año"] = 2010
+
+dffinal = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
+dffinal = dffinal.drop(columns = ["varon", "mujer"]) #Sacamos la columna de total que era redundante
+dffinal.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/censos.csv')
 
 
 #%%Analizamos la tabla de nacidos de 2022 y nacidos 2010
@@ -114,7 +130,6 @@ def ver_valores_nacidos(nacidos):
     print(nacidos['ITIEMGEST'].value_counts())
     print("Valores de niveles de educacion de madre: ")
     print(nacidos['IMINSTRUC'].value_counts()) 
-    print()
     
 ver_valores_nacidos(nacidos2010)
 ver_valores_nacidos(nacidos2022)
@@ -194,15 +209,23 @@ def analizar_variables_calidad(variables_calidad, censo):
         print("Columna: ", variable)
         print("Nacimientos sin especificar:", sin_especificar)
         print("Porcentaje:", porcentaje)
-        print()
+       
 
 nacidos2022_limpio = modificar_censo(columnas_a_limpiar, nacidos2022)
-nacidos2022_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2022.csv')
+nacidos2022_limpio["año"] = 2022
+nacidos2022_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/nacidos2022.csv')
 analizar_variables_calidad(variables_calidad, nacidos2022_limpio )
 
+
 nacidos2010_limpio = modificar_censo(columnas_a_limpiar, nacidos2010)
-nacidos2010_limpio.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasLimpias/nacidos2010.csv')
+nacidos2010_limpio["año"] = 2010
+nacidos2010_limpio.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/nacidos2010.csv')
 analizar_variables_calidad(variables_calidad, nacidos2010_limpio )
+
+
+dffinal = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
+dffinal.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/nacidos.csv')
+
 
 #%% Analziamos la tabla de establecimientos
 print('Columnas de tabla ========= \n')
@@ -253,6 +276,7 @@ provincias_tabla = provincias_tabla.rename(columns ={
     'Código UTA 2010': 'codigo'
     })
 
-provincias_tabla.to_csv('~/Documents/TP1/Trabajo-practico---Laboratorio-de-Datos/data/TablasModelo/provincias.csv')
+
+provincias_tabla.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasLimpias/provincias.csv')
 
 #%%
