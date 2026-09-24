@@ -1,6 +1,5 @@
 ,cobertura,edad,varon,mujer,total,provincia_id
 0,,,,,,2
-2,Obra social (incluye PAMI),,Varón,Mujer,Total,2
 3,Obra social (incluye PAMI),0,5906,5544,11450,2
 4,Obra social (incluye PAMI),1,5229,5830,11059,2
 5,Obra social (incluye PAMI),2,5844,5608,11452,2
@@ -112,7 +111,6 @@
 111,Obra social (incluye PAMI),108,-,1,1,2
 112,Obra social (incluye PAMI),109,1,2,3,2
 113,Obra social (incluye PAMI),110,-,10,10,2
-115,Prepaga a través de obra social,,Varón,Mujer,Total,2
 116,Prepaga a través de obra social,0,4954,4441,9395,2
 117,Prepaga a través de obra social,1,4285,4230,8515,2
 118,Prepaga a través de obra social,2,4576,4292,8868,2
@@ -220,7 +218,6 @@
 220,Prepaga a través de obra social,105,-,1,1,2
 221,Prepaga a través de obra social,106,1,-,1,2
 222,Prepaga a través de obra social,108,-,1,1,2
-224,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,2
 225,Prepaga sólo por contratación voluntaria,0,2467,2390,4857,2
 226,Prepaga sólo por contratación voluntaria,1,2150,2285,4435,2
 227,Prepaga sólo por contratación voluntaria,2,2434,2124,4558,2
@@ -329,7 +326,6 @@
 330,Prepaga sólo por contratación voluntaria,105,-,2,2,2
 331,Prepaga sólo por contratación voluntaria,106,-,12,12,2
 332,Prepaga sólo por contratación voluntaria,107,-,3,3,2
-334,Programas o planes estatales de salud,,Varón,Mujer,Total,2
 335,Programas o planes estatales de salud,0,285,213,498,2
 336,Programas o planes estatales de salud,1,395,325,720,2
 337,Programas o planes estatales de salud,2,387,274,661,2
@@ -432,7 +428,6 @@
 434,Programas o planes estatales de salud,99,1,-,1,2
 435,Programas o planes estatales de salud,100,-,14,14,2
 436,Programas o planes estatales de salud,101,-,1,1,2
-438,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,2
 439,"No tiene obra social, prepaga o plan estatal",0,4612,4539,9151,2
 440,"No tiene obra social, prepaga o plan estatal",1,4442,4083,8525,2
 441,"No tiene obra social, prepaga o plan estatal",2,4084,3974,8058,2
@@ -538,7 +533,6 @@
 541,"No tiene obra social, prepaga o plan estatal",103,2,-,2,2
 542,"No tiene obra social, prepaga o plan estatal",104,1,-,1,2
 543,"No tiene obra social, prepaga o plan estatal",107,-,1,1,2
-661,Obra social (incluye PAMI),,Varón,Mujer,Total,6
 662,Obra social (incluye PAMI),0,50336,47844,98180,6
 663,Obra social (incluye PAMI),1,50624,48760,99384,6
 664,Obra social (incluye PAMI),2,52523,49981,102504,6
@@ -650,7 +644,6 @@
 770,Obra social (incluye PAMI),108,10,-,10,6
 771,Obra social (incluye PAMI),109,1,2,3,6
 772,Obra social (incluye PAMI),110,6,45,51,6
-774,Prepaga a través de obra social,,Varón,Mujer,Total,6
 775,Prepaga a través de obra social,0,15193,14442,29635,6
 776,Prepaga a través de obra social,1,15039,14447,29486,6
 777,Prepaga a través de obra social,2,14906,14668,29574,6
@@ -757,7 +750,6 @@
 878,Prepaga a través de obra social,103,-,1,1,6
 879,Prepaga a través de obra social,106,1,11,12,6
 880,Prepaga a través de obra social,109,2,-,2,6
-882,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,6
 883,Prepaga sólo por contratación voluntaria,0,5395,5183,10578,6
 884,Prepaga sólo por contratación voluntaria,1,5595,5111,10706,6
 885,Prepaga sólo por contratación voluntaria,2,5150,5184,10334,6
@@ -867,7 +859,6 @@
 989,Prepaga sólo por contratación voluntaria,106,-,1,1,6
 990,Prepaga sólo por contratación voluntaria,107,-,1,1,6
 991,Prepaga sólo por contratación voluntaria,110,12,1,13,6
-993,Programas o planes estatales de salud,,Varón,Mujer,Total,6
 994,Programas o planes estatales de salud,0,2371,2227,4598,6
 995,Programas o planes estatales de salud,1,2375,2214,4589,6
 996,Programas o planes estatales de salud,2,2471,2372,4843,6
@@ -974,7 +965,6 @@
 1097,Programas o planes estatales de salud,104,1,-,1,6
 1098,Programas o planes estatales de salud,105,-,1,1,6
 1099,Programas o planes estatales de salud,110,1,10,11,6
-1101,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,6
 1102,"No tiene obra social, prepaga o plan estatal",0,62059,58994,121053,6
 1103,"No tiene obra social, prepaga o plan estatal",1,58452,58317,116769,6
 1104,"No tiene obra social, prepaga o plan estatal",2,56715,55492,112207,6
@@ -1083,7 +1073,6 @@
 1207,"No tiene obra social, prepaga o plan estatal",108,-,1,1,6
 1208,"No tiene obra social, prepaga o plan estatal",109,3,8,11,6
 1209,"No tiene obra social, prepaga o plan estatal",110,24,23,47,6
-1327,Obra social (incluye PAMI),,Varón,Mujer,Total,10
 1328,Obra social (incluye PAMI),0,1035,1181,2216,10
 1329,Obra social (incluye PAMI),1,1407,1263,2670,10
 1330,Obra social (incluye PAMI),2,1350,1362,2712,10
@@ -1191,7 +1180,6 @@
 1432,Obra social (incluye PAMI),107,-,7,7,10
 1433,Obra social (incluye PAMI),109,1,-,1,10
 1434,Obra social (incluye PAMI),110,2,2,4,10
-1436,Prepaga a través de obra social,,Varón,Mujer,Total,10
 1437,Prepaga a través de obra social,0,198,157,355,10
 1438,Prepaga a través de obra social,1,159,188,347,10
 1439,Prepaga a través de obra social,2,254,210,464,10
@@ -1289,7 +1277,6 @@
 1531,Prepaga a través de obra social,94,-,3,3,10
 1532,Prepaga a través de obra social,95,1,1,2,10
 1533,Prepaga a través de obra social,96,-,1,1,10
-1535,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,10
 1536,Prepaga sólo por contratación voluntaria,0,20,53,73,10
 1537,Prepaga sólo por contratación voluntaria,1,54,73,127,10
 1538,Prepaga sólo por contratación voluntaria,2,48,60,108,10
@@ -1379,7 +1366,6 @@
 1622,Prepaga sólo por contratación voluntaria,95,-,1,1,10
 1623,Prepaga sólo por contratación voluntaria,96,-,1,1,10
 1624,Prepaga sólo por contratación voluntaria,99,1,-,1,10
-1626,Programas o planes estatales de salud,,Varón,Mujer,Total,10
 1627,Programas o planes estatales de salud,0,119,159,278,10
 1628,Programas o planes estatales de salud,1,140,125,265,10
 1629,Programas o planes estatales de salud,2,144,125,269,10
@@ -1478,7 +1464,6 @@
 1722,Programas o planes estatales de salud,95,1,-,1,10
 1723,Programas o planes estatales de salud,96,-,2,2,10
 1724,Programas o planes estatales de salud,102,1,-,1,10
-1726,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,10
 1727,"No tiene obra social, prepaga o plan estatal",0,1723,1625,3348,10
 1728,"No tiene obra social, prepaga o plan estatal",1,1552,1516,3068,10
 1729,"No tiene obra social, prepaga o plan estatal",2,1545,1563,3108,10
@@ -1583,7 +1568,6 @@
 1828,"No tiene obra social, prepaga o plan estatal",104,1,-,1,10
 1829,"No tiene obra social, prepaga o plan estatal",105,-,1,1,10
 1830,"No tiene obra social, prepaga o plan estatal",110,1,-,1,10
-1946,Obra social (incluye PAMI),,Varón,Mujer,Total,14
 1947,Obra social (incluye PAMI),0,10273,9303,19576,14
 1948,Obra social (incluye PAMI),1,9829,9656,19485,14
 1949,Obra social (incluye PAMI),2,10555,10599,21154,14
@@ -1694,7 +1678,6 @@
 2054,Obra social (incluye PAMI),108,-,1,1,14
 2055,Obra social (incluye PAMI),109,-,1,1,14
 2056,Obra social (incluye PAMI),110,9,-,9,14
-2058,Prepaga a través de obra social,,Varón,Mujer,Total,14
 2059,Prepaga a través de obra social,0,3510,3440,6950,14
 2060,Prepaga a través de obra social,1,3357,3547,6904,14
 2061,Prepaga a través de obra social,2,3576,3494,7070,14
@@ -1798,7 +1781,6 @@
 2159,Prepaga a través de obra social,101,1,-,1,14
 2160,Prepaga a través de obra social,102,-,1,1,14
 2161,Prepaga a través de obra social,103,-,1,1,14
-2163,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,14
 2164,Prepaga sólo por contratación voluntaria,0,1710,1457,3167,14
 2165,Prepaga sólo por contratación voluntaria,1,1436,1708,3144,14
 2166,Prepaga sólo por contratación voluntaria,2,1449,1368,2817,14
@@ -1899,7 +1881,6 @@
 2261,Prepaga sólo por contratación voluntaria,97,-,1,1,14
 2262,Prepaga sólo por contratación voluntaria,98,-,9,9,14
 2263,Prepaga sólo por contratación voluntaria,100,-,3,3,14
-2265,Programas o planes estatales de salud,,Varón,Mujer,Total,14
 2266,Programas o planes estatales de salud,0,1170,1209,2379,14
 2267,Programas o planes estatales de salud,1,1163,1106,2269,14
 2268,Programas o planes estatales de salud,2,1047,1013,2060,14
@@ -2003,7 +1984,6 @@
 2366,Programas o planes estatales de salud,100,-,3,3,14
 2367,Programas o planes estatales de salud,101,-,1,1,14
 2368,Programas o planes estatales de salud,105,-,1,1,14
-2370,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,14
 2371,"No tiene obra social, prepaga o plan estatal",0,10574,10006,20580,14
 2372,"No tiene obra social, prepaga o plan estatal",1,10552,10099,20651,14
 2373,"No tiene obra social, prepaga o plan estatal",2,10318,10228,20546,14
@@ -2109,7 +2089,6 @@
 2473,"No tiene obra social, prepaga o plan estatal",102,-,2,2,14
 2474,"No tiene obra social, prepaga o plan estatal",103,-,1,1,14
 2475,"No tiene obra social, prepaga o plan estatal",104,-,1,1,14
-2592,Obra social (incluye PAMI),,Varón,Mujer,Total,18
 2593,Obra social (incluye PAMI),0,2447,2502,4949,18
 2594,Obra social (incluye PAMI),1,2501,2510,5011,18
 2595,Obra social (incluye PAMI),2,2655,2407,5062,18
@@ -2216,7 +2195,6 @@
 2696,Obra social (incluye PAMI),103,1,5,6,18
 2697,Obra social (incluye PAMI),106,-,1,1,18
 2698,Obra social (incluye PAMI),109,-,1,1,18
-2700,Prepaga a través de obra social,,Varón,Mujer,Total,18
 2701,Prepaga a través de obra social,0,663,541,1204,18
 2702,Prepaga a través de obra social,1,592,659,1251,18
 2703,Prepaga a través de obra social,2,526,574,1100,18
@@ -2315,7 +2293,6 @@
 2796,Prepaga a través de obra social,96,2,1,3,18
 2797,Prepaga a través de obra social,97,-,2,2,18
 2798,Prepaga a través de obra social,110,1,-,1,18
-2800,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,18
 2801,Prepaga sólo por contratación voluntaria,0,118,95,213,18
 2802,Prepaga sólo por contratación voluntaria,1,125,111,236,18
 2803,Prepaga sólo por contratación voluntaria,2,168,154,322,18
@@ -2410,7 +2387,6 @@
 2892,Prepaga sólo por contratación voluntaria,96,1,-,1,18
 2893,Prepaga sólo por contratación voluntaria,97,1,1,2,18
 2894,Prepaga sólo por contratación voluntaria,110,-,1,1,18
-2896,Programas o planes estatales de salud,,Varón,Mujer,Total,18
 2897,Programas o planes estatales de salud,0,953,887,1840,18
 2898,Programas o planes estatales de salud,1,1071,1043,2114,18
 2899,Programas o planes estatales de salud,2,941,980,1921,18
@@ -2513,7 +2489,6 @@
 2996,Programas o planes estatales de salud,100,-,1,1,18
 2997,Programas o planes estatales de salud,101,3,-,3,18
 2998,Programas o planes estatales de salud,107,-,1,1,18
-3000,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,18
 3001,"No tiene obra social, prepaga o plan estatal",0,5357,4861,10218,18
 3002,"No tiene obra social, prepaga o plan estatal",1,4834,4802,9636,18
 3003,"No tiene obra social, prepaga o plan estatal",2,4857,4539,9396,18
@@ -2618,7 +2593,6 @@
 3102,"No tiene obra social, prepaga o plan estatal",108,-,5,5,18
 3103,"No tiene obra social, prepaga o plan estatal",109,1,1,2,18
 3104,"No tiene obra social, prepaga o plan estatal",110,14,3,17,18
-3220,Obra social (incluye PAMI),,Varón,Mujer,Total,22
 3221,Obra social (incluye PAMI),0,2056,2054,4110,22
 3222,Obra social (incluye PAMI),1,2076,1871,3947,22
 3223,Obra social (incluye PAMI),2,2117,1928,4045,22
@@ -2726,7 +2700,6 @@
 3325,Obra social (incluye PAMI),105,-,2,2,22
 3326,Obra social (incluye PAMI),108,1,-,1,22
 3327,Obra social (incluye PAMI),110,1,1,2,22
-3329,Prepaga a través de obra social,,Varón,Mujer,Total,22
 3330,Prepaga a través de obra social,0,332,398,730,22
 3331,Prepaga a través de obra social,1,387,444,831,22
 3332,Prepaga a través de obra social,2,341,444,785,22
@@ -2823,7 +2796,6 @@
 3423,Prepaga a través de obra social,94,-,2,2,22
 3424,Prepaga a través de obra social,96,-,1,1,22
 3425,Prepaga a través de obra social,98,-,1,1,22
-3427,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,22
 3428,Prepaga sólo por contratación voluntaria,0,133,144,277,22
 3429,Prepaga sólo por contratación voluntaria,1,130,139,269,22
 3430,Prepaga sólo por contratación voluntaria,2,145,228,373,22
@@ -2910,7 +2882,6 @@
 3511,Prepaga sólo por contratación voluntaria,83,11,2,13,22
 3512,Prepaga sólo por contratación voluntaria,89,-,1,1,22
 3513,Prepaga sólo por contratación voluntaria,90,-,10,10,22
-3515,Programas o planes estatales de salud,,Varón,Mujer,Total,22
 3516,Programas o planes estatales de salud,0,246,245,491,22
 3517,Programas o planes estatales de salud,1,270,186,456,22
 3518,Programas o planes estatales de salud,2,263,292,555,22
@@ -3009,7 +2980,6 @@
 3611,Programas o planes estatales de salud,96,-,10,10,22
 3612,Programas o planes estatales de salud,98,-,1,1,22
 3613,Programas o planes estatales de salud,99,-,1,1,22
-3615,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,22
 3616,"No tiene obra social, prepaga o plan estatal",0,7221,6936,14157,22
 3617,"No tiene obra social, prepaga o plan estatal",1,6792,6610,13402,22
 3618,"No tiene obra social, prepaga o plan estatal",2,6676,6844,13520,22
@@ -3114,7 +3084,6 @@
 3717,"No tiene obra social, prepaga o plan estatal",104,-,1,1,22
 3718,"No tiene obra social, prepaga o plan estatal",108,-,1,1,22
 3719,"No tiene obra social, prepaga o plan estatal",110,-,1,1,22
-3833,Obra social (incluye PAMI),,Varón,Mujer,Total,26
 3834,Obra social (incluye PAMI),0,2318,2192,4510,26
 3835,Obra social (incluye PAMI),1,2377,2187,4564,26
 3836,Obra social (incluye PAMI),2,2385,2420,4805,26
@@ -3220,7 +3189,6 @@
 3936,Obra social (incluye PAMI),102,-,1,1,26
 3937,Obra social (incluye PAMI),107,1,11,12,26
 3938,Obra social (incluye PAMI),108,1,-,1,26
-3940,Prepaga a través de obra social,,Varón,Mujer,Total,26
 3941,Prepaga a través de obra social,0,742,459,1201,26
 3942,Prepaga a través de obra social,1,564,541,1105,26
 3943,Prepaga a través de obra social,2,577,518,1095,26
@@ -3315,7 +3283,6 @@
 4032,Prepaga a través de obra social,93,-,2,2,26
 4033,Prepaga a través de obra social,94,-,1,1,26
 4034,Prepaga a través de obra social,96,1,-,1,26
-4036,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,26
 4037,Prepaga sólo por contratación voluntaria,0,190,207,397,26
 4038,Prepaga sólo por contratación voluntaria,1,90,140,230,26
 4039,Prepaga sólo por contratación voluntaria,2,172,132,304,26
@@ -3407,7 +3374,6 @@
 4125,Prepaga sólo por contratación voluntaria,89,1,-,1,26
 4126,Prepaga sólo por contratación voluntaria,90,-,2,2,26
 4127,Prepaga sólo por contratación voluntaria,91,-,1,1,26
-4129,Programas o planes estatales de salud,,Varón,Mujer,Total,26
 4130,Programas o planes estatales de salud,0,258,272,530,26
 4131,Programas o planes estatales de salud,1,187,128,315,26
 4132,Programas o planes estatales de salud,2,184,183,367,26
@@ -3504,7 +3470,6 @@
 4223,Programas o planes estatales de salud,94,1,-,1,26
 4224,Programas o planes estatales de salud,95,-,1,1,26
 4225,Programas o planes estatales de salud,101,-,1,1,26
-4227,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,26
 4228,"No tiene obra social, prepaga o plan estatal",0,1294,1452,2746,26
 4229,"No tiene obra social, prepaga o plan estatal",1,1311,1282,2593,26
 4230,"No tiene obra social, prepaga o plan estatal",2,1391,1315,2706,26
@@ -3606,7 +3571,6 @@
 4326,"No tiene obra social, prepaga o plan estatal",98,1,10,11,26
 4327,"No tiene obra social, prepaga o plan estatal",99,-,1,1,26
 4328,"No tiene obra social, prepaga o plan estatal",100,-,1,1,26
-4440,Obra social (incluye PAMI),,Varón,Mujer,Total,30
 4441,Obra social (incluye PAMI),0,4415,3955,8370,30
 4442,Obra social (incluye PAMI),1,4252,4375,8627,30
 4443,Obra social (incluye PAMI),2,4343,4362,8705,30
@@ -3713,7 +3677,6 @@
 4544,Obra social (incluye PAMI),104,-,4,4,30
 4545,Obra social (incluye PAMI),105,-,2,2,30
 4546,Obra social (incluye PAMI),110,-,1,1,30
-4548,Prepaga a través de obra social,,Varón,Mujer,Total,30
 4549,Prepaga a través de obra social,0,585,555,1140,30
 4550,Prepaga a través de obra social,1,608,582,1190,30
 4551,Prepaga a través de obra social,2,609,637,1246,30
@@ -3812,7 +3775,6 @@
 4644,Prepaga a través de obra social,95,1,1,2,30
 4645,Prepaga a través de obra social,96,-,2,2,30
 4646,Prepaga a través de obra social,101,1,-,1,30
-4648,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,30
 4649,Prepaga sólo por contratación voluntaria,0,348,285,633,30
 4650,Prepaga sólo por contratación voluntaria,1,465,318,783,30
 4651,Prepaga sólo por contratación voluntaria,2,406,377,783,30
@@ -3910,7 +3872,6 @@
 4743,Prepaga sólo por contratación voluntaria,95,1,1,2,30
 4744,Prepaga sólo por contratación voluntaria,97,1,1,2,30
 4745,Prepaga sólo por contratación voluntaria,98,-,1,1,30
-4747,Programas o planes estatales de salud,,Varón,Mujer,Total,30
 4748,Programas o planes estatales de salud,0,437,359,796,30
 4749,Programas o planes estatales de salud,1,324,391,715,30
 4750,Programas o planes estatales de salud,2,412,376,788,30
@@ -4008,7 +3969,6 @@
 4842,Programas o planes estatales de salud,95,1,2,3,30
 4843,Programas o planes estatales de salud,99,-,1,1,30
 4844,Programas o planes estatales de salud,104,-,1,1,30
-4846,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,30
 4847,"No tiene obra social, prepaga o plan estatal",0,4818,4398,9216,30
 4848,"No tiene obra social, prepaga o plan estatal",1,4425,4241,8666,30
 4849,"No tiene obra social, prepaga o plan estatal",2,4651,4294,8945,30
@@ -4113,7 +4073,6 @@
 4948,"No tiene obra social, prepaga o plan estatal",101,-,1,1,30
 4949,"No tiene obra social, prepaga o plan estatal",104,1,-,1,30
 4950,"No tiene obra social, prepaga o plan estatal",109,-,1,1,30
-5064,Obra social (incluye PAMI),,Varón,Mujer,Total,34
 5065,Obra social (incluye PAMI),0,1164,1008,2172,34
 5066,Obra social (incluye PAMI),1,1243,1173,2416,34
 5067,Obra social (incluye PAMI),2,1183,1228,2411,34
@@ -4217,7 +4176,6 @@
 5165,Obra social (incluye PAMI),100,4,4,8,34
 5166,Obra social (incluye PAMI),102,-,1,1,34
 5167,Obra social (incluye PAMI),110,-,1,1,34
-5169,Prepaga a través de obra social,,Varón,Mujer,Total,34
 5170,Prepaga a través de obra social,0,146,160,306,34
 5171,Prepaga a través de obra social,1,121,115,236,34
 5172,Prepaga a través de obra social,2,212,94,306,34
@@ -4313,7 +4271,6 @@
 5262,Prepaga a través de obra social,94,1,-,1,34
 5263,Prepaga a través de obra social,95,1,-,1,34
 5264,Prepaga a través de obra social,96,-,1,1,34
-5266,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,34
 5267,Prepaga sólo por contratación voluntaria,0,31,53,84,34
 5268,Prepaga sólo por contratación voluntaria,1,63,25,88,34
 5269,Prepaga sólo por contratación voluntaria,2,99,69,168,34
@@ -4397,7 +4354,6 @@
 5347,Prepaga sólo por contratación voluntaria,82,-,1,1,34
 5348,Prepaga sólo por contratación voluntaria,85,10,-,10,34
 5349,Prepaga sólo por contratación voluntaria,88,-,10,10,34
-5351,Programas o planes estatales de salud,,Varón,Mujer,Total,34
 5352,Programas o planes estatales de salud,0,141,104,245,34
 5353,Programas o planes estatales de salud,1,191,189,380,34
 5354,Programas o planes estatales de salud,2,175,138,313,34
@@ -4494,7 +4450,6 @@
 5445,Programas o planes estatales de salud,93,-,3,3,34
 5446,Programas o planes estatales de salud,94,1,-,1,34
 5447,Programas o planes estatales de salud,96,1,1,2,34
-5449,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,34
 5450,"No tiene obra social, prepaga o plan estatal",0,3697,3442,7139,34
 5451,"No tiene obra social, prepaga o plan estatal",1,3647,3762,7409,34
 5452,"No tiene obra social, prepaga o plan estatal",2,3698,3217,6915,34
@@ -4600,7 +4555,6 @@
 5552,"No tiene obra social, prepaga o plan estatal",104,-,1,1,34
 5553,"No tiene obra social, prepaga o plan estatal",105,-,1,1,34
 5554,"No tiene obra social, prepaga o plan estatal",107,-,1,1,34
-5668,Obra social (incluye PAMI),,Varón,Mujer,Total,38
 5669,Obra social (incluye PAMI),0,1820,1689,3509,38
 5670,Obra social (incluye PAMI),1,1975,1901,3876,38
 5671,Obra social (incluye PAMI),2,1847,2114,3961,38
@@ -4704,7 +4658,6 @@
 5769,Obra social (incluye PAMI),100,1,6,7,38
 5770,Obra social (incluye PAMI),101,-,9,9,38
 5771,Obra social (incluye PAMI),105,-,1,1,38
-5773,Prepaga a través de obra social,,Varón,Mujer,Total,38
 5774,Prepaga a través de obra social,0,362,430,792,38
 5775,Prepaga a través de obra social,1,484,405,889,38
 5776,Prepaga a través de obra social,2,500,449,949,38
@@ -4801,7 +4754,6 @@
 5867,Prepaga a través de obra social,93,-,1,1,38
 5868,Prepaga a través de obra social,97,-,1,1,38
 5869,Prepaga a través de obra social,109,-,10,10,38
-5871,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,38
 5872,Prepaga sólo por contratación voluntaria,0,127,124,251,38
 5873,Prepaga sólo por contratación voluntaria,1,134,144,278,38
 5874,Prepaga sólo por contratación voluntaria,2,155,222,377,38
@@ -4893,7 +4845,6 @@
 5960,Prepaga sólo por contratación voluntaria,90,-,6,6,38
 5961,Prepaga sólo por contratación voluntaria,93,1,1,2,38
 5962,Prepaga sólo por contratación voluntaria,95,1,-,1,38
-5964,Programas o planes estatales de salud,,Varón,Mujer,Total,38
 5965,Programas o planes estatales de salud,0,608,551,1159,38
 5966,Programas o planes estatales de salud,1,514,475,989,38
 5967,Programas o planes estatales de salud,2,490,471,961,38
@@ -4993,7 +4944,6 @@
 6061,Programas o planes estatales de salud,96,-,1,1,38
 6062,Programas o planes estatales de salud,97,1,-,1,38
 6063,Programas o planes estatales de salud,100,-,1,1,38
-6065,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,38
 6066,"No tiene obra social, prepaga o plan estatal",0,3113,3324,6437,38
 6067,"No tiene obra social, prepaga o plan estatal",1,3262,3158,6420,38
 6068,"No tiene obra social, prepaga o plan estatal",2,3081,3169,6250,38
@@ -5098,7 +5048,6 @@
 6167,"No tiene obra social, prepaga o plan estatal",103,-,1,1,38
 6168,"No tiene obra social, prepaga o plan estatal",108,1,-,1,38
 6169,"No tiene obra social, prepaga o plan estatal",110,2,-,2,38
-6283,Obra social (incluye PAMI),,Varón,Mujer,Total,42
 6284,Obra social (incluye PAMI),0,1213,980,2193,42
 6285,Obra social (incluye PAMI),1,1119,971,2090,42
 6286,Obra social (incluye PAMI),2,1116,1023,2139,42
@@ -5204,7 +5153,6 @@
 6386,Obra social (incluye PAMI),102,-,1,1,42
 6387,Obra social (incluye PAMI),103,1,1,2,42
 6388,Obra social (incluye PAMI),104,-,1,1,42
-6390,Prepaga a través de obra social,,Varón,Mujer,Total,42
 6391,Prepaga a través de obra social,0,152,190,342,42
 6392,Prepaga a través de obra social,1,198,228,426,42
 6393,Prepaga a través de obra social,2,233,222,455,42
@@ -5298,7 +5246,6 @@
 6481,Prepaga a través de obra social,91,-,1,1,42
 6482,Prepaga a través de obra social,93,3,-,3,42
 6483,Prepaga a través de obra social,94,1,1,2,42
-6485,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,42
 6486,Prepaga sólo por contratación voluntaria,0,67,108,175,42
 6487,Prepaga sólo por contratación voluntaria,1,80,73,153,42
 6488,Prepaga sólo por contratación voluntaria,2,100,106,206,42
@@ -5389,7 +5336,6 @@
 6573,Prepaga sólo por contratación voluntaria,88,1,2,3,42
 6574,Prepaga sólo por contratación voluntaria,90,-,1,1,42
 6575,Prepaga sólo por contratación voluntaria,92,-,1,1,42
-6577,Programas o planes estatales de salud,,Varón,Mujer,Total,42
 6578,Programas o planes estatales de salud,0,177,166,343,42
 6579,Programas o planes estatales de salud,1,151,194,345,42
 6580,Programas o planes estatales de salud,2,196,179,375,42
@@ -5484,7 +5430,6 @@
 6669,Programas o planes estatales de salud,92,2,-,2,42
 6670,Programas o planes estatales de salud,97,-,2,2,42
 6671,Programas o planes estatales de salud,99,-,1,1,42
-6673,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,42
 6674,"No tiene obra social, prepaga o plan estatal",0,1075,1099,2174,42
 6675,"No tiene obra social, prepaga o plan estatal",1,1074,984,2058,42
 6676,"No tiene obra social, prepaga o plan estatal",2,965,1022,1987,42
@@ -5586,7 +5531,6 @@
 6772,"No tiene obra social, prepaga o plan estatal",99,-,1,1,42
 6773,"No tiene obra social, prepaga o plan estatal",100,-,1,1,42
 6774,"No tiene obra social, prepaga o plan estatal",106,1,-,1,42
-6887,Obra social (incluye PAMI),,Varón,Mujer,Total,46
 6888,Obra social (incluye PAMI),0,1076,949,2025,46
 6889,Obra social (incluye PAMI),1,1129,1117,2246,46
 6890,Obra social (incluye PAMI),2,1229,1225,2454,46
@@ -5694,7 +5638,6 @@
 6992,Obra social (incluye PAMI),108,1,-,1,46
 6993,Obra social (incluye PAMI),109,-,1,1,46
 6994,Obra social (incluye PAMI),110,-,1,1,46
-6996,Prepaga a través de obra social,,Varón,Mujer,Total,46
 6997,Prepaga a través de obra social,0,242,227,469,46
 6998,Prepaga a través de obra social,1,278,243,521,46
 6999,Prepaga a través de obra social,2,224,272,496,46
@@ -5790,7 +5733,6 @@
 7089,Prepaga a través de obra social,92,-,1,1,46
 7090,Prepaga a través de obra social,93,2,-,2,46
 7091,Prepaga a través de obra social,95,2,-,2,46
-7093,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,46
 7094,Prepaga sólo por contratación voluntaria,0,96,57,153,46
 7095,Prepaga sólo por contratación voluntaria,1,25,90,115,46
 7096,Prepaga sólo por contratación voluntaria,2,156,108,264,46
@@ -5877,7 +5819,6 @@
 7177,Prepaga sólo por contratación voluntaria,89,-,1,1,46
 7178,Prepaga sólo por contratación voluntaria,91,-,1,1,46
 7179,Prepaga sólo por contratación voluntaria,92,1,-,1,46
-7181,Programas o planes estatales de salud,,Varón,Mujer,Total,46
 7182,Programas o planes estatales de salud,0,35,39,74,46
 7183,Programas o planes estatales de salud,1,107,50,157,46
 7184,Programas o planes estatales de salud,2,64,31,95,46
@@ -5969,7 +5910,6 @@
 7270,Programas o planes estatales de salud,90,-,1,1,46
 7271,Programas o planes estatales de salud,91,1,4,5,46
 7272,Programas o planes estatales de salud,92,1,-,1,46
-7274,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,46
 7275,"No tiene obra social, prepaga o plan estatal",0,1478,1496,2974,46
 7276,"No tiene obra social, prepaga o plan estatal",1,1471,1412,2883,46
 7277,"No tiene obra social, prepaga o plan estatal",2,1486,1262,2748,46
@@ -6070,7 +6010,6 @@
 7372,"No tiene obra social, prepaga o plan estatal",99,1,-,1,46
 7373,"No tiene obra social, prepaga o plan estatal",100,11,-,11,46
 7374,"No tiene obra social, prepaga o plan estatal",110,1,-,1,46
-7488,Obra social (incluye PAMI),,Varón,Mujer,Total,50
 7489,Obra social (incluye PAMI),0,6294,6378,12672,50
 7490,Obra social (incluye PAMI),1,6134,6178,12312,50
 7491,Obra social (incluye PAMI),2,6969,6263,13232,50
@@ -6179,7 +6118,6 @@
 7594,Obra social (incluye PAMI),105,-,2,2,50
 7595,Obra social (incluye PAMI),106,-,1,1,50
 7596,Obra social (incluye PAMI),107,-,1,1,50
-7598,Prepaga a través de obra social,,Varón,Mujer,Total,50
 7599,Prepaga a través de obra social,0,1336,1359,2695,50
 7600,Prepaga a través de obra social,1,1486,1229,2715,50
 7601,Prepaga a través de obra social,2,1342,1368,2710,50
@@ -6280,7 +6218,6 @@
 7696,Prepaga a través de obra social,97,-,1,1,50
 7697,Prepaga a través de obra social,104,-,1,1,50
 7698,Prepaga a través de obra social,105,-,1,1,50
-7700,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,50
 7701,Prepaga sólo por contratación voluntaria,0,439,537,976,50
 7702,Prepaga sólo por contratación voluntaria,1,551,522,1073,50
 7703,Prepaga sólo por contratación voluntaria,2,429,443,872,50
@@ -6378,7 +6315,6 @@
 7795,Prepaga sólo por contratación voluntaria,95,10,-,10,50
 7796,Prepaga sólo por contratación voluntaria,96,1,-,1,50
 7797,Prepaga sólo por contratación voluntaria,97,-,11,11,50
-7799,Programas o planes estatales de salud,,Varón,Mujer,Total,50
 7800,Programas o planes estatales de salud,0,518,512,1030,50
 7801,Programas o planes estatales de salud,1,495,428,923,50
 7802,Programas o planes estatales de salud,2,469,324,793,50
@@ -6478,7 +6414,6 @@
 7896,Programas o planes estatales de salud,96,2,1,3,50
 7897,Programas o planes estatales de salud,97,-,10,10,50
 7898,Programas o planes estatales de salud,103,-,1,1,50
-7900,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,50
 7901,"No tiene obra social, prepaga o plan estatal",0,7216,6915,14131,50
 7902,"No tiene obra social, prepaga o plan estatal",1,7229,6842,14071,50
 7903,"No tiene obra social, prepaga o plan estatal",2,7141,6689,13830,50
@@ -6582,7 +6517,6 @@
 8001,"No tiene obra social, prepaga o plan estatal",100,2,2,4,50
 8002,"No tiene obra social, prepaga o plan estatal",102,1,-,1,50
 8003,"No tiene obra social, prepaga o plan estatal",108,6,1,7,50
-8119,Obra social (incluye PAMI),,Varón,Mujer,Total,54
 8120,Obra social (incluye PAMI),0,3684,3690,7374,54
 8121,Obra social (incluye PAMI),1,3830,3688,7518,54
 8122,Obra social (incluye PAMI),2,4033,3507,7540,54
@@ -6692,7 +6626,6 @@
 8226,Obra social (incluye PAMI),106,-,1,1,54
 8227,Obra social (incluye PAMI),107,1,1,2,54
 8228,Obra social (incluye PAMI),110,1,2,3,54
-8230,Prepaga a través de obra social,,Varón,Mujer,Total,54
 8231,Prepaga a través de obra social,0,795,756,1551,54
 8232,Prepaga a través de obra social,1,673,734,1407,54
 8233,Prepaga a través de obra social,2,759,864,1623,54
@@ -6791,7 +6724,6 @@
 8326,Prepaga a través de obra social,95,1,1,2,54
 8327,Prepaga a través de obra social,98,1,-,1,54
 8328,Prepaga a través de obra social,100,-,1,1,54
-8330,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,54
 8331,Prepaga sólo por contratación voluntaria,0,166,285,451,54
 8332,Prepaga sólo por contratación voluntaria,1,207,177,384,54
 8333,Prepaga sólo por contratación voluntaria,2,226,169,395,54
@@ -6882,7 +6814,6 @@
 8418,Prepaga sólo por contratación voluntaria,92,1,-,1,54
 8419,Prepaga sólo por contratación voluntaria,93,-,1,1,54
 8420,Prepaga sólo por contratación voluntaria,94,10,-,10,54
-8422,Programas o planes estatales de salud,,Varón,Mujer,Total,54
 8423,Programas o planes estatales de salud,0,1104,1204,2308,54
 8424,Programas o planes estatales de salud,1,1052,1028,2080,54
 8425,Programas o planes estatales de salud,2,1010,964,1974,54
@@ -6984,7 +6915,6 @@
 8521,Programas o planes estatales de salud,98,-,1,1,54
 8522,Programas o planes estatales de salud,103,-,1,1,54
 8523,Programas o planes estatales de salud,106,-,1,1,54
-8525,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,54
 8526,"No tiene obra social, prepaga o plan estatal",0,6516,6234,12750,54
 8527,"No tiene obra social, prepaga o plan estatal",1,5745,5467,11212,54
 8528,"No tiene obra social, prepaga o plan estatal",2,5515,5409,10924,54
@@ -7094,7 +7024,6 @@
 8632,"No tiene obra social, prepaga o plan estatal",106,1,-,1,54
 8633,"No tiene obra social, prepaga o plan estatal",108,-,1,1,54
 8634,"No tiene obra social, prepaga o plan estatal",110,3,2,5,54
-8751,Obra social (incluye PAMI),,Varón,Mujer,Total,58
 8752,Obra social (incluye PAMI),0,2072,2199,4271,58
 8753,Obra social (incluye PAMI),1,2465,2265,4730,58
 8754,Obra social (incluye PAMI),2,2392,2373,4765,58
@@ -7203,7 +7132,6 @@
 8857,Obra social (incluye PAMI),105,-,1,1,58
 8858,Obra social (incluye PAMI),108,-,1,1,58
 8859,Obra social (incluye PAMI),109,-,1,1,58
-8861,Prepaga a través de obra social,,Varón,Mujer,Total,58
 8862,Prepaga a través de obra social,0,483,447,930,58
 8863,Prepaga a través de obra social,1,494,561,1055,58
 8864,Prepaga a través de obra social,2,538,592,1130,58
@@ -7302,7 +7230,6 @@
 8957,Prepaga a través de obra social,95,9,1,10,58
 8958,Prepaga a través de obra social,99,-,1,1,58
 8959,Prepaga a través de obra social,110,-,1,1,58
-8961,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,58
 8962,Prepaga sólo por contratación voluntaria,0,103,93,196,58
 8963,Prepaga sólo por contratación voluntaria,1,122,78,200,58
 8964,Prepaga sólo por contratación voluntaria,2,116,74,190,58
@@ -7396,7 +7323,6 @@
 9052,Prepaga sólo por contratación voluntaria,91,-,11,11,58
 9053,Prepaga sólo por contratación voluntaria,92,-,1,1,58
 9054,Prepaga sólo por contratación voluntaria,93,1,-,1,58
-9056,Programas o planes estatales de salud,,Varón,Mujer,Total,58
 9057,Programas o planes estatales de salud,0,117,97,214,58
 9058,Programas o planes estatales de salud,1,127,122,249,58
 9059,Programas o planes estatales de salud,2,93,99,192,58
@@ -7493,7 +7419,6 @@
 9150,Programas o planes estatales de salud,94,1,4,5,58
 9151,Programas o planes estatales de salud,95,1,-,1,58
 9152,Programas o planes estatales de salud,100,-,1,1,58
-9154,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,58
 9155,"No tiene obra social, prepaga o plan estatal",0,2259,2193,4452,58
 9156,"No tiene obra social, prepaga o plan estatal",1,2093,1958,4051,58
 9157,"No tiene obra social, prepaga o plan estatal",2,2438,1768,4206,58
@@ -7598,7 +7523,6 @@
 9256,"No tiene obra social, prepaga o plan estatal",105,-,1,1,58
 9257,"No tiene obra social, prepaga o plan estatal",107,-,1,1,58
 9258,"No tiene obra social, prepaga o plan estatal",110,-,13,13,58
-9375,Obra social (incluye PAMI),,Varón,Mujer,Total,62
 9376,Obra social (incluye PAMI),0,2183,2297,4480,62
 9377,Obra social (incluye PAMI),1,2421,2198,4619,62
 9378,Obra social (incluye PAMI),2,2441,2510,4951,62
@@ -7706,7 +7630,6 @@
 9480,Obra social (incluye PAMI),104,-,1,1,62
 9481,Obra social (incluye PAMI),109,-,2,2,62
 9482,Obra social (incluye PAMI),110,-,1,1,62
-9484,Prepaga a través de obra social,,Varón,Mujer,Total,62
 9485,Prepaga a través de obra social,0,629,560,1189,62
 9486,Prepaga a través de obra social,1,671,664,1335,62
 9487,Prepaga a través de obra social,2,459,446,905,62
@@ -7804,7 +7727,6 @@
 9579,Prepaga a través de obra social,95,-,1,1,62
 9580,Prepaga a través de obra social,97,-,1,1,62
 9581,Prepaga a través de obra social,98,-,1,1,62
-9583,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,62
 9584,Prepaga sólo por contratación voluntaria,0,183,171,354,62
 9585,Prepaga sólo por contratación voluntaria,1,194,189,383,62
 9586,Prepaga sólo por contratación voluntaria,2,157,187,344,62
@@ -7900,7 +7822,6 @@
 9676,Prepaga sólo por contratación voluntaria,94,-,8,8,62
 9677,Prepaga sólo por contratación voluntaria,95,-,1,1,62
 9678,Prepaga sólo por contratación voluntaria,97,-,1,1,62
-9680,Programas o planes estatales de salud,,Varón,Mujer,Total,62
 9681,Programas o planes estatales de salud,0,138,138,276,62
 9682,Programas o planes estatales de salud,1,125,146,271,62
 9683,Programas o planes estatales de salud,2,128,100,228,62
@@ -7997,7 +7918,6 @@
 9774,Programas o planes estatales de salud,93,-,9,9,62
 9775,Programas o planes estatales de salud,95,-,2,2,62
 9776,Programas o planes estatales de salud,100,-,2,2,62
-9778,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,62
 9779,"No tiene obra social, prepaga o plan estatal",0,2397,2132,4529,62
 9780,"No tiene obra social, prepaga o plan estatal",1,2183,2124,4307,62
 9781,"No tiene obra social, prepaga o plan estatal",2,2285,2095,4380,62
@@ -8100,7 +8020,6 @@
 9878,"No tiene obra social, prepaga o plan estatal",100,-,1,1,62
 9879,"No tiene obra social, prepaga o plan estatal",105,-,1,1,62
 9880,"No tiene obra social, prepaga o plan estatal",110,1,-,1,62
-9995,Obra social (incluye PAMI),,Varón,Mujer,Total,66
 9996,Obra social (incluye PAMI),0,3487,3750,7237,66
 9997,Obra social (incluye PAMI),1,3920,3499,7419,66
 9998,Obra social (incluye PAMI),2,3839,3354,7193,66
@@ -8207,7 +8126,6 @@
 10099,Obra social (incluye PAMI),104,-,2,2,66
 10100,Obra social (incluye PAMI),105,-,1,1,66
 10101,Obra social (incluye PAMI),110,-,4,4,66
-10103,Prepaga a través de obra social,,Varón,Mujer,Total,66
 10104,Prepaga a través de obra social,0,887,812,1699,66
 10105,Prepaga a través de obra social,1,870,827,1697,66
 10106,Prepaga a través de obra social,2,866,933,1799,66
@@ -8307,7 +8225,6 @@
 10200,Prepaga a través de obra social,96,1,-,1,66
 10201,Prepaga a través de obra social,98,1,-,1,66
 10202,Prepaga a través de obra social,101,-,1,1,66
-10204,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,66
 10205,Prepaga sólo por contratación voluntaria,0,226,244,470,66
 10206,Prepaga sólo por contratación voluntaria,1,175,235,410,66
 10207,Prepaga sólo por contratación voluntaria,2,253,234,487,66
@@ -8400,7 +8317,6 @@
 10294,Prepaga sólo por contratación voluntaria,90,1,-,1,66
 10295,Prepaga sólo por contratación voluntaria,92,-,11,11,66
 10296,Prepaga sólo por contratación voluntaria,97,1,-,1,66
-10298,Programas o planes estatales de salud,,Varón,Mujer,Total,66
 10299,Programas o planes estatales de salud,0,735,580,1315,66
 10300,Programas o planes estatales de salud,1,549,626,1175,66
 10301,Programas o planes estatales de salud,2,706,685,1391,66
@@ -8502,7 +8418,6 @@
 10397,Programas o planes estatales de salud,98,-,1,1,66
 10398,Programas o planes estatales de salud,99,1,-,1,66
 10399,Programas o planes estatales de salud,100,1,-,1,66
-10401,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,66
 10402,"No tiene obra social, prepaga o plan estatal",0,7850,7278,15128,66
 10403,"No tiene obra social, prepaga o plan estatal",1,6767,6657,13424,66
 10404,"No tiene obra social, prepaga o plan estatal",2,6805,6484,13289,66
@@ -8611,7 +8526,6 @@
 10507,"No tiene obra social, prepaga o plan estatal",105,-,1,1,66
 10508,"No tiene obra social, prepaga o plan estatal",109,-,1,1,66
 10509,"No tiene obra social, prepaga o plan estatal",110,2,-,2,66
-10624,Obra social (incluye PAMI),,Varón,Mujer,Total,70
 10625,Obra social (incluye PAMI),0,1992,1676,3668,70
 10626,Obra social (incluye PAMI),1,2126,1874,4000,70
 10627,Obra social (incluye PAMI),2,2042,2040,4082,70
@@ -8720,7 +8634,6 @@
 10730,Obra social (incluye PAMI),105,1,-,1,70
 10731,Obra social (incluye PAMI),108,-,1,1,70
 10732,Obra social (incluye PAMI),109,-,1,1,70
-10734,Prepaga a través de obra social,,Varón,Mujer,Total,70
 10735,Prepaga a través de obra social,0,634,525,1159,70
 10736,Prepaga a través de obra social,1,643,550,1193,70
 10737,Prepaga a través de obra social,2,707,573,1280,70
@@ -8816,7 +8729,6 @@
 10827,Prepaga a través de obra social,94,-,11,11,70
 10828,Prepaga a través de obra social,96,1,-,1,70
 10829,Prepaga a través de obra social,97,1,1,2,70
-10831,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,70
 10832,Prepaga sólo por contratación voluntaria,0,96,205,301,70
 10833,Prepaga sólo por contratación voluntaria,1,199,170,369,70
 10834,Prepaga sólo por contratación voluntaria,2,252,173,425,70
@@ -8909,7 +8821,6 @@
 10921,Prepaga sólo por contratación voluntaria,93,1,-,1,70
 10922,Prepaga sólo por contratación voluntaria,95,1,-,1,70
 10923,Prepaga sólo por contratación voluntaria,96,-,7,7,70
-10925,Programas o planes estatales de salud,,Varón,Mujer,Total,70
 10926,Programas o planes estatales de salud,0,273,243,516,70
 10927,Programas o planes estatales de salud,1,233,213,446,70
 10928,Programas o planes estatales de salud,2,239,224,463,70
@@ -9005,7 +8916,6 @@
 11018,Programas o planes estatales de salud,95,1,-,1,70
 11019,Programas o planes estatales de salud,96,-,1,1,70
 11020,Programas o planes estatales de salud,101,1,-,1,70
-11022,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,70
 11023,"No tiene obra social, prepaga o plan estatal",0,3688,3446,7134,70
 11024,"No tiene obra social, prepaga o plan estatal",1,3504,3436,6940,70
 11025,"No tiene obra social, prepaga o plan estatal",2,3648,3411,7059,70
@@ -9106,7 +9016,6 @@
 11120,"No tiene obra social, prepaga o plan estatal",98,-,1,1,70
 11121,"No tiene obra social, prepaga o plan estatal",99,1,1,2,70
 11122,"No tiene obra social, prepaga o plan estatal",100,-,2,2,70
-11237,Obra social (incluye PAMI),,Varón,Mujer,Total,74
 11238,Obra social (incluye PAMI),0,1506,1306,2812,74
 11239,Obra social (incluye PAMI),1,1594,1555,3149,74
 11240,Obra social (incluye PAMI),2,1771,1503,3274,74
@@ -9213,7 +9122,6 @@
 11341,Obra social (incluye PAMI),103,1,2,3,74
 11342,Obra social (incluye PAMI),106,-,11,11,74
 11343,Obra social (incluye PAMI),110,1,-,1,74
-11345,Prepaga a través de obra social,,Varón,Mujer,Total,74
 11346,Prepaga a través de obra social,0,340,380,720,74
 11347,Prepaga a través de obra social,1,316,360,676,74
 11348,Prepaga a través de obra social,2,336,264,600,74
@@ -9311,7 +9219,6 @@
 11440,Prepaga a través de obra social,94,1,-,1,74
 11441,Prepaga a través de obra social,101,-,1,1,74
 11442,Prepaga a través de obra social,110,-,1,1,74
-11444,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,74
 11445,Prepaga sólo por contratación voluntaria,0,47,143,190,74
 11446,Prepaga sólo por contratación voluntaria,1,61,48,109,74
 11447,Prepaga sólo por contratación voluntaria,2,126,52,178,74
@@ -9401,7 +9308,6 @@
 11531,Prepaga sólo por contratación voluntaria,87,1,2,3,74
 11532,Prepaga sólo por contratación voluntaria,88,-,10,10,74
 11533,Prepaga sólo por contratación voluntaria,89,-,1,1,74
-11535,Programas o planes estatales de salud,,Varón,Mujer,Total,74
 11536,Programas o planes estatales de salud,0,127,125,252,74
 11537,Programas o planes estatales de salud,1,128,77,205,74
 11538,Programas o planes estatales de salud,2,67,81,148,74
@@ -9501,7 +9407,6 @@
 11632,Programas o planes estatales de salud,96,-,1,1,74
 11633,Programas o planes estatales de salud,97,1,-,1,74
 11634,Programas o planes estatales de salud,98,1,1,2,74
-11636,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,74
 11637,"No tiene obra social, prepaga o plan estatal",0,1684,1705,3389,74
 11638,"No tiene obra social, prepaga o plan estatal",1,1765,1611,3376,74
 11639,"No tiene obra social, prepaga o plan estatal",2,1935,1631,3566,74
@@ -9600,7 +9505,6 @@
 11732,"No tiene obra social, prepaga o plan estatal",95,-,2,2,74
 11733,"No tiene obra social, prepaga o plan estatal",96,-,8,8,74
 11734,"No tiene obra social, prepaga o plan estatal",99,1,1,2,74
-11847,Obra social (incluye PAMI),,Varón,Mujer,Total,78
 11848,Obra social (incluye PAMI),0,1703,1620,3323,78
 11849,Obra social (incluye PAMI),1,1735,1431,3166,78
 11850,Obra social (incluye PAMI),2,1695,1569,3264,78
@@ -9702,7 +9606,6 @@
 11946,Obra social (incluye PAMI),98,10,3,13,78
 11947,Obra social (incluye PAMI),99,-,1,1,78
 11948,Obra social (incluye PAMI),104,1,-,1,78
-11950,Prepaga a través de obra social,,Varón,Mujer,Total,78
 11951,Prepaga a través de obra social,0,297,285,582,78
 11952,Prepaga a través de obra social,1,355,297,652,78
 11953,Prepaga a través de obra social,2,349,298,647,78
@@ -9797,7 +9700,6 @@
 12042,Prepaga a través de obra social,91,-,2,2,78
 12043,Prepaga a través de obra social,93,-,9,9,78
 12044,Prepaga a través de obra social,94,1,1,2,78
-12046,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,78
 12047,Prepaga sólo por contratación voluntaria,0,49,39,88,78
 12048,Prepaga sólo por contratación voluntaria,1,69,52,121,78
 12049,Prepaga sólo por contratación voluntaria,2,49,68,117,78
@@ -9886,7 +9788,6 @@
 12132,Prepaga sólo por contratación voluntaria,87,2,-,2,78
 12133,Prepaga sólo por contratación voluntaria,88,10,2,12,78
 12134,Prepaga sólo por contratación voluntaria,90,1,1,2,78
-12136,Programas o planes estatales de salud,,Varón,Mujer,Total,78
 12137,Programas o planes estatales de salud,0,232,216,448,78
 12138,Programas o planes estatales de salud,1,202,249,451,78
 12139,Programas o planes estatales de salud,2,201,196,397,78
@@ -9982,7 +9883,6 @@
 12229,Programas o planes estatales de salud,96,1,-,1,78
 12230,Programas o planes estatales de salud,97,-,1,1,78
 12231,Programas o planes estatales de salud,100,1,-,1,78
-12233,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,78
 12234,"No tiene obra social, prepaga o plan estatal",0,488,476,964,78
 12235,"No tiene obra social, prepaga o plan estatal",1,431,479,910,78
 12236,"No tiene obra social, prepaga o plan estatal",2,362,502,864,78
@@ -10080,7 +9980,6 @@
 12328,"No tiene obra social, prepaga o plan estatal",95,1,1,2,78
 12329,"No tiene obra social, prepaga o plan estatal",97,-,1,1,78
 12330,"No tiene obra social, prepaga o plan estatal",99,1,-,1,78
-12439,Obra social (incluye PAMI),,Varón,Mujer,Total,82
 12440,Obra social (incluye PAMI),0,9205,8741,17946,82
 12441,Obra social (incluye PAMI),1,9048,8875,17923,82
 12442,Obra social (incluye PAMI),2,8878,9010,17888,82
@@ -10191,7 +10090,6 @@
 12547,Obra social (incluye PAMI),107,1,1,2,82
 12548,Obra social (incluye PAMI),108,1,-,1,82
 12549,Obra social (incluye PAMI),110,2,1,3,82
-12551,Prepaga a través de obra social,,Varón,Mujer,Total,82
 12552,Prepaga a través de obra social,0,3301,3283,6584,82
 12553,Prepaga a través de obra social,1,3572,3407,6979,82
 12554,Prepaga a través de obra social,2,3624,3439,7063,82
@@ -10296,7 +10194,6 @@
 12653,Prepaga a través de obra social,101,1,-,1,82
 12654,Prepaga a través de obra social,107,-,1,1,82
 12655,Prepaga a través de obra social,109,-,1,1,82
-12657,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,82
 12658,Prepaga sólo por contratación voluntaria,0,1616,1467,3083,82
 12659,Prepaga sólo por contratación voluntaria,1,1663,1639,3302,82
 12660,Prepaga sólo por contratación voluntaria,2,1632,1784,3416,82
@@ -10399,7 +10296,6 @@
 12757,Prepaga sólo por contratación voluntaria,99,-,1,1,82
 12758,Prepaga sólo por contratación voluntaria,100,-,1,1,82
 12759,Prepaga sólo por contratación voluntaria,103,-,1,1,82
-12761,Programas o planes estatales de salud,,Varón,Mujer,Total,82
 12762,Programas o planes estatales de salud,0,427,496,923,82
 12763,Programas o planes estatales de salud,1,545,556,1101,82
 12764,Programas o planes estatales de salud,2,560,549,1109,82
@@ -10502,7 +10398,6 @@
 12861,Programas o planes estatales de salud,100,1,2,3,82
 12862,Programas o planes estatales de salud,101,1,-,1,82
 12863,Programas o planes estatales de salud,110,-,1,1,82
-12865,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,82
 12866,"No tiene obra social, prepaga o plan estatal",0,10663,10163,20826,82
 12867,"No tiene obra social, prepaga o plan estatal",1,10200,10212,20412,82
 12868,"No tiene obra social, prepaga o plan estatal",2,10612,9815,20427,82
@@ -10610,7 +10505,6 @@
 12970,"No tiene obra social, prepaga o plan estatal",108,1,-,1,82
 12971,"No tiene obra social, prepaga o plan estatal",109,1,1,2,82
 12972,"No tiene obra social, prepaga o plan estatal",110,1,1,2,82
-13090,Obra social (incluye PAMI),,Varón,Mujer,Total,86
 13091,Obra social (incluye PAMI),0,1702,1535,3237,86
 13092,Obra social (incluye PAMI),1,1619,1654,3273,86
 13093,Obra social (incluye PAMI),2,1900,1768,3668,86
@@ -10722,7 +10616,6 @@
 13199,Obra social (incluye PAMI),108,-,1,1,86
 13200,Obra social (incluye PAMI),109,-,1,1,86
 13201,Obra social (incluye PAMI),110,-,2,2,86
-13203,Prepaga a través de obra social,,Varón,Mujer,Total,86
 13204,Prepaga a través de obra social,0,361,430,791,86
 13205,Prepaga a través de obra social,1,400,422,822,86
 13206,Prepaga a través de obra social,2,518,389,907,86
@@ -10823,7 +10716,6 @@
 13301,Prepaga a través de obra social,98,-,3,3,86
 13302,Prepaga a través de obra social,99,1,-,1,86
 13303,Prepaga a través de obra social,107,1,-,1,86
-13305,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,86
 13306,Prepaga sólo por contratación voluntaria,0,173,224,397,86
 13307,Prepaga sólo por contratación voluntaria,1,194,196,390,86
 13308,Prepaga sólo por contratación voluntaria,2,110,179,289,86
@@ -10916,7 +10808,6 @@
 13395,Prepaga sólo por contratación voluntaria,95,1,-,1,86
 13396,Prepaga sólo por contratación voluntaria,100,-,1,1,86
 13397,Prepaga sólo por contratación voluntaria,110,-,1,1,86
-13399,Programas o planes estatales de salud,,Varón,Mujer,Total,86
 13400,Programas o planes estatales de salud,0,359,404,763,86
 13401,Programas o planes estatales de salud,1,434,469,903,86
 13402,Programas o planes estatales de salud,2,407,391,798,86
@@ -11018,7 +10909,6 @@
 13498,Programas o planes estatales de salud,98,-,2,2,86
 13499,Programas o planes estatales de salud,99,-,2,2,86
 13500,Programas o planes estatales de salud,100,1,-,1,86
-13502,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,86
 13503,"No tiene obra social, prepaga o plan estatal",0,6149,6195,12344,86
 13504,"No tiene obra social, prepaga o plan estatal",1,6297,6266,12563,86
 13505,"No tiene obra social, prepaga o plan estatal",2,5760,5510,11270,86
@@ -11129,7 +11019,6 @@
 13610,"No tiene obra social, prepaga o plan estatal",108,1,-,1,86
 13611,"No tiene obra social, prepaga o plan estatal",109,1,1,2,86
 13612,"No tiene obra social, prepaga o plan estatal",110,2,2,4,86
-13730,Obra social (incluye PAMI),,Varón,Mujer,Total,90
 13731,Obra social (incluye PAMI),0,4306,4528,8834,90
 13732,Obra social (incluye PAMI),1,4488,4428,8916,90
 13733,Obra social (incluye PAMI),2,4760,4818,9578,90
@@ -11237,7 +11126,6 @@
 13835,Obra social (incluye PAMI),104,-,2,2,90
 13836,Obra social (incluye PAMI),109,-,1,1,90
 13837,Obra social (incluye PAMI),110,5,1,6,90
-13839,Prepaga a través de obra social,,Varón,Mujer,Total,90
 13840,Prepaga a través de obra social,0,961,906,1867,90
 13841,Prepaga a través de obra social,1,994,1010,2004,90
 13842,Prepaga a través de obra social,2,1283,874,2157,90
@@ -11340,7 +11228,6 @@
 13939,Prepaga a través de obra social,99,-,1,1,90
 13940,Prepaga a través de obra social,100,-,1,1,90
 13941,Prepaga a través de obra social,101,-,1,1,90
-13943,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,90
 13944,Prepaga sólo por contratación voluntaria,0,1217,884,2101,90
 13945,Prepaga sólo por contratación voluntaria,1,1007,1011,2018,90
 13946,Prepaga sólo por contratación voluntaria,2,926,989,1915,90
@@ -11439,7 +11326,6 @@
 14039,Prepaga sólo por contratación voluntaria,97,-,2,2,90
 14040,Prepaga sólo por contratación voluntaria,98,-,11,11,90
 14041,Prepaga sólo por contratación voluntaria,99,-,1,1,90
-14043,Programas o planes estatales de salud,,Varón,Mujer,Total,90
 14044,Programas o planes estatales de salud,0,630,485,1115,90
 14045,Programas o planes estatales de salud,1,661,646,1307,90
 14046,Programas o planes estatales de salud,2,544,542,1086,90
@@ -11541,7 +11427,6 @@
 14142,Programas o planes estatales de salud,98,-,1,1,90
 14143,Programas o planes estatales de salud,99,-,1,1,90
 14144,Programas o planes estatales de salud,102,1,-,1,90
-14146,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,90
 14147,"No tiene obra social, prepaga o plan estatal",0,6380,6054,12434,90
 14148,"No tiene obra social, prepaga o plan estatal",1,6102,5520,11622,90
 14149,"No tiene obra social, prepaga o plan estatal",2,5628,5686,11314,90
@@ -11645,7 +11530,6 @@
 14247,"No tiene obra social, prepaga o plan estatal",100,3,-,3,90
 14248,"No tiene obra social, prepaga o plan estatal",105,1,-,1,90
 14249,"No tiene obra social, prepaga o plan estatal",110,1,-,1,90
-14364,Obra social (incluye PAMI),,Varón,Mujer,Total,
 14365,Obra social (incluye PAMI),0,611,504,1115,
 14366,Obra social (incluye PAMI),1,679,647,1326,
 14367,Obra social (incluye PAMI),2,621,501,1122,
@@ -11739,7 +11623,6 @@
 14455,Obra social (incluye PAMI),90,-,30,30,
 14456,Obra social (incluye PAMI),91,-,5,5,
 14457,Obra social (incluye PAMI),92,-,30,30,
-14459,Prepaga a través de obra social,,Varón,Mujer,Total,
 14460,Prepaga a través de obra social,0,158,167,325,
 14461,Prepaga a través de obra social,1,211,144,355,
 14462,Prepaga a través de obra social,2,161,193,354,
@@ -11824,7 +11707,6 @@
 14541,Prepaga a través de obra social,83,6,-,6,
 14542,Prepaga a través de obra social,90,-,14,14,
 14543,Prepaga a través de obra social,91,-,6,6,
-14545,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,
 14546,Prepaga sólo por contratación voluntaria,0,29,37,66,
 14547,Prepaga sólo por contratación voluntaria,1,28,21,49,
 14548,Prepaga sólo por contratación voluntaria,2,16,32,48,
@@ -11906,7 +11788,6 @@
 14624,Prepaga sólo por contratación voluntaria,92,5,-,5,
 14625,Prepaga sólo por contratación voluntaria,99,1,-,1,
 14626,Prepaga sólo por contratación voluntaria,104,1,-,1,
-14628,Programas o planes estatales de salud,,Varón,Mujer,Total,
 14629,Programas o planes estatales de salud,0,190,193,383,
 14630,Programas o planes estatales de salud,1,245,264,509,
 14631,Programas o planes estatales de salud,2,189,164,353,
@@ -11987,7 +11868,6 @@
 14706,Programas o planes estatales de salud,84,-,1,1,
 14707,Programas o planes estatales de salud,86,-,1,1,
 14708,Programas o planes estatales de salud,91,1,-,1,
-14710,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,
 14711,"No tiene obra social, prepaga o plan estatal",0,152,111,263,
 14712,"No tiene obra social, prepaga o plan estatal",1,182,121,303,
 14713,"No tiene obra social, prepaga o plan estatal",2,137,192,329,
@@ -12069,9 +11949,6 @@
 14789,"No tiene obra social, prepaga o plan estatal",88,-,8,8,
 14790,"No tiene obra social, prepaga o plan estatal",94,6,-,6,
 14791,"No tiene obra social, prepaga o plan estatal",95,-,1,1,
-14893,RESUMEN,,,,,
-14894,RESUMEN,,,,,
-14896,Obra social (incluye PAMI),,Varón,Mujer,Total,
 14897,Obra social (incluye PAMI),0,122804,117425,240229,
 14898,Obra social (incluye PAMI),1,123820,119906,243726,
 14899,Obra social (incluye PAMI),2,128488,123473,251961,
@@ -12183,7 +12060,6 @@
 15005,Obra social (incluye PAMI),108,14,5,19,
 15006,Obra social (incluye PAMI),109,3,13,16,
 15007,Obra social (incluye PAMI),110,27,72,99,
-15009,Prepaga a través de obra social,,Varón,Mujer,Total,
 15010,Prepaga a través de obra social,0,37261,35350,72611,
 15011,Prepaga a través de obra social,1,36757,35834,72591,
 15012,Prepaga a través de obra social,2,37476,36107,73583,
@@ -12295,7 +12171,6 @@
 15118,Prepaga a través de obra social,108,-,1,1,
 15119,Prepaga a través de obra social,109,2,11,13,
 15120,Prepaga a través de obra social,110,1,2,3,
-15122,Prepaga sólo por contratación voluntaria,,Varón,Mujer,Total,
 15123,Prepaga sólo por contratación voluntaria,0,15046,14485,29531,
 15124,Prepaga sólo por contratación voluntaria,1,14817,14555,29372,
 15125,Prepaga sólo por contratación voluntaria,2,14774,14516,29290,
@@ -12405,7 +12280,6 @@
 15229,Prepaga sólo por contratación voluntaria,106,-,13,13,
 15230,Prepaga sólo por contratación voluntaria,107,-,4,4,
 15231,Prepaga sólo por contratación voluntaria,110,12,3,15,
-15233,Programas o planes estatales de salud,,Varón,Mujer,Total,
 15234,Programas o planes estatales de salud,0,11650,11124,22774,
 15235,Programas o planes estatales de salud,1,11684,11250,22934,
 15236,Programas o planes estatales de salud,2,11387,10753,22140,
@@ -12515,7 +12389,6 @@
 15340,Programas o planes estatales de salud,106,-,1,1,
 15341,Programas o planes estatales de salud,107,-,1,1,
 15342,Programas o planes estatales de salud,110,1,11,12,
-15344,"No tiene obra social, prepaga o plan estatal",,Varón,Mujer,Total,
 15345,"No tiene obra social, prepaga o plan estatal",0,162463,155074,317537,
 15346,"No tiene obra social, prepaga o plan estatal",1,154312,150959,305271,
 15347,"No tiene obra social, prepaga o plan estatal",2,151733,146111,297844,

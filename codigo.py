@@ -76,7 +76,6 @@ def normalizar_datos_censo(censo):
     
         censo_limpio.loc[i, "provincia"] = provincia_actual #Agregamos 
     
-    #print(censo_limpio["provincia"].unique())
     
     censo_limpio["provincia"] = censo_limpio["provincia"].str.upper()
 
@@ -108,13 +107,23 @@ def normalizar_datos_censo(censo):
     
     #Aca llenamos los espacios vacios que aparecian en cobertura
     censo_limpio["cobertura"] = censo_limpio["cobertura"].ffill() 
+    
+    
+    #Hay que normalizar los datos entre las dos tablas
+   # censo_limpio["cobertura"] = censo_limpio["cobertura"].replace({
+   #     "No tiene obra social, prepaga o plan estatal": "No tiene obra social, prepaga ni plan estatal",
+   #     "Obra social o prepaga (incluye PAMI)": "Obra social (incluye PAMI)"
+        
+   # })
     #Hay que ver si es valida para la materia
     
     #Sacamos la pseudo tablita de los totales (la podemos calcular nosotros a mano, es redundante)
     censo_limpio = censo_limpio[
     (censo_limpio["edad"].astype(str).str.strip().str.lower() != "total") &
     (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "total") &
-    (censo_limpio["edad"].astype(str).str.strip().str.lower() != "edad")
+    (censo_limpio["edad"].astype(str).str.strip().str.lower() != "edad") &
+    (censo_limpio["total"].astype(str).str.strip().str.lower() != "total") &
+    (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "resumen")
 ]
  
     return censo_limpio
@@ -132,7 +141,7 @@ dfcenso2010_limpio["año"] = 2010
 
 
 dffinal = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
-dffinal = dffinal.drop(columns = ["varon", "mujer"]) #Sacamos la columna de total que era redundante
+dffinal = dffinal.drop(columns = ["varon", "mujer"]).dropna() #Sacamos la columna de total que era redundante
 dffinal.to_csv(carpetaModelos / "censos.csv")
 
 #Chequeamos dependencias funcionales
@@ -275,11 +284,26 @@ print("\nValores de nombres de tipologia =======\n")
 print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
 
 
+establecimientos["origen_financiamiento"] = establecimientos["origen_financiamiento"].replace({
+    "Provincial": "Estatal",
+    "Municipal": "Estatal",
+    "FFAA/Seguridad": "Estatal",
+    "Nacional": "Estatal",
+    "Servicio Penitenciario Provincial": "Estatal",
+    "Universitario público": "Estatal",
+    "Servicio Penitenciario Federal": "Estatal",
+    
+    "Mutual": "Privado",
+    "Universitario privado": "Privado"
+})
+
+
+
 #cambio los Null por "Sin especificar" para evitar inconsistencias y erorres en las consultas
 establecimientos["sitio_web"] = establecimientos["sitio_web"].fillna("Sin especificar")
 establecimientos["codent"] = establecimientos["codent"].fillna("Sin especificar")
 
-# Analisis de calidad: porcentaje de valores "Sin especificar", valores desconocidos.
+# Analisis de calidad: porcentaje de valores "Sin especificar", valores desconocidos. CAMBIAR
 def analisis_calidad_porcnull_establecimientos(columna,censo):
     porcentaje_columna = (
         (censo[columna] == "Sin especificar").sum()
@@ -313,6 +337,96 @@ establecimientos_limpio.to_csv(carpetaModelos / "establecimientos.csv")
 
 
 
-#%% Consultas
+#%% Consultas (archivos)
+censo = pd.read_csv(carpetaModelos / 'censos.csv')
+departamentos = pd.read_csv(carpetaModelos / 'departamentos.csv')
+provincias = pd.read_csv(carpetaModelos / "provincias.csv")
+nacidos = pd.read_csv(carpetaModelos / "nacidos.csv")
+establecimientos = pd.read_csv(carpetaModelos / "establecimientos.csv")
+
+#%% Mini analisis
+
+establecimientos['origen_financiamiento'].value_counts()
+nacidos["peso_nacimiento"].value_counts()
+nacidos.columns
+
+#%% Cobertura de salud
+
+consulta = """ 
+            SELECT 
 
 
+           """
+    
+dataframeResultado = dd.sql(consulta).df()
+
+#%% Establecimientos de terapia intensiva
+
+consulta = """
+            SELECT 
+                p.provincia, 
+                e.origen_financiamiento, 
+                COUNT(e.establecimiento_id) as cantidad 
+            FROM establecimientos e
+            
+            INNER JOIN provincias as p ON p.codigo = e.provincia_id
+            
+            WHERE e.origen_financiamiento IN ('Estatal', 'Privado') 
+            AND LOWER(e.tipologia_nombre) LIKE '%terapia intensiva%'
+            
+            GROUP BY p.provincia, e.origen_financiamiento
+            
+            
+
+           """
+dataframeResultado = dd.sql(consulta).df()
+
+dataframeResultado
+
+#%% características de los nacimientos 
+
+
+consulta = """
+        SELECT p.provincia, n.grupo_edad_madre, n.año,
+         SUM(n.cantidad) AS cantidad_nacidos,
+            SUM(
+                CASE
+                    WHEN n.peso_nacimiento = 'Menos de 2500 gramos'
+                    THEN n.cantidad
+                    ELSE 0
+                END
+            ) AS cantidad_bajo_peso,
+            100.0 * SUM(
+                CASE
+                    WHEN n.peso_nacimiento = 'Menos de 2500 gramos'
+                    THEN n.cantidad
+                    ELSE 0
+                END
+            )/ SUM(
+                CASE
+                    WHEN n.peso_nacimiento != 'Sin especificar'
+                    THEN n.cantidad
+                    ELSE 0
+                END
+            ) AS porcentaje_bajo_peso
+        
+        FROM nacidos n
+        
+        INNER JOIN provincias p ON p.codigo = n.provincia_residencia
+        
+        GROUP BY p.provincia, n.grupo_edad_madre, n.año
+        
+        ORDER BY p.provincia ASC, n.grupo_edad_madre ASC, n.año ASC
+        
+           """
+dataframeResultado = dd.sql(consulta).df()
+
+dataframeResultado
+
+#%% Tasa de fecundidad por provincia
+consulta = """
+            SELECT p.provincia, n.grupo_edad_madre,
+                
+
+
+           """

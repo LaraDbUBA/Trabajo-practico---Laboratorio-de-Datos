@@ -1,6 +1,4 @@
 ,cobertura,edad,total,provincia_id,año
-0,,,,2,2010
-2,Obra social (incluye PAMI),,Total,2,2010
 3,Obra social (incluye PAMI),0,11450,2,2010
 4,Obra social (incluye PAMI),1,11059,2,2010
 5,Obra social (incluye PAMI),2,11452,2,2010
@@ -112,7 +110,6 @@
 111,Obra social (incluye PAMI),108,1,2,2010
 112,Obra social (incluye PAMI),109,3,2,2010
 113,Obra social (incluye PAMI),110,10,2,2010
-115,Prepaga a través de obra social,,Total,2,2010
 116,Prepaga a través de obra social,0,9395,2,2010
 117,Prepaga a través de obra social,1,8515,2,2010
 118,Prepaga a través de obra social,2,8868,2,2010
@@ -220,7 +217,6 @@
 220,Prepaga a través de obra social,105,1,2,2010
 221,Prepaga a través de obra social,106,1,2,2010
 222,Prepaga a través de obra social,108,1,2,2010
-224,Prepaga sólo por contratación voluntaria,,Total,2,2010
 225,Prepaga sólo por contratación voluntaria,0,4857,2,2010
 226,Prepaga sólo por contratación voluntaria,1,4435,2,2010
 227,Prepaga sólo por contratación voluntaria,2,4558,2,2010
@@ -329,7 +325,6 @@
 330,Prepaga sólo por contratación voluntaria,105,2,2,2010
 331,Prepaga sólo por contratación voluntaria,106,12,2,2010
 332,Prepaga sólo por contratación voluntaria,107,3,2,2010
-334,Programas o planes estatales de salud,,Total,2,2010
 335,Programas o planes estatales de salud,0,498,2,2010
 336,Programas o planes estatales de salud,1,720,2,2010
 337,Programas o planes estatales de salud,2,661,2,2010
@@ -432,7 +427,6 @@
 434,Programas o planes estatales de salud,99,1,2,2010
 435,Programas o planes estatales de salud,100,14,2,2010
 436,Programas o planes estatales de salud,101,1,2,2010
-438,"No tiene obra social, prepaga o plan estatal",,Total,2,2010
 439,"No tiene obra social, prepaga o plan estatal",0,9151,2,2010
 440,"No tiene obra social, prepaga o plan estatal",1,8525,2,2010
 441,"No tiene obra social, prepaga o plan estatal",2,8058,2,2010
@@ -538,7 +532,6 @@
 541,"No tiene obra social, prepaga o plan estatal",103,2,2,2010
 542,"No tiene obra social, prepaga o plan estatal",104,1,2,2010
 543,"No tiene obra social, prepaga o plan estatal",107,1,2,2010
-661,Obra social (incluye PAMI),,Total,6,2010
 662,Obra social (incluye PAMI),0,98180,6,2010
 663,Obra social (incluye PAMI),1,99384,6,2010
 664,Obra social (incluye PAMI),2,102504,6,2010
@@ -650,7 +643,6 @@
 770,Obra social (incluye PAMI),108,10,6,2010
 771,Obra social (incluye PAMI),109,3,6,2010
 772,Obra social (incluye PAMI),110,51,6,2010
-774,Prepaga a través de obra social,,Total,6,2010
 775,Prepaga a través de obra social,0,29635,6,2010
 776,Prepaga a través de obra social,1,29486,6,2010
 777,Prepaga a través de obra social,2,29574,6,2010
@@ -757,7 +749,6 @@
 878,Prepaga a través de obra social,103,1,6,2010
 879,Prepaga a través de obra social,106,12,6,2010
 880,Prepaga a través de obra social,109,2,6,2010
-882,Prepaga sólo por contratación voluntaria,,Total,6,2010
 883,Prepaga sólo por contratación voluntaria,0,10578,6,2010
 884,Prepaga sólo por contratación voluntaria,1,10706,6,2010
 885,Prepaga sólo por contratación voluntaria,2,10334,6,2010
@@ -867,7 +858,6 @@
 989,Prepaga sólo por contratación voluntaria,106,1,6,2010
 990,Prepaga sólo por contratación voluntaria,107,1,6,2010
 991,Prepaga sólo por contratación voluntaria,110,13,6,2010
-993,Programas o planes estatales de salud,,Total,6,2010
 994,Programas o planes estatales de salud,0,4598,6,2010
 995,Programas o planes estatales de salud,1,4589,6,2010
 996,Programas o planes estatales de salud,2,4843,6,2010
@@ -974,7 +964,6 @@
 1097,Programas o planes estatales de salud,104,1,6,2010
 1098,Programas o planes estatales de salud,105,1,6,2010
 1099,Programas o planes estatales de salud,110,11,6,2010
-1101,"No tiene obra social, prepaga o plan estatal",,Total,6,2010
 1102,"No tiene obra social, prepaga o plan estatal",0,121053,6,2010
 1103,"No tiene obra social, prepaga o plan estatal",1,116769,6,2010
 1104,"No tiene obra social, prepaga o plan estatal",2,112207,6,2010
@@ -1083,7 +1072,6 @@
 1207,"No tiene obra social, prepaga o plan estatal",108,1,6,2010
 1208,"No tiene obra social, prepaga o plan estatal",109,11,6,2010
 1209,"No tiene obra social, prepaga o plan estatal",110,47,6,2010
-1327,Obra social (incluye PAMI),,Total,10,2010
 1328,Obra social (incluye PAMI),0,2216,10,2010
 1329,Obra social (incluye PAMI),1,2670,10,2010
 1330,Obra social (incluye PAMI),2,2712,10,2010
@@ -1191,7 +1179,6 @@
 1432,Obra social (incluye PAMI),107,7,10,2010
 1433,Obra social (incluye PAMI),109,1,10,2010
 1434,Obra social (incluye PAMI),110,4,10,2010
-1436,Prepaga a través de obra social,,Total,10,2010
 1437,Prepaga a través de obra social,0,355,10,2010
 1438,Prepaga a través de obra social,1,347,10,2010
 1439,Prepaga a través de obra social,2,464,10,2010
@@ -1289,7 +1276,6 @@
 1531,Prepaga a través de obra social,94,3,10,2010
 1532,Prepaga a través de obra social,95,2,10,2010
 1533,Prepaga a través de obra social,96,1,10,2010
-1535,Prepaga sólo por contratación voluntaria,,Total,10,2010
 1536,Prepaga sólo por contratación voluntaria,0,73,10,2010
 1537,Prepaga sólo por contratación voluntaria,1,127,10,2010
 1538,Prepaga sólo por contratación voluntaria,2,108,10,2010
@@ -1379,7 +1365,6 @@
 1622,Prepaga sólo por contratación voluntaria,95,1,10,2010
 1623,Prepaga sólo por contratación voluntaria,96,1,10,2010
 1624,Prepaga sólo por contratación voluntaria,99,1,10,2010
-1626,Programas o planes estatales de salud,,Total,10,2010
 1627,Programas o planes estatales de salud,0,278,10,2010
 1628,Programas o planes estatales de salud,1,265,10,2010
 1629,Programas o planes estatales de salud,2,269,10,2010
@@ -1478,7 +1463,6 @@
 1722,Programas o planes estatales de salud,95,1,10,2010
 1723,Programas o planes estatales de salud,96,2,10,2010
 1724,Programas o planes estatales de salud,102,1,10,2010
-1726,"No tiene obra social, prepaga o plan estatal",,Total,10,2010
 1727,"No tiene obra social, prepaga o plan estatal",0,3348,10,2010
 1728,"No tiene obra social, prepaga o plan estatal",1,3068,10,2010
 1729,"No tiene obra social, prepaga o plan estatal",2,3108,10,2010
@@ -1583,7 +1567,6 @@
 1828,"No tiene obra social, prepaga o plan estatal",104,1,10,2010
 1829,"No tiene obra social, prepaga o plan estatal",105,1,10,2010
 1830,"No tiene obra social, prepaga o plan estatal",110,1,10,2010
-1946,Obra social (incluye PAMI),,Total,14,2010
 1947,Obra social (incluye PAMI),0,19576,14,2010
 1948,Obra social (incluye PAMI),1,19485,14,2010
 1949,Obra social (incluye PAMI),2,21154,14,2010
@@ -1694,7 +1677,6 @@
 2054,Obra social (incluye PAMI),108,1,14,2010
 2055,Obra social (incluye PAMI),109,1,14,2010
 2056,Obra social (incluye PAMI),110,9,14,2010
-2058,Prepaga a través de obra social,,Total,14,2010
 2059,Prepaga a través de obra social,0,6950,14,2010
 2060,Prepaga a través de obra social,1,6904,14,2010
 2061,Prepaga a través de obra social,2,7070,14,2010
@@ -1798,7 +1780,6 @@
 2159,Prepaga a través de obra social,101,1,14,2010
 2160,Prepaga a través de obra social,102,1,14,2010
 2161,Prepaga a través de obra social,103,1,14,2010
-2163,Prepaga sólo por contratación voluntaria,,Total,14,2010
 2164,Prepaga sólo por contratación voluntaria,0,3167,14,2010
 2165,Prepaga sólo por contratación voluntaria,1,3144,14,2010
 2166,Prepaga sólo por contratación voluntaria,2,2817,14,2010
@@ -1899,7 +1880,6 @@
 2261,Prepaga sólo por contratación voluntaria,97,1,14,2010
 2262,Prepaga sólo por contratación voluntaria,98,9,14,2010
 2263,Prepaga sólo por contratación voluntaria,100,3,14,2010
-2265,Programas o planes estatales de salud,,Total,14,2010
 2266,Programas o planes estatales de salud,0,2379,14,2010
 2267,Programas o planes estatales de salud,1,2269,14,2010
 2268,Programas o planes estatales de salud,2,2060,14,2010
@@ -2003,7 +1983,6 @@
 2366,Programas o planes estatales de salud,100,3,14,2010
 2367,Programas o planes estatales de salud,101,1,14,2010
 2368,Programas o planes estatales de salud,105,1,14,2010
-2370,"No tiene obra social, prepaga o plan estatal",,Total,14,2010
 2371,"No tiene obra social, prepaga o plan estatal",0,20580,14,2010
 2372,"No tiene obra social, prepaga o plan estatal",1,20651,14,2010
 2373,"No tiene obra social, prepaga o plan estatal",2,20546,14,2010
@@ -2109,7 +2088,6 @@
 2473,"No tiene obra social, prepaga o plan estatal",102,2,14,2010
 2474,"No tiene obra social, prepaga o plan estatal",103,1,14,2010
 2475,"No tiene obra social, prepaga o plan estatal",104,1,14,2010
-2592,Obra social (incluye PAMI),,Total,18,2010
 2593,Obra social (incluye PAMI),0,4949,18,2010
 2594,Obra social (incluye PAMI),1,5011,18,2010
 2595,Obra social (incluye PAMI),2,5062,18,2010
@@ -2216,7 +2194,6 @@
 2696,Obra social (incluye PAMI),103,6,18,2010
 2697,Obra social (incluye PAMI),106,1,18,2010
 2698,Obra social (incluye PAMI),109,1,18,2010
-2700,Prepaga a través de obra social,,Total,18,2010
 2701,Prepaga a través de obra social,0,1204,18,2010
 2702,Prepaga a través de obra social,1,1251,18,2010
 2703,Prepaga a través de obra social,2,1100,18,2010
@@ -2315,7 +2292,6 @@
 2796,Prepaga a través de obra social,96,3,18,2010
 2797,Prepaga a través de obra social,97,2,18,2010
 2798,Prepaga a través de obra social,110,1,18,2010
-2800,Prepaga sólo por contratación voluntaria,,Total,18,2010
 2801,Prepaga sólo por contratación voluntaria,0,213,18,2010
 2802,Prepaga sólo por contratación voluntaria,1,236,18,2010
 2803,Prepaga sólo por contratación voluntaria,2,322,18,2010
@@ -2410,7 +2386,6 @@
 2892,Prepaga sólo por contratación voluntaria,96,1,18,2010
 2893,Prepaga sólo por contratación voluntaria,97,2,18,2010
 2894,Prepaga sólo por contratación voluntaria,110,1,18,2010
-2896,Programas o planes estatales de salud,,Total,18,2010
 2897,Programas o planes estatales de salud,0,1840,18,2010
 2898,Programas o planes estatales de salud,1,2114,18,2010
 2899,Programas o planes estatales de salud,2,1921,18,2010
@@ -2513,7 +2488,6 @@
 2996,Programas o planes estatales de salud,100,1,18,2010
 2997,Programas o planes estatales de salud,101,3,18,2010
 2998,Programas o planes estatales de salud,107,1,18,2010
-3000,"No tiene obra social, prepaga o plan estatal",,Total,18,2010
 3001,"No tiene obra social, prepaga o plan estatal",0,10218,18,2010
 3002,"No tiene obra social, prepaga o plan estatal",1,9636,18,2010
 3003,"No tiene obra social, prepaga o plan estatal",2,9396,18,2010
@@ -2618,7 +2592,6 @@
 3102,"No tiene obra social, prepaga o plan estatal",108,5,18,2010
 3103,"No tiene obra social, prepaga o plan estatal",109,2,18,2010
 3104,"No tiene obra social, prepaga o plan estatal",110,17,18,2010
-3220,Obra social (incluye PAMI),,Total,22,2010
 3221,Obra social (incluye PAMI),0,4110,22,2010
 3222,Obra social (incluye PAMI),1,3947,22,2010
 3223,Obra social (incluye PAMI),2,4045,22,2010
@@ -2726,7 +2699,6 @@
 3325,Obra social (incluye PAMI),105,2,22,2010
 3326,Obra social (incluye PAMI),108,1,22,2010
 3327,Obra social (incluye PAMI),110,2,22,2010
-3329,Prepaga a través de obra social,,Total,22,2010
 3330,Prepaga a través de obra social,0,730,22,2010
 3331,Prepaga a través de obra social,1,831,22,2010
 3332,Prepaga a través de obra social,2,785,22,2010
@@ -2823,7 +2795,6 @@
 3423,Prepaga a través de obra social,94,2,22,2010
 3424,Prepaga a través de obra social,96,1,22,2010
 3425,Prepaga a través de obra social,98,1,22,2010
-3427,Prepaga sólo por contratación voluntaria,,Total,22,2010
 3428,Prepaga sólo por contratación voluntaria,0,277,22,2010
 3429,Prepaga sólo por contratación voluntaria,1,269,22,2010
 3430,Prepaga sólo por contratación voluntaria,2,373,22,2010
@@ -2910,7 +2881,6 @@
 3511,Prepaga sólo por contratación voluntaria,83,13,22,2010
 3512,Prepaga sólo por contratación voluntaria,89,1,22,2010
 3513,Prepaga sólo por contratación voluntaria,90,10,22,2010
-3515,Programas o planes estatales de salud,,Total,22,2010
 3516,Programas o planes estatales de salud,0,491,22,2010
 3517,Programas o planes estatales de salud,1,456,22,2010
 3518,Programas o planes estatales de salud,2,555,22,2010
@@ -3009,7 +2979,6 @@
 3611,Programas o planes estatales de salud,96,10,22,2010
 3612,Programas o planes estatales de salud,98,1,22,2010
 3613,Programas o planes estatales de salud,99,1,22,2010
-3615,"No tiene obra social, prepaga o plan estatal",,Total,22,2010
 3616,"No tiene obra social, prepaga o plan estatal",0,14157,22,2010
 3617,"No tiene obra social, prepaga o plan estatal",1,13402,22,2010
 3618,"No tiene obra social, prepaga o plan estatal",2,13520,22,2010
@@ -3114,7 +3083,6 @@
 3717,"No tiene obra social, prepaga o plan estatal",104,1,22,2010
 3718,"No tiene obra social, prepaga o plan estatal",108,1,22,2010
 3719,"No tiene obra social, prepaga o plan estatal",110,1,22,2010
-3833,Obra social (incluye PAMI),,Total,26,2010
 3834,Obra social (incluye PAMI),0,4510,26,2010
 3835,Obra social (incluye PAMI),1,4564,26,2010
 3836,Obra social (incluye PAMI),2,4805,26,2010
@@ -3220,7 +3188,6 @@
 3936,Obra social (incluye PAMI),102,1,26,2010
 3937,Obra social (incluye PAMI),107,12,26,2010
 3938,Obra social (incluye PAMI),108,1,26,2010
-3940,Prepaga a través de obra social,,Total,26,2010
 3941,Prepaga a través de obra social,0,1201,26,2010
 3942,Prepaga a través de obra social,1,1105,26,2010
 3943,Prepaga a través de obra social,2,1095,26,2010
@@ -3315,7 +3282,6 @@
 4032,Prepaga a través de obra social,93,2,26,2010
 4033,Prepaga a través de obra social,94,1,26,2010
 4034,Prepaga a través de obra social,96,1,26,2010
-4036,Prepaga sólo por contratación voluntaria,,Total,26,2010
 4037,Prepaga sólo por contratación voluntaria,0,397,26,2010
 4038,Prepaga sólo por contratación voluntaria,1,230,26,2010
 4039,Prepaga sólo por contratación voluntaria,2,304,26,2010
@@ -3407,7 +3373,6 @@
 4125,Prepaga sólo por contratación voluntaria,89,1,26,2010
 4126,Prepaga sólo por contratación voluntaria,90,2,26,2010
 4127,Prepaga sólo por contratación voluntaria,91,1,26,2010
-4129,Programas o planes estatales de salud,,Total,26,2010
 4130,Programas o planes estatales de salud,0,530,26,2010
 4131,Programas o planes estatales de salud,1,315,26,2010
 4132,Programas o planes estatales de salud,2,367,26,2010
@@ -3504,7 +3469,6 @@
 4223,Programas o planes estatales de salud,94,1,26,2010
 4224,Programas o planes estatales de salud,95,1,26,2010
 4225,Programas o planes estatales de salud,101,1,26,2010
-4227,"No tiene obra social, prepaga o plan estatal",,Total,26,2010
 4228,"No tiene obra social, prepaga o plan estatal",0,2746,26,2010
 4229,"No tiene obra social, prepaga o plan estatal",1,2593,26,2010
 4230,"No tiene obra social, prepaga o plan estatal",2,2706,26,2010
@@ -3606,7 +3570,6 @@
 4326,"No tiene obra social, prepaga o plan estatal",98,11,26,2010
 4327,"No tiene obra social, prepaga o plan estatal",99,1,26,2010
 4328,"No tiene obra social, prepaga o plan estatal",100,1,26,2010
-4440,Obra social (incluye PAMI),,Total,30,2010
 4441,Obra social (incluye PAMI),0,8370,30,2010
 4442,Obra social (incluye PAMI),1,8627,30,2010
 4443,Obra social (incluye PAMI),2,8705,30,2010
@@ -3713,7 +3676,6 @@
 4544,Obra social (incluye PAMI),104,4,30,2010
 4545,Obra social (incluye PAMI),105,2,30,2010
 4546,Obra social (incluye PAMI),110,1,30,2010
-4548,Prepaga a través de obra social,,Total,30,2010
 4549,Prepaga a través de obra social,0,1140,30,2010
 4550,Prepaga a través de obra social,1,1190,30,2010
 4551,Prepaga a través de obra social,2,1246,30,2010
@@ -3812,7 +3774,6 @@
 4644,Prepaga a través de obra social,95,2,30,2010
 4645,Prepaga a través de obra social,96,2,30,2010
 4646,Prepaga a través de obra social,101,1,30,2010
-4648,Prepaga sólo por contratación voluntaria,,Total,30,2010
 4649,Prepaga sólo por contratación voluntaria,0,633,30,2010
 4650,Prepaga sólo por contratación voluntaria,1,783,30,2010
 4651,Prepaga sólo por contratación voluntaria,2,783,30,2010
@@ -3910,7 +3871,6 @@
 4743,Prepaga sólo por contratación voluntaria,95,2,30,2010
 4744,Prepaga sólo por contratación voluntaria,97,2,30,2010
 4745,Prepaga sólo por contratación voluntaria,98,1,30,2010
-4747,Programas o planes estatales de salud,,Total,30,2010
 4748,Programas o planes estatales de salud,0,796,30,2010
 4749,Programas o planes estatales de salud,1,715,30,2010
 4750,Programas o planes estatales de salud,2,788,30,2010
@@ -4008,7 +3968,6 @@
 4842,Programas o planes estatales de salud,95,3,30,2010
 4843,Programas o planes estatales de salud,99,1,30,2010
 4844,Programas o planes estatales de salud,104,1,30,2010
-4846,"No tiene obra social, prepaga o plan estatal",,Total,30,2010
 4847,"No tiene obra social, prepaga o plan estatal",0,9216,30,2010
 4848,"No tiene obra social, prepaga o plan estatal",1,8666,30,2010
 4849,"No tiene obra social, prepaga o plan estatal",2,8945,30,2010
@@ -4113,7 +4072,6 @@
 4948,"No tiene obra social, prepaga o plan estatal",101,1,30,2010
 4949,"No tiene obra social, prepaga o plan estatal",104,1,30,2010
 4950,"No tiene obra social, prepaga o plan estatal",109,1,30,2010
-5064,Obra social (incluye PAMI),,Total,34,2010
 5065,Obra social (incluye PAMI),0,2172,34,2010
 5066,Obra social (incluye PAMI),1,2416,34,2010
 5067,Obra social (incluye PAMI),2,2411,34,2010
@@ -4217,7 +4175,6 @@
 5165,Obra social (incluye PAMI),100,8,34,2010
 5166,Obra social (incluye PAMI),102,1,34,2010
 5167,Obra social (incluye PAMI),110,1,34,2010
-5169,Prepaga a través de obra social,,Total,34,2010
 5170,Prepaga a través de obra social,0,306,34,2010
 5171,Prepaga a través de obra social,1,236,34,2010
 5172,Prepaga a través de obra social,2,306,34,2010
@@ -4313,7 +4270,6 @@
 5262,Prepaga a través de obra social,94,1,34,2010
 5263,Prepaga a través de obra social,95,1,34,2010
 5264,Prepaga a través de obra social,96,1,34,2010
-5266,Prepaga sólo por contratación voluntaria,,Total,34,2010
 5267,Prepaga sólo por contratación voluntaria,0,84,34,2010
 5268,Prepaga sólo por contratación voluntaria,1,88,34,2010
 5269,Prepaga sólo por contratación voluntaria,2,168,34,2010
@@ -4397,7 +4353,6 @@
 5347,Prepaga sólo por contratación voluntaria,82,1,34,2010
 5348,Prepaga sólo por contratación voluntaria,85,10,34,2010
 5349,Prepaga sólo por contratación voluntaria,88,10,34,2010
-5351,Programas o planes estatales de salud,,Total,34,2010
 5352,Programas o planes estatales de salud,0,245,34,2010
 5353,Programas o planes estatales de salud,1,380,34,2010
 5354,Programas o planes estatales de salud,2,313,34,2010
@@ -4494,7 +4449,6 @@
 5445,Programas o planes estatales de salud,93,3,34,2010
 5446,Programas o planes estatales de salud,94,1,34,2010
 5447,Programas o planes estatales de salud,96,2,34,2010
-5449,"No tiene obra social, prepaga o plan estatal",,Total,34,2010
 5450,"No tiene obra social, prepaga o plan estatal",0,7139,34,2010
 5451,"No tiene obra social, prepaga o plan estatal",1,7409,34,2010
 5452,"No tiene obra social, prepaga o plan estatal",2,6915,34,2010
@@ -4600,7 +4554,6 @@
 5552,"No tiene obra social, prepaga o plan estatal",104,1,34,2010
 5553,"No tiene obra social, prepaga o plan estatal",105,1,34,2010
 5554,"No tiene obra social, prepaga o plan estatal",107,1,34,2010
-5668,Obra social (incluye PAMI),,Total,38,2010
 5669,Obra social (incluye PAMI),0,3509,38,2010
 5670,Obra social (incluye PAMI),1,3876,38,2010
 5671,Obra social (incluye PAMI),2,3961,38,2010
@@ -4704,7 +4657,6 @@
 5769,Obra social (incluye PAMI),100,7,38,2010
 5770,Obra social (incluye PAMI),101,9,38,2010
 5771,Obra social (incluye PAMI),105,1,38,2010
-5773,Prepaga a través de obra social,,Total,38,2010
 5774,Prepaga a través de obra social,0,792,38,2010
 5775,Prepaga a través de obra social,1,889,38,2010
 5776,Prepaga a través de obra social,2,949,38,2010
@@ -4801,7 +4753,6 @@
 5867,Prepaga a través de obra social,93,1,38,2010
 5868,Prepaga a través de obra social,97,1,38,2010
 5869,Prepaga a través de obra social,109,10,38,2010
-5871,Prepaga sólo por contratación voluntaria,,Total,38,2010
 5872,Prepaga sólo por contratación voluntaria,0,251,38,2010
 5873,Prepaga sólo por contratación voluntaria,1,278,38,2010
 5874,Prepaga sólo por contratación voluntaria,2,377,38,2010
@@ -4893,7 +4844,6 @@
 5960,Prepaga sólo por contratación voluntaria,90,6,38,2010
 5961,Prepaga sólo por contratación voluntaria,93,2,38,2010
 5962,Prepaga sólo por contratación voluntaria,95,1,38,2010
-5964,Programas o planes estatales de salud,,Total,38,2010
 5965,Programas o planes estatales de salud,0,1159,38,2010
 5966,Programas o planes estatales de salud,1,989,38,2010
 5967,Programas o planes estatales de salud,2,961,38,2010
@@ -4993,7 +4943,6 @@
 6061,Programas o planes estatales de salud,96,1,38,2010
 6062,Programas o planes estatales de salud,97,1,38,2010
 6063,Programas o planes estatales de salud,100,1,38,2010
-6065,"No tiene obra social, prepaga o plan estatal",,Total,38,2010
 6066,"No tiene obra social, prepaga o plan estatal",0,6437,38,2010
 6067,"No tiene obra social, prepaga o plan estatal",1,6420,38,2010
 6068,"No tiene obra social, prepaga o plan estatal",2,6250,38,2010
@@ -5098,7 +5047,6 @@
 6167,"No tiene obra social, prepaga o plan estatal",103,1,38,2010
 6168,"No tiene obra social, prepaga o plan estatal",108,1,38,2010
 6169,"No tiene obra social, prepaga o plan estatal",110,2,38,2010
-6283,Obra social (incluye PAMI),,Total,42,2010
 6284,Obra social (incluye PAMI),0,2193,42,2010
 6285,Obra social (incluye PAMI),1,2090,42,2010
 6286,Obra social (incluye PAMI),2,2139,42,2010
@@ -5204,7 +5152,6 @@
 6386,Obra social (incluye PAMI),102,1,42,2010
 6387,Obra social (incluye PAMI),103,2,42,2010
 6388,Obra social (incluye PAMI),104,1,42,2010
-6390,Prepaga a través de obra social,,Total,42,2010
 6391,Prepaga a través de obra social,0,342,42,2010
 6392,Prepaga a través de obra social,1,426,42,2010
 6393,Prepaga a través de obra social,2,455,42,2010
@@ -5298,7 +5245,6 @@
 6481,Prepaga a través de obra social,91,1,42,2010
 6482,Prepaga a través de obra social,93,3,42,2010
 6483,Prepaga a través de obra social,94,2,42,2010
-6485,Prepaga sólo por contratación voluntaria,,Total,42,2010
 6486,Prepaga sólo por contratación voluntaria,0,175,42,2010
 6487,Prepaga sólo por contratación voluntaria,1,153,42,2010
 6488,Prepaga sólo por contratación voluntaria,2,206,42,2010
@@ -5389,7 +5335,6 @@
 6573,Prepaga sólo por contratación voluntaria,88,3,42,2010
 6574,Prepaga sólo por contratación voluntaria,90,1,42,2010
 6575,Prepaga sólo por contratación voluntaria,92,1,42,2010
-6577,Programas o planes estatales de salud,,Total,42,2010
 6578,Programas o planes estatales de salud,0,343,42,2010
 6579,Programas o planes estatales de salud,1,345,42,2010
 6580,Programas o planes estatales de salud,2,375,42,2010
@@ -5484,7 +5429,6 @@
 6669,Programas o planes estatales de salud,92,2,42,2010
 6670,Programas o planes estatales de salud,97,2,42,2010
 6671,Programas o planes estatales de salud,99,1,42,2010
-6673,"No tiene obra social, prepaga o plan estatal",,Total,42,2010
 6674,"No tiene obra social, prepaga o plan estatal",0,2174,42,2010
 6675,"No tiene obra social, prepaga o plan estatal",1,2058,42,2010
 6676,"No tiene obra social, prepaga o plan estatal",2,1987,42,2010
@@ -5586,7 +5530,6 @@
 6772,"No tiene obra social, prepaga o plan estatal",99,1,42,2010
 6773,"No tiene obra social, prepaga o plan estatal",100,1,42,2010
 6774,"No tiene obra social, prepaga o plan estatal",106,1,42,2010
-6887,Obra social (incluye PAMI),,Total,46,2010
 6888,Obra social (incluye PAMI),0,2025,46,2010
 6889,Obra social (incluye PAMI),1,2246,46,2010
 6890,Obra social (incluye PAMI),2,2454,46,2010
@@ -5694,7 +5637,6 @@
 6992,Obra social (incluye PAMI),108,1,46,2010
 6993,Obra social (incluye PAMI),109,1,46,2010
 6994,Obra social (incluye PAMI),110,1,46,2010
-6996,Prepaga a través de obra social,,Total,46,2010
 6997,Prepaga a través de obra social,0,469,46,2010
 6998,Prepaga a través de obra social,1,521,46,2010
 6999,Prepaga a través de obra social,2,496,46,2010
@@ -5790,7 +5732,6 @@
 7089,Prepaga a través de obra social,92,1,46,2010
 7090,Prepaga a través de obra social,93,2,46,2010
 7091,Prepaga a través de obra social,95,2,46,2010
-7093,Prepaga sólo por contratación voluntaria,,Total,46,2010
 7094,Prepaga sólo por contratación voluntaria,0,153,46,2010
 7095,Prepaga sólo por contratación voluntaria,1,115,46,2010
 7096,Prepaga sólo por contratación voluntaria,2,264,46,2010
@@ -5877,7 +5818,6 @@
 7177,Prepaga sólo por contratación voluntaria,89,1,46,2010
 7178,Prepaga sólo por contratación voluntaria,91,1,46,2010
 7179,Prepaga sólo por contratación voluntaria,92,1,46,2010
-7181,Programas o planes estatales de salud,,Total,46,2010
 7182,Programas o planes estatales de salud,0,74,46,2010
 7183,Programas o planes estatales de salud,1,157,46,2010
 7184,Programas o planes estatales de salud,2,95,46,2010
@@ -5969,7 +5909,6 @@
 7270,Programas o planes estatales de salud,90,1,46,2010
 7271,Programas o planes estatales de salud,91,5,46,2010
 7272,Programas o planes estatales de salud,92,1,46,2010
-7274,"No tiene obra social, prepaga o plan estatal",,Total,46,2010
 7275,"No tiene obra social, prepaga o plan estatal",0,2974,46,2010
 7276,"No tiene obra social, prepaga o plan estatal",1,2883,46,2010
 7277,"No tiene obra social, prepaga o plan estatal",2,2748,46,2010
@@ -6070,7 +6009,6 @@
 7372,"No tiene obra social, prepaga o plan estatal",99,1,46,2010
 7373,"No tiene obra social, prepaga o plan estatal",100,11,46,2010
 7374,"No tiene obra social, prepaga o plan estatal",110,1,46,2010
-7488,Obra social (incluye PAMI),,Total,50,2010
 7489,Obra social (incluye PAMI),0,12672,50,2010
 7490,Obra social (incluye PAMI),1,12312,50,2010
 7491,Obra social (incluye PAMI),2,13232,50,2010
@@ -6179,7 +6117,6 @@
 7594,Obra social (incluye PAMI),105,2,50,2010
 7595,Obra social (incluye PAMI),106,1,50,2010
 7596,Obra social (incluye PAMI),107,1,50,2010
-7598,Prepaga a través de obra social,,Total,50,2010
 7599,Prepaga a través de obra social,0,2695,50,2010
 7600,Prepaga a través de obra social,1,2715,50,2010
 7601,Prepaga a través de obra social,2,2710,50,2010
@@ -6280,7 +6217,6 @@
 7696,Prepaga a través de obra social,97,1,50,2010
 7697,Prepaga a través de obra social,104,1,50,2010
 7698,Prepaga a través de obra social,105,1,50,2010
-7700,Prepaga sólo por contratación voluntaria,,Total,50,2010
 7701,Prepaga sólo por contratación voluntaria,0,976,50,2010
 7702,Prepaga sólo por contratación voluntaria,1,1073,50,2010
 7703,Prepaga sólo por contratación voluntaria,2,872,50,2010
@@ -6378,7 +6314,6 @@
 7795,Prepaga sólo por contratación voluntaria,95,10,50,2010
 7796,Prepaga sólo por contratación voluntaria,96,1,50,2010
 7797,Prepaga sólo por contratación voluntaria,97,11,50,2010
-7799,Programas o planes estatales de salud,,Total,50,2010
 7800,Programas o planes estatales de salud,0,1030,50,2010
 7801,Programas o planes estatales de salud,1,923,50,2010
 7802,Programas o planes estatales de salud,2,793,50,2010
@@ -6478,7 +6413,6 @@
 7896,Programas o planes estatales de salud,96,3,50,2010
 7897,Programas o planes estatales de salud,97,10,50,2010
 7898,Programas o planes estatales de salud,103,1,50,2010
-7900,"No tiene obra social, prepaga o plan estatal",,Total,50,2010
 7901,"No tiene obra social, prepaga o plan estatal",0,14131,50,2010
 7902,"No tiene obra social, prepaga o plan estatal",1,14071,50,2010
 7903,"No tiene obra social, prepaga o plan estatal",2,13830,50,2010
@@ -6582,7 +6516,6 @@
 8001,"No tiene obra social, prepaga o plan estatal",100,4,50,2010
 8002,"No tiene obra social, prepaga o plan estatal",102,1,50,2010
 8003,"No tiene obra social, prepaga o plan estatal",108,7,50,2010
-8119,Obra social (incluye PAMI),,Total,54,2010
 8120,Obra social (incluye PAMI),0,7374,54,2010
 8121,Obra social (incluye PAMI),1,7518,54,2010
 8122,Obra social (incluye PAMI),2,7540,54,2010
@@ -6692,7 +6625,6 @@
 8226,Obra social (incluye PAMI),106,1,54,2010
 8227,Obra social (incluye PAMI),107,2,54,2010
 8228,Obra social (incluye PAMI),110,3,54,2010
-8230,Prepaga a través de obra social,,Total,54,2010
 8231,Prepaga a través de obra social,0,1551,54,2010
 8232,Prepaga a través de obra social,1,1407,54,2010
 8233,Prepaga a través de obra social,2,1623,54,2010
@@ -6791,7 +6723,6 @@
 8326,Prepaga a través de obra social,95,2,54,2010
 8327,Prepaga a través de obra social,98,1,54,2010
 8328,Prepaga a través de obra social,100,1,54,2010
-8330,Prepaga sólo por contratación voluntaria,,Total,54,2010
 8331,Prepaga sólo por contratación voluntaria,0,451,54,2010
 8332,Prepaga sólo por contratación voluntaria,1,384,54,2010
 8333,Prepaga sólo por contratación voluntaria,2,395,54,2010
@@ -6882,7 +6813,6 @@
 8418,Prepaga sólo por contratación voluntaria,92,1,54,2010
 8419,Prepaga sólo por contratación voluntaria,93,1,54,2010
 8420,Prepaga sólo por contratación voluntaria,94,10,54,2010
-8422,Programas o planes estatales de salud,,Total,54,2010
 8423,Programas o planes estatales de salud,0,2308,54,2010
 8424,Programas o planes estatales de salud,1,2080,54,2010
 8425,Programas o planes estatales de salud,2,1974,54,2010
@@ -6984,7 +6914,6 @@
 8521,Programas o planes estatales de salud,98,1,54,2010
 8522,Programas o planes estatales de salud,103,1,54,2010
 8523,Programas o planes estatales de salud,106,1,54,2010
-8525,"No tiene obra social, prepaga o plan estatal",,Total,54,2010
 8526,"No tiene obra social, prepaga o plan estatal",0,12750,54,2010
 8527,"No tiene obra social, prepaga o plan estatal",1,11212,54,2010
 8528,"No tiene obra social, prepaga o plan estatal",2,10924,54,2010
@@ -7094,7 +7023,6 @@
 8632,"No tiene obra social, prepaga o plan estatal",106,1,54,2010
 8633,"No tiene obra social, prepaga o plan estatal",108,1,54,2010
 8634,"No tiene obra social, prepaga o plan estatal",110,5,54,2010
-8751,Obra social (incluye PAMI),,Total,58,2010
 8752,Obra social (incluye PAMI),0,4271,58,2010
 8753,Obra social (incluye PAMI),1,4730,58,2010
 8754,Obra social (incluye PAMI),2,4765,58,2010
@@ -7203,7 +7131,6 @@
 8857,Obra social (incluye PAMI),105,1,58,2010
 8858,Obra social (incluye PAMI),108,1,58,2010
 8859,Obra social (incluye PAMI),109,1,58,2010
-8861,Prepaga a través de obra social,,Total,58,2010
 8862,Prepaga a través de obra social,0,930,58,2010
 8863,Prepaga a través de obra social,1,1055,58,2010
 8864,Prepaga a través de obra social,2,1130,58,2010
@@ -7302,7 +7229,6 @@
 8957,Prepaga a través de obra social,95,10,58,2010
 8958,Prepaga a través de obra social,99,1,58,2010
 8959,Prepaga a través de obra social,110,1,58,2010
-8961,Prepaga sólo por contratación voluntaria,,Total,58,2010
 8962,Prepaga sólo por contratación voluntaria,0,196,58,2010
 8963,Prepaga sólo por contratación voluntaria,1,200,58,2010
 8964,Prepaga sólo por contratación voluntaria,2,190,58,2010
@@ -7396,7 +7322,6 @@
 9052,Prepaga sólo por contratación voluntaria,91,11,58,2010
 9053,Prepaga sólo por contratación voluntaria,92,1,58,2010
 9054,Prepaga sólo por contratación voluntaria,93,1,58,2010
-9056,Programas o planes estatales de salud,,Total,58,2010
 9057,Programas o planes estatales de salud,0,214,58,2010
 9058,Programas o planes estatales de salud,1,249,58,2010
 9059,Programas o planes estatales de salud,2,192,58,2010
@@ -7493,7 +7418,6 @@
 9150,Programas o planes estatales de salud,94,5,58,2010
 9151,Programas o planes estatales de salud,95,1,58,2010
 9152,Programas o planes estatales de salud,100,1,58,2010
-9154,"No tiene obra social, prepaga o plan estatal",,Total,58,2010
 9155,"No tiene obra social, prepaga o plan estatal",0,4452,58,2010
 9156,"No tiene obra social, prepaga o plan estatal",1,4051,58,2010
 9157,"No tiene obra social, prepaga o plan estatal",2,4206,58,2010
@@ -7598,7 +7522,6 @@
 9256,"No tiene obra social, prepaga o plan estatal",105,1,58,2010
 9257,"No tiene obra social, prepaga o plan estatal",107,1,58,2010
 9258,"No tiene obra social, prepaga o plan estatal",110,13,58,2010
-9375,Obra social (incluye PAMI),,Total,62,2010
 9376,Obra social (incluye PAMI),0,4480,62,2010
 9377,Obra social (incluye PAMI),1,4619,62,2010
 9378,Obra social (incluye PAMI),2,4951,62,2010
@@ -7706,7 +7629,6 @@
 9480,Obra social (incluye PAMI),104,1,62,2010
 9481,Obra social (incluye PAMI),109,2,62,2010
 9482,Obra social (incluye PAMI),110,1,62,2010
-9484,Prepaga a través de obra social,,Total,62,2010
 9485,Prepaga a través de obra social,0,1189,62,2010
 9486,Prepaga a través de obra social,1,1335,62,2010
 9487,Prepaga a través de obra social,2,905,62,2010
@@ -7804,7 +7726,6 @@
 9579,Prepaga a través de obra social,95,1,62,2010
 9580,Prepaga a través de obra social,97,1,62,2010
 9581,Prepaga a través de obra social,98,1,62,2010
-9583,Prepaga sólo por contratación voluntaria,,Total,62,2010
 9584,Prepaga sólo por contratación voluntaria,0,354,62,2010
 9585,Prepaga sólo por contratación voluntaria,1,383,62,2010
 9586,Prepaga sólo por contratación voluntaria,2,344,62,2010
@@ -7900,7 +7821,6 @@
 9676,Prepaga sólo por contratación voluntaria,94,8,62,2010
 9677,Prepaga sólo por contratación voluntaria,95,1,62,2010
 9678,Prepaga sólo por contratación voluntaria,97,1,62,2010
-9680,Programas o planes estatales de salud,,Total,62,2010
 9681,Programas o planes estatales de salud,0,276,62,2010
 9682,Programas o planes estatales de salud,1,271,62,2010
 9683,Programas o planes estatales de salud,2,228,62,2010
@@ -7997,7 +7917,6 @@
 9774,Programas o planes estatales de salud,93,9,62,2010
 9775,Programas o planes estatales de salud,95,2,62,2010
 9776,Programas o planes estatales de salud,100,2,62,2010
-9778,"No tiene obra social, prepaga o plan estatal",,Total,62,2010
 9779,"No tiene obra social, prepaga o plan estatal",0,4529,62,2010
 9780,"No tiene obra social, prepaga o plan estatal",1,4307,62,2010
 9781,"No tiene obra social, prepaga o plan estatal",2,4380,62,2010
@@ -8100,7 +8019,6 @@
 9878,"No tiene obra social, prepaga o plan estatal",100,1,62,2010
 9879,"No tiene obra social, prepaga o plan estatal",105,1,62,2010
 9880,"No tiene obra social, prepaga o plan estatal",110,1,62,2010
-9995,Obra social (incluye PAMI),,Total,66,2010
 9996,Obra social (incluye PAMI),0,7237,66,2010
 9997,Obra social (incluye PAMI),1,7419,66,2010
 9998,Obra social (incluye PAMI),2,7193,66,2010
@@ -8207,7 +8125,6 @@
 10099,Obra social (incluye PAMI),104,2,66,2010
 10100,Obra social (incluye PAMI),105,1,66,2010
 10101,Obra social (incluye PAMI),110,4,66,2010
-10103,Prepaga a través de obra social,,Total,66,2010
 10104,Prepaga a través de obra social,0,1699,66,2010
 10105,Prepaga a través de obra social,1,1697,66,2010
 10106,Prepaga a través de obra social,2,1799,66,2010
@@ -8307,7 +8224,6 @@
 10200,Prepaga a través de obra social,96,1,66,2010
 10201,Prepaga a través de obra social,98,1,66,2010
 10202,Prepaga a través de obra social,101,1,66,2010
-10204,Prepaga sólo por contratación voluntaria,,Total,66,2010
 10205,Prepaga sólo por contratación voluntaria,0,470,66,2010
 10206,Prepaga sólo por contratación voluntaria,1,410,66,2010
 10207,Prepaga sólo por contratación voluntaria,2,487,66,2010
@@ -8400,7 +8316,6 @@
 10294,Prepaga sólo por contratación voluntaria,90,1,66,2010
 10295,Prepaga sólo por contratación voluntaria,92,11,66,2010
 10296,Prepaga sólo por contratación voluntaria,97,1,66,2010
-10298,Programas o planes estatales de salud,,Total,66,2010
 10299,Programas o planes estatales de salud,0,1315,66,2010
 10300,Programas o planes estatales de salud,1,1175,66,2010
 10301,Programas o planes estatales de salud,2,1391,66,2010
@@ -8502,7 +8417,6 @@
 10397,Programas o planes estatales de salud,98,1,66,2010
 10398,Programas o planes estatales de salud,99,1,66,2010
 10399,Programas o planes estatales de salud,100,1,66,2010
-10401,"No tiene obra social, prepaga o plan estatal",,Total,66,2010
 10402,"No tiene obra social, prepaga o plan estatal",0,15128,66,2010
 10403,"No tiene obra social, prepaga o plan estatal",1,13424,66,2010
 10404,"No tiene obra social, prepaga o plan estatal",2,13289,66,2010
@@ -8611,7 +8525,6 @@
 10507,"No tiene obra social, prepaga o plan estatal",105,1,66,2010
 10508,"No tiene obra social, prepaga o plan estatal",109,1,66,2010
 10509,"No tiene obra social, prepaga o plan estatal",110,2,66,2010
-10624,Obra social (incluye PAMI),,Total,70,2010
 10625,Obra social (incluye PAMI),0,3668,70,2010
 10626,Obra social (incluye PAMI),1,4000,70,2010
 10627,Obra social (incluye PAMI),2,4082,70,2010
@@ -8720,7 +8633,6 @@
 10730,Obra social (incluye PAMI),105,1,70,2010
 10731,Obra social (incluye PAMI),108,1,70,2010
 10732,Obra social (incluye PAMI),109,1,70,2010
-10734,Prepaga a través de obra social,,Total,70,2010
 10735,Prepaga a través de obra social,0,1159,70,2010
 10736,Prepaga a través de obra social,1,1193,70,2010
 10737,Prepaga a través de obra social,2,1280,70,2010
@@ -8816,7 +8728,6 @@
 10827,Prepaga a través de obra social,94,11,70,2010
 10828,Prepaga a través de obra social,96,1,70,2010
 10829,Prepaga a través de obra social,97,2,70,2010
-10831,Prepaga sólo por contratación voluntaria,,Total,70,2010
 10832,Prepaga sólo por contratación voluntaria,0,301,70,2010
 10833,Prepaga sólo por contratación voluntaria,1,369,70,2010
 10834,Prepaga sólo por contratación voluntaria,2,425,70,2010
@@ -8909,7 +8820,6 @@
 10921,Prepaga sólo por contratación voluntaria,93,1,70,2010
 10922,Prepaga sólo por contratación voluntaria,95,1,70,2010
 10923,Prepaga sólo por contratación voluntaria,96,7,70,2010
-10925,Programas o planes estatales de salud,,Total,70,2010
 10926,Programas o planes estatales de salud,0,516,70,2010
 10927,Programas o planes estatales de salud,1,446,70,2010
 10928,Programas o planes estatales de salud,2,463,70,2010
@@ -9005,7 +8915,6 @@
 11018,Programas o planes estatales de salud,95,1,70,2010
 11019,Programas o planes estatales de salud,96,1,70,2010
 11020,Programas o planes estatales de salud,101,1,70,2010
-11022,"No tiene obra social, prepaga o plan estatal",,Total,70,2010
 11023,"No tiene obra social, prepaga o plan estatal",0,7134,70,2010
 11024,"No tiene obra social, prepaga o plan estatal",1,6940,70,2010
 11025,"No tiene obra social, prepaga o plan estatal",2,7059,70,2010
@@ -9106,7 +9015,6 @@
 11120,"No tiene obra social, prepaga o plan estatal",98,1,70,2010
 11121,"No tiene obra social, prepaga o plan estatal",99,2,70,2010
 11122,"No tiene obra social, prepaga o plan estatal",100,2,70,2010
-11237,Obra social (incluye PAMI),,Total,74,2010
 11238,Obra social (incluye PAMI),0,2812,74,2010
 11239,Obra social (incluye PAMI),1,3149,74,2010
 11240,Obra social (incluye PAMI),2,3274,74,2010
@@ -9213,7 +9121,6 @@
 11341,Obra social (incluye PAMI),103,3,74,2010
 11342,Obra social (incluye PAMI),106,11,74,2010
 11343,Obra social (incluye PAMI),110,1,74,2010
-11345,Prepaga a través de obra social,,Total,74,2010
 11346,Prepaga a través de obra social,0,720,74,2010
 11347,Prepaga a través de obra social,1,676,74,2010
 11348,Prepaga a través de obra social,2,600,74,2010
@@ -9311,7 +9218,6 @@
 11440,Prepaga a través de obra social,94,1,74,2010
 11441,Prepaga a través de obra social,101,1,74,2010
 11442,Prepaga a través de obra social,110,1,74,2010
-11444,Prepaga sólo por contratación voluntaria,,Total,74,2010
 11445,Prepaga sólo por contratación voluntaria,0,190,74,2010
 11446,Prepaga sólo por contratación voluntaria,1,109,74,2010
 11447,Prepaga sólo por contratación voluntaria,2,178,74,2010
@@ -9401,7 +9307,6 @@
 11531,Prepaga sólo por contratación voluntaria,87,3,74,2010
 11532,Prepaga sólo por contratación voluntaria,88,10,74,2010
 11533,Prepaga sólo por contratación voluntaria,89,1,74,2010
-11535,Programas o planes estatales de salud,,Total,74,2010
 11536,Programas o planes estatales de salud,0,252,74,2010
 11537,Programas o planes estatales de salud,1,205,74,2010
 11538,Programas o planes estatales de salud,2,148,74,2010
@@ -9501,7 +9406,6 @@
 11632,Programas o planes estatales de salud,96,1,74,2010
 11633,Programas o planes estatales de salud,97,1,74,2010
 11634,Programas o planes estatales de salud,98,2,74,2010
-11636,"No tiene obra social, prepaga o plan estatal",,Total,74,2010
 11637,"No tiene obra social, prepaga o plan estatal",0,3389,74,2010
 11638,"No tiene obra social, prepaga o plan estatal",1,3376,74,2010
 11639,"No tiene obra social, prepaga o plan estatal",2,3566,74,2010
@@ -9600,7 +9504,6 @@
 11732,"No tiene obra social, prepaga o plan estatal",95,2,74,2010
 11733,"No tiene obra social, prepaga o plan estatal",96,8,74,2010
 11734,"No tiene obra social, prepaga o plan estatal",99,2,74,2010
-11847,Obra social (incluye PAMI),,Total,78,2010
 11848,Obra social (incluye PAMI),0,3323,78,2010
 11849,Obra social (incluye PAMI),1,3166,78,2010
 11850,Obra social (incluye PAMI),2,3264,78,2010
@@ -9702,7 +9605,6 @@
 11946,Obra social (incluye PAMI),98,13,78,2010
 11947,Obra social (incluye PAMI),99,1,78,2010
 11948,Obra social (incluye PAMI),104,1,78,2010
-11950,Prepaga a través de obra social,,Total,78,2010
 11951,Prepaga a través de obra social,0,582,78,2010
 11952,Prepaga a través de obra social,1,652,78,2010
 11953,Prepaga a través de obra social,2,647,78,2010
@@ -9797,7 +9699,6 @@
 12042,Prepaga a través de obra social,91,2,78,2010
 12043,Prepaga a través de obra social,93,9,78,2010
 12044,Prepaga a través de obra social,94,2,78,2010
-12046,Prepaga sólo por contratación voluntaria,,Total,78,2010
 12047,Prepaga sólo por contratación voluntaria,0,88,78,2010
 12048,Prepaga sólo por contratación voluntaria,1,121,78,2010
 12049,Prepaga sólo por contratación voluntaria,2,117,78,2010
@@ -9886,7 +9787,6 @@
 12132,Prepaga sólo por contratación voluntaria,87,2,78,2010
 12133,Prepaga sólo por contratación voluntaria,88,12,78,2010
 12134,Prepaga sólo por contratación voluntaria,90,2,78,2010
-12136,Programas o planes estatales de salud,,Total,78,2010
 12137,Programas o planes estatales de salud,0,448,78,2010
 12138,Programas o planes estatales de salud,1,451,78,2010
 12139,Programas o planes estatales de salud,2,397,78,2010
@@ -9982,7 +9882,6 @@
 12229,Programas o planes estatales de salud,96,1,78,2010
 12230,Programas o planes estatales de salud,97,1,78,2010
 12231,Programas o planes estatales de salud,100,1,78,2010
-12233,"No tiene obra social, prepaga o plan estatal",,Total,78,2010
 12234,"No tiene obra social, prepaga o plan estatal",0,964,78,2010
 12235,"No tiene obra social, prepaga o plan estatal",1,910,78,2010
 12236,"No tiene obra social, prepaga o plan estatal",2,864,78,2010
@@ -10080,7 +9979,6 @@
 12328,"No tiene obra social, prepaga o plan estatal",95,2,78,2010
 12329,"No tiene obra social, prepaga o plan estatal",97,1,78,2010
 12330,"No tiene obra social, prepaga o plan estatal",99,1,78,2010
-12439,Obra social (incluye PAMI),,Total,82,2010
 12440,Obra social (incluye PAMI),0,17946,82,2010
 12441,Obra social (incluye PAMI),1,17923,82,2010
 12442,Obra social (incluye PAMI),2,17888,82,2010
@@ -10191,7 +10089,6 @@
 12547,Obra social (incluye PAMI),107,2,82,2010
 12548,Obra social (incluye PAMI),108,1,82,2010
 12549,Obra social (incluye PAMI),110,3,82,2010
-12551,Prepaga a través de obra social,,Total,82,2010
 12552,Prepaga a través de obra social,0,6584,82,2010
 12553,Prepaga a través de obra social,1,6979,82,2010
 12554,Prepaga a través de obra social,2,7063,82,2010
@@ -10296,7 +10193,6 @@
 12653,Prepaga a través de obra social,101,1,82,2010
 12654,Prepaga a través de obra social,107,1,82,2010
 12655,Prepaga a través de obra social,109,1,82,2010
-12657,Prepaga sólo por contratación voluntaria,,Total,82,2010
 12658,Prepaga sólo por contratación voluntaria,0,3083,82,2010
 12659,Prepaga sólo por contratación voluntaria,1,3302,82,2010
 12660,Prepaga sólo por contratación voluntaria,2,3416,82,2010
@@ -10399,7 +10295,6 @@
 12757,Prepaga sólo por contratación voluntaria,99,1,82,2010
 12758,Prepaga sólo por contratación voluntaria,100,1,82,2010
 12759,Prepaga sólo por contratación voluntaria,103,1,82,2010
-12761,Programas o planes estatales de salud,,Total,82,2010
 12762,Programas o planes estatales de salud,0,923,82,2010
 12763,Programas o planes estatales de salud,1,1101,82,2010
 12764,Programas o planes estatales de salud,2,1109,82,2010
@@ -10502,7 +10397,6 @@
 12861,Programas o planes estatales de salud,100,3,82,2010
 12862,Programas o planes estatales de salud,101,1,82,2010
 12863,Programas o planes estatales de salud,110,1,82,2010
-12865,"No tiene obra social, prepaga o plan estatal",,Total,82,2010
 12866,"No tiene obra social, prepaga o plan estatal",0,20826,82,2010
 12867,"No tiene obra social, prepaga o plan estatal",1,20412,82,2010
 12868,"No tiene obra social, prepaga o plan estatal",2,20427,82,2010
@@ -10610,7 +10504,6 @@
 12970,"No tiene obra social, prepaga o plan estatal",108,1,82,2010
 12971,"No tiene obra social, prepaga o plan estatal",109,2,82,2010
 12972,"No tiene obra social, prepaga o plan estatal",110,2,82,2010
-13090,Obra social (incluye PAMI),,Total,86,2010
 13091,Obra social (incluye PAMI),0,3237,86,2010
 13092,Obra social (incluye PAMI),1,3273,86,2010
 13093,Obra social (incluye PAMI),2,3668,86,2010
@@ -10722,7 +10615,6 @@
 13199,Obra social (incluye PAMI),108,1,86,2010
 13200,Obra social (incluye PAMI),109,1,86,2010
 13201,Obra social (incluye PAMI),110,2,86,2010
-13203,Prepaga a través de obra social,,Total,86,2010
 13204,Prepaga a través de obra social,0,791,86,2010
 13205,Prepaga a través de obra social,1,822,86,2010
 13206,Prepaga a través de obra social,2,907,86,2010
@@ -10823,7 +10715,6 @@
 13301,Prepaga a través de obra social,98,3,86,2010
 13302,Prepaga a través de obra social,99,1,86,2010
 13303,Prepaga a través de obra social,107,1,86,2010
-13305,Prepaga sólo por contratación voluntaria,,Total,86,2010
 13306,Prepaga sólo por contratación voluntaria,0,397,86,2010
 13307,Prepaga sólo por contratación voluntaria,1,390,86,2010
 13308,Prepaga sólo por contratación voluntaria,2,289,86,2010
@@ -10916,7 +10807,6 @@
 13395,Prepaga sólo por contratación voluntaria,95,1,86,2010
 13396,Prepaga sólo por contratación voluntaria,100,1,86,2010
 13397,Prepaga sólo por contratación voluntaria,110,1,86,2010
-13399,Programas o planes estatales de salud,,Total,86,2010
 13400,Programas o planes estatales de salud,0,763,86,2010
 13401,Programas o planes estatales de salud,1,903,86,2010
 13402,Programas o planes estatales de salud,2,798,86,2010
@@ -11018,7 +10908,6 @@
 13498,Programas o planes estatales de salud,98,2,86,2010
 13499,Programas o planes estatales de salud,99,2,86,2010
 13500,Programas o planes estatales de salud,100,1,86,2010
-13502,"No tiene obra social, prepaga o plan estatal",,Total,86,2010
 13503,"No tiene obra social, prepaga o plan estatal",0,12344,86,2010
 13504,"No tiene obra social, prepaga o plan estatal",1,12563,86,2010
 13505,"No tiene obra social, prepaga o plan estatal",2,11270,86,2010
@@ -11129,7 +11018,6 @@
 13610,"No tiene obra social, prepaga o plan estatal",108,1,86,2010
 13611,"No tiene obra social, prepaga o plan estatal",109,2,86,2010
 13612,"No tiene obra social, prepaga o plan estatal",110,4,86,2010
-13730,Obra social (incluye PAMI),,Total,90,2010
 13731,Obra social (incluye PAMI),0,8834,90,2010
 13732,Obra social (incluye PAMI),1,8916,90,2010
 13733,Obra social (incluye PAMI),2,9578,90,2010
@@ -11237,7 +11125,6 @@
 13835,Obra social (incluye PAMI),104,2,90,2010
 13836,Obra social (incluye PAMI),109,1,90,2010
 13837,Obra social (incluye PAMI),110,6,90,2010
-13839,Prepaga a través de obra social,,Total,90,2010
 13840,Prepaga a través de obra social,0,1867,90,2010
 13841,Prepaga a través de obra social,1,2004,90,2010
 13842,Prepaga a través de obra social,2,2157,90,2010
@@ -11340,7 +11227,6 @@
 13939,Prepaga a través de obra social,99,1,90,2010
 13940,Prepaga a través de obra social,100,1,90,2010
 13941,Prepaga a través de obra social,101,1,90,2010
-13943,Prepaga sólo por contratación voluntaria,,Total,90,2010
 13944,Prepaga sólo por contratación voluntaria,0,2101,90,2010
 13945,Prepaga sólo por contratación voluntaria,1,2018,90,2010
 13946,Prepaga sólo por contratación voluntaria,2,1915,90,2010
@@ -11439,7 +11325,6 @@
 14039,Prepaga sólo por contratación voluntaria,97,2,90,2010
 14040,Prepaga sólo por contratación voluntaria,98,11,90,2010
 14041,Prepaga sólo por contratación voluntaria,99,1,90,2010
-14043,Programas o planes estatales de salud,,Total,90,2010
 14044,Programas o planes estatales de salud,0,1115,90,2010
 14045,Programas o planes estatales de salud,1,1307,90,2010
 14046,Programas o planes estatales de salud,2,1086,90,2010
@@ -11541,7 +11426,6 @@
 14142,Programas o planes estatales de salud,98,1,90,2010
 14143,Programas o planes estatales de salud,99,1,90,2010
 14144,Programas o planes estatales de salud,102,1,90,2010
-14146,"No tiene obra social, prepaga o plan estatal",,Total,90,2010
 14147,"No tiene obra social, prepaga o plan estatal",0,12434,90,2010
 14148,"No tiene obra social, prepaga o plan estatal",1,11622,90,2010
 14149,"No tiene obra social, prepaga o plan estatal",2,11314,90,2010
@@ -11645,990 +11529,6 @@
 14247,"No tiene obra social, prepaga o plan estatal",100,3,90,2010
 14248,"No tiene obra social, prepaga o plan estatal",105,1,90,2010
 14249,"No tiene obra social, prepaga o plan estatal",110,1,90,2010
-14364,Obra social (incluye PAMI),,Total,,2010
-14365,Obra social (incluye PAMI),0,1115,,2010
-14366,Obra social (incluye PAMI),1,1326,,2010
-14367,Obra social (incluye PAMI),2,1122,,2010
-14368,Obra social (incluye PAMI),3,1126,,2010
-14369,Obra social (incluye PAMI),4,1294,,2010
-14370,Obra social (incluye PAMI),5,1284,,2010
-14371,Obra social (incluye PAMI),6,1271,,2010
-14372,Obra social (incluye PAMI),7,1387,,2010
-14373,Obra social (incluye PAMI),8,1380,,2010
-14374,Obra social (incluye PAMI),9,1256,,2010
-14375,Obra social (incluye PAMI),10,1422,,2010
-14376,Obra social (incluye PAMI),11,1223,,2010
-14377,Obra social (incluye PAMI),12,1471,,2010
-14378,Obra social (incluye PAMI),13,1355,,2010
-14379,Obra social (incluye PAMI),14,1441,,2010
-14380,Obra social (incluye PAMI),15,1514,,2010
-14381,Obra social (incluye PAMI),16,1506,,2010
-14382,Obra social (incluye PAMI),17,1341,,2010
-14383,Obra social (incluye PAMI),18,1218,,2010
-14384,Obra social (incluye PAMI),19,1114,,2010
-14385,Obra social (incluye PAMI),20,1167,,2010
-14386,Obra social (incluye PAMI),21,813,,2010
-14387,Obra social (incluye PAMI),22,973,,2010
-14388,Obra social (incluye PAMI),23,967,,2010
-14389,Obra social (incluye PAMI),24,1050,,2010
-14390,Obra social (incluye PAMI),25,1130,,2010
-14391,Obra social (incluye PAMI),26,1146,,2010
-14392,Obra social (incluye PAMI),27,1068,,2010
-14393,Obra social (incluye PAMI),28,1098,,2010
-14394,Obra social (incluye PAMI),29,1126,,2010
-14395,Obra social (incluye PAMI),30,1266,,2010
-14396,Obra social (incluye PAMI),31,1370,,2010
-14397,Obra social (incluye PAMI),32,1251,,2010
-14398,Obra social (incluye PAMI),33,1164,,2010
-14399,Obra social (incluye PAMI),34,1166,,2010
-14400,Obra social (incluye PAMI),35,1241,,2010
-14401,Obra social (incluye PAMI),36,1029,,2010
-14402,Obra social (incluye PAMI),37,1034,,2010
-14403,Obra social (incluye PAMI),38,1101,,2010
-14404,Obra social (incluye PAMI),39,1017,,2010
-14405,Obra social (incluye PAMI),40,1014,,2010
-14406,Obra social (incluye PAMI),41,789,,2010
-14407,Obra social (incluye PAMI),42,1124,,2010
-14408,Obra social (incluye PAMI),43,832,,2010
-14409,Obra social (incluye PAMI),44,1028,,2010
-14410,Obra social (incluye PAMI),45,948,,2010
-14411,Obra social (incluye PAMI),46,902,,2010
-14412,Obra social (incluye PAMI),47,1150,,2010
-14413,Obra social (incluye PAMI),48,1184,,2010
-14414,Obra social (incluye PAMI),49,1093,,2010
-14415,Obra social (incluye PAMI),50,896,,2010
-14416,Obra social (incluye PAMI),51,804,,2010
-14417,Obra social (incluye PAMI),52,663,,2010
-14418,Obra social (incluye PAMI),53,779,,2010
-14419,Obra social (incluye PAMI),54,636,,2010
-14420,Obra social (incluye PAMI),55,828,,2010
-14421,Obra social (incluye PAMI),56,694,,2010
-14422,Obra social (incluye PAMI),57,543,,2010
-14423,Obra social (incluye PAMI),58,487,,2010
-14424,Obra social (incluye PAMI),59,595,,2010
-14425,Obra social (incluye PAMI),60,467,,2010
-14426,Obra social (incluye PAMI),61,448,,2010
-14427,Obra social (incluye PAMI),62,445,,2010
-14428,Obra social (incluye PAMI),63,285,,2010
-14429,Obra social (incluye PAMI),64,385,,2010
-14430,Obra social (incluye PAMI),65,332,,2010
-14431,Obra social (incluye PAMI),66,282,,2010
-14432,Obra social (incluye PAMI),67,326,,2010
-14433,Obra social (incluye PAMI),68,266,,2010
-14434,Obra social (incluye PAMI),69,267,,2010
-14435,Obra social (incluye PAMI),70,310,,2010
-14436,Obra social (incluye PAMI),71,177,,2010
-14437,Obra social (incluye PAMI),72,138,,2010
-14438,Obra social (incluye PAMI),73,176,,2010
-14439,Obra social (incluye PAMI),74,154,,2010
-14440,Obra social (incluye PAMI),75,115,,2010
-14441,Obra social (incluye PAMI),76,159,,2010
-14442,Obra social (incluye PAMI),77,143,,2010
-14443,Obra social (incluye PAMI),78,165,,2010
-14444,Obra social (incluye PAMI),79,150,,2010
-14445,Obra social (incluye PAMI),80,104,,2010
-14446,Obra social (incluye PAMI),81,120,,2010
-14447,Obra social (incluye PAMI),82,67,,2010
-14448,Obra social (incluye PAMI),83,69,,2010
-14449,Obra social (incluye PAMI),84,49,,2010
-14450,Obra social (incluye PAMI),85,52,,2010
-14451,Obra social (incluye PAMI),86,40,,2010
-14452,Obra social (incluye PAMI),87,77,,2010
-14453,Obra social (incluye PAMI),88,34,,2010
-14454,Obra social (incluye PAMI),89,32,,2010
-14455,Obra social (incluye PAMI),90,30,,2010
-14456,Obra social (incluye PAMI),91,5,,2010
-14457,Obra social (incluye PAMI),92,30,,2010
-14459,Prepaga a través de obra social,,Total,,2010
-14460,Prepaga a través de obra social,0,325,,2010
-14461,Prepaga a través de obra social,1,355,,2010
-14462,Prepaga a través de obra social,2,354,,2010
-14463,Prepaga a través de obra social,3,398,,2010
-14464,Prepaga a través de obra social,4,324,,2010
-14465,Prepaga a través de obra social,5,373,,2010
-14466,Prepaga a través de obra social,6,332,,2010
-14467,Prepaga a través de obra social,7,329,,2010
-14468,Prepaga a través de obra social,8,407,,2010
-14469,Prepaga a través de obra social,9,293,,2010
-14470,Prepaga a través de obra social,10,329,,2010
-14471,Prepaga a través de obra social,11,308,,2010
-14472,Prepaga a través de obra social,12,306,,2010
-14473,Prepaga a través de obra social,13,307,,2010
-14474,Prepaga a través de obra social,14,340,,2010
-14475,Prepaga a través de obra social,15,386,,2010
-14476,Prepaga a través de obra social,16,290,,2010
-14477,Prepaga a través de obra social,17,354,,2010
-14478,Prepaga a través de obra social,18,233,,2010
-14479,Prepaga a través de obra social,19,264,,2010
-14480,Prepaga a través de obra social,20,309,,2010
-14481,Prepaga a través de obra social,21,259,,2010
-14482,Prepaga a través de obra social,22,278,,2010
-14483,Prepaga a través de obra social,23,348,,2010
-14484,Prepaga a través de obra social,24,284,,2010
-14485,Prepaga a través de obra social,25,301,,2010
-14486,Prepaga a través de obra social,26,360,,2010
-14487,Prepaga a través de obra social,27,410,,2010
-14488,Prepaga a través de obra social,28,376,,2010
-14489,Prepaga a través de obra social,29,331,,2010
-14490,Prepaga a través de obra social,30,367,,2010
-14491,Prepaga a través de obra social,31,432,,2010
-14492,Prepaga a través de obra social,32,385,,2010
-14493,Prepaga a través de obra social,33,518,,2010
-14494,Prepaga a través de obra social,34,382,,2010
-14495,Prepaga a través de obra social,35,337,,2010
-14496,Prepaga a través de obra social,36,246,,2010
-14497,Prepaga a través de obra social,37,291,,2010
-14498,Prepaga a través de obra social,38,289,,2010
-14499,Prepaga a través de obra social,39,340,,2010
-14500,Prepaga a través de obra social,40,288,,2010
-14501,Prepaga a través de obra social,41,237,,2010
-14502,Prepaga a través de obra social,42,227,,2010
-14503,Prepaga a través de obra social,43,256,,2010
-14504,Prepaga a través de obra social,44,252,,2010
-14505,Prepaga a través de obra social,45,315,,2010
-14506,Prepaga a través de obra social,46,252,,2010
-14507,Prepaga a través de obra social,47,314,,2010
-14508,Prepaga a través de obra social,48,269,,2010
-14509,Prepaga a través de obra social,49,226,,2010
-14510,Prepaga a través de obra social,50,304,,2010
-14511,Prepaga a través de obra social,51,179,,2010
-14512,Prepaga a través de obra social,52,190,,2010
-14513,Prepaga a través de obra social,53,159,,2010
-14514,Prepaga a través de obra social,54,186,,2010
-14515,Prepaga a través de obra social,55,139,,2010
-14516,Prepaga a través de obra social,56,110,,2010
-14517,Prepaga a través de obra social,57,100,,2010
-14518,Prepaga a través de obra social,58,93,,2010
-14519,Prepaga a través de obra social,59,100,,2010
-14520,Prepaga a través de obra social,60,114,,2010
-14521,Prepaga a través de obra social,61,57,,2010
-14522,Prepaga a través de obra social,62,75,,2010
-14523,Prepaga a través de obra social,63,45,,2010
-14524,Prepaga a través de obra social,64,84,,2010
-14525,Prepaga a través de obra social,65,78,,2010
-14526,Prepaga a través de obra social,66,41,,2010
-14527,Prepaga a través de obra social,67,34,,2010
-14528,Prepaga a través de obra social,68,19,,2010
-14529,Prepaga a través de obra social,69,16,,2010
-14530,Prepaga a través de obra social,70,6,,2010
-14531,Prepaga a través de obra social,71,2,,2010
-14532,Prepaga a través de obra social,72,27,,2010
-14533,Prepaga a través de obra social,73,12,,2010
-14534,Prepaga a través de obra social,74,5,,2010
-14535,Prepaga a través de obra social,75,8,,2010
-14536,Prepaga a través de obra social,76,5,,2010
-14537,Prepaga a través de obra social,79,6,,2010
-14538,Prepaga a través de obra social,80,1,,2010
-14539,Prepaga a través de obra social,81,31,,2010
-14540,Prepaga a través de obra social,82,5,,2010
-14541,Prepaga a través de obra social,83,6,,2010
-14542,Prepaga a través de obra social,90,14,,2010
-14543,Prepaga a través de obra social,91,6,,2010
-14545,Prepaga sólo por contratación voluntaria,,Total,,2010
-14546,Prepaga sólo por contratación voluntaria,0,66,,2010
-14547,Prepaga sólo por contratación voluntaria,1,49,,2010
-14548,Prepaga sólo por contratación voluntaria,2,48,,2010
-14549,Prepaga sólo por contratación voluntaria,3,41,,2010
-14550,Prepaga sólo por contratación voluntaria,4,22,,2010
-14551,Prepaga sólo por contratación voluntaria,5,12,,2010
-14552,Prepaga sólo por contratación voluntaria,6,25,,2010
-14553,Prepaga sólo por contratación voluntaria,7,18,,2010
-14554,Prepaga sólo por contratación voluntaria,8,17,,2010
-14555,Prepaga sólo por contratación voluntaria,9,34,,2010
-14556,Prepaga sólo por contratación voluntaria,10,66,,2010
-14557,Prepaga sólo por contratación voluntaria,11,60,,2010
-14558,Prepaga sólo por contratación voluntaria,12,22,,2010
-14559,Prepaga sólo por contratación voluntaria,13,66,,2010
-14560,Prepaga sólo por contratación voluntaria,14,58,,2010
-14561,Prepaga sólo por contratación voluntaria,15,39,,2010
-14562,Prepaga sólo por contratación voluntaria,16,45,,2010
-14563,Prepaga sólo por contratación voluntaria,17,49,,2010
-14564,Prepaga sólo por contratación voluntaria,18,7,,2010
-14565,Prepaga sólo por contratación voluntaria,19,13,,2010
-14566,Prepaga sólo por contratación voluntaria,20,27,,2010
-14567,Prepaga sólo por contratación voluntaria,21,40,,2010
-14568,Prepaga sólo por contratación voluntaria,22,28,,2010
-14569,Prepaga sólo por contratación voluntaria,23,45,,2010
-14570,Prepaga sólo por contratación voluntaria,24,39,,2010
-14571,Prepaga sólo por contratación voluntaria,25,45,,2010
-14572,Prepaga sólo por contratación voluntaria,26,49,,2010
-14573,Prepaga sólo por contratación voluntaria,27,44,,2010
-14574,Prepaga sólo por contratación voluntaria,28,31,,2010
-14575,Prepaga sólo por contratación voluntaria,29,47,,2010
-14576,Prepaga sólo por contratación voluntaria,30,34,,2010
-14577,Prepaga sólo por contratación voluntaria,31,67,,2010
-14578,Prepaga sólo por contratación voluntaria,32,24,,2010
-14579,Prepaga sólo por contratación voluntaria,33,84,,2010
-14580,Prepaga sólo por contratación voluntaria,34,76,,2010
-14581,Prepaga sólo por contratación voluntaria,35,52,,2010
-14582,Prepaga sólo por contratación voluntaria,36,100,,2010
-14583,Prepaga sólo por contratación voluntaria,37,73,,2010
-14584,Prepaga sólo por contratación voluntaria,38,56,,2010
-14585,Prepaga sólo por contratación voluntaria,39,42,,2010
-14586,Prepaga sólo por contratación voluntaria,40,77,,2010
-14587,Prepaga sólo por contratación voluntaria,41,69,,2010
-14588,Prepaga sólo por contratación voluntaria,42,20,,2010
-14589,Prepaga sólo por contratación voluntaria,43,30,,2010
-14590,Prepaga sólo por contratación voluntaria,44,54,,2010
-14591,Prepaga sólo por contratación voluntaria,45,72,,2010
-14592,Prepaga sólo por contratación voluntaria,46,60,,2010
-14593,Prepaga sólo por contratación voluntaria,47,43,,2010
-14594,Prepaga sólo por contratación voluntaria,48,85,,2010
-14595,Prepaga sólo por contratación voluntaria,49,68,,2010
-14596,Prepaga sólo por contratación voluntaria,50,87,,2010
-14597,Prepaga sólo por contratación voluntaria,51,36,,2010
-14598,Prepaga sólo por contratación voluntaria,52,54,,2010
-14599,Prepaga sólo por contratación voluntaria,53,29,,2010
-14600,Prepaga sólo por contratación voluntaria,54,83,,2010
-14601,Prepaga sólo por contratación voluntaria,55,24,,2010
-14602,Prepaga sólo por contratación voluntaria,56,41,,2010
-14603,Prepaga sólo por contratación voluntaria,57,40,,2010
-14604,Prepaga sólo por contratación voluntaria,58,39,,2010
-14605,Prepaga sólo por contratación voluntaria,59,33,,2010
-14606,Prepaga sólo por contratación voluntaria,60,38,,2010
-14607,Prepaga sólo por contratación voluntaria,61,17,,2010
-14608,Prepaga sólo por contratación voluntaria,62,6,,2010
-14609,Prepaga sólo por contratación voluntaria,63,17,,2010
-14610,Prepaga sólo por contratación voluntaria,64,58,,2010
-14611,Prepaga sólo por contratación voluntaria,65,21,,2010
-14612,Prepaga sólo por contratación voluntaria,66,11,,2010
-14613,Prepaga sólo por contratación voluntaria,67,8,,2010
-14614,Prepaga sólo por contratación voluntaria,68,6,,2010
-14615,Prepaga sólo por contratación voluntaria,69,15,,2010
-14616,Prepaga sólo por contratación voluntaria,70,7,,2010
-14617,Prepaga sólo por contratación voluntaria,72,1,,2010
-14618,Prepaga sólo por contratación voluntaria,73,1,,2010
-14619,Prepaga sólo por contratación voluntaria,74,4,,2010
-14620,Prepaga sólo por contratación voluntaria,75,1,,2010
-14621,Prepaga sólo por contratación voluntaria,77,6,,2010
-14622,Prepaga sólo por contratación voluntaria,80,13,,2010
-14623,Prepaga sólo por contratación voluntaria,83,6,,2010
-14624,Prepaga sólo por contratación voluntaria,92,5,,2010
-14625,Prepaga sólo por contratación voluntaria,99,1,,2010
-14626,Prepaga sólo por contratación voluntaria,104,1,,2010
-14628,Programas o planes estatales de salud,,Total,,2010
-14629,Programas o planes estatales de salud,0,383,,2010
-14630,Programas o planes estatales de salud,1,509,,2010
-14631,Programas o planes estatales de salud,2,353,,2010
-14632,Programas o planes estatales de salud,3,330,,2010
-14633,Programas o planes estatales de salud,4,322,,2010
-14634,Programas o planes estatales de salud,5,220,,2010
-14635,Programas o planes estatales de salud,6,171,,2010
-14636,Programas o planes estatales de salud,7,113,,2010
-14637,Programas o planes estatales de salud,8,69,,2010
-14638,Programas o planes estatales de salud,9,162,,2010
-14639,Programas o planes estatales de salud,10,156,,2010
-14640,Programas o planes estatales de salud,11,65,,2010
-14641,Programas o planes estatales de salud,12,101,,2010
-14642,Programas o planes estatales de salud,13,90,,2010
-14643,Programas o planes estatales de salud,14,114,,2010
-14644,Programas o planes estatales de salud,15,119,,2010
-14645,Programas o planes estatales de salud,16,88,,2010
-14646,Programas o planes estatales de salud,17,155,,2010
-14647,Programas o planes estatales de salud,18,55,,2010
-14648,Programas o planes estatales de salud,19,104,,2010
-14649,Programas o planes estatales de salud,20,78,,2010
-14650,Programas o planes estatales de salud,21,86,,2010
-14651,Programas o planes estatales de salud,22,128,,2010
-14652,Programas o planes estatales de salud,23,60,,2010
-14653,Programas o planes estatales de salud,24,134,,2010
-14654,Programas o planes estatales de salud,25,91,,2010
-14655,Programas o planes estatales de salud,26,84,,2010
-14656,Programas o planes estatales de salud,27,110,,2010
-14657,Programas o planes estatales de salud,28,124,,2010
-14658,Programas o planes estatales de salud,29,73,,2010
-14659,Programas o planes estatales de salud,30,94,,2010
-14660,Programas o planes estatales de salud,31,55,,2010
-14661,Programas o planes estatales de salud,32,153,,2010
-14662,Programas o planes estatales de salud,33,64,,2010
-14663,Programas o planes estatales de salud,34,41,,2010
-14664,Programas o planes estatales de salud,35,41,,2010
-14665,Programas o planes estatales de salud,36,98,,2010
-14666,Programas o planes estatales de salud,37,100,,2010
-14667,Programas o planes estatales de salud,38,76,,2010
-14668,Programas o planes estatales de salud,39,48,,2010
-14669,Programas o planes estatales de salud,40,69,,2010
-14670,Programas o planes estatales de salud,41,37,,2010
-14671,Programas o planes estatales de salud,42,49,,2010
-14672,Programas o planes estatales de salud,43,59,,2010
-14673,Programas o planes estatales de salud,44,32,,2010
-14674,Programas o planes estatales de salud,45,97,,2010
-14675,Programas o planes estatales de salud,46,82,,2010
-14676,Programas o planes estatales de salud,47,78,,2010
-14677,Programas o planes estatales de salud,48,104,,2010
-14678,Programas o planes estatales de salud,49,52,,2010
-14679,Programas o planes estatales de salud,50,71,,2010
-14680,Programas o planes estatales de salud,51,61,,2010
-14681,Programas o planes estatales de salud,52,109,,2010
-14682,Programas o planes estatales de salud,53,47,,2010
-14683,Programas o planes estatales de salud,54,89,,2010
-14684,Programas o planes estatales de salud,55,63,,2010
-14685,Programas o planes estatales de salud,56,55,,2010
-14686,Programas o planes estatales de salud,57,70,,2010
-14687,Programas o planes estatales de salud,58,20,,2010
-14688,Programas o planes estatales de salud,59,63,,2010
-14689,Programas o planes estatales de salud,60,69,,2010
-14690,Programas o planes estatales de salud,61,15,,2010
-14691,Programas o planes estatales de salud,62,71,,2010
-14692,Programas o planes estatales de salud,63,23,,2010
-14693,Programas o planes estatales de salud,64,10,,2010
-14694,Programas o planes estatales de salud,65,21,,2010
-14695,Programas o planes estatales de salud,66,13,,2010
-14696,Programas o planes estatales de salud,67,14,,2010
-14697,Programas o planes estatales de salud,68,9,,2010
-14698,Programas o planes estatales de salud,69,33,,2010
-14699,Programas o planes estatales de salud,70,4,,2010
-14700,Programas o planes estatales de salud,71,12,,2010
-14701,Programas o planes estatales de salud,72,1,,2010
-14702,Programas o planes estatales de salud,73,4,,2010
-14703,Programas o planes estatales de salud,74,13,,2010
-14704,Programas o planes estatales de salud,76,15,,2010
-14705,Programas o planes estatales de salud,79,7,,2010
-14706,Programas o planes estatales de salud,84,1,,2010
-14707,Programas o planes estatales de salud,86,1,,2010
-14708,Programas o planes estatales de salud,91,1,,2010
-14710,"No tiene obra social, prepaga o plan estatal",,Total,,2010
-14711,"No tiene obra social, prepaga o plan estatal",0,263,,2010
-14712,"No tiene obra social, prepaga o plan estatal",1,303,,2010
-14713,"No tiene obra social, prepaga o plan estatal",2,329,,2010
-14714,"No tiene obra social, prepaga o plan estatal",3,348,,2010
-14715,"No tiene obra social, prepaga o plan estatal",4,444,,2010
-14716,"No tiene obra social, prepaga o plan estatal",5,394,,2010
-14717,"No tiene obra social, prepaga o plan estatal",6,487,,2010
-14718,"No tiene obra social, prepaga o plan estatal",7,463,,2010
-14719,"No tiene obra social, prepaga o plan estatal",8,464,,2010
-14720,"No tiene obra social, prepaga o plan estatal",9,511,,2010
-14721,"No tiene obra social, prepaga o plan estatal",10,470,,2010
-14722,"No tiene obra social, prepaga o plan estatal",11,481,,2010
-14723,"No tiene obra social, prepaga o plan estatal",12,542,,2010
-14724,"No tiene obra social, prepaga o plan estatal",13,466,,2010
-14725,"No tiene obra social, prepaga o plan estatal",14,527,,2010
-14726,"No tiene obra social, prepaga o plan estatal",15,505,,2010
-14727,"No tiene obra social, prepaga o plan estatal",16,347,,2010
-14728,"No tiene obra social, prepaga o plan estatal",17,535,,2010
-14729,"No tiene obra social, prepaga o plan estatal",18,708,,2010
-14730,"No tiene obra social, prepaga o plan estatal",19,614,,2010
-14731,"No tiene obra social, prepaga o plan estatal",20,571,,2010
-14732,"No tiene obra social, prepaga o plan estatal",21,781,,2010
-14733,"No tiene obra social, prepaga o plan estatal",22,727,,2010
-14734,"No tiene obra social, prepaga o plan estatal",23,748,,2010
-14735,"No tiene obra social, prepaga o plan estatal",24,647,,2010
-14736,"No tiene obra social, prepaga o plan estatal",25,583,,2010
-14737,"No tiene obra social, prepaga o plan estatal",26,579,,2010
-14738,"No tiene obra social, prepaga o plan estatal",27,531,,2010
-14739,"No tiene obra social, prepaga o plan estatal",28,771,,2010
-14740,"No tiene obra social, prepaga o plan estatal",29,559,,2010
-14741,"No tiene obra social, prepaga o plan estatal",30,618,,2010
-14742,"No tiene obra social, prepaga o plan estatal",31,553,,2010
-14743,"No tiene obra social, prepaga o plan estatal",32,509,,2010
-14744,"No tiene obra social, prepaga o plan estatal",33,579,,2010
-14745,"No tiene obra social, prepaga o plan estatal",34,473,,2010
-14746,"No tiene obra social, prepaga o plan estatal",35,344,,2010
-14747,"No tiene obra social, prepaga o plan estatal",36,360,,2010
-14748,"No tiene obra social, prepaga o plan estatal",37,437,,2010
-14749,"No tiene obra social, prepaga o plan estatal",38,312,,2010
-14750,"No tiene obra social, prepaga o plan estatal",39,265,,2010
-14751,"No tiene obra social, prepaga o plan estatal",40,348,,2010
-14752,"No tiene obra social, prepaga o plan estatal",41,433,,2010
-14753,"No tiene obra social, prepaga o plan estatal",42,304,,2010
-14754,"No tiene obra social, prepaga o plan estatal",43,255,,2010
-14755,"No tiene obra social, prepaga o plan estatal",44,303,,2010
-14756,"No tiene obra social, prepaga o plan estatal",45,300,,2010
-14757,"No tiene obra social, prepaga o plan estatal",46,308,,2010
-14758,"No tiene obra social, prepaga o plan estatal",47,334,,2010
-14759,"No tiene obra social, prepaga o plan estatal",48,287,,2010
-14760,"No tiene obra social, prepaga o plan estatal",49,304,,2010
-14761,"No tiene obra social, prepaga o plan estatal",50,405,,2010
-14762,"No tiene obra social, prepaga o plan estatal",51,303,,2010
-14763,"No tiene obra social, prepaga o plan estatal",52,267,,2010
-14764,"No tiene obra social, prepaga o plan estatal",53,252,,2010
-14765,"No tiene obra social, prepaga o plan estatal",54,192,,2010
-14766,"No tiene obra social, prepaga o plan estatal",55,212,,2010
-14767,"No tiene obra social, prepaga o plan estatal",56,232,,2010
-14768,"No tiene obra social, prepaga o plan estatal",57,188,,2010
-14769,"No tiene obra social, prepaga o plan estatal",58,186,,2010
-14770,"No tiene obra social, prepaga o plan estatal",59,167,,2010
-14771,"No tiene obra social, prepaga o plan estatal",60,164,,2010
-14772,"No tiene obra social, prepaga o plan estatal",61,111,,2010
-14773,"No tiene obra social, prepaga o plan estatal",62,95,,2010
-14774,"No tiene obra social, prepaga o plan estatal",63,75,,2010
-14775,"No tiene obra social, prepaga o plan estatal",64,75,,2010
-14776,"No tiene obra social, prepaga o plan estatal",65,83,,2010
-14777,"No tiene obra social, prepaga o plan estatal",66,85,,2010
-14778,"No tiene obra social, prepaga o plan estatal",67,24,,2010
-14779,"No tiene obra social, prepaga o plan estatal",68,21,,2010
-14780,"No tiene obra social, prepaga o plan estatal",69,41,,2010
-14781,"No tiene obra social, prepaga o plan estatal",70,31,,2010
-14782,"No tiene obra social, prepaga o plan estatal",71,22,,2010
-14783,"No tiene obra social, prepaga o plan estatal",72,33,,2010
-14784,"No tiene obra social, prepaga o plan estatal",73,1,,2010
-14785,"No tiene obra social, prepaga o plan estatal",75,2,,2010
-14786,"No tiene obra social, prepaga o plan estatal",76,15,,2010
-14787,"No tiene obra social, prepaga o plan estatal",82,11,,2010
-14788,"No tiene obra social, prepaga o plan estatal",84,6,,2010
-14789,"No tiene obra social, prepaga o plan estatal",88,8,,2010
-14790,"No tiene obra social, prepaga o plan estatal",94,6,,2010
-14791,"No tiene obra social, prepaga o plan estatal",95,1,,2010
-14893,RESUMEN,,,,2010
-14894,RESUMEN,,,,2010
-14896,Obra social (incluye PAMI),,Total,,2010
-14897,Obra social (incluye PAMI),0,240229,,2010
-14898,Obra social (incluye PAMI),1,243726,,2010
-14899,Obra social (incluye PAMI),2,251961,,2010
-14900,Obra social (incluye PAMI),3,243364,,2010
-14901,Obra social (incluye PAMI),4,258401,,2010
-14902,Obra social (incluye PAMI),5,263029,,2010
-14903,Obra social (incluye PAMI),6,268576,,2010
-14904,Obra social (incluye PAMI),7,270586,,2010
-14905,Obra social (incluye PAMI),8,267899,,2010
-14906,Obra social (incluye PAMI),9,274756,,2010
-14907,Obra social (incluye PAMI),10,283540,,2010
-14908,Obra social (incluye PAMI),11,278721,,2010
-14909,Obra social (incluye PAMI),12,279086,,2010
-14910,Obra social (incluye PAMI),13,279032,,2010
-14911,Obra social (incluye PAMI),14,300036,,2010
-14912,Obra social (incluye PAMI),15,294578,,2010
-14913,Obra social (incluye PAMI),16,287183,,2010
-14914,Obra social (incluye PAMI),17,285216,,2010
-14915,Obra social (incluye PAMI),18,278155,,2010
-14916,Obra social (incluye PAMI),19,276332,,2010
-14917,Obra social (incluye PAMI),20,265227,,2010
-14918,Obra social (incluye PAMI),21,215066,,2010
-14919,Obra social (incluye PAMI),22,215916,,2010
-14920,Obra social (incluye PAMI),23,226947,,2010
-14921,Obra social (incluye PAMI),24,231727,,2010
-14922,Obra social (incluye PAMI),25,228540,,2010
-14923,Obra social (incluye PAMI),26,222882,,2010
-14924,Obra social (incluye PAMI),27,231998,,2010
-14925,Obra social (incluye PAMI),28,250378,,2010
-14926,Obra social (incluye PAMI),29,250774,,2010
-14927,Obra social (incluye PAMI),30,266847,,2010
-14928,Obra social (incluye PAMI),31,266927,,2010
-14929,Obra social (incluye PAMI),32,259889,,2010
-14930,Obra social (incluye PAMI),33,259545,,2010
-14931,Obra social (incluye PAMI),34,244913,,2010
-14932,Obra social (incluye PAMI),35,246776,,2010
-14933,Obra social (incluye PAMI),36,232068,,2010
-14934,Obra social (incluye PAMI),37,232353,,2010
-14935,Obra social (incluye PAMI),38,227855,,2010
-14936,Obra social (incluye PAMI),39,227721,,2010
-14937,Obra social (incluye PAMI),40,226147,,2010
-14938,Obra social (incluye PAMI),41,212866,,2010
-14939,Obra social (incluye PAMI),42,206531,,2010
-14940,Obra social (incluye PAMI),43,200694,,2010
-14941,Obra social (incluye PAMI),44,199695,,2010
-14942,Obra social (incluye PAMI),45,206811,,2010
-14943,Obra social (incluye PAMI),46,207398,,2010
-14944,Obra social (incluye PAMI),47,208459,,2010
-14945,Obra social (incluye PAMI),48,205047,,2010
-14946,Obra social (incluye PAMI),49,196720,,2010
-14947,Obra social (incluye PAMI),50,199790,,2010
-14948,Obra social (incluye PAMI),51,188732,,2010
-14949,Obra social (incluye PAMI),52,185367,,2010
-14950,Obra social (incluye PAMI),53,188388,,2010
-14951,Obra social (incluye PAMI),54,184344,,2010
-14952,Obra social (incluye PAMI),55,183493,,2010
-14953,Obra social (incluye PAMI),56,177816,,2010
-14954,Obra social (incluye PAMI),57,178440,,2010
-14955,Obra social (incluye PAMI),58,176376,,2010
-14956,Obra social (incluye PAMI),59,174171,,2010
-14957,Obra social (incluye PAMI),60,191811,,2010
-14958,Obra social (incluye PAMI),61,191940,,2010
-14959,Obra social (incluye PAMI),62,201367,,2010
-14960,Obra social (incluye PAMI),63,201450,,2010
-14961,Obra social (incluye PAMI),64,200431,,2010
-14962,Obra social (incluye PAMI),65,219175,,2010
-14963,Obra social (incluye PAMI),66,217572,,2010
-14964,Obra social (incluye PAMI),67,212107,,2010
-14965,Obra social (incluye PAMI),68,202868,,2010
-14966,Obra social (incluye PAMI),69,193230,,2010
-14967,Obra social (incluye PAMI),70,205726,,2010
-14968,Obra social (incluye PAMI),71,179948,,2010
-14969,Obra social (incluye PAMI),72,171675,,2010
-14970,Obra social (incluye PAMI),73,164846,,2010
-14971,Obra social (incluye PAMI),74,158139,,2010
-14972,Obra social (incluye PAMI),75,157727,,2010
-14973,Obra social (incluye PAMI),76,139703,,2010
-14974,Obra social (incluye PAMI),77,136870,,2010
-14975,Obra social (incluye PAMI),78,134501,,2010
-14976,Obra social (incluye PAMI),79,127032,,2010
-14977,Obra social (incluye PAMI),80,125150,,2010
-14978,Obra social (incluye PAMI),81,107030,,2010
-14979,Obra social (incluye PAMI),82,97927,,2010
-14980,Obra social (incluye PAMI),83,88719,,2010
-14981,Obra social (incluye PAMI),84,79462,,2010
-14982,Obra social (incluye PAMI),85,71049,,2010
-14983,Obra social (incluye PAMI),86,61805,,2010
-14984,Obra social (incluye PAMI),87,53143,,2010
-14985,Obra social (incluye PAMI),88,44850,,2010
-14986,Obra social (incluye PAMI),89,36590,,2010
-14987,Obra social (incluye PAMI),90,29680,,2010
-14988,Obra social (incluye PAMI),91,20466,,2010
-14989,Obra social (incluye PAMI),92,16181,,2010
-14990,Obra social (incluye PAMI),93,12972,,2010
-14991,Obra social (incluye PAMI),94,9696,,2010
-14992,Obra social (incluye PAMI),95,7159,,2010
-14993,Obra social (incluye PAMI),96,4943,,2010
-14994,Obra social (incluye PAMI),97,3483,,2010
-14995,Obra social (incluye PAMI),98,2375,,2010
-14996,Obra social (incluye PAMI),99,1510,,2010
-14997,Obra social (incluye PAMI),100,1236,,2010
-14998,Obra social (incluye PAMI),101,646,,2010
-14999,Obra social (incluye PAMI),102,374,,2010
-15000,Obra social (incluye PAMI),103,195,,2010
-15001,Obra social (incluye PAMI),104,80,,2010
-15002,Obra social (incluye PAMI),105,62,,2010
-15003,Obra social (incluye PAMI),106,40,,2010
-15004,Obra social (incluye PAMI),107,38,,2010
-15005,Obra social (incluye PAMI),108,19,,2010
-15006,Obra social (incluye PAMI),109,16,,2010
-15007,Obra social (incluye PAMI),110,99,,2010
-15009,Prepaga a través de obra social,,Total,,2010
-15010,Prepaga a través de obra social,0,72611,,2010
-15011,Prepaga a través de obra social,1,72591,,2010
-15012,Prepaga a través de obra social,2,73583,,2010
-15013,Prepaga a través de obra social,3,70655,,2010
-15014,Prepaga a través de obra social,4,73750,,2010
-15015,Prepaga a través de obra social,5,74572,,2010
-15016,Prepaga a través de obra social,6,75601,,2010
-15017,Prepaga a través de obra social,7,72191,,2010
-15018,Prepaga a través de obra social,8,70917,,2010
-15019,Prepaga a través de obra social,9,71354,,2010
-15020,Prepaga a través de obra social,10,71525,,2010
-15021,Prepaga a través de obra social,11,68284,,2010
-15022,Prepaga a través de obra social,12,67977,,2010
-15023,Prepaga a través de obra social,13,65223,,2010
-15024,Prepaga a través de obra social,14,68397,,2010
-15025,Prepaga a través de obra social,15,67836,,2010
-15026,Prepaga a través de obra social,16,64241,,2010
-15027,Prepaga a través de obra social,17,63512,,2010
-15028,Prepaga a través de obra social,18,62465,,2010
-15029,Prepaga a través de obra social,19,63960,,2010
-15030,Prepaga a través de obra social,20,64359,,2010
-15031,Prepaga a través de obra social,21,57277,,2010
-15032,Prepaga a través de obra social,22,60356,,2010
-15033,Prepaga a través de obra social,23,64800,,2010
-15034,Prepaga a través de obra social,24,70888,,2010
-15035,Prepaga a través de obra social,25,72370,,2010
-15036,Prepaga a través de obra social,26,72005,,2010
-15037,Prepaga a través de obra social,27,76101,,2010
-15038,Prepaga a través de obra social,28,81181,,2010
-15039,Prepaga a través de obra social,29,84035,,2010
-15040,Prepaga a través de obra social,30,89213,,2010
-15041,Prepaga a través de obra social,31,86995,,2010
-15042,Prepaga a través de obra social,32,86015,,2010
-15043,Prepaga a través de obra social,33,85192,,2010
-15044,Prepaga a través de obra social,34,82692,,2010
-15045,Prepaga a través de obra social,35,80724,,2010
-15046,Prepaga a través de obra social,36,75032,,2010
-15047,Prepaga a través de obra social,37,73963,,2010
-15048,Prepaga a través de obra social,38,72564,,2010
-15049,Prepaga a través de obra social,39,70143,,2010
-15050,Prepaga a través de obra social,40,67600,,2010
-15051,Prepaga a través de obra social,41,62225,,2010
-15052,Prepaga a través de obra social,42,58954,,2010
-15053,Prepaga a través de obra social,43,55846,,2010
-15054,Prepaga a través de obra social,44,55491,,2010
-15055,Prepaga a través de obra social,45,56230,,2010
-15056,Prepaga a través de obra social,46,54162,,2010
-15057,Prepaga a través de obra social,47,54848,,2010
-15058,Prepaga a través de obra social,48,53671,,2010
-15059,Prepaga a través de obra social,49,51528,,2010
-15060,Prepaga a través de obra social,50,52943,,2010
-15061,Prepaga a través de obra social,51,48474,,2010
-15062,Prepaga a través de obra social,52,46730,,2010
-15063,Prepaga a través de obra social,53,46796,,2010
-15064,Prepaga a través de obra social,54,46343,,2010
-15065,Prepaga a través de obra social,55,45934,,2010
-15066,Prepaga a través de obra social,56,42678,,2010
-15067,Prepaga a través de obra social,57,42001,,2010
-15068,Prepaga a través de obra social,58,39519,,2010
-15069,Prepaga a través de obra social,59,37832,,2010
-15070,Prepaga a través de obra social,60,36491,,2010
-15071,Prepaga a través de obra social,61,29096,,2010
-15072,Prepaga a través de obra social,62,27181,,2010
-15073,Prepaga a través de obra social,63,24390,,2010
-15074,Prepaga a través de obra social,64,23394,,2010
-15075,Prepaga a través de obra social,65,19716,,2010
-15076,Prepaga a través de obra social,66,14662,,2010
-15077,Prepaga a través de obra social,67,12412,,2010
-15078,Prepaga a través de obra social,68,11094,,2010
-15079,Prepaga a través de obra social,69,10169,,2010
-15080,Prepaga a través de obra social,70,10707,,2010
-15081,Prepaga a través de obra social,71,9146,,2010
-15082,Prepaga a través de obra social,72,8485,,2010
-15083,Prepaga a través de obra social,73,7739,,2010
-15084,Prepaga a través de obra social,74,7276,,2010
-15085,Prepaga a través de obra social,75,7271,,2010
-15086,Prepaga a través de obra social,76,6513,,2010
-15087,Prepaga a través de obra social,77,5822,,2010
-15088,Prepaga a través de obra social,78,5985,,2010
-15089,Prepaga a través de obra social,79,5843,,2010
-15090,Prepaga a través de obra social,80,5425,,2010
-15091,Prepaga a través de obra social,81,4815,,2010
-15092,Prepaga a través de obra social,82,4035,,2010
-15093,Prepaga a través de obra social,83,3454,,2010
-15094,Prepaga a través de obra social,84,3429,,2010
-15095,Prepaga a través de obra social,85,3018,,2010
-15096,Prepaga a través de obra social,86,2605,,2010
-15097,Prepaga a través de obra social,87,2116,,2010
-15098,Prepaga a través de obra social,88,1873,,2010
-15099,Prepaga a través de obra social,89,1637,,2010
-15100,Prepaga a través de obra social,90,1163,,2010
-15101,Prepaga a través de obra social,91,817,,2010
-15102,Prepaga a través de obra social,92,782,,2010
-15103,Prepaga a través de obra social,93,559,,2010
-15104,Prepaga a través de obra social,94,421,,2010
-15105,Prepaga a través de obra social,95,251,,2010
-15106,Prepaga a través de obra social,96,229,,2010
-15107,Prepaga a través de obra social,97,153,,2010
-15108,Prepaga a través de obra social,98,102,,2010
-15109,Prepaga a través de obra social,99,49,,2010
-15110,Prepaga a través de obra social,100,69,,2010
-15111,Prepaga a través de obra social,101,32,,2010
-15112,Prepaga a través de obra social,102,4,,2010
-15113,Prepaga a través de obra social,103,7,,2010
-15114,Prepaga a través de obra social,104,1,,2010
-15115,Prepaga a través de obra social,105,2,,2010
-15116,Prepaga a través de obra social,106,13,,2010
-15117,Prepaga a través de obra social,107,2,,2010
-15118,Prepaga a través de obra social,108,1,,2010
-15119,Prepaga a través de obra social,109,13,,2010
-15120,Prepaga a través de obra social,110,3,,2010
-15122,Prepaga sólo por contratación voluntaria,,Total,,2010
-15123,Prepaga sólo por contratación voluntaria,0,29531,,2010
-15124,Prepaga sólo por contratación voluntaria,1,29372,,2010
-15125,Prepaga sólo por contratación voluntaria,2,29290,,2010
-15126,Prepaga sólo por contratación voluntaria,3,27724,,2010
-15127,Prepaga sólo por contratación voluntaria,4,28292,,2010
-15128,Prepaga sólo por contratación voluntaria,5,28171,,2010
-15129,Prepaga sólo por contratación voluntaria,6,28118,,2010
-15130,Prepaga sólo por contratación voluntaria,7,28001,,2010
-15131,Prepaga sólo por contratación voluntaria,8,26840,,2010
-15132,Prepaga sólo por contratación voluntaria,9,26637,,2010
-15133,Prepaga sólo por contratación voluntaria,10,27314,,2010
-15134,Prepaga sólo por contratación voluntaria,11,25651,,2010
-15135,Prepaga sólo por contratación voluntaria,12,25471,,2010
-15136,Prepaga sólo por contratación voluntaria,13,25433,,2010
-15137,Prepaga sólo por contratación voluntaria,14,27025,,2010
-15138,Prepaga sólo por contratación voluntaria,15,26569,,2010
-15139,Prepaga sólo por contratación voluntaria,16,25005,,2010
-15140,Prepaga sólo por contratación voluntaria,17,26161,,2010
-15141,Prepaga sólo por contratación voluntaria,18,26545,,2010
-15142,Prepaga sólo por contratación voluntaria,19,27819,,2010
-15143,Prepaga sólo por contratación voluntaria,20,28128,,2010
-15144,Prepaga sólo por contratación voluntaria,21,29864,,2010
-15145,Prepaga sólo por contratación voluntaria,22,29661,,2010
-15146,Prepaga sólo por contratación voluntaria,23,32525,,2010
-15147,Prepaga sólo por contratación voluntaria,24,32870,,2010
-15148,Prepaga sólo por contratación voluntaria,25,33910,,2010
-15149,Prepaga sólo por contratación voluntaria,26,34930,,2010
-15150,Prepaga sólo por contratación voluntaria,27,34498,,2010
-15151,Prepaga sólo por contratación voluntaria,28,36916,,2010
-15152,Prepaga sólo por contratación voluntaria,29,34614,,2010
-15153,Prepaga sólo por contratación voluntaria,30,36635,,2010
-15154,Prepaga sólo por contratación voluntaria,31,36510,,2010
-15155,Prepaga sólo por contratación voluntaria,32,35742,,2010
-15156,Prepaga sólo por contratación voluntaria,33,35784,,2010
-15157,Prepaga sólo por contratación voluntaria,34,34569,,2010
-15158,Prepaga sólo por contratación voluntaria,35,35225,,2010
-15159,Prepaga sólo por contratación voluntaria,36,33108,,2010
-15160,Prepaga sólo por contratación voluntaria,37,32166,,2010
-15161,Prepaga sólo por contratación voluntaria,38,30936,,2010
-15162,Prepaga sólo por contratación voluntaria,39,30629,,2010
-15163,Prepaga sólo por contratación voluntaria,40,30912,,2010
-15164,Prepaga sólo por contratación voluntaria,41,28559,,2010
-15165,Prepaga sólo por contratación voluntaria,42,27695,,2010
-15166,Prepaga sólo por contratación voluntaria,43,27095,,2010
-15167,Prepaga sólo por contratación voluntaria,44,26585,,2010
-15168,Prepaga sólo por contratación voluntaria,45,27615,,2010
-15169,Prepaga sólo por contratación voluntaria,46,27008,,2010
-15170,Prepaga sólo por contratación voluntaria,47,28116,,2010
-15171,Prepaga sólo por contratación voluntaria,48,27107,,2010
-15172,Prepaga sólo por contratación voluntaria,49,28670,,2010
-15173,Prepaga sólo por contratación voluntaria,50,29650,,2010
-15174,Prepaga sólo por contratación voluntaria,51,28933,,2010
-15175,Prepaga sólo por contratación voluntaria,52,27303,,2010
-15176,Prepaga sólo por contratación voluntaria,53,28814,,2010
-15177,Prepaga sólo por contratación voluntaria,54,28628,,2010
-15178,Prepaga sólo por contratación voluntaria,55,29397,,2010
-15179,Prepaga sólo por contratación voluntaria,56,28218,,2010
-15180,Prepaga sólo por contratación voluntaria,57,27687,,2010
-15181,Prepaga sólo por contratación voluntaria,58,27627,,2010
-15182,Prepaga sólo por contratación voluntaria,59,28024,,2010
-15183,Prepaga sólo por contratación voluntaria,60,27604,,2010
-15184,Prepaga sólo por contratación voluntaria,61,22749,,2010
-15185,Prepaga sólo por contratación voluntaria,62,22298,,2010
-15186,Prepaga sólo por contratación voluntaria,63,19660,,2010
-15187,Prepaga sólo por contratación voluntaria,64,18343,,2010
-15188,Prepaga sólo por contratación voluntaria,65,16324,,2010
-15189,Prepaga sólo por contratación voluntaria,66,13730,,2010
-15190,Prepaga sólo por contratación voluntaria,67,12048,,2010
-15191,Prepaga sólo por contratación voluntaria,68,11014,,2010
-15192,Prepaga sólo por contratación voluntaria,69,9513,,2010
-15193,Prepaga sólo por contratación voluntaria,70,10023,,2010
-15194,Prepaga sólo por contratación voluntaria,71,8527,,2010
-15195,Prepaga sólo por contratación voluntaria,72,7937,,2010
-15196,Prepaga sólo por contratación voluntaria,73,7498,,2010
-15197,Prepaga sólo por contratación voluntaria,74,6937,,2010
-15198,Prepaga sólo por contratación voluntaria,75,6739,,2010
-15199,Prepaga sólo por contratación voluntaria,76,5455,,2010
-15200,Prepaga sólo por contratación voluntaria,77,5790,,2010
-15201,Prepaga sólo por contratación voluntaria,78,5512,,2010
-15202,Prepaga sólo por contratación voluntaria,79,5246,,2010
-15203,Prepaga sólo por contratación voluntaria,80,5495,,2010
-15204,Prepaga sólo por contratación voluntaria,81,4583,,2010
-15205,Prepaga sólo por contratación voluntaria,82,4405,,2010
-15206,Prepaga sólo por contratación voluntaria,83,3751,,2010
-15207,Prepaga sólo por contratación voluntaria,84,3583,,2010
-15208,Prepaga sólo por contratación voluntaria,85,3610,,2010
-15209,Prepaga sólo por contratación voluntaria,86,2486,,2010
-15210,Prepaga sólo por contratación voluntaria,87,2137,,2010
-15211,Prepaga sólo por contratación voluntaria,88,1865,,2010
-15212,Prepaga sólo por contratación voluntaria,89,1372,,2010
-15213,Prepaga sólo por contratación voluntaria,90,1388,,2010
-15214,Prepaga sólo por contratación voluntaria,91,682,,2010
-15215,Prepaga sólo por contratación voluntaria,92,740,,2010
-15216,Prepaga sólo por contratación voluntaria,93,615,,2010
-15217,Prepaga sólo por contratación voluntaria,94,420,,2010
-15218,Prepaga sólo por contratación voluntaria,95,373,,2010
-15219,Prepaga sólo por contratación voluntaria,96,252,,2010
-15220,Prepaga sólo por contratación voluntaria,97,141,,2010
-15221,Prepaga sólo por contratación voluntaria,98,106,,2010
-15222,Prepaga sólo por contratación voluntaria,99,74,,2010
-15223,Prepaga sólo por contratación voluntaria,100,39,,2010
-15224,Prepaga sólo por contratación voluntaria,101,5,,2010
-15225,Prepaga sólo por contratación voluntaria,102,12,,2010
-15226,Prepaga sólo por contratación voluntaria,103,4,,2010
-15227,Prepaga sólo por contratación voluntaria,104,13,,2010
-15228,Prepaga sólo por contratación voluntaria,105,14,,2010
-15229,Prepaga sólo por contratación voluntaria,106,13,,2010
-15230,Prepaga sólo por contratación voluntaria,107,4,,2010
-15231,Prepaga sólo por contratación voluntaria,110,15,,2010
-15233,Programas o planes estatales de salud,,Total,,2010
-15234,Programas o planes estatales de salud,0,22774,,2010
-15235,Programas o planes estatales de salud,1,22934,,2010
-15236,Programas o planes estatales de salud,2,22140,,2010
-15237,Programas o planes estatales de salud,3,20844,,2010
-15238,Programas o planes estatales de salud,4,19676,,2010
-15239,Programas o planes estatales de salud,5,18938,,2010
-15240,Programas o planes estatales de salud,6,15426,,2010
-15241,Programas o planes estatales de salud,7,13862,,2010
-15242,Programas o planes estatales de salud,8,13913,,2010
-15243,Programas o planes estatales de salud,9,13959,,2010
-15244,Programas o planes estatales de salud,10,14279,,2010
-15245,Programas o planes estatales de salud,11,13830,,2010
-15246,Programas o planes estatales de salud,12,14799,,2010
-15247,Programas o planes estatales de salud,13,14025,,2010
-15248,Programas o planes estatales de salud,14,15135,,2010
-15249,Programas o planes estatales de salud,15,14881,,2010
-15250,Programas o planes estatales de salud,16,13828,,2010
-15251,Programas o planes estatales de salud,17,13366,,2010
-15252,Programas o planes estatales de salud,18,11995,,2010
-15253,Programas o planes estatales de salud,19,11790,,2010
-15254,Programas o planes estatales de salud,20,10996,,2010
-15255,Programas o planes estatales de salud,21,10384,,2010
-15256,Programas o planes estatales de salud,22,9728,,2010
-15257,Programas o planes estatales de salud,23,9945,,2010
-15258,Programas o planes estatales de salud,24,10219,,2010
-15259,Programas o planes estatales de salud,25,9231,,2010
-15260,Programas o planes estatales de salud,26,8885,,2010
-15261,Programas o planes estatales de salud,27,9389,,2010
-15262,Programas o planes estatales de salud,28,10147,,2010
-15263,Programas o planes estatales de salud,29,9505,,2010
-15264,Programas o planes estatales de salud,30,10402,,2010
-15265,Programas o planes estatales de salud,31,9787,,2010
-15266,Programas o planes estatales de salud,32,9588,,2010
-15267,Programas o planes estatales de salud,33,9006,,2010
-15268,Programas o planes estatales de salud,34,8752,,2010
-15269,Programas o planes estatales de salud,35,9018,,2010
-15270,Programas o planes estatales de salud,36,8594,,2010
-15271,Programas o planes estatales de salud,37,8257,,2010
-15272,Programas o planes estatales de salud,38,8412,,2010
-15273,Programas o planes estatales de salud,39,8635,,2010
-15274,Programas o planes estatales de salud,40,9022,,2010
-15275,Programas o planes estatales de salud,41,8360,,2010
-15276,Programas o planes estatales de salud,42,8148,,2010
-15277,Programas o planes estatales de salud,43,7958,,2010
-15278,Programas o planes estatales de salud,44,8001,,2010
-15279,Programas o planes estatales de salud,45,9121,,2010
-15280,Programas o planes estatales de salud,46,8457,,2010
-15281,Programas o planes estatales de salud,47,8827,,2010
-15282,Programas o planes estatales de salud,48,8570,,2010
-15283,Programas o planes estatales de salud,49,8814,,2010
-15284,Programas o planes estatales de salud,50,9143,,2010
-15285,Programas o planes estatales de salud,51,8545,,2010
-15286,Programas o planes estatales de salud,52,8477,,2010
-15287,Programas o planes estatales de salud,53,9019,,2010
-15288,Programas o planes estatales de salud,54,8588,,2010
-15289,Programas o planes estatales de salud,55,8894,,2010
-15290,Programas o planes estatales de salud,56,8358,,2010
-15291,Programas o planes estatales de salud,57,8538,,2010
-15292,Programas o planes estatales de salud,58,8050,,2010
-15293,Programas o planes estatales de salud,59,8407,,2010
-15294,Programas o planes estatales de salud,60,7837,,2010
-15295,Programas o planes estatales de salud,61,6680,,2010
-15296,Programas o planes estatales de salud,62,6103,,2010
-15297,Programas o planes estatales de salud,63,5554,,2010
-15298,Programas o planes estatales de salud,64,4196,,2010
-15299,Programas o planes estatales de salud,65,3910,,2010
-15300,Programas o planes estatales de salud,66,3044,,2010
-15301,Programas o planes estatales de salud,67,2608,,2010
-15302,Programas o planes estatales de salud,68,2632,,2010
-15303,Programas o planes estatales de salud,69,2169,,2010
-15304,Programas o planes estatales de salud,70,2116,,2010
-15305,Programas o planes estatales de salud,71,2035,,2010
-15306,Programas o planes estatales de salud,72,1770,,2010
-15307,Programas o planes estatales de salud,73,1685,,2010
-15308,Programas o planes estatales de salud,74,1834,,2010
-15309,Programas o planes estatales de salud,75,1782,,2010
-15310,Programas o planes estatales de salud,76,2013,,2010
-15311,Programas o planes estatales de salud,77,1665,,2010
-15312,Programas o planes estatales de salud,78,1611,,2010
-15313,Programas o planes estatales de salud,79,1461,,2010
-15314,Programas o planes estatales de salud,80,1482,,2010
-15315,Programas o planes estatales de salud,81,1224,,2010
-15316,Programas o planes estatales de salud,82,1140,,2010
-15317,Programas o planes estatales de salud,83,1003,,2010
-15318,Programas o planes estatales de salud,84,928,,2010
-15319,Programas o planes estatales de salud,85,900,,2010
-15320,Programas o planes estatales de salud,86,621,,2010
-15321,Programas o planes estatales de salud,87,519,,2010
-15322,Programas o planes estatales de salud,88,571,,2010
-15323,Programas o planes estatales de salud,89,442,,2010
-15324,Programas o planes estatales de salud,90,328,,2010
-15325,Programas o planes estatales de salud,91,246,,2010
-15326,Programas o planes estatales de salud,92,200,,2010
-15327,Programas o planes estatales de salud,93,189,,2010
-15328,Programas o planes estatales de salud,94,161,,2010
-15329,Programas o planes estatales de salud,95,106,,2010
-15330,Programas o planes estatales de salud,96,80,,2010
-15331,Programas o planes estatales de salud,97,82,,2010
-15332,Programas o planes estatales de salud,98,24,,2010
-15333,Programas o planes estatales de salud,99,28,,2010
-15334,Programas o planes estatales de salud,100,29,,2010
-15335,Programas o planes estatales de salud,101,9,,2010
-15336,Programas o planes estatales de salud,102,3,,2010
-15337,Programas o planes estatales de salud,103,2,,2010
-15338,Programas o planes estatales de salud,104,2,,2010
-15339,Programas o planes estatales de salud,105,2,,2010
-15340,Programas o planes estatales de salud,106,1,,2010
-15341,Programas o planes estatales de salud,107,1,,2010
-15342,Programas o planes estatales de salud,110,12,,2010
-15344,"No tiene obra social, prepaga o plan estatal",,Total,,2010
-15345,"No tiene obra social, prepaga o plan estatal",0,317537,,2010
-15346,"No tiene obra social, prepaga o plan estatal",1,305271,,2010
-15347,"No tiene obra social, prepaga o plan estatal",2,297844,,2010
-15348,"No tiene obra social, prepaga o plan estatal",3,285475,,2010
-15349,"No tiene obra social, prepaga o plan estatal",4,281515,,2010
-15350,"No tiene obra social, prepaga o plan estatal",5,287692,,2010
-15351,"No tiene obra social, prepaga o plan estatal",6,295566,,2010
-15352,"No tiene obra social, prepaga o plan estatal",7,292859,,2010
-15353,"No tiene obra social, prepaga o plan estatal",8,293130,,2010
-15354,"No tiene obra social, prepaga o plan estatal",9,294020,,2010
-15355,"No tiene obra social, prepaga o plan estatal",10,311556,,2010
-15356,"No tiene obra social, prepaga o plan estatal",11,302169,,2010
-15357,"No tiene obra social, prepaga o plan estatal",12,303535,,2010
-15358,"No tiene obra social, prepaga o plan estatal",13,295250,,2010
-15359,"No tiene obra social, prepaga o plan estatal",14,326127,,2010
-15360,"No tiene obra social, prepaga o plan estatal",15,319780,,2010
-15361,"No tiene obra social, prepaga o plan estatal",16,308363,,2010
-15362,"No tiene obra social, prepaga o plan estatal",17,303472,,2010
-15363,"No tiene obra social, prepaga o plan estatal",18,333997,,2010
-15364,"No tiene obra social, prepaga o plan estatal",19,338525,,2010
-15365,"No tiene obra social, prepaga o plan estatal",20,325020,,2010
-15366,"No tiene obra social, prepaga o plan estatal",21,339609,,2010
-15367,"No tiene obra social, prepaga o plan estatal",22,331598,,2010
-15368,"No tiene obra social, prepaga o plan estatal",23,317960,,2010
-15369,"No tiene obra social, prepaga o plan estatal",24,308318,,2010
-15370,"No tiene obra social, prepaga o plan estatal",25,282187,,2010
-15371,"No tiene obra social, prepaga o plan estatal",26,267646,,2010
-15372,"No tiene obra social, prepaga o plan estatal",27,261450,,2010
-15373,"No tiene obra social, prepaga o plan estatal",28,272172,,2010
-15374,"No tiene obra social, prepaga o plan estatal",29,254458,,2010
-15375,"No tiene obra social, prepaga o plan estatal",30,260480,,2010
-15376,"No tiene obra social, prepaga o plan estatal",31,237161,,2010
-15377,"No tiene obra social, prepaga o plan estatal",32,228470,,2010
-15378,"No tiene obra social, prepaga o plan estatal",33,221884,,2010
-15379,"No tiene obra social, prepaga o plan estatal",34,200013,,2010
-15380,"No tiene obra social, prepaga o plan estatal",35,204349,,2010
-15381,"No tiene obra social, prepaga o plan estatal",36,188024,,2010
-15382,"No tiene obra social, prepaga o plan estatal",37,183487,,2010
-15383,"No tiene obra social, prepaga o plan estatal",38,180333,,2010
-15384,"No tiene obra social, prepaga o plan estatal",39,172411,,2010
-15385,"No tiene obra social, prepaga o plan estatal",40,176533,,2010
-15386,"No tiene obra social, prepaga o plan estatal",41,156430,,2010
-15387,"No tiene obra social, prepaga o plan estatal",42,154946,,2010
-15388,"No tiene obra social, prepaga o plan estatal",43,147866,,2010
-15389,"No tiene obra social, prepaga o plan estatal",44,144713,,2010
-15390,"No tiene obra social, prepaga o plan estatal",45,150522,,2010
-15391,"No tiene obra social, prepaga o plan estatal",46,146713,,2010
-15392,"No tiene obra social, prepaga o plan estatal",47,145123,,2010
-15393,"No tiene obra social, prepaga o plan estatal",48,140203,,2010
-15394,"No tiene obra social, prepaga o plan estatal",49,137245,,2010
-15395,"No tiene obra social, prepaga o plan estatal",50,145117,,2010
-15396,"No tiene obra social, prepaga o plan estatal",51,131178,,2010
-15397,"No tiene obra social, prepaga o plan estatal",52,129619,,2010
-15398,"No tiene obra social, prepaga o plan estatal",53,132197,,2010
-15399,"No tiene obra social, prepaga o plan estatal",54,127276,,2010
-15400,"No tiene obra social, prepaga o plan estatal",55,124080,,2010
-15401,"No tiene obra social, prepaga o plan estatal",56,120579,,2010
-15402,"No tiene obra social, prepaga o plan estatal",57,115113,,2010
-15403,"No tiene obra social, prepaga o plan estatal",58,114143,,2010
-15404,"No tiene obra social, prepaga o plan estatal",59,106511,,2010
-15405,"No tiene obra social, prepaga o plan estatal",60,104826,,2010
-15406,"No tiene obra social, prepaga o plan estatal",61,75773,,2010
-15407,"No tiene obra social, prepaga o plan estatal",62,68637,,2010
-15408,"No tiene obra social, prepaga o plan estatal",63,59701,,2010
-15409,"No tiene obra social, prepaga o plan estatal",64,48000,,2010
-15410,"No tiene obra social, prepaga o plan estatal",65,39366,,2010
-15411,"No tiene obra social, prepaga o plan estatal",66,20802,,2010
-15412,"No tiene obra social, prepaga o plan estatal",67,16309,,2010
-15413,"No tiene obra social, prepaga o plan estatal",68,13793,,2010
-15414,"No tiene obra social, prepaga o plan estatal",69,10617,,2010
-15415,"No tiene obra social, prepaga o plan estatal",70,12755,,2010
-15416,"No tiene obra social, prepaga o plan estatal",71,8607,,2010
-15417,"No tiene obra social, prepaga o plan estatal",72,7416,,2010
-15418,"No tiene obra social, prepaga o plan estatal",73,7323,,2010
-15419,"No tiene obra social, prepaga o plan estatal",74,6924,,2010
-15420,"No tiene obra social, prepaga o plan estatal",75,7500,,2010
-15421,"No tiene obra social, prepaga o plan estatal",76,6362,,2010
-15422,"No tiene obra social, prepaga o plan estatal",77,6136,,2010
-15423,"No tiene obra social, prepaga o plan estatal",78,5933,,2010
-15424,"No tiene obra social, prepaga o plan estatal",79,5265,,2010
-15425,"No tiene obra social, prepaga o plan estatal",80,5198,,2010
-15426,"No tiene obra social, prepaga o plan estatal",81,3619,,2010
-15427,"No tiene obra social, prepaga o plan estatal",82,3322,,2010
-15428,"No tiene obra social, prepaga o plan estatal",83,2725,,2010
-15429,"No tiene obra social, prepaga o plan estatal",84,2362,,2010
-15430,"No tiene obra social, prepaga o plan estatal",85,2130,,2010
-15431,"No tiene obra social, prepaga o plan estatal",86,1891,,2010
-15432,"No tiene obra social, prepaga o plan estatal",87,1559,,2010
-15433,"No tiene obra social, prepaga o plan estatal",88,1351,,2010
-15434,"No tiene obra social, prepaga o plan estatal",89,1198,,2010
-15435,"No tiene obra social, prepaga o plan estatal",90,1112,,2010
-15436,"No tiene obra social, prepaga o plan estatal",91,766,,2010
-15437,"No tiene obra social, prepaga o plan estatal",92,630,,2010
-15438,"No tiene obra social, prepaga o plan estatal",93,469,,2010
-15439,"No tiene obra social, prepaga o plan estatal",94,442,,2010
-15440,"No tiene obra social, prepaga o plan estatal",95,350,,2010
-15441,"No tiene obra social, prepaga o plan estatal",96,282,,2010
-15442,"No tiene obra social, prepaga o plan estatal",97,107,,2010
-15443,"No tiene obra social, prepaga o plan estatal",98,131,,2010
-15444,"No tiene obra social, prepaga o plan estatal",99,99,,2010
-15445,"No tiene obra social, prepaga o plan estatal",100,116,,2010
-15446,"No tiene obra social, prepaga o plan estatal",101,33,,2010
-15447,"No tiene obra social, prepaga o plan estatal",102,50,,2010
-15448,"No tiene obra social, prepaga o plan estatal",103,28,,2010
-15449,"No tiene obra social, prepaga o plan estatal",104,19,,2010
-15450,"No tiene obra social, prepaga o plan estatal",105,10,,2010
-15451,"No tiene obra social, prepaga o plan estatal",106,3,,2010
-15452,"No tiene obra social, prepaga o plan estatal",107,5,,2010
-15453,"No tiene obra social, prepaga o plan estatal",108,18,,2010
-15454,"No tiene obra social, prepaga o plan estatal",109,19,,2010
-15455,"No tiene obra social, prepaga o plan estatal",110,97,,2010
-0,,,,2,2022
-2,Obra social o prepaga (incluye PAMI),,Total,2,2022
 3,Obra social o prepaga (incluye PAMI),0,17122,2,2022
 4,Obra social o prepaga (incluye PAMI),1,16850,2,2022
 5,Obra social o prepaga (incluye PAMI),2,18926,2,2022
@@ -12740,7 +11640,6 @@
 111,Obra social o prepaga (incluye PAMI),108,9,2,2022
 112,Obra social o prepaga (incluye PAMI),109,11,2,2022
 113,Obra social o prepaga (incluye PAMI),110,4,2,2022
-115,Programas o planes estatales de salud,,Total,2,2022
 116,Programas o planes estatales de salud,0,563,2,2022
 117,Programas o planes estatales de salud,1,557,2,2022
 118,Programas o planes estatales de salud,2,648,2,2022
@@ -12847,7 +11746,6 @@
 219,Programas o planes estatales de salud,104,1,2,2022
 220,Programas o planes estatales de salud,105,1,2,2022
 221,Programas o planes estatales de salud,110,1,2,2022
-223,"No tiene obra social, prepaga ni plan estatal",,Total,2,2022
 224,"No tiene obra social, prepaga ni plan estatal",0,3996,2,2022
 225,"No tiene obra social, prepaga ni plan estatal",1,4110,2,2022
 226,"No tiene obra social, prepaga ni plan estatal",2,5007,2,2022
@@ -12955,7 +11853,6 @@
 328,"No tiene obra social, prepaga ni plan estatal",107,3,2,2022
 329,"No tiene obra social, prepaga ni plan estatal",109,1,2,2022
 330,"No tiene obra social, prepaga ni plan estatal",110,2,2,2022
-448,Obra social o prepaga (incluye PAMI),,Total,6,2022
 449,Obra social o prepaga (incluye PAMI),0,86247,6,2022
 450,Obra social o prepaga (incluye PAMI),1,93532,6,2022
 451,Obra social o prepaga (incluye PAMI),2,107033,6,2022
@@ -13067,7 +11964,6 @@
 557,Obra social o prepaga (incluye PAMI),108,45,6,2022
 558,Obra social o prepaga (incluye PAMI),109,36,6,2022
 559,Obra social o prepaga (incluye PAMI),110,28,6,2022
-561,Programas o planes estatales de salud,,Total,6,2022
 562,Programas o planes estatales de salud,0,5211,6,2022
 563,Programas o planes estatales de salud,1,5309,6,2022
 564,Programas o planes estatales de salud,2,6063,6,2022
@@ -13175,7 +12071,6 @@
 666,Programas o planes estatales de salud,105,2,6,2022
 667,Programas o planes estatales de salud,109,1,6,2022
 668,Programas o planes estatales de salud,110,2,6,2022
-670,"No tiene obra social, prepaga ni plan estatal",,Total,6,2022
 671,"No tiene obra social, prepaga ni plan estatal",0,84419,6,2022
 672,"No tiene obra social, prepaga ni plan estatal",1,86943,6,2022
 673,"No tiene obra social, prepaga ni plan estatal",2,99384,6,2022
@@ -13287,7 +12182,6 @@
 779,"No tiene obra social, prepaga ni plan estatal",108,3,6,2022
 780,"No tiene obra social, prepaga ni plan estatal",109,11,6,2022
 781,"No tiene obra social, prepaga ni plan estatal",110,11,6,2022
-899,Obra social o prepaga (incluye PAMI),,Total,10,2022
 900,Obra social o prepaga (incluye PAMI),0,1850,10,2022
 901,Obra social o prepaga (incluye PAMI),1,2146,10,2022
 902,Obra social o prepaga (incluye PAMI),2,2396,10,2022
@@ -13397,7 +12291,6 @@
 1006,Obra social o prepaga (incluye PAMI),106,1,10,2022
 1007,Obra social o prepaga (incluye PAMI),108,2,10,2022
 1008,Obra social o prepaga (incluye PAMI),110,1,10,2022
-1010,Programas o planes estatales de salud,,Total,10,2022
 1011,Programas o planes estatales de salud,0,123,10,2022
 1012,Programas o planes estatales de salud,1,134,10,2022
 1013,Programas o planes estatales de salud,2,129,10,2022
@@ -13495,7 +12388,6 @@
 1105,Programas o planes estatales de salud,96,1,10,2022
 1106,Programas o planes estatales de salud,98,3,10,2022
 1107,Programas o planes estatales de salud,99,1,10,2022
-1109,"No tiene obra social, prepaga ni plan estatal",,Total,10,2022
 1110,"No tiene obra social, prepaga ni plan estatal",0,2668,10,2022
 1111,"No tiene obra social, prepaga ni plan estatal",1,2629,10,2022
 1112,"No tiene obra social, prepaga ni plan estatal",2,2882,10,2022
@@ -13599,7 +12491,6 @@
 1210,"No tiene obra social, prepaga ni plan estatal",101,2,10,2022
 1211,"No tiene obra social, prepaga ni plan estatal",102,1,10,2022
 1212,"No tiene obra social, prepaga ni plan estatal",103,5,10,2022
-1328,Obra social o prepaga (incluye PAMI),,Total,14,2022
 1329,Obra social o prepaga (incluye PAMI),0,20909,14,2022
 1330,Obra social o prepaga (incluye PAMI),1,22155,14,2022
 1331,Obra social o prepaga (incluye PAMI),2,24720,14,2022
@@ -13711,7 +12602,6 @@
 1437,Obra social o prepaga (incluye PAMI),108,13,14,2022
 1438,Obra social o prepaga (incluye PAMI),109,5,14,2022
 1439,Obra social o prepaga (incluye PAMI),110,11,14,2022
-1441,Programas o planes estatales de salud,,Total,14,2022
 1442,Programas o planes estatales de salud,0,1314,14,2022
 1443,Programas o planes estatales de salud,1,1365,14,2022
 1444,Programas o planes estatales de salud,2,1408,14,2022
@@ -13817,7 +12707,6 @@
 1544,Programas o planes estatales de salud,103,1,14,2022
 1545,Programas o planes estatales de salud,104,2,14,2022
 1546,Programas o planes estatales de salud,105,1,14,2022
-1548,"No tiene obra social, prepaga ni plan estatal",,Total,14,2022
 1549,"No tiene obra social, prepaga ni plan estatal",0,18190,14,2022
 1550,"No tiene obra social, prepaga ni plan estatal",1,18286,14,2022
 1551,"No tiene obra social, prepaga ni plan estatal",2,20720,14,2022
@@ -13927,7 +12816,6 @@
 1655,"No tiene obra social, prepaga ni plan estatal",106,2,14,2022
 1656,"No tiene obra social, prepaga ni plan estatal",108,2,14,2022
 1657,"No tiene obra social, prepaga ni plan estatal",109,1,14,2022
-1775,Obra social o prepaga (incluye PAMI),,Total,18,2022
 1776,Obra social o prepaga (incluye PAMI),0,4827,18,2022
 1777,Obra social o prepaga (incluye PAMI),1,5339,18,2022
 1778,Obra social o prepaga (incluye PAMI),2,6159,18,2022
@@ -14039,7 +12927,6 @@
 1884,Obra social o prepaga (incluye PAMI),108,4,18,2022
 1885,Obra social o prepaga (incluye PAMI),109,3,18,2022
 1886,Obra social o prepaga (incluye PAMI),110,3,18,2022
-1888,Programas o planes estatales de salud,,Total,18,2022
 1889,Programas o planes estatales de salud,0,2669,18,2022
 1890,Programas o planes estatales de salud,1,2580,18,2022
 1891,Programas o planes estatales de salud,2,2793,18,2022
@@ -14145,7 +13032,6 @@
 1991,Programas o planes estatales de salud,102,3,18,2022
 1992,Programas o planes estatales de salud,103,1,18,2022
 1993,Programas o planes estatales de salud,105,1,18,2022
-1995,"No tiene obra social, prepaga ni plan estatal",,Total,18,2022
 1996,"No tiene obra social, prepaga ni plan estatal",0,7863,18,2022
 1997,"No tiene obra social, prepaga ni plan estatal",1,7649,18,2022
 1998,"No tiene obra social, prepaga ni plan estatal",2,8681,18,2022
@@ -14256,7 +13142,6 @@
 2103,"No tiene obra social, prepaga ni plan estatal",107,1,18,2022
 2104,"No tiene obra social, prepaga ni plan estatal",108,1,18,2022
 2105,"No tiene obra social, prepaga ni plan estatal",110,2,18,2022
-2223,Obra social o prepaga (incluye PAMI),,Total,22,2022
 2224,Obra social o prepaga (incluye PAMI),0,3874,22,2022
 2225,Obra social o prepaga (incluye PAMI),1,4295,22,2022
 2226,Obra social o prepaga (incluye PAMI),2,5176,22,2022
@@ -14368,7 +13253,6 @@
 2332,Obra social o prepaga (incluye PAMI),108,1,22,2022
 2333,Obra social o prepaga (incluye PAMI),109,3,22,2022
 2334,Obra social o prepaga (incluye PAMI),110,3,22,2022
-2336,Programas o planes estatales de salud,,Total,22,2022
 2337,Programas o planes estatales de salud,0,393,22,2022
 2338,Programas o planes estatales de salud,1,494,22,2022
 2339,Programas o planes estatales de salud,2,456,22,2022
@@ -14471,7 +13355,6 @@
 2436,Programas o planes estatales de salud,102,1,22,2022
 2437,Programas o planes estatales de salud,107,1,22,2022
 2438,Programas o planes estatales de salud,110,1,22,2022
-2440,"No tiene obra social, prepaga ni plan estatal",,Total,22,2022
 2441,"No tiene obra social, prepaga ni plan estatal",0,10012,22,2022
 2442,"No tiene obra social, prepaga ni plan estatal",1,9381,22,2022
 2443,"No tiene obra social, prepaga ni plan estatal",2,10949,22,2022
@@ -14579,7 +13462,6 @@
 2545,"No tiene obra social, prepaga ni plan estatal",104,5,22,2022
 2546,"No tiene obra social, prepaga ni plan estatal",105,2,22,2022
 2547,"No tiene obra social, prepaga ni plan estatal",106,2,22,2022
-2665,Obra social o prepaga (incluye PAMI),,Total,26,2022
 2666,Obra social o prepaga (incluye PAMI),0,3890,26,2022
 2667,Obra social o prepaga (incluye PAMI),1,4055,26,2022
 2668,Obra social o prepaga (incluye PAMI),2,4635,26,2022
@@ -14685,7 +13567,6 @@
 2768,Obra social o prepaga (incluye PAMI),102,3,26,2022
 2769,Obra social o prepaga (incluye PAMI),103,4,26,2022
 2770,Obra social o prepaga (incluye PAMI),105,2,26,2022
-2772,Programas o planes estatales de salud,,Total,26,2022
 2773,Programas o planes estatales de salud,0,212,26,2022
 2774,Programas o planes estatales de salud,1,186,26,2022
 2775,Programas o planes estatales de salud,2,221,26,2022
@@ -14786,7 +13667,6 @@
 2870,Programas o planes estatales de salud,97,2,26,2022
 2871,Programas o planes estatales de salud,98,1,26,2022
 2872,Programas o planes estatales de salud,99,2,26,2022
-2874,"No tiene obra social, prepaga ni plan estatal",,Total,26,2022
 2875,"No tiene obra social, prepaga ni plan estatal",0,2118,26,2022
 2876,"No tiene obra social, prepaga ni plan estatal",1,2054,26,2022
 2877,"No tiene obra social, prepaga ni plan estatal",2,2407,26,2022
@@ -14889,7 +13769,6 @@
 2974,"No tiene obra social, prepaga ni plan estatal",99,15,26,2022
 2975,"No tiene obra social, prepaga ni plan estatal",100,1,26,2022
 2976,"No tiene obra social, prepaga ni plan estatal",103,1,26,2022
-3088,Obra social o prepaga (incluye PAMI),,Total,30,2022
 3089,Obra social o prepaga (incluye PAMI),0,7607,30,2022
 3090,Obra social o prepaga (incluye PAMI),1,8058,30,2022
 3091,Obra social o prepaga (incluye PAMI),2,9001,30,2022
@@ -15001,7 +13880,6 @@
 3197,Obra social o prepaga (incluye PAMI),108,4,30,2022
 3198,Obra social o prepaga (incluye PAMI),109,5,30,2022
 3199,Obra social o prepaga (incluye PAMI),110,3,30,2022
-3201,Programas o planes estatales de salud,,Total,30,2022
 3202,Programas o planes estatales de salud,0,528,30,2022
 3203,Programas o planes estatales de salud,1,537,30,2022
 3204,Programas o planes estatales de salud,2,548,30,2022
@@ -15104,7 +13982,6 @@
 3301,Programas o planes estatales de salud,99,3,30,2022
 3302,Programas o planes estatales de salud,100,2,30,2022
 3303,Programas o planes estatales de salud,105,1,30,2022
-3305,"No tiene obra social, prepaga ni plan estatal",,Total,30,2022
 3306,"No tiene obra social, prepaga ni plan estatal",0,7245,30,2022
 3307,"No tiene obra social, prepaga ni plan estatal",1,7349,30,2022
 3308,"No tiene obra social, prepaga ni plan estatal",2,8278,30,2022
@@ -15212,7 +14089,6 @@
 3410,"No tiene obra social, prepaga ni plan estatal",105,2,30,2022
 3411,"No tiene obra social, prepaga ni plan estatal",106,1,30,2022
 3412,"No tiene obra social, prepaga ni plan estatal",107,1,30,2022
-3530,Obra social o prepaga (incluye PAMI),,Total,34,2022
 3531,Obra social o prepaga (incluye PAMI),0,1969,34,2022
 3532,Obra social o prepaga (incluye PAMI),1,2098,34,2022
 3533,Obra social o prepaga (incluye PAMI),2,2520,34,2022
@@ -15320,7 +14196,6 @@
 3635,Obra social o prepaga (incluye PAMI),104,2,34,2022
 3636,Obra social o prepaga (incluye PAMI),105,2,34,2022
 3637,Obra social o prepaga (incluye PAMI),106,1,34,2022
-3639,Programas o planes estatales de salud,,Total,34,2022
 3640,Programas o planes estatales de salud,0,221,34,2022
 3641,Programas o planes estatales de salud,1,256,34,2022
 3642,Programas o planes estatales de salud,2,267,34,2022
@@ -15421,7 +14296,6 @@
 3737,Programas o planes estatales de salud,97,1,34,2022
 3738,Programas o planes estatales de salud,102,1,34,2022
 3739,Programas o planes estatales de salud,103,1,34,2022
-3741,"No tiene obra social, prepaga ni plan estatal",,Total,34,2022
 3742,"No tiene obra social, prepaga ni plan estatal",0,5190,34,2022
 3743,"No tiene obra social, prepaga ni plan estatal",1,5471,34,2022
 3744,"No tiene obra social, prepaga ni plan estatal",2,5917,34,2022
@@ -15529,7 +14403,6 @@
 3846,"No tiene obra social, prepaga ni plan estatal",104,1,34,2022
 3847,"No tiene obra social, prepaga ni plan estatal",106,1,34,2022
 3848,"No tiene obra social, prepaga ni plan estatal",108,2,34,2022
-3963,Obra social o prepaga (incluye PAMI),,Total,38,2022
 3964,Obra social o prepaga (incluye PAMI),0,2991,38,2022
 3965,Obra social o prepaga (incluye PAMI),1,3234,38,2022
 3966,Obra social o prepaga (incluye PAMI),2,4161,38,2022
@@ -15640,7 +14513,6 @@
 4071,Obra social o prepaga (incluye PAMI),107,6,38,2022
 4072,Obra social o prepaga (incluye PAMI),108,4,38,2022
 4073,Obra social o prepaga (incluye PAMI),110,1,38,2022
-4075,Programas o planes estatales de salud,,Total,38,2022
 4076,Programas o planes estatales de salud,0,433,38,2022
 4077,Programas o planes estatales de salud,1,417,38,2022
 4078,Programas o planes estatales de salud,2,401,38,2022
@@ -15744,7 +14616,6 @@
 4176,Programas o planes estatales de salud,100,2,38,2022
 4177,Programas o planes estatales de salud,101,1,38,2022
 4178,Programas o planes estatales de salud,102,1,38,2022
-4180,"No tiene obra social, prepaga ni plan estatal",,Total,38,2022
 4181,"No tiene obra social, prepaga ni plan estatal",0,5273,38,2022
 4182,"No tiene obra social, prepaga ni plan estatal",1,4946,38,2022
 4183,"No tiene obra social, prepaga ni plan estatal",2,5810,38,2022
@@ -15850,7 +14721,6 @@
 4283,"No tiene obra social, prepaga ni plan estatal",102,4,38,2022
 4284,"No tiene obra social, prepaga ni plan estatal",103,1,38,2022
 4285,"No tiene obra social, prepaga ni plan estatal",108,1,38,2022
-4402,Obra social o prepaga (incluye PAMI),,Total,42,2022
 4403,Obra social o prepaga (incluye PAMI),0,1772,42,2022
 4404,Obra social o prepaga (incluye PAMI),1,1891,42,2022
 4405,Obra social o prepaga (incluye PAMI),2,2164,42,2022
@@ -15960,7 +14830,6 @@
 4509,Obra social o prepaga (incluye PAMI),107,1,42,2022
 4510,Obra social o prepaga (incluye PAMI),108,1,42,2022
 4511,Obra social o prepaga (incluye PAMI),109,2,42,2022
-4513,Programas o planes estatales de salud,,Total,42,2022
 4514,Programas o planes estatales de salud,0,239,42,2022
 4515,Programas o planes estatales de salud,1,248,42,2022
 4516,Programas o planes estatales de salud,2,302,42,2022
@@ -16059,7 +14928,6 @@
 4609,Programas o planes estatales de salud,95,2,42,2022
 4610,Programas o planes estatales de salud,100,1,42,2022
 4611,Programas o planes estatales de salud,101,1,42,2022
-4613,"No tiene obra social, prepaga ni plan estatal",,Total,42,2022
 4614,"No tiene obra social, prepaga ni plan estatal",0,1526,42,2022
 4615,"No tiene obra social, prepaga ni plan estatal",1,1560,42,2022
 4616,"No tiene obra social, prepaga ni plan estatal",2,1703,42,2022
@@ -16159,7 +15027,6 @@
 4710,"No tiene obra social, prepaga ni plan estatal",98,2,42,2022
 4711,"No tiene obra social, prepaga ni plan estatal",99,1,42,2022
 4712,"No tiene obra social, prepaga ni plan estatal",102,1,42,2022
-4828,Obra social o prepaga (incluye PAMI),,Total,46,2022
 4829,Obra social o prepaga (incluye PAMI),0,1656,46,2022
 4830,Obra social o prepaga (incluye PAMI),1,1731,46,2022
 4831,Obra social o prepaga (incluye PAMI),2,1975,46,2022
@@ -16268,7 +15135,6 @@
 4934,Obra social o prepaga (incluye PAMI),106,1,46,2022
 4935,Obra social o prepaga (incluye PAMI),107,2,46,2022
 4936,Obra social o prepaga (incluye PAMI),110,1,46,2022
-4938,Programas o planes estatales de salud,,Total,46,2022
 4939,Programas o planes estatales de salud,0,121,46,2022
 4940,Programas o planes estatales de salud,1,122,46,2022
 4941,Programas o planes estatales de salud,2,148,46,2022
@@ -16369,7 +15235,6 @@
 5036,Programas o planes estatales de salud,97,1,46,2022
 5037,Programas o planes estatales de salud,98,2,46,2022
 5038,Programas o planes estatales de salud,99,2,46,2022
-5040,"No tiene obra social, prepaga ni plan estatal",,Total,46,2022
 5041,"No tiene obra social, prepaga ni plan estatal",0,2473,46,2022
 5042,"No tiene obra social, prepaga ni plan estatal",1,2256,46,2022
 5043,"No tiene obra social, prepaga ni plan estatal",2,2586,46,2022
@@ -16477,7 +15342,6 @@
 5145,"No tiene obra social, prepaga ni plan estatal",105,2,46,2022
 5146,"No tiene obra social, prepaga ni plan estatal",106,1,46,2022
 5147,"No tiene obra social, prepaga ni plan estatal",109,1,46,2022
-5264,Obra social o prepaga (incluye PAMI),,Total,50,2022
 5265,Obra social o prepaga (incluye PAMI),0,10193,50,2022
 5266,Obra social o prepaga (incluye PAMI),1,10911,50,2022
 5267,Obra social o prepaga (incluye PAMI),2,12485,50,2022
@@ -16588,7 +15452,6 @@
 5372,Obra social o prepaga (incluye PAMI),107,1,50,2022
 5373,Obra social o prepaga (incluye PAMI),108,3,50,2022
 5374,Obra social o prepaga (incluye PAMI),109,2,50,2022
-5376,Programas o planes estatales de salud,,Total,50,2022
 5377,Programas o planes estatales de salud,0,781,50,2022
 5378,Programas o planes estatales de salud,1,787,50,2022
 5379,Programas o planes estatales de salud,2,794,50,2022
@@ -16689,7 +15552,6 @@
 5474,Programas o planes estatales de salud,97,4,50,2022
 5475,Programas o planes estatales de salud,99,3,50,2022
 5476,Programas o planes estatales de salud,107,1,50,2022
-5478,"No tiene obra social, prepaga ni plan estatal",,Total,50,2022
 5479,"No tiene obra social, prepaga ni plan estatal",0,11036,50,2022
 5480,"No tiene obra social, prepaga ni plan estatal",1,11121,50,2022
 5481,"No tiene obra social, prepaga ni plan estatal",2,12889,50,2022
@@ -16796,7 +15658,6 @@
 5582,"No tiene obra social, prepaga ni plan estatal",106,2,50,2022
 5583,"No tiene obra social, prepaga ni plan estatal",107,1,50,2022
 5584,"No tiene obra social, prepaga ni plan estatal",110,1,50,2022
-5702,Obra social o prepaga (incluye PAMI),,Total,54,2022
 5703,Obra social o prepaga (incluye PAMI),0,6444,54,2022
 5704,Obra social o prepaga (incluye PAMI),1,6562,54,2022
 5705,Obra social o prepaga (incluye PAMI),2,7083,54,2022
@@ -16908,7 +15769,6 @@
 5811,Obra social o prepaga (incluye PAMI),108,4,54,2022
 5812,Obra social o prepaga (incluye PAMI),109,2,54,2022
 5813,Obra social o prepaga (incluye PAMI),110,2,54,2022
-5815,Programas o planes estatales de salud,,Total,54,2022
 5816,Programas o planes estatales de salud,0,1188,54,2022
 5817,Programas o planes estatales de salud,1,1161,54,2022
 5818,Programas o planes estatales de salud,2,1290,54,2022
@@ -17011,7 +15871,6 @@
 5915,Programas o planes estatales de salud,99,2,54,2022
 5916,Programas o planes estatales de salud,102,3,54,2022
 5917,Programas o planes estatales de salud,103,2,54,2022
-5919,"No tiene obra social, prepaga ni plan estatal",,Total,54,2022
 5920,"No tiene obra social, prepaga ni plan estatal",0,11213,54,2022
 5921,"No tiene obra social, prepaga ni plan estatal",1,10417,54,2022
 5922,"No tiene obra social, prepaga ni plan estatal",2,11784,54,2022
@@ -17121,7 +15980,6 @@
 6026,"No tiene obra social, prepaga ni plan estatal",107,1,54,2022
 6027,"No tiene obra social, prepaga ni plan estatal",108,1,54,2022
 6028,"No tiene obra social, prepaga ni plan estatal",110,1,54,2022
-6146,Obra social o prepaga (incluye PAMI),,Total,58,2022
 6147,Obra social o prepaga (incluye PAMI),0,4172,58,2022
 6148,Obra social o prepaga (incluye PAMI),1,4322,58,2022
 6149,Obra social o prepaga (incluye PAMI),2,5198,58,2022
@@ -17232,7 +16090,6 @@
 6254,Obra social o prepaga (incluye PAMI),107,2,58,2022
 6255,Obra social o prepaga (incluye PAMI),108,1,58,2022
 6256,Obra social o prepaga (incluye PAMI),110,1,58,2022
-6258,Programas o planes estatales de salud,,Total,58,2022
 6259,Programas o planes estatales de salud,0,213,58,2022
 6260,Programas o planes estatales de salud,1,232,58,2022
 6261,Programas o planes estatales de salud,2,274,58,2022
@@ -17332,7 +16189,6 @@
 6355,Programas o planes estatales de salud,97,1,58,2022
 6356,Programas o planes estatales de salud,100,1,58,2022
 6357,Programas o planes estatales de salud,103,1,58,2022
-6359,"No tiene obra social, prepaga ni plan estatal",,Total,58,2022
 6360,"No tiene obra social, prepaga ni plan estatal",0,2758,58,2022
 6361,"No tiene obra social, prepaga ni plan estatal",1,2683,58,2022
 6362,"No tiene obra social, prepaga ni plan estatal",2,3235,58,2022
@@ -17435,7 +16291,6 @@
 6459,"No tiene obra social, prepaga ni plan estatal",99,9,58,2022
 6460,"No tiene obra social, prepaga ni plan estatal",102,3,58,2022
 6461,"No tiene obra social, prepaga ni plan estatal",107,1,58,2022
-6578,Obra social o prepaga (incluye PAMI),,Total,62,2022
 6579,Obra social o prepaga (incluye PAMI),0,4038,62,2022
 6580,Obra social o prepaga (incluye PAMI),1,4122,62,2022
 6581,Obra social o prepaga (incluye PAMI),2,4800,62,2022
@@ -17545,7 +16400,6 @@
 6685,Obra social o prepaga (incluye PAMI),106,2,62,2022
 6686,Obra social o prepaga (incluye PAMI),108,4,62,2022
 6687,Obra social o prepaga (incluye PAMI),110,1,62,2022
-6689,Programas o planes estatales de salud,,Total,62,2022
 6690,Programas o planes estatales de salud,0,262,62,2022
 6691,Programas o planes estatales de salud,1,270,62,2022
 6692,Programas o planes estatales de salud,2,290,62,2022
@@ -17648,7 +16502,6 @@
 6789,Programas o planes estatales de salud,99,1,62,2022
 6790,Programas o planes estatales de salud,101,1,62,2022
 6791,Programas o planes estatales de salud,103,1,62,2022
-6793,"No tiene obra social, prepaga ni plan estatal",,Total,62,2022
 6794,"No tiene obra social, prepaga ni plan estatal",0,3650,62,2022
 6795,"No tiene obra social, prepaga ni plan estatal",1,3449,62,2022
 6796,"No tiene obra social, prepaga ni plan estatal",2,3763,62,2022
@@ -17757,7 +16610,6 @@
 6899,"No tiene obra social, prepaga ni plan estatal",107,1,62,2022
 6900,"No tiene obra social, prepaga ni plan estatal",108,1,62,2022
 6901,"No tiene obra social, prepaga ni plan estatal",109,1,62,2022
-7019,Obra social o prepaga (incluye PAMI),,Total,66,2022
 7020,Obra social o prepaga (incluye PAMI),0,5731,66,2022
 7021,Obra social o prepaga (incluye PAMI),1,6234,66,2022
 7022,Obra social o prepaga (incluye PAMI),2,7517,66,2022
@@ -17869,7 +16721,6 @@
 7128,Obra social o prepaga (incluye PAMI),108,5,66,2022
 7129,Obra social o prepaga (incluye PAMI),109,4,66,2022
 7130,Obra social o prepaga (incluye PAMI),110,3,66,2022
-7132,Programas o planes estatales de salud,,Total,66,2022
 7133,Programas o planes estatales de salud,0,788,66,2022
 7134,Programas o planes estatales de salud,1,857,66,2022
 7135,Programas o planes estatales de salud,2,974,66,2022
@@ -17974,7 +16825,6 @@
 7234,Programas o planes estatales de salud,102,2,66,2022
 7235,Programas o planes estatales de salud,103,2,66,2022
 7236,Programas o planes estatales de salud,110,1,66,2022
-7238,"No tiene obra social, prepaga ni plan estatal",,Total,66,2022
 7239,"No tiene obra social, prepaga ni plan estatal",0,12095,66,2022
 7240,"No tiene obra social, prepaga ni plan estatal",1,11091,66,2022
 7241,"No tiene obra social, prepaga ni plan estatal",2,12470,66,2022
@@ -18084,7 +16934,6 @@
 7345,"No tiene obra social, prepaga ni plan estatal",107,2,66,2022
 7346,"No tiene obra social, prepaga ni plan estatal",108,1,66,2022
 7347,"No tiene obra social, prepaga ni plan estatal",110,3,66,2022
-7465,Obra social o prepaga (incluye PAMI),,Total,70,2022
 7466,Obra social o prepaga (incluye PAMI),0,4111,70,2022
 7467,Obra social o prepaga (incluye PAMI),1,4221,70,2022
 7468,Obra social o prepaga (incluye PAMI),2,4941,70,2022
@@ -18192,7 +17041,6 @@
 7570,Obra social o prepaga (incluye PAMI),106,1,70,2022
 7571,Obra social o prepaga (incluye PAMI),107,2,70,2022
 7572,Obra social o prepaga (incluye PAMI),108,2,70,2022
-7574,Programas o planes estatales de salud,,Total,70,2022
 7575,Programas o planes estatales de salud,0,324,70,2022
 7576,Programas o planes estatales de salud,1,381,70,2022
 7577,Programas o planes estatales de salud,2,376,70,2022
@@ -18296,7 +17144,6 @@
 7675,Programas o planes estatales de salud,102,1,70,2022
 7676,Programas o planes estatales de salud,109,1,70,2022
 7677,Programas o planes estatales de salud,110,1,70,2022
-7679,"No tiene obra social, prepaga ni plan estatal",,Total,70,2022
 7680,"No tiene obra social, prepaga ni plan estatal",0,6224,70,2022
 7681,"No tiene obra social, prepaga ni plan estatal",1,5896,70,2022
 7682,"No tiene obra social, prepaga ni plan estatal",2,6646,70,2022
@@ -18400,7 +17247,6 @@
 7780,"No tiene obra social, prepaga ni plan estatal",100,1,70,2022
 7781,"No tiene obra social, prepaga ni plan estatal",101,3,70,2022
 7782,"No tiene obra social, prepaga ni plan estatal",102,2,70,2022
-7898,Obra social o prepaga (incluye PAMI),,Total,74,2022
 7899,Obra social o prepaga (incluye PAMI),0,2769,74,2022
 7900,Obra social o prepaga (incluye PAMI),1,3035,74,2022
 7901,Obra social o prepaga (incluye PAMI),2,3450,74,2022
@@ -18510,7 +17356,6 @@
 8005,Obra social o prepaga (incluye PAMI),106,1,74,2022
 8006,Obra social o prepaga (incluye PAMI),109,1,74,2022
 8007,Obra social o prepaga (incluye PAMI),110,1,74,2022
-8009,Programas o planes estatales de salud,,Total,74,2022
 8010,Programas o planes estatales de salud,0,284,74,2022
 8011,Programas o planes estatales de salud,1,281,74,2022
 8012,Programas o planes estatales de salud,2,294,74,2022
@@ -18611,7 +17456,6 @@
 8107,Programas o planes estatales de salud,98,1,74,2022
 8108,Programas o planes estatales de salud,99,1,74,2022
 8109,Programas o planes estatales de salud,100,1,74,2022
-8111,"No tiene obra social, prepaga ni plan estatal",,Total,74,2022
 8112,"No tiene obra social, prepaga ni plan estatal",0,2917,74,2022
 8113,"No tiene obra social, prepaga ni plan estatal",1,2874,74,2022
 8114,"No tiene obra social, prepaga ni plan estatal",2,2921,74,2022
@@ -18713,7 +17557,6 @@
 8210,"No tiene obra social, prepaga ni plan estatal",98,4,74,2022
 8211,"No tiene obra social, prepaga ni plan estatal",99,5,74,2022
 8212,"No tiene obra social, prepaga ni plan estatal",102,1,74,2022
-8328,Obra social o prepaga (incluye PAMI),,Total,78,2022
 8329,Obra social o prepaga (incluye PAMI),0,2307,78,2022
 8330,Obra social o prepaga (incluye PAMI),1,2604,78,2022
 8331,Obra social o prepaga (incluye PAMI),2,3166,78,2022
@@ -18818,7 +17661,6 @@
 8430,Obra social o prepaga (incluye PAMI),101,3,78,2022
 8431,Obra social o prepaga (incluye PAMI),102,4,78,2022
 8432,Obra social o prepaga (incluye PAMI),103,1,78,2022
-8434,Programas o planes estatales de salud,,Total,78,2022
 8435,Programas o planes estatales de salud,0,548,78,2022
 8436,Programas o planes estatales de salud,1,535,78,2022
 8437,Programas o planes estatales de salud,2,608,78,2022
@@ -18917,7 +17759,6 @@
 8530,Programas o planes estatales de salud,95,2,78,2022
 8531,Programas o planes estatales de salud,96,2,78,2022
 8532,Programas o planes estatales de salud,97,1,78,2022
-8534,"No tiene obra social, prepaga ni plan estatal",,Total,78,2022
 8535,"No tiene obra social, prepaga ni plan estatal",0,638,78,2022
 8536,"No tiene obra social, prepaga ni plan estatal",1,647,78,2022
 8537,"No tiene obra social, prepaga ni plan estatal",2,725,78,2022
@@ -19019,7 +17860,6 @@
 8633,"No tiene obra social, prepaga ni plan estatal",98,6,78,2022
 8634,"No tiene obra social, prepaga ni plan estatal",99,1,78,2022
 8635,"No tiene obra social, prepaga ni plan estatal",108,1,78,2022
-8747,Obra social o prepaga (incluye PAMI),,Total,82,2022
 8748,Obra social o prepaga (incluye PAMI),0,21346,82,2022
 8749,Obra social o prepaga (incluye PAMI),1,21722,82,2022
 8750,Obra social o prepaga (incluye PAMI),2,24386,82,2022
@@ -19131,7 +17971,6 @@
 8856,Obra social o prepaga (incluye PAMI),108,5,82,2022
 8857,Obra social o prepaga (incluye PAMI),109,9,82,2022
 8858,Obra social o prepaga (incluye PAMI),110,6,82,2022
-8860,Programas o planes estatales de salud,,Total,82,2022
 8861,Programas o planes estatales de salud,0,1192,82,2022
 8862,Programas o planes estatales de salud,1,1104,82,2022
 8863,Programas o planes estatales de salud,2,1238,82,2022
@@ -19239,7 +18078,6 @@
 8965,Programas o planes estatales de salud,108,1,82,2022
 8966,Programas o planes estatales de salud,109,2,82,2022
 8967,Programas o planes estatales de salud,110,1,82,2022
-8969,"No tiene obra social, prepaga ni plan estatal",,Total,82,2022
 8970,"No tiene obra social, prepaga ni plan estatal",0,17194,82,2022
 8971,"No tiene obra social, prepaga ni plan estatal",1,15773,82,2022
 8972,"No tiene obra social, prepaga ni plan estatal",2,17250,82,2022
@@ -19350,7 +18188,6 @@
 9077,"No tiene obra social, prepaga ni plan estatal",107,1,82,2022
 9078,"No tiene obra social, prepaga ni plan estatal",109,3,82,2022
 9079,"No tiene obra social, prepaga ni plan estatal",110,1,82,2022
-9197,Obra social o prepaga (incluye PAMI),,Total,86,2022
 9198,Obra social o prepaga (incluye PAMI),0,3229,86,2022
 9199,Obra social o prepaga (incluye PAMI),1,3454,86,2022
 9200,Obra social o prepaga (incluye PAMI),2,4108,86,2022
@@ -19461,7 +18298,6 @@
 9305,Obra social o prepaga (incluye PAMI),108,2,86,2022
 9306,Obra social o prepaga (incluye PAMI),109,3,86,2022
 9307,Obra social o prepaga (incluye PAMI),110,2,86,2022
-9309,Programas o planes estatales de salud,,Total,86,2022
 9310,Programas o planes estatales de salud,0,331,86,2022
 9311,Programas o planes estatales de salud,1,370,86,2022
 9312,Programas o planes estatales de salud,2,399,86,2022
@@ -19568,7 +18404,6 @@
 9413,Programas o planes estatales de salud,106,1,86,2022
 9414,Programas o planes estatales de salud,107,1,86,2022
 9415,Programas o planes estatales de salud,110,1,86,2022
-9417,"No tiene obra social, prepaga ni plan estatal",,Total,86,2022
 9418,"No tiene obra social, prepaga ni plan estatal",0,10967,86,2022
 9419,"No tiene obra social, prepaga ni plan estatal",1,10032,86,2022
 9420,"No tiene obra social, prepaga ni plan estatal",2,11375,86,2022
@@ -19676,7 +18511,6 @@
 9522,"No tiene obra social, prepaga ni plan estatal",104,2,86,2022
 9523,"No tiene obra social, prepaga ni plan estatal",105,1,86,2022
 9524,"No tiene obra social, prepaga ni plan estatal",107,1,86,2022
-9642,Obra social o prepaga (incluye PAMI),,Total,90,2022
 9643,Obra social o prepaga (incluye PAMI),0,9420,90,2022
 9644,Obra social o prepaga (incluye PAMI),1,9915,90,2022
 9645,Obra social o prepaga (incluye PAMI),2,11361,90,2022
@@ -19787,7 +18621,6 @@
 9750,Obra social o prepaga (incluye PAMI),107,3,90,2022
 9751,Obra social o prepaga (incluye PAMI),109,1,90,2022
 9752,Obra social o prepaga (incluye PAMI),110,5,90,2022
-9754,Programas o planes estatales de salud,,Total,90,2022
 9755,Programas o planes estatales de salud,0,744,90,2022
 9756,Programas o planes estatales de salud,1,721,90,2022
 9757,Programas o planes estatales de salud,2,897,90,2022
@@ -19893,7 +18726,6 @@
 9857,Programas o planes estatales de salud,103,1,90,2022
 9858,Programas o planes estatales de salud,108,1,90,2022
 9859,Programas o planes estatales de salud,109,1,90,2022
-9861,"No tiene obra social, prepaga ni plan estatal",,Total,90,2022
 9862,"No tiene obra social, prepaga ni plan estatal",0,10652,90,2022
 9863,"No tiene obra social, prepaga ni plan estatal",1,10057,90,2022
 9864,"No tiene obra social, prepaga ni plan estatal",2,10919,90,2022
@@ -20002,648 +18834,3 @@
 9967,"No tiene obra social, prepaga ni plan estatal",105,1,90,2022
 9968,"No tiene obra social, prepaga ni plan estatal",106,2,90,2022
 9969,"No tiene obra social, prepaga ni plan estatal",110,2,90,2022
-10087,Obra social o prepaga (incluye PAMI),,Total,,2022
-10088,Obra social o prepaga (incluye PAMI),0,1176,,2022
-10089,Obra social o prepaga (incluye PAMI),1,1429,,2022
-10090,Obra social o prepaga (incluye PAMI),2,1739,,2022
-10091,Obra social o prepaga (incluye PAMI),3,1964,,2022
-10092,Obra social o prepaga (incluye PAMI),4,2126,,2022
-10093,Obra social o prepaga (incluye PAMI),5,2203,,2022
-10094,Obra social o prepaga (incluye PAMI),6,2149,,2022
-10095,Obra social o prepaga (incluye PAMI),7,2492,,2022
-10096,Obra social o prepaga (incluye PAMI),8,2353,,2022
-10097,Obra social o prepaga (incluye PAMI),9,2275,,2022
-10098,Obra social o prepaga (incluye PAMI),10,2320,,2022
-10099,Obra social o prepaga (incluye PAMI),11,2315,,2022
-10100,Obra social o prepaga (incluye PAMI),12,2382,,2022
-10101,Obra social o prepaga (incluye PAMI),13,2386,,2022
-10102,Obra social o prepaga (incluye PAMI),14,2330,,2022
-10103,Obra social o prepaga (incluye PAMI),15,2203,,2022
-10104,Obra social o prepaga (incluye PAMI),16,2321,,2022
-10105,Obra social o prepaga (incluye PAMI),17,2200,,2022
-10106,Obra social o prepaga (incluye PAMI),18,1809,,2022
-10107,Obra social o prepaga (incluye PAMI),19,1741,,2022
-10108,Obra social o prepaga (incluye PAMI),20,1548,,2022
-10109,Obra social o prepaga (incluye PAMI),21,1359,,2022
-10110,Obra social o prepaga (incluye PAMI),22,1312,,2022
-10111,Obra social o prepaga (incluye PAMI),23,1348,,2022
-10112,Obra social o prepaga (incluye PAMI),24,1521,,2022
-10113,Obra social o prepaga (incluye PAMI),25,1578,,2022
-10114,Obra social o prepaga (incluye PAMI),26,1705,,2022
-10115,Obra social o prepaga (incluye PAMI),27,1978,,2022
-10116,Obra social o prepaga (incluye PAMI),28,2060,,2022
-10117,Obra social o prepaga (incluye PAMI),29,2051,,2022
-10118,Obra social o prepaga (incluye PAMI),30,2331,,2022
-10119,Obra social o prepaga (incluye PAMI),31,2429,,2022
-10120,Obra social o prepaga (incluye PAMI),32,2499,,2022
-10121,Obra social o prepaga (incluye PAMI),33,2480,,2022
-10122,Obra social o prepaga (incluye PAMI),34,2570,,2022
-10123,Obra social o prepaga (incluye PAMI),35,2573,,2022
-10124,Obra social o prepaga (incluye PAMI),36,2469,,2022
-10125,Obra social o prepaga (incluye PAMI),37,2330,,2022
-10126,Obra social o prepaga (incluye PAMI),38,2268,,2022
-10127,Obra social o prepaga (incluye PAMI),39,2354,,2022
-10128,Obra social o prepaga (incluye PAMI),40,2378,,2022
-10129,Obra social o prepaga (incluye PAMI),41,2265,,2022
-10130,Obra social o prepaga (incluye PAMI),42,2182,,2022
-10131,Obra social o prepaga (incluye PAMI),43,2174,,2022
-10132,Obra social o prepaga (incluye PAMI),44,2230,,2022
-10133,Obra social o prepaga (incluye PAMI),45,1956,,2022
-10134,Obra social o prepaga (incluye PAMI),46,1925,,2022
-10135,Obra social o prepaga (incluye PAMI),47,1724,,2022
-10136,Obra social o prepaga (incluye PAMI),48,1656,,2022
-10137,Obra social o prepaga (incluye PAMI),49,1617,,2022
-10138,Obra social o prepaga (incluye PAMI),50,1615,,2022
-10139,Obra social o prepaga (incluye PAMI),51,1523,,2022
-10140,Obra social o prepaga (incluye PAMI),52,1459,,2022
-10141,Obra social o prepaga (incluye PAMI),53,1288,,2022
-10142,Obra social o prepaga (incluye PAMI),54,1394,,2022
-10143,Obra social o prepaga (incluye PAMI),55,1348,,2022
-10144,Obra social o prepaga (incluye PAMI),56,1406,,2022
-10145,Obra social o prepaga (incluye PAMI),57,1435,,2022
-10146,Obra social o prepaga (incluye PAMI),58,1451,,2022
-10147,Obra social o prepaga (incluye PAMI),59,1442,,2022
-10148,Obra social o prepaga (incluye PAMI),60,1496,,2022
-10149,Obra social o prepaga (incluye PAMI),61,1346,,2022
-10150,Obra social o prepaga (incluye PAMI),62,1350,,2022
-10151,Obra social o prepaga (incluye PAMI),63,1280,,2022
-10152,Obra social o prepaga (incluye PAMI),64,1082,,2022
-10153,Obra social o prepaga (incluye PAMI),65,1122,,2022
-10154,Obra social o prepaga (incluye PAMI),66,1003,,2022
-10155,Obra social o prepaga (incluye PAMI),67,967,,2022
-10156,Obra social o prepaga (incluye PAMI),68,887,,2022
-10157,Obra social o prepaga (incluye PAMI),69,807,,2022
-10158,Obra social o prepaga (incluye PAMI),70,759,,2022
-10159,Obra social o prepaga (incluye PAMI),71,656,,2022
-10160,Obra social o prepaga (incluye PAMI),72,633,,2022
-10161,Obra social o prepaga (incluye PAMI),73,585,,2022
-10162,Obra social o prepaga (incluye PAMI),74,435,,2022
-10163,Obra social o prepaga (incluye PAMI),75,422,,2022
-10164,Obra social o prepaga (incluye PAMI),76,391,,2022
-10165,Obra social o prepaga (incluye PAMI),77,351,,2022
-10166,Obra social o prepaga (incluye PAMI),78,299,,2022
-10167,Obra social o prepaga (incluye PAMI),79,266,,2022
-10168,Obra social o prepaga (incluye PAMI),80,240,,2022
-10169,Obra social o prepaga (incluye PAMI),81,196,,2022
-10170,Obra social o prepaga (incluye PAMI),82,210,,2022
-10171,Obra social o prepaga (incluye PAMI),83,193,,2022
-10172,Obra social o prepaga (incluye PAMI),84,123,,2022
-10173,Obra social o prepaga (incluye PAMI),85,142,,2022
-10174,Obra social o prepaga (incluye PAMI),86,105,,2022
-10175,Obra social o prepaga (incluye PAMI),87,81,,2022
-10176,Obra social o prepaga (incluye PAMI),88,75,,2022
-10177,Obra social o prepaga (incluye PAMI),89,58,,2022
-10178,Obra social o prepaga (incluye PAMI),90,46,,2022
-10179,Obra social o prepaga (incluye PAMI),91,53,,2022
-10180,Obra social o prepaga (incluye PAMI),92,49,,2022
-10181,Obra social o prepaga (incluye PAMI),93,36,,2022
-10182,Obra social o prepaga (incluye PAMI),94,37,,2022
-10183,Obra social o prepaga (incluye PAMI),95,27,,2022
-10184,Obra social o prepaga (incluye PAMI),96,23,,2022
-10185,Obra social o prepaga (incluye PAMI),97,16,,2022
-10186,Obra social o prepaga (incluye PAMI),98,11,,2022
-10187,Obra social o prepaga (incluye PAMI),99,9,,2022
-10188,Obra social o prepaga (incluye PAMI),100,1,,2022
-10189,Obra social o prepaga (incluye PAMI),101,2,,2022
-10190,Obra social o prepaga (incluye PAMI),102,1,,2022
-10191,Obra social o prepaga (incluye PAMI),103,1,,2022
-10193,Programas o planes estatales de salud,,Total,,2022
-10194,Programas o planes estatales de salud,0,295,,2022
-10195,Programas o planes estatales de salud,1,336,,2022
-10196,Programas o planes estatales de salud,2,402,,2022
-10197,Programas o planes estatales de salud,3,442,,2022
-10198,Programas o planes estatales de salud,4,470,,2022
-10199,Programas o planes estatales de salud,5,536,,2022
-10200,Programas o planes estatales de salud,6,483,,2022
-10201,Programas o planes estatales de salud,7,479,,2022
-10202,Programas o planes estatales de salud,8,464,,2022
-10203,Programas o planes estatales de salud,9,472,,2022
-10204,Programas o planes estatales de salud,10,408,,2022
-10205,Programas o planes estatales de salud,11,405,,2022
-10206,Programas o planes estatales de salud,12,403,,2022
-10207,Programas o planes estatales de salud,13,420,,2022
-10208,Programas o planes estatales de salud,14,422,,2022
-10209,Programas o planes estatales de salud,15,404,,2022
-10210,Programas o planes estatales de salud,16,390,,2022
-10211,Programas o planes estatales de salud,17,353,,2022
-10212,Programas o planes estatales de salud,18,300,,2022
-10213,Programas o planes estatales de salud,19,277,,2022
-10214,Programas o planes estatales de salud,20,260,,2022
-10215,Programas o planes estatales de salud,21,288,,2022
-10216,Programas o planes estatales de salud,22,347,,2022
-10217,Programas o planes estatales de salud,23,365,,2022
-10218,Programas o planes estatales de salud,24,398,,2022
-10219,Programas o planes estatales de salud,25,399,,2022
-10220,Programas o planes estatales de salud,26,471,,2022
-10221,Programas o planes estatales de salud,27,485,,2022
-10222,Programas o planes estatales de salud,28,449,,2022
-10223,Programas o planes estatales de salud,29,452,,2022
-10224,Programas o planes estatales de salud,30,470,,2022
-10225,Programas o planes estatales de salud,31,422,,2022
-10226,Programas o planes estatales de salud,32,412,,2022
-10227,Programas o planes estatales de salud,33,357,,2022
-10228,Programas o planes estatales de salud,34,383,,2022
-10229,Programas o planes estatales de salud,35,364,,2022
-10230,Programas o planes estatales de salud,36,305,,2022
-10231,Programas o planes estatales de salud,37,329,,2022
-10232,Programas o planes estatales de salud,38,292,,2022
-10233,Programas o planes estatales de salud,39,283,,2022
-10234,Programas o planes estatales de salud,40,318,,2022
-10235,Programas o planes estatales de salud,41,266,,2022
-10236,Programas o planes estatales de salud,42,323,,2022
-10237,Programas o planes estatales de salud,43,288,,2022
-10238,Programas o planes estatales de salud,44,254,,2022
-10239,Programas o planes estatales de salud,45,253,,2022
-10240,Programas o planes estatales de salud,46,230,,2022
-10241,Programas o planes estatales de salud,47,213,,2022
-10242,Programas o planes estatales de salud,48,209,,2022
-10243,Programas o planes estatales de salud,49,238,,2022
-10244,Programas o planes estatales de salud,50,221,,2022
-10245,Programas o planes estatales de salud,51,186,,2022
-10246,Programas o planes estatales de salud,52,193,,2022
-10247,Programas o planes estatales de salud,53,193,,2022
-10248,Programas o planes estatales de salud,54,187,,2022
-10249,Programas o planes estatales de salud,55,196,,2022
-10250,Programas o planes estatales de salud,56,194,,2022
-10251,Programas o planes estatales de salud,57,218,,2022
-10252,Programas o planes estatales de salud,58,225,,2022
-10253,Programas o planes estatales de salud,59,227,,2022
-10254,Programas o planes estatales de salud,60,169,,2022
-10255,Programas o planes estatales de salud,61,143,,2022
-10256,Programas o planes estatales de salud,62,123,,2022
-10257,Programas o planes estatales de salud,63,135,,2022
-10258,Programas o planes estatales de salud,64,95,,2022
-10259,Programas o planes estatales de salud,65,97,,2022
-10260,Programas o planes estatales de salud,66,51,,2022
-10261,Programas o planes estatales de salud,67,57,,2022
-10262,Programas o planes estatales de salud,68,47,,2022
-10263,Programas o planes estatales de salud,69,33,,2022
-10264,Programas o planes estatales de salud,70,28,,2022
-10265,Programas o planes estatales de salud,71,37,,2022
-10266,Programas o planes estatales de salud,72,26,,2022
-10267,Programas o planes estatales de salud,73,27,,2022
-10268,Programas o planes estatales de salud,74,19,,2022
-10269,Programas o planes estatales de salud,75,13,,2022
-10270,Programas o planes estatales de salud,76,18,,2022
-10271,Programas o planes estatales de salud,77,11,,2022
-10272,Programas o planes estatales de salud,78,7,,2022
-10273,Programas o planes estatales de salud,79,11,,2022
-10274,Programas o planes estatales de salud,80,12,,2022
-10275,Programas o planes estatales de salud,81,25,,2022
-10276,Programas o planes estatales de salud,82,8,,2022
-10277,Programas o planes estatales de salud,83,4,,2022
-10278,Programas o planes estatales de salud,84,4,,2022
-10279,Programas o planes estatales de salud,85,4,,2022
-10280,Programas o planes estatales de salud,86,7,,2022
-10281,Programas o planes estatales de salud,87,3,,2022
-10282,Programas o planes estatales de salud,88,2,,2022
-10283,Programas o planes estatales de salud,89,3,,2022
-10284,Programas o planes estatales de salud,90,3,,2022
-10285,Programas o planes estatales de salud,91,5,,2022
-10286,Programas o planes estatales de salud,92,3,,2022
-10287,Programas o planes estatales de salud,93,3,,2022
-10288,Programas o planes estatales de salud,94,4,,2022
-10289,Programas o planes estatales de salud,95,4,,2022
-10290,Programas o planes estatales de salud,96,1,,2022
-10291,Programas o planes estatales de salud,97,1,,2022
-10292,Programas o planes estatales de salud,99,1,,2022
-10293,Programas o planes estatales de salud,103,1,,2022
-10295,"No tiene obra social, prepaga ni plan estatal",,Total,,2022
-10296,"No tiene obra social, prepaga ni plan estatal",0,250,,2022
-10297,"No tiene obra social, prepaga ni plan estatal",1,226,,2022
-10298,"No tiene obra social, prepaga ni plan estatal",2,281,,2022
-10299,"No tiene obra social, prepaga ni plan estatal",3,275,,2022
-10300,"No tiene obra social, prepaga ni plan estatal",4,313,,2022
-10301,"No tiene obra social, prepaga ni plan estatal",5,340,,2022
-10302,"No tiene obra social, prepaga ni plan estatal",6,322,,2022
-10303,"No tiene obra social, prepaga ni plan estatal",7,305,,2022
-10304,"No tiene obra social, prepaga ni plan estatal",8,341,,2022
-10305,"No tiene obra social, prepaga ni plan estatal",9,296,,2022
-10306,"No tiene obra social, prepaga ni plan estatal",10,291,,2022
-10307,"No tiene obra social, prepaga ni plan estatal",11,316,,2022
-10308,"No tiene obra social, prepaga ni plan estatal",12,275,,2022
-10309,"No tiene obra social, prepaga ni plan estatal",13,314,,2022
-10310,"No tiene obra social, prepaga ni plan estatal",14,328,,2022
-10311,"No tiene obra social, prepaga ni plan estatal",15,302,,2022
-10312,"No tiene obra social, prepaga ni plan estatal",16,333,,2022
-10313,"No tiene obra social, prepaga ni plan estatal",17,367,,2022
-10314,"No tiene obra social, prepaga ni plan estatal",18,469,,2022
-10315,"No tiene obra social, prepaga ni plan estatal",19,568,,2022
-10316,"No tiene obra social, prepaga ni plan estatal",20,574,,2022
-10317,"No tiene obra social, prepaga ni plan estatal",21,941,,2022
-10318,"No tiene obra social, prepaga ni plan estatal",22,947,,2022
-10319,"No tiene obra social, prepaga ni plan estatal",23,871,,2022
-10320,"No tiene obra social, prepaga ni plan estatal",24,947,,2022
-10321,"No tiene obra social, prepaga ni plan estatal",25,899,,2022
-10322,"No tiene obra social, prepaga ni plan estatal",26,967,,2022
-10323,"No tiene obra social, prepaga ni plan estatal",27,944,,2022
-10324,"No tiene obra social, prepaga ni plan estatal",28,875,,2022
-10325,"No tiene obra social, prepaga ni plan estatal",29,784,,2022
-10326,"No tiene obra social, prepaga ni plan estatal",30,788,,2022
-10327,"No tiene obra social, prepaga ni plan estatal",31,736,,2022
-10328,"No tiene obra social, prepaga ni plan estatal",32,680,,2022
-10329,"No tiene obra social, prepaga ni plan estatal",33,674,,2022
-10330,"No tiene obra social, prepaga ni plan estatal",34,575,,2022
-10331,"No tiene obra social, prepaga ni plan estatal",35,584,,2022
-10332,"No tiene obra social, prepaga ni plan estatal",36,524,,2022
-10333,"No tiene obra social, prepaga ni plan estatal",37,469,,2022
-10334,"No tiene obra social, prepaga ni plan estatal",38,453,,2022
-10335,"No tiene obra social, prepaga ni plan estatal",39,473,,2022
-10336,"No tiene obra social, prepaga ni plan estatal",40,474,,2022
-10337,"No tiene obra social, prepaga ni plan estatal",41,424,,2022
-10338,"No tiene obra social, prepaga ni plan estatal",42,444,,2022
-10339,"No tiene obra social, prepaga ni plan estatal",43,415,,2022
-10340,"No tiene obra social, prepaga ni plan estatal",44,370,,2022
-10341,"No tiene obra social, prepaga ni plan estatal",45,326,,2022
-10342,"No tiene obra social, prepaga ni plan estatal",46,347,,2022
-10343,"No tiene obra social, prepaga ni plan estatal",47,364,,2022
-10344,"No tiene obra social, prepaga ni plan estatal",48,302,,2022
-10345,"No tiene obra social, prepaga ni plan estatal",49,289,,2022
-10346,"No tiene obra social, prepaga ni plan estatal",50,264,,2022
-10347,"No tiene obra social, prepaga ni plan estatal",51,232,,2022
-10348,"No tiene obra social, prepaga ni plan estatal",52,224,,2022
-10349,"No tiene obra social, prepaga ni plan estatal",53,230,,2022
-10350,"No tiene obra social, prepaga ni plan estatal",54,232,,2022
-10351,"No tiene obra social, prepaga ni plan estatal",55,237,,2022
-10352,"No tiene obra social, prepaga ni plan estatal",56,201,,2022
-10353,"No tiene obra social, prepaga ni plan estatal",57,202,,2022
-10354,"No tiene obra social, prepaga ni plan estatal",58,225,,2022
-10355,"No tiene obra social, prepaga ni plan estatal",59,221,,2022
-10356,"No tiene obra social, prepaga ni plan estatal",60,228,,2022
-10357,"No tiene obra social, prepaga ni plan estatal",61,152,,2022
-10358,"No tiene obra social, prepaga ni plan estatal",62,152,,2022
-10359,"No tiene obra social, prepaga ni plan estatal",63,127,,2022
-10360,"No tiene obra social, prepaga ni plan estatal",64,99,,2022
-10361,"No tiene obra social, prepaga ni plan estatal",65,84,,2022
-10362,"No tiene obra social, prepaga ni plan estatal",66,43,,2022
-10363,"No tiene obra social, prepaga ni plan estatal",67,38,,2022
-10364,"No tiene obra social, prepaga ni plan estatal",68,31,,2022
-10365,"No tiene obra social, prepaga ni plan estatal",69,21,,2022
-10366,"No tiene obra social, prepaga ni plan estatal",70,9,,2022
-10367,"No tiene obra social, prepaga ni plan estatal",71,12,,2022
-10368,"No tiene obra social, prepaga ni plan estatal",72,12,,2022
-10369,"No tiene obra social, prepaga ni plan estatal",73,11,,2022
-10370,"No tiene obra social, prepaga ni plan estatal",74,5,,2022
-10371,"No tiene obra social, prepaga ni plan estatal",75,8,,2022
-10372,"No tiene obra social, prepaga ni plan estatal",76,9,,2022
-10373,"No tiene obra social, prepaga ni plan estatal",77,7,,2022
-10374,"No tiene obra social, prepaga ni plan estatal",78,5,,2022
-10375,"No tiene obra social, prepaga ni plan estatal",79,5,,2022
-10376,"No tiene obra social, prepaga ni plan estatal",80,10,,2022
-10377,"No tiene obra social, prepaga ni plan estatal",81,4,,2022
-10378,"No tiene obra social, prepaga ni plan estatal",82,10,,2022
-10379,"No tiene obra social, prepaga ni plan estatal",83,4,,2022
-10380,"No tiene obra social, prepaga ni plan estatal",84,5,,2022
-10381,"No tiene obra social, prepaga ni plan estatal",85,1,,2022
-10382,"No tiene obra social, prepaga ni plan estatal",86,3,,2022
-10383,"No tiene obra social, prepaga ni plan estatal",87,1,,2022
-10384,"No tiene obra social, prepaga ni plan estatal",88,2,,2022
-10385,"No tiene obra social, prepaga ni plan estatal",89,9,,2022
-10386,"No tiene obra social, prepaga ni plan estatal",90,2,,2022
-10387,"No tiene obra social, prepaga ni plan estatal",91,3,,2022
-10388,"No tiene obra social, prepaga ni plan estatal",92,2,,2022
-10389,"No tiene obra social, prepaga ni plan estatal",93,6,,2022
-10390,"No tiene obra social, prepaga ni plan estatal",94,3,,2022
-10391,"No tiene obra social, prepaga ni plan estatal",95,1,,2022
-10392,"No tiene obra social, prepaga ni plan estatal",96,4,,2022
-10393,"No tiene obra social, prepaga ni plan estatal",97,1,,2022
-10394,"No tiene obra social, prepaga ni plan estatal",98,1,,2022
-10395,"No tiene obra social, prepaga ni plan estatal",99,3,,2022
-10504,RESUMEN,,,,2022
-10505,RESUMEN,,,,2022
-10507,Obra social o prepaga (incluye PAMI),,Total,,2022
-10508,Obra social o prepaga (incluye PAMI),0,229650,,2022
-10509,Obra social o prepaga (incluye PAMI),1,243915,,2022
-10510,Obra social o prepaga (incluye PAMI),2,279100,,2022
-10511,Obra social o prepaga (incluye PAMI),3,312716,,2022
-10512,Obra social o prepaga (incluye PAMI),4,335928,,2022
-10513,Obra social o prepaga (incluye PAMI),5,357429,,2022
-10514,Obra social o prepaga (incluye PAMI),6,369851,,2022
-10515,Obra social o prepaga (incluye PAMI),7,394015,,2022
-10516,Obra social o prepaga (incluye PAMI),8,387840,,2022
-10517,Obra social o prepaga (incluye PAMI),9,391142,,2022
-10518,Obra social o prepaga (incluye PAMI),10,388437,,2022
-10519,Obra social o prepaga (incluye PAMI),11,404482,,2022
-10520,Obra social o prepaga (incluye PAMI),12,403510,,2022
-10521,Obra social o prepaga (incluye PAMI),13,402047,,2022
-10522,Obra social o prepaga (incluye PAMI),14,392494,,2022
-10523,Obra social o prepaga (incluye PAMI),15,393358,,2022
-10524,Obra social o prepaga (incluye PAMI),16,394107,,2022
-10525,Obra social o prepaga (incluye PAMI),17,404912,,2022
-10526,Obra social o prepaga (incluye PAMI),18,377972,,2022
-10527,Obra social o prepaga (incluye PAMI),19,363863,,2022
-10528,Obra social o prepaga (incluye PAMI),20,345128,,2022
-10529,Obra social o prepaga (incluye PAMI),21,301537,,2022
-10530,Obra social o prepaga (incluye PAMI),22,297519,,2022
-10531,Obra social o prepaga (incluye PAMI),23,290487,,2022
-10532,Obra social o prepaga (incluye PAMI),24,295363,,2022
-10533,Obra social o prepaga (incluye PAMI),25,307493,,2022
-10534,Obra social o prepaga (incluye PAMI),26,310423,,2022
-10535,Obra social o prepaga (incluye PAMI),27,326937,,2022
-10536,Obra social o prepaga (incluye PAMI),28,331093,,2022
-10537,Obra social o prepaga (incluye PAMI),29,348516,,2022
-10538,Obra social o prepaga (incluye PAMI),30,380154,,2022
-10539,Obra social o prepaga (incluye PAMI),31,380273,,2022
-10540,Obra social o prepaga (incluye PAMI),32,375367,,2022
-10541,Obra social o prepaga (incluye PAMI),33,382128,,2022
-10542,Obra social o prepaga (incluye PAMI),34,382087,,2022
-10543,Obra social o prepaga (incluye PAMI),35,404642,,2022
-10544,Obra social o prepaga (incluye PAMI),36,397284,,2022
-10545,Obra social o prepaga (incluye PAMI),37,387471,,2022
-10546,Obra social o prepaga (incluye PAMI),38,388989,,2022
-10547,Obra social o prepaga (incluye PAMI),39,405886,,2022
-10548,Obra social o prepaga (incluye PAMI),40,426475,,2022
-10549,Obra social o prepaga (incluye PAMI),41,405826,,2022
-10550,Obra social o prepaga (incluye PAMI),42,429829,,2022
-10551,Obra social o prepaga (incluye PAMI),43,417030,,2022
-10552,Obra social o prepaga (incluye PAMI),44,405439,,2022
-10553,Obra social o prepaga (incluye PAMI),45,396315,,2022
-10554,Obra social o prepaga (incluye PAMI),46,377973,,2022
-10555,Obra social o prepaga (incluye PAMI),47,370936,,2022
-10556,Obra social o prepaga (incluye PAMI),48,345796,,2022
-10557,Obra social o prepaga (incluye PAMI),49,346428,,2022
-10558,Obra social o prepaga (incluye PAMI),50,350538,,2022
-10559,Obra social o prepaga (incluye PAMI),51,326871,,2022
-10560,Obra social o prepaga (incluye PAMI),52,317293,,2022
-10561,Obra social o prepaga (incluye PAMI),53,301004,,2022
-10562,Obra social o prepaga (incluye PAMI),54,295605,,2022
-10563,Obra social o prepaga (incluye PAMI),55,289682,,2022
-10564,Obra social o prepaga (incluye PAMI),56,291956,,2022
-10565,Obra social o prepaga (incluye PAMI),57,294234,,2022
-10566,Obra social o prepaga (incluye PAMI),58,288855,,2022
-10567,Obra social o prepaga (incluye PAMI),59,294806,,2022
-10568,Obra social o prepaga (incluye PAMI),60,298547,,2022
-10569,Obra social o prepaga (incluye PAMI),61,292249,,2022
-10570,Obra social o prepaga (incluye PAMI),62,303098,,2022
-10571,Obra social o prepaga (incluye PAMI),63,299761,,2022
-10572,Obra social o prepaga (incluye PAMI),64,297794,,2022
-10573,Obra social o prepaga (incluye PAMI),65,324168,,2022
-10574,Obra social o prepaga (incluye PAMI),66,315406,,2022
-10575,Obra social o prepaga (incluye PAMI),67,319673,,2022
-10576,Obra social o prepaga (incluye PAMI),68,305486,,2022
-10577,Obra social o prepaga (incluye PAMI),69,302788,,2022
-10578,Obra social o prepaga (incluye PAMI),70,299281,,2022
-10579,Obra social o prepaga (incluye PAMI),71,280060,,2022
-10580,Obra social o prepaga (incluye PAMI),72,275200,,2022
-10581,Obra social o prepaga (incluye PAMI),73,255212,,2022
-10582,Obra social o prepaga (incluye PAMI),74,242256,,2022
-10583,Obra social o prepaga (incluye PAMI),75,227727,,2022
-10584,Obra social o prepaga (incluye PAMI),76,214219,,2022
-10585,Obra social o prepaga (incluye PAMI),77,198705,,2022
-10586,Obra social o prepaga (incluye PAMI),78,180267,,2022
-10587,Obra social o prepaga (incluye PAMI),79,163497,,2022
-10588,Obra social o prepaga (incluye PAMI),80,150181,,2022
-10589,Obra social o prepaga (incluye PAMI),81,135085,,2022
-10590,Obra social o prepaga (incluye PAMI),82,129553,,2022
-10591,Obra social o prepaga (incluye PAMI),83,110528,,2022
-10592,Obra social o prepaga (incluye PAMI),84,98235,,2022
-10593,Obra social o prepaga (incluye PAMI),85,87748,,2022
-10594,Obra social o prepaga (incluye PAMI),86,77744,,2022
-10595,Obra social o prepaga (incluye PAMI),87,67851,,2022
-10596,Obra social o prepaga (incluye PAMI),88,56536,,2022
-10597,Obra social o prepaga (incluye PAMI),89,50724,,2022
-10598,Obra social o prepaga (incluye PAMI),90,43303,,2022
-10599,Obra social o prepaga (incluye PAMI),91,35778,,2022
-10600,Obra social o prepaga (incluye PAMI),92,28970,,2022
-10601,Obra social o prepaga (incluye PAMI),93,22152,,2022
-10602,Obra social o prepaga (incluye PAMI),94,16894,,2022
-10603,Obra social o prepaga (incluye PAMI),95,12655,,2022
-10604,Obra social o prepaga (incluye PAMI),96,9284,,2022
-10605,Obra social o prepaga (incluye PAMI),97,6989,,2022
-10606,Obra social o prepaga (incluye PAMI),98,4675,,2022
-10607,Obra social o prepaga (incluye PAMI),99,3549,,2022
-10608,Obra social o prepaga (incluye PAMI),100,1473,,2022
-10609,Obra social o prepaga (incluye PAMI),101,922,,2022
-10610,Obra social o prepaga (incluye PAMI),102,971,,2022
-10611,Obra social o prepaga (incluye PAMI),103,589,,2022
-10612,Obra social o prepaga (incluye PAMI),104,251,,2022
-10613,Obra social o prepaga (incluye PAMI),105,178,,2022
-10614,Obra social o prepaga (incluye PAMI),106,111,,2022
-10615,Obra social o prepaga (incluye PAMI),107,93,,2022
-10616,Obra social o prepaga (incluye PAMI),108,109,,2022
-10617,Obra social o prepaga (incluye PAMI),109,87,,2022
-10618,Obra social o prepaga (incluye PAMI),110,76,,2022
-10620,Programas o planes estatales de salud,,Total,,2022
-10621,Programas o planes estatales de salud,0,18977,,2022
-10622,Programas o planes estatales de salud,1,19240,,2022
-10623,Programas o planes estatales de salud,2,21220,,2022
-10624,Programas o planes estatales de salud,3,23399,,2022
-10625,Programas o planes estatales de salud,4,24402,,2022
-10626,Programas o planes estatales de salud,5,25373,,2022
-10627,Programas o planes estatales de salud,6,25906,,2022
-10628,Programas o planes estatales de salud,7,27629,,2022
-10629,Programas o planes estatales de salud,8,26500,,2022
-10630,Programas o planes estatales de salud,9,27362,,2022
-10631,Programas o planes estatales de salud,10,26667,,2022
-10632,Programas o planes estatales de salud,11,27369,,2022
-10633,Programas o planes estatales de salud,12,27722,,2022
-10634,Programas o planes estatales de salud,13,26683,,2022
-10635,Programas o planes estatales de salud,14,26291,,2022
-10636,Programas o planes estatales de salud,15,25145,,2022
-10637,Programas o planes estatales de salud,16,24848,,2022
-10638,Programas o planes estatales de salud,17,24994,,2022
-10639,Programas o planes estatales de salud,18,22477,,2022
-10640,Programas o planes estatales de salud,19,22084,,2022
-10641,Programas o planes estatales de salud,20,20707,,2022
-10642,Programas o planes estatales de salud,21,19625,,2022
-10643,Programas o planes estatales de salud,22,20718,,2022
-10644,Programas o planes estatales de salud,23,20298,,2022
-10645,Programas o planes estatales de salud,24,20917,,2022
-10646,Programas o planes estatales de salud,25,21705,,2022
-10647,Programas o planes estatales de salud,26,22016,,2022
-10648,Programas o planes estatales de salud,27,22985,,2022
-10649,Programas o planes estatales de salud,28,22646,,2022
-10650,Programas o planes estatales de salud,29,23867,,2022
-10651,Programas o planes estatales de salud,30,25148,,2022
-10652,Programas o planes estatales de salud,31,24189,,2022
-10653,Programas o planes estatales de salud,32,23097,,2022
-10654,Programas o planes estatales de salud,33,23112,,2022
-10655,Programas o planes estatales de salud,34,23198,,2022
-10656,Programas o planes estatales de salud,35,23802,,2022
-10657,Programas o planes estatales de salud,36,23162,,2022
-10658,Programas o planes estatales de salud,37,22181,,2022
-10659,Programas o planes estatales de salud,38,22723,,2022
-10660,Programas o planes estatales de salud,39,23958,,2022
-10661,Programas o planes estatales de salud,40,25189,,2022
-10662,Programas o planes estatales de salud,41,23630,,2022
-10663,Programas o planes estatales de salud,42,25140,,2022
-10664,Programas o planes estatales de salud,43,24312,,2022
-10665,Programas o planes estatales de salud,44,23599,,2022
-10666,Programas o planes estatales de salud,45,23118,,2022
-10667,Programas o planes estatales de salud,46,21949,,2022
-10668,Programas o planes estatales de salud,47,21581,,2022
-10669,Programas o planes estatales de salud,48,20531,,2022
-10670,Programas o planes estatales de salud,49,20954,,2022
-10671,Programas o planes estatales de salud,50,21425,,2022
-10672,Programas o planes estatales de salud,51,19853,,2022
-10673,Programas o planes estatales de salud,52,19640,,2022
-10674,Programas o planes estatales de salud,53,18583,,2022
-10675,Programas o planes estatales de salud,54,18639,,2022
-10676,Programas o planes estatales de salud,55,18266,,2022
-10677,Programas o planes estatales de salud,56,18461,,2022
-10678,Programas o planes estatales de salud,57,18637,,2022
-10679,Programas o planes estatales de salud,58,18201,,2022
-10680,Programas o planes estatales de salud,59,18422,,2022
-10681,Programas o planes estatales de salud,60,16921,,2022
-10682,Programas o planes estatales de salud,61,14471,,2022
-10683,Programas o planes estatales de salud,62,14022,,2022
-10684,Programas o planes estatales de salud,63,12442,,2022
-10685,Programas o planes estatales de salud,64,11580,,2022
-10686,Programas o planes estatales de salud,65,9705,,2022
-10687,Programas o planes estatales de salud,66,7128,,2022
-10688,Programas o planes estatales de salud,67,6533,,2022
-10689,Programas o planes estatales de salud,68,5777,,2022
-10690,Programas o planes estatales de salud,69,5358,,2022
-10691,Programas o planes estatales de salud,70,4838,,2022
-10692,Programas o planes estatales de salud,71,4234,,2022
-10693,Programas o planes estatales de salud,72,4041,,2022
-10694,Programas o planes estatales de salud,73,3511,,2022
-10695,Programas o planes estatales de salud,74,3323,,2022
-10696,Programas o planes estatales de salud,75,2846,,2022
-10697,Programas o planes estatales de salud,76,2663,,2022
-10698,Programas o planes estatales de salud,77,2552,,2022
-10699,Programas o planes estatales de salud,78,2195,,2022
-10700,Programas o planes estatales de salud,79,2020,,2022
-10701,Programas o planes estatales de salud,80,1773,,2022
-10702,Programas o planes estatales de salud,81,1524,,2022
-10703,Programas o planes estatales de salud,82,1484,,2022
-10704,Programas o planes estatales de salud,83,1198,,2022
-10705,Programas o planes estatales de salud,84,1090,,2022
-10706,Programas o planes estatales de salud,85,908,,2022
-10707,Programas o planes estatales de salud,86,856,,2022
-10708,Programas o planes estatales de salud,87,803,,2022
-10709,Programas o planes estatales de salud,88,638,,2022
-10710,Programas o planes estatales de salud,89,622,,2022
-10711,Programas o planes estatales de salud,90,502,,2022
-10712,Programas o planes estatales de salud,91,425,,2022
-10713,Programas o planes estatales de salud,92,384,,2022
-10714,Programas o planes estatales de salud,93,312,,2022
-10715,Programas o planes estatales de salud,94,236,,2022
-10716,Programas o planes estatales de salud,95,201,,2022
-10717,Programas o planes estatales de salud,96,177,,2022
-10718,Programas o planes estatales de salud,97,137,,2022
-10719,Programas o planes estatales de salud,98,106,,2022
-10720,Programas o planes estatales de salud,99,108,,2022
-10721,Programas o planes estatales de salud,100,24,,2022
-10722,Programas o planes estatales de salud,101,17,,2022
-10723,Programas o planes estatales de salud,102,26,,2022
-10724,Programas o planes estatales de salud,103,17,,2022
-10725,Programas o planes estatales de salud,104,3,,2022
-10726,Programas o planes estatales de salud,105,8,,2022
-10727,Programas o planes estatales de salud,106,1,,2022
-10728,Programas o planes estatales de salud,107,4,,2022
-10729,Programas o planes estatales de salud,108,2,,2022
-10730,Programas o planes estatales de salud,109,5,,2022
-10731,Programas o planes estatales de salud,110,8,,2022
-10733,"No tiene obra social, prepaga ni plan estatal",,Total,,2022
-10734,"No tiene obra social, prepaga ni plan estatal",0,240567,,2022
-10735,"No tiene obra social, prepaga ni plan estatal",1,236900,,2022
-10736,"No tiene obra social, prepaga ni plan estatal",2,268582,,2022
-10737,"No tiene obra social, prepaga ni plan estatal",3,291253,,2022
-10738,"No tiene obra social, prepaga ni plan estatal",4,297901,,2022
-10739,"No tiene obra social, prepaga ni plan estatal",5,301045,,2022
-10740,"No tiene obra social, prepaga ni plan estatal",6,310013,,2022
-10741,"No tiene obra social, prepaga ni plan estatal",7,329158,,2022
-10742,"No tiene obra social, prepaga ni plan estatal",8,313695,,2022
-10743,"No tiene obra social, prepaga ni plan estatal",9,309459,,2022
-10744,"No tiene obra social, prepaga ni plan estatal",10,301341,,2022
-10745,"No tiene obra social, prepaga ni plan estatal",11,305590,,2022
-10746,"No tiene obra social, prepaga ni plan estatal",12,305383,,2022
-10747,"No tiene obra social, prepaga ni plan estatal",13,300013,,2022
-10748,"No tiene obra social, prepaga ni plan estatal",14,290877,,2022
-10749,"No tiene obra social, prepaga ni plan estatal",15,283434,,2022
-10750,"No tiene obra social, prepaga ni plan estatal",16,283768,,2022
-10751,"No tiene obra social, prepaga ni plan estatal",17,300267,,2022
-10752,"No tiene obra social, prepaga ni plan estatal",18,316296,,2022
-10753,"No tiene obra social, prepaga ni plan estatal",19,321494,,2022
-10754,"No tiene obra social, prepaga ni plan estatal",20,317427,,2022
-10755,"No tiene obra social, prepaga ni plan estatal",21,380025,,2022
-10756,"No tiene obra social, prepaga ni plan estatal",22,406668,,2022
-10757,"No tiene obra social, prepaga ni plan estatal",23,389077,,2022
-10758,"No tiene obra social, prepaga ni plan estatal",24,384965,,2022
-10759,"No tiene obra social, prepaga ni plan estatal",25,387699,,2022
-10760,"No tiene obra social, prepaga ni plan estatal",26,376771,,2022
-10761,"No tiene obra social, prepaga ni plan estatal",27,371245,,2022
-10762,"No tiene obra social, prepaga ni plan estatal",28,342390,,2022
-10763,"No tiene obra social, prepaga ni plan estatal",29,334605,,2022
-10764,"No tiene obra social, prepaga ni plan estatal",30,337222,,2022
-10765,"No tiene obra social, prepaga ni plan estatal",31,305670,,2022
-10766,"No tiene obra social, prepaga ni plan estatal",32,281914,,2022
-10767,"No tiene obra social, prepaga ni plan estatal",33,268178,,2022
-10768,"No tiene obra social, prepaga ni plan estatal",34,257797,,2022
-10769,"No tiene obra social, prepaga ni plan estatal",35,260489,,2022
-10770,"No tiene obra social, prepaga ni plan estatal",36,243233,,2022
-10771,"No tiene obra social, prepaga ni plan estatal",37,226706,,2022
-10772,"No tiene obra social, prepaga ni plan estatal",38,224060,,2022
-10773,"No tiene obra social, prepaga ni plan estatal",39,234183,,2022
-10774,"No tiene obra social, prepaga ni plan estatal",40,237917,,2022
-10775,"No tiene obra social, prepaga ni plan estatal",41,217647,,2022
-10776,"No tiene obra social, prepaga ni plan estatal",42,230721,,2022
-10777,"No tiene obra social, prepaga ni plan estatal",43,216711,,2022
-10778,"No tiene obra social, prepaga ni plan estatal",44,205690,,2022
-10779,"No tiene obra social, prepaga ni plan estatal",45,197838,,2022
-10780,"No tiene obra social, prepaga ni plan estatal",46,187116,,2022
-10781,"No tiene obra social, prepaga ni plan estatal",47,185691,,2022
-10782,"No tiene obra social, prepaga ni plan estatal",48,172732,,2022
-10783,"No tiene obra social, prepaga ni plan estatal",49,173993,,2022
-10784,"No tiene obra social, prepaga ni plan estatal",50,172018,,2022
-10785,"No tiene obra social, prepaga ni plan estatal",51,156042,,2022
-10786,"No tiene obra social, prepaga ni plan estatal",52,152776,,2022
-10787,"No tiene obra social, prepaga ni plan estatal",53,141177,,2022
-10788,"No tiene obra social, prepaga ni plan estatal",54,136710,,2022
-10789,"No tiene obra social, prepaga ni plan estatal",55,132800,,2022
-10790,"No tiene obra social, prepaga ni plan estatal",56,132556,,2022
-10791,"No tiene obra social, prepaga ni plan estatal",57,129270,,2022
-10792,"No tiene obra social, prepaga ni plan estatal",58,124801,,2022
-10793,"No tiene obra social, prepaga ni plan estatal",59,123184,,2022
-10794,"No tiene obra social, prepaga ni plan estatal",60,110162,,2022
-10795,"No tiene obra social, prepaga ni plan estatal",61,90770,,2022
-10796,"No tiene obra social, prepaga ni plan estatal",62,82373,,2022
-10797,"No tiene obra social, prepaga ni plan estatal",63,70241,,2022
-10798,"No tiene obra social, prepaga ni plan estatal",64,63275,,2022
-10799,"No tiene obra social, prepaga ni plan estatal",65,49485,,2022
-10800,"No tiene obra social, prepaga ni plan estatal",66,27215,,2022
-10801,"No tiene obra social, prepaga ni plan estatal",67,22241,,2022
-10802,"No tiene obra social, prepaga ni plan estatal",68,17093,,2022
-10803,"No tiene obra social, prepaga ni plan estatal",69,14498,,2022
-10804,"No tiene obra social, prepaga ni plan estatal",70,11903,,2022
-10805,"No tiene obra social, prepaga ni plan estatal",71,9161,,2022
-10806,"No tiene obra social, prepaga ni plan estatal",72,8520,,2022
-10807,"No tiene obra social, prepaga ni plan estatal",73,7167,,2022
-10808,"No tiene obra social, prepaga ni plan estatal",74,6857,,2022
-10809,"No tiene obra social, prepaga ni plan estatal",75,5994,,2022
-10810,"No tiene obra social, prepaga ni plan estatal",76,5446,,2022
-10811,"No tiene obra social, prepaga ni plan estatal",77,5087,,2022
-10812,"No tiene obra social, prepaga ni plan estatal",78,4438,,2022
-10813,"No tiene obra social, prepaga ni plan estatal",79,4254,,2022
-10814,"No tiene obra social, prepaga ni plan estatal",80,3798,,2022
-10815,"No tiene obra social, prepaga ni plan estatal",81,3246,,2022
-10816,"No tiene obra social, prepaga ni plan estatal",82,3141,,2022
-10817,"No tiene obra social, prepaga ni plan estatal",83,2436,,2022
-10818,"No tiene obra social, prepaga ni plan estatal",84,2233,,2022
-10819,"No tiene obra social, prepaga ni plan estatal",85,2108,,2022
-10820,"No tiene obra social, prepaga ni plan estatal",86,1950,,2022
-10821,"No tiene obra social, prepaga ni plan estatal",87,1720,,2022
-10822,"No tiene obra social, prepaga ni plan estatal",88,1674,,2022
-10823,"No tiene obra social, prepaga ni plan estatal",89,1737,,2022
-10824,"No tiene obra social, prepaga ni plan estatal",90,1829,,2022
-10825,"No tiene obra social, prepaga ni plan estatal",91,1411,,2022
-10826,"No tiene obra social, prepaga ni plan estatal",92,1490,,2022
-10827,"No tiene obra social, prepaga ni plan estatal",93,1248,,2022
-10828,"No tiene obra social, prepaga ni plan estatal",94,1222,,2022
-10829,"No tiene obra social, prepaga ni plan estatal",95,1113,,2022
-10830,"No tiene obra social, prepaga ni plan estatal",96,960,,2022
-10831,"No tiene obra social, prepaga ni plan estatal",97,943,,2022
-10832,"No tiene obra social, prepaga ni plan estatal",98,887,,2022
-10833,"No tiene obra social, prepaga ni plan estatal",99,797,,2022
-10834,"No tiene obra social, prepaga ni plan estatal",100,76,,2022
-10835,"No tiene obra social, prepaga ni plan estatal",101,62,,2022
-10836,"No tiene obra social, prepaga ni plan estatal",102,163,,2022
-10837,"No tiene obra social, prepaga ni plan estatal",103,95,,2022
-10838,"No tiene obra social, prepaga ni plan estatal",104,36,,2022
-10839,"No tiene obra social, prepaga ni plan estatal",105,27,,2022
-10840,"No tiene obra social, prepaga ni plan estatal",106,27,,2022
-10841,"No tiene obra social, prepaga ni plan estatal",107,19,,2022
-10842,"No tiene obra social, prepaga ni plan estatal",108,13,,2022
-10843,"No tiene obra social, prepaga ni plan estatal",109,18,,2022
-10844,"No tiene obra social, prepaga ni plan estatal",110,23,,2022
