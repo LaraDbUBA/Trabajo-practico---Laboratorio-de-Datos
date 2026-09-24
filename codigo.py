@@ -348,7 +348,7 @@ establecimientos = pd.read_csv(carpetaModelos / "establecimientos.csv")
 
 establecimientos['origen_financiamiento'].value_counts()
 nacidos["peso_nacimiento"].value_counts()
-nacidos.columns
+nacidos["grupo_edad_madre"].value_counts()
 
 #%% Cobertura de salud
 
@@ -430,3 +430,84 @@ consulta = """
 
 
            """
+           
+#%% Cambios en la edad de las madres
+
+consulta = """
+            SELECT
+                p.provincia,
+            
+                100.0 * SUM(
+                    CASE
+                        WHEN n.año = 2010
+                         AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15') 
+                        THEN n.cantidad
+                        ELSE 0
+                    END
+                ) / SUM(
+                    CASE
+                        WHEN n.año = 2010
+                        THEN n.cantidad
+                        ELSE 0
+                    END
+                ) AS porcentaje_2010,
+            
+                100.0 * SUM(
+                    CASE
+                        WHEN n.año = 2022
+                         AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
+                        THEN n.cantidad
+                        ELSE 0
+                    END
+                ) / SUM(
+                    CASE
+                        WHEN n.año = 2022
+                        THEN n.cantidad
+                        ELSE 0
+                    END
+                ) AS porcentaje_2022,
+            
+                ABS((
+                    100.0 * SUM(
+                        CASE
+                            WHEN n.año = 2022
+                             AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
+                            THEN n.cantidad
+                            ELSE 0
+                        END
+                    ) / SUM(
+                        CASE
+                            WHEN n.año = 2022
+                            THEN n.cantidad
+                            ELSE 0
+                        END
+                    )
+                )-
+                (
+                    100.0 * SUM(
+                        CASE
+                            WHEN n.año = 2010
+                             AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
+                            THEN n.cantidad
+                            ELSE 0
+                        END
+                    ) / SUM(
+                        CASE
+                            WHEN n.año = 2010
+                            THEN n.cantidad
+                            ELSE 0
+                        END
+                    )
+                )) AS diferencia
+            
+            FROM nacidos n
+            INNER JOIN provincias p
+                ON p.codigo = n.provincia_residencia
+            
+            GROUP BY p.provincia
+            
+            ORDER BY diferencia DESC
+            """
+dataframeResultado = dd.sql(consulta).df()
+
+dataframeResultado
