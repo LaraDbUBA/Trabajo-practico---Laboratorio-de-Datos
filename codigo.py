@@ -15,6 +15,7 @@ Otros datos:  :)
 import pandas as pd
 import duckdb as dd
 from pathlib import Path
+import matplotlib.pyplot as plt
 
 #Ignoren esto es de un problema de mi carpeta local
 #import os
@@ -50,17 +51,24 @@ provincias_tabla = provincias_tabla.rename(columns ={
 
 
 provincias_tabla.to_csv(carpetaModelos /'provincias.csv')
-#%% Emprolijamos la tabla del censo 2010
+#%% Emprolijamos la tabla de los censos
+
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
 #Tambien notamos que por cada provincia habia una tabla distinta, nuestro objetivo ahora es juntarlo
 #Todo en una columna de Provincia. tambien habian filas de "totales" metidas en la columna de edad
 #y una tabla al final de todo que era la suma de todos los valores, esa tabla nos es inutil, decidimos
 #eliminarla
+#Ademas debemos juntar las dos tablas de los censos 
+#Como adicional, vamos a retirar las columnas de varon y mujer y transformaremos las celdas de cobertura a: Con cobertura o sin cobertura, que es lo que nos interesa
 
 
 # normalizar los archivos de censo
 provincias = pd.read_csv(carpetaModelos / "provincias.csv")
+
+def visualizar_datos(censo):
+    return 0 #llenar como corresponde, la idea es mostrar la justificacion de por que hacemos lo que hacemos en el bloque de abajo
+    
 def normalizar_datos_censo(censo):
     censo_limpio = censo.drop(columns= 0) # eliminamos la primera columna que eran todos Nan
     censo_limpio.columns =['cobertura', 'edad', 'varon', 'mujer', 'total'] # Definimos las columnas con los valores que queremos
@@ -110,11 +118,15 @@ def normalizar_datos_censo(censo):
     
     
     #Hay que normalizar los datos entre las dos tablas
-   # censo_limpio["cobertura"] = censo_limpio["cobertura"].replace({
-   #     "No tiene obra social, prepaga o plan estatal": "No tiene obra social, prepaga ni plan estatal",
-   #     "Obra social o prepaga (incluye PAMI)": "Obra social (incluye PAMI)"
-        
-   # })
+    censo_limpio["cobertura"] = censo_limpio["cobertura"].replace({
+        "Programas o planes estatales de salud": "Con cobertura",
+        "Obra social o prepaga (incluye PAMI)": "Con cobertura",
+        "Obra social (incluye PAMI)": "Con cobertura",
+        "Prepaga a través de obra social": "Con cobertura",
+        "Prepaga sólo por contratación voluntaria": "Con cobertura",
+        "No tiene obra social, prepaga ni plan estatal": "Sin cobertura",
+        "No tiene obra social, prepaga o plan estatal": "Sin cobertura"
+        })
     #Hay que ver si es valida para la materia
     
     #Sacamos la pseudo tablita de los totales (la podemos calcular nosotros a mano, es redundante)
@@ -125,7 +137,9 @@ def normalizar_datos_censo(censo):
     (censo_limpio["total"].astype(str).str.strip().str.lower() != "total") &
     (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "resumen")
 ]
- 
+    
+    censo_limpio["mujer"] = censo_limpio["mujer"].replace("-", 0)
+   
     return censo_limpio
     
 
@@ -141,7 +155,7 @@ dfcenso2010_limpio["año"] = 2010
 
 
 dffinal = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
-dffinal = dffinal.drop(columns = ["varon", "mujer"]).dropna() #Sacamos la columna de total que era redundante
+dffinal = dffinal.drop(columns = ["varon"]).dropna() #Sacamos la columna de total que era redundante
 dffinal.to_csv(carpetaModelos / "censos.csv")
 
 #Chequeamos dependencias funcionales
@@ -350,15 +364,74 @@ establecimientos['origen_financiamiento'].value_counts()
 nacidos["peso_nacimiento"].value_counts()
 nacidos["grupo_edad_madre"].value_counts()
 
+
 #%% Cobertura de salud
 
-consulta = """ 
-            SELECT 
+#Hay que cambiar los rangos de edad, no se bien cual poner
 
-
-           """
+consulta = """
+            SELECT p.provincia,
+            
+                CASE
+                    WHEN c.edad BETWEEN 0 AND 15 THEN '0-14'
+                    WHEN c.edad BETWEEN 15 AND 29 THEN '15-29'
+                    WHEN c.edad BETWEEN 30 AND 44 THEN '30-44'
+                    WHEN c.edad BETWEEN 45 AND 64 THEN '45-64'
+                    WHEN c.edad >= 65 THEN '65+'
+                END AS grupo_etario,
+            
+                SUM(
+                    CASE
+                        WHEN c.cobertura = 'Con cobertura'
+                         AND c.año = 2010
+                        THEN c.total
+                        ELSE 0
+                    END
+                ) AS habitantes_con_cobertura_2010,
+            
+                SUM(
+                    CASE
+                        WHEN c.cobertura = 'Sin cobertura'
+                         AND c.año = 2010
+                        THEN c.total
+                        ELSE 0
+                    END
+                ) AS habitantes_sin_cobertura_2010,
+            
+                SUM(
+                    CASE
+                        WHEN c.cobertura = 'Con cobertura'
+                         AND c.año = 2022
+                        THEN c.total
+                        ELSE 0
+                    END
+                ) AS habitantes_con_cobertura_2022,
+            
+                SUM(
+                    CASE
+                        WHEN c.cobertura = 'Sin cobertura'
+                         AND c.año = 2022
+                        THEN c.total
+                        ELSE 0
+                    END
+                ) AS habitantes_sin_cobertura_2022
+            
+            FROM censo c
+            
+            INNER JOIN provincias p
+                ON p.codigo = c.provincia_id
+            
+            GROUP BY
+                p.provincia,
+                grupo_etario
+            
+            ORDER BY
+                p.provincia,
+                grupo_etario
+            """
     
 dataframeResultado = dd.sql(consulta).df()
+dataframeResultado
 
 #%% Establecimientos de terapia intensiva
 
@@ -424,12 +497,56 @@ dataframeResultado = dd.sql(consulta).df()
 dataframeResultado
 
 #%% Tasa de fecundidad por provincia
+
+#habria que revisarla bien, le pude haber pifiado 
 consulta = """
-            SELECT p.provincia, n.grupo_edad_madre,
-                
+            SELECT
+                p.provincia,
+                n.grupo_edad_madre,
+                1000.0 * SUM(n.cantidad) / c.mujer AS tasa_fecundidad
+            
+            FROM nacidos n
+            
+            INNER JOIN provincias p
+                ON p.codigo = n.provincia_residencia
+            
+            INNER JOIN (
+                SELECT
+                    provincia_id,
+                    CASE
+                        WHEN edad BETWEEN 0 AND 14 THEN 'Menor de 15'
+                        WHEN edad BETWEEN 15 AND 19 THEN '15 a 19'
+                        WHEN edad BETWEEN 20 AND 24 THEN '20 a 24'
+                        WHEN edad BETWEEN 25 AND 29 THEN '25 a 29'
+                        WHEN edad BETWEEN 30 AND 34 THEN '30 a 34'
+                        WHEN edad BETWEEN 35 AND 39 THEN '35 a 39'
+                        WHEN edad BETWEEN 40 AND 44 THEN '40 a 44'
+                        WHEN edad >= 49 THEN 'De 45 y más'
+                    END AS grupo_edad,
+                    SUM(mujer) AS mujer
+                FROM censo
+                WHERE año = 2022
+                GROUP BY
+                    provincia_id,
+                    grupo_edad
+            ) c
+                ON c.provincia_id = n.provincia_residencia
+                AND c.grupo_edad = n.grupo_edad_madre
+            
+            WHERE n.año = 2022
+            
+            GROUP BY
+                p.provincia,
+                n.grupo_edad_madre,
+                c.mujer
+            
+            ORDER BY
+                p.provincia,
+                n.grupo_edad_madre
+            """
+dataframeResultado = dd.sql(consulta).df()
 
-
-           """
+dataframeResultado
            
 #%% Cambios en la edad de las madres
 
@@ -511,3 +628,5 @@ consulta = """
 dataframeResultado = dd.sql(consulta).df()
 
 dataframeResultado
+
+#%% Visualizaciones 
