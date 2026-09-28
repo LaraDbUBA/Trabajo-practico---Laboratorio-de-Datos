@@ -431,7 +431,7 @@ consulta = """
             """
     
 dataframeResultado = dd.sql(consulta).df()
-dataframeResultado
+dataframeResultado.to_csv(raiz / "consulta_cobertura_de_salud.csv")
 
 #%% Establecimientos de terapia intensiva
 
@@ -454,7 +454,7 @@ consulta = """
            """
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado
+dataframeResultado.to_csv(raiz / "consulta_establecimientos_terapia_intensiva.csv")
 
 #%% características de los nacimientos 
 
@@ -494,7 +494,7 @@ consulta = """
            """
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado
+dataframeResultado.to_csv(raiz / "caracteristicas_nacimientos.csv")
 
 #%% Tasa de fecundidad por provincia
 
@@ -546,7 +546,7 @@ consulta = """
             """
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado
+dataframeResultado.to_csv(raiz / "tasa_fecundidad_provincia.csv")
            
 #%% Cambios en la edad de las madres
 
@@ -627,6 +627,6 @@ consulta = """
             """
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado
+dataframeResultado.to_csv(raiz / "consulta_cambios_en_madres.csv")
 
 #%% Visualizaciones 
