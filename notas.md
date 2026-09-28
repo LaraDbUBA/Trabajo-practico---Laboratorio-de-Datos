@@ -35,46 +35,47 @@
 
 ---
 
-##Dependencias funcionales
-###Censo
+## Dependencias funcionales
+### Censo
 (cobertura, edad, año, provincia_id) -> (total, mujer)
 
-###Nacidos
+### Nacidos
 (provincia_residencia, tipo_parto, sexo, grupo_edad_madre, grupo_semanas_gestacion, nivel_educativo_madre,  peso_nacimiento, año)->("cantidad")
 
-###Establecimientos
+### Establecimientos
 (establecimiento_id -> todo)
 
-###Departamento
+### Departamento
 (departamento_id, provincia_id) -> departamento_nombre
 
-###provincias
+### provincias
 (provincia_id) -> (provincia_nombre)
 
-###Tipologia
+### Tipologia
 Aca esta interesante mencionar que la sigla, el id y el nombre no se relacionan entre si
 
 ---
 
-##Procesamiento de calidad
-###Censo
+## Procesamiento de calidad
+### Censo
 1. Cambiamos el formato de excel que tenia (filas innecesarias, subtitulos, subtablas de total o resumen adentro de la tabla principal)
 2. Habia valores en Mujer que eran "-" en vez de 0
 3. Inconsistencia entre 2010 y 2022 con algunos nombres (solo Caba y Ciudad Autonoma de Buenos Aires)
 4. Falta poner en el codigo una seccion solamente para ver estas cosas
 5. Cambiamos los nombres de cobertura a Con cobertura o Sin cobertura 
 
-###Nacidos
+### Nacidos
 1. Los nombres no eran muy descriptivos
 2. Columnas como sexo y tipo de parto tenian el valor como 1,2, 9 y los cambiamos a sus correspondientes (informacion sacada de la tabla descargada)
 3. Los datos tenian formato de lista, por ej: "1. Menor a 15", lo retiramos
 
 
-###Establecimientos
+### Establecimientos
 1. La tabla no estaba en 3FN.
 2. El 94% de los datos de sitio web eran null
 3. Cambiamos el origen de financiamiento a si era Estatal o Privado, los que no sabemos los dejamos como estan
 4. Revisamos dependencias funcionales 
-5. Sacamos columnas que no aportaban informacion 
+5. Sacamos columnas que no aportaban informacion, entre ellas decidimos sacar lo relacionado a localidad, pues solo nos interesaba los departamentos y provincias y se obtenian simplemente con el departamento id y la provincia id, tener lo de localidad era innecesario, ademas de que algunos codigos estaban mal
+6. Siguiendo con lo mencionado en el 4. , tiplogia nombre, sigla y codigo no se relacionaban entre si, es decir no se puede hacer una tabla adicional de tipoloogia con esas tres cosas, lo unico que nos interesa de ahi es el nombre asi que es lo unico con lo que nos quedamos.
 
 
