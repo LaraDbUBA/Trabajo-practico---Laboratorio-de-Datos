@@ -25,13 +25,15 @@
 
 ---
 
-## Análisis de calidad
+## Análisis de calidad(habria que borrar lo que hicimos con pandas)
 ### Nacimientos
-1. Analizar datos "Sin especificar" y porcentaje con el total
-2. Elegimos el mas representativo (educación de madre)
+1. Variable de calidad: COMPLETITUD; analizamos las columnas(ITIEMGEST, IMEDAD, IMINSTRUC, IPESONAC) con null o ("Sin especificar") y sacamos porcentaje de cada una y con respecto al total
+1. Variable de calidad: CONSISTENCIA(falta encontrarla)
 
 ### Establecimientos
-1. Analizamos datos null en sitio web
+1.Variable de calidad: COMPLETITUD; analizamos los datos null en (sitio_web, codent) y datos incompletos("Sin calle", "Sin dato", "sin datos.", tambien eran inconsistentes los datos faltantes) en la columna domicilio y tambien sacamos pporcentaje del total.
+2.Variable de calidad: CONSISTENCIA; encontramos valores en localidad_id que tenian distintos localidad_nombre. La inconsistencia estaba en como estaban escritos los datos en localidad nombre(estaba MALVINAS ARGENTINAS y MALVINAS ARGENTINAS(MALVINAS ARGENTINAS)). Sospechamos que es la misma localidad pero que no hay consistencia en como se nombra.
+(El analisis esta hecho sobre establecimientosOriginal(volvi a cargar el archivo) ya que establecimientos lo habian modificado in place)
 
 ---
 
@@ -72,7 +74,7 @@ Aca esta interesante mencionar que la sigla, el id y el nombre no se relacionan 
 
 ### Establecimientos
 1. La tabla no estaba en 3FN.
-2. El 94% de los datos de sitio web eran null
+2. El 94% de los datos de sitio web eran null(tambien codent y domicilio tenian datos incompletos)
 3. Cambiamos el origen de financiamiento a si era Estatal o Privado, los que no sabemos los dejamos como estan
 4. Revisamos dependencias funcionales 
 5. Sacamos columnas que no aportaban informacion, entre ellas decidimos sacar lo relacionado a localidad, pues solo nos interesaba los departamentos y provincias y se obtenian simplemente con el departamento id y la provincia id, tener lo de localidad era innecesario, ademas de que algunos codigos estaban mal
