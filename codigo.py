@@ -2,7 +2,7 @@
 """
 Created on Fri Sep 11 10:23:09 2026
 
-Integrantes: Ayala Ignacio, Della Bonzana Lara, Mile, Lu (completar)
+Integrantes: Ayala Ignacio, Della Bonzana Lara, Ventroni Milena, Posse Lucila
 
 Descripcion: En el presente archivo se muestra el código realizado para limpiar datos, visualizarlos y 
 generar consultas 
