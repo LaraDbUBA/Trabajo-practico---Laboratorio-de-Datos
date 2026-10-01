@@ -22,7 +22,8 @@
 3. Se puede dejar separado en TablasLimpias? 
 4. Se puede usar la tabla extra de provincias que encontramos? 
 5. No hay otra cosa mejor que analizar en establecimientos?
-
+6. Teniendo en cuenta el tamaño del DER realizado ¿Cuál es la manera óptima de plasmarlo en el informe? ya que no resulta sencillo acomodarlo de manera que quede prolijo.
+7. En el informe, ¿Quieren que las bases de datos sean citadas (o mencionadas) en la introducción, en la sección de procesamiento de datos, o en algún otro lado? Además, ¿existe alguna forma particula en que prefieren que se realice esta "cita"?
 ---
 
 ## Análisis de calidad(habria que borrar lo que hicimos con pandas)

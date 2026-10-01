@@ -2,7 +2,7 @@
 """
 Created on Fri Sep 11 10:23:09 2026
 
-Integrantes: Ayala Ignacio, Della Bonzana Lara, Mile, Lu (completar)
+Integrantes: Ayala Ignacio, Della Bonzana Lara, Ventroni Milena, Posse Lucila
 
 Descripcion: En el presente archivo se muestra el código realizado para limpiar datos, visualizarlos y 
 generar consultas 
@@ -53,7 +53,7 @@ provincias_tabla = provincias_tabla.rename(columns ={
 
 provincias_tabla.to_csv(carpetaModelos /'provincias.csv')
 
-#%% Mini analisis de atributos de calidad
+#%% Analisis de atributos de calidad
 
 # Tabla establecimientos 
 
@@ -178,7 +178,6 @@ pct_val_incompletos_nacidos = """
 dataframeResultado3 = dd.sql(pct_val_incompletos_nacidos).df()
 
 print(dataframeResultado3) 
-
 
 
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
@@ -717,7 +716,6 @@ dataframeResultado = dd.sql(consulta).df()
 dataframeResultado.to_csv(raiz / "consulta_cambios_en_madres.csv")
 
 #%% Visualizaciones 
-
 #cantidad de habitantes por provincia
 consulta = """
             SELECT p.provincia, 
