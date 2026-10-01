@@ -196,35 +196,24 @@ print(dataframeResultado3)
 # normalizar los archivos de censo
 provincias = pd.read_csv(carpetaModelos / "provincias.csv")
   
+#el objetivo de esta funcion es resumir un poco el analisis que hicimos porque fuimos y vinimos con la limpieza de datos
 def analizar_censo(censo):
     print("=" * 60)
     print("ANÁLISIS DEL CENSO")
     print("=" * 60)
 
-    # ---------------------------------------------------------
-    # 1. Columnas y tipos de datos
-    # ---------------------------------------------------------
     print("\n1. COLUMNAS Y TIPOS DE DATOS")
     print("-" * 40)
     print(censo.dtypes)
 
-    # ---------------------------------------------------------
-    # 2. Valores de cobertura
-    # ---------------------------------------------------------
     print("\n2. VALORES DE COBERTURA")
     print("-" * 40)
     print(censo.iloc[:, 1].value_counts(dropna=False))
 
-    # ---------------------------------------------------------
-    # 3. Valores de edad
-    # ---------------------------------------------------------
     print("\n3. VALORES DE EDAD")
     print("-" * 40)
     print(censo.iloc[:, 2].value_counts(dropna=False).head(30))
 
-    # ---------------------------------------------------------
-    # 4. Valores no numéricos en cantidad de mujeres
-    # ---------------------------------------------------------
     print("\n4. CANTIDAD DE MUJERES")
     print("-" * 40)
 
@@ -247,9 +236,7 @@ def analizar_censo(censo):
         ].value_counts()
     )
 
-    # ---------------------------------------------------------
-    # 5. Valores no numéricos en cantidad de hombres
-    # ---------------------------------------------------------
+
     print("\n5. CANTIDAD DE HOMBRES")
     print("-" * 40)
 
@@ -271,9 +258,6 @@ def analizar_censo(censo):
         ].value_counts()
     )
 
-    # ---------------------------------------------------------
-    # 6. Valores de total
-    # ---------------------------------------------------------
     print("\n6. TOTAL")
     print("-" * 40)
 
@@ -295,9 +279,6 @@ def analizar_censo(censo):
         ].value_counts()
     )
 
-    # ---------------------------------------------------------
-    # 7. Filas con AREA
-    # ---------------------------------------------------------
     print("\n7. FILAS QUE IDENTIFICAN PROVINCIAS")
     print("-" * 40)
 
@@ -309,9 +290,6 @@ def analizar_censo(censo):
     print("\nEjemplos:")
     print(filas_area.head(10))
 
-    # ---------------------------------------------------------
-    # 8. Filas que contienen TOTAL
-    # ---------------------------------------------------------
     print("\n8. FILAS CON TOTAL")
     print("-" * 40)
 
@@ -326,16 +304,12 @@ def analizar_censo(censo):
     print("\nEjemplos:")
     print(filas_total.head(10))
 
-    # ---------------------------------------------------------
-    # 9. Valores nulos por columna
-    # ---------------------------------------------------------
+
     print("\n9. VALORES NULOS POR COLUMNA")
     print("-" * 40)
     print(censo.isna().sum())
 
-    # ---------------------------------------------------------
-    # 10. Cantidad de filas y columnas
-    # ---------------------------------------------------------
+
     print("\n10. DIMENSIONES")
     print("-" * 40)
     print("Filas:", censo.shape[0])
@@ -369,7 +343,7 @@ def normalizar_datos_censo(censo):
     
     censo_limpio = censo_limpio[
     ~censo_limpio["cobertura"].astype(str).str.startswith("AREA")
-]
+    ]
     
     #Hacemos merge con el dataframe de provincias para sacar los codigos
     
@@ -409,7 +383,7 @@ def normalizar_datos_censo(censo):
     (censo_limpio["edad"].astype(str).str.strip().str.lower() != "edad") &
     (censo_limpio["total"].astype(str).str.strip().str.lower() != "total") &
     (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "resumen")
-]
+    ]
     
     censo_limpio["cantidad_mujeres"] = censo_limpio["cantidad_mujeres"].replace("-", 0)
     censo_limpio["cantidad_hombres"] = censo_limpio["cantidad_hombres"].replace("-", 0)
@@ -417,8 +391,11 @@ def normalizar_datos_censo(censo):
    
     return censo_limpio
     
+#vemos un poco el analisis
+analizar_censo(censo2010)
+analizar_censo(censo2022)
 
-
+#dentro de la funcion encontramos mas cosas como que los nomrbes entre las tablas eran distintas (en un solo caso) pero esta todo bien comentado
 dfcenso2022_limpio = normalizar_datos_censo(censo2022)
 dfcenso2022_limpio.to_csv(carpetaLimpias / "censo2022.csv")
 dfcenso2010_limpio = normalizar_datos_censo(censo2010)
@@ -455,25 +432,39 @@ tablaRelacion.groupby(["cobertura",  "edad", "provincia_id", "año"])[["cantidad
 #Aca podemos ver que no es tan obvio lo que nos quiere expresar el csv
 
 def ver_valores_nacidos(nacidos):
-    print("\nCantidad de datos vacios por columna =======\n")
-    print(nacidos.isna().value_counts())
-    #No hay ningun null, pero
-    print("Valores de los pesos en gramos: ")
-    print(nacidos['IPESONAC'].value_counts()) 
-    print("Valores de sexo: ")
-    print(nacidos['SEXO'].value_counts())
-    print("Valores de grupo de edad de la madre: ")
-    print(nacidos['IMEDAD'].value_counts()) 
-    print("Tiempo de gestacion: ")
-    print(nacidos['ITIEMGEST'].value_counts())
-    print("Valores de niveles de educacion de madre: ")
-    print(nacidos['IMINSTRUC'].value_counts()) 
+    print("=" * 60)
+    print("ANÁLISIS DE NACIDOS VIVOS")
+    print("=" * 60)
+    
+    print("\n1. DATOS VACÍOS")
+    print("-" * 40)
+    print(nacidos.isna().sum()) #No encontramos ninguno pero sin embargo existen datos sin especificar
+    
+    print("\n2. PESO AL NACER")
+    print("-" * 40)
+    print(nacidos["IPESONAC"].value_counts())
+    
+    print("\n3. SEXO")
+    print("-" * 40)
+    print(nacidos["SEXO"].value_counts())
+    
+    print("\n4. GRUPO DE EDAD DE LA MADRE")
+    print("-" * 40)
+    print(nacidos["IMEDAD"].value_counts())
+    
+    print("\n5. TIEMPO DE GESTACIÓN")
+    print("-" * 40)
+    print(nacidos["ITIEMGEST"].value_counts())
+    
+    print("\n6. NIVEL EDUCATIVO DE LA MADRE")
+    print("-" * 40)
+    print(nacidos["IMINSTRUC"].value_counts())
     
 ver_valores_nacidos(nacidos2010)
 ver_valores_nacidos(nacidos2022)
 
-#En todos estos apareces un numero n y n.Sin especificar 
-#Despues hay que preguntarnos, sirve de algo tener datos vacios en este caso? Los puedo eliminar? 
+#En todos estos aparece un numero n y n.Sin especificar 
+# sirve de algo tener datos vacios en este caso? Los puedo eliminar? Veremos mas adelante en las consultas
 #Ademas de que las columnas no son muy declarativas, no se leen muy bien
 
 
@@ -539,7 +530,7 @@ tablaRelacion2 = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
 
 tablaRelacion2.to_csv(carpetaModelos / "se_registran_nacidos.csv")
 
-tablaNacidos = tablaRelacion2.drop(columns = ["provincia_residencia", "cantidad"])
+tablaNacidos = tablaRelacion2.drop(columns = ["provincia_residencia", "cantidad"]).drop_duplicates()
 tablaNacidos.to_csv(carpetaModelos / "nacidos.csv")
 #dependencia funcional
 tablaRelacion2.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_edad_madre", "grupo_semanas_gestacion", "nivel_educativo_madre",  "peso_nacimiento", "año"])["cantidad"].nunique().loc[lambda x : x>1]
@@ -550,23 +541,116 @@ tablaRelacion2.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_eda
 
 # Analizamos tabla establecimientos
 def ver_valores_establecimientos(establecimientos):
-    print('Columnas de tabla ========= \n')
-    print(establecimientos.columns + "\n")
-    print("\nInformación ======== \n")
-    print(establecimientos.info)
-    print("\nCantidad de datos vacios por columna =======\n")
-    print(establecimientos.isna().sum()) #Aca vemos que en la oclumna de codent hay 816 Nan y en el sitioweb 33188, cosa que no aporta mucha informacion de lo que nos interesa
-    #establecimientos[establecimientos['sitio_web'] =='<br>']
+    print("=" * 60)
+    print("ANÁLISIS DE ESTABLECIMIENTOS")
+    print("=" * 60)
     
-    print("\nHay duplicados? =======\n")
-    print(establecimientos[establecimientos.duplicated(keep=False)]) #No hay repetidos
-    print("\nValores de financiamiento =======\n")
-    print(establecimientos["origen_financiamiento"].value_counts(dropna=False)) #Se ve bien
-    print("\nValores de siglas de tipologia =====\n")
+    print("\n1. COLUMNAS DE LA TABLA")
+    print("-" * 40)
+    print(establecimientos.columns)
+    
+    print("\n2. INFORMACIÓN DE LA TABLA")
+    print("-" * 40)
+    print(establecimientos.info())
+    
+    print("\n3. DATOS VACÍOS")
+    print("-" * 40)
+    print(establecimientos.isna().sum())
+    
+    print("\n4. REGISTROS DUPLICADOS")
+    print("-" * 40)
+    print(establecimientos[establecimientos.duplicated(keep=False)])
+    
+    print("\n5. ORIGEN DE FINANCIAMIENTO")
+    print("-" * 40)
+    print(establecimientos["origen_financiamiento"].value_counts(dropna=False))
+    
+    print("\n6. SIGLAS DE TIPOLOGÍA")
+    print("-" * 40)
     print(establecimientos["tipologia_sigla"].value_counts(dropna=False))
-    print("\nValores de nombres de tipologia =======\n")
+    
+    print("\n7. NOMBRES DE TIPOLOGÍA")
+    print("-" * 40)
     print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
     
+    print("\n8. RELACIÓN ENTRE TIPOLOGÍA, SIGLA, NOMBRE E ID")
+    print("-" * 40)
+    
+    print("\n¿Una sigla tiene más de un ID?")
+    print(establecimientos.groupby("tipologia_sigla")["tipologia_id"].nunique()
+          .loc[lambda x: x > 1])
+    
+    print("\n¿Un nombre tiene más de un ID?")
+    print(establecimientos.groupby("tipologia_nombre")["tipologia_id"].nunique()
+          .loc[lambda x: x > 1])
+    
+    print("\n¿Una sigla tiene más de un nombre?")
+    print(establecimientos.groupby("tipologia_sigla")["tipologia_nombre"].nunique()
+          .loc[lambda x: x > 1])
+    
+    print("\n¿Un ID tiene más de una sigla?")
+    print(establecimientos.groupby("tipologia_id")["tipologia_sigla"].nunique()
+          .loc[lambda x: x > 1])
+    
+    print("\n¿Un ID tiene más de un nombre?")
+    print(establecimientos.groupby("tipologia_id")["tipologia_nombre"].nunique()
+          .loc[lambda x: x > 1])
+    
+    print("\n9. DEPENDENCIAS FUNCIONALES")
+    print("-" * 40)
+    
+    print("\n¿(provincia_id, departamento_id) -> departamento_nombre?")
+    print(
+        establecimientos
+        .groupby(["provincia_id", "departamento_id"])
+        .agg({"departamento_nombre": "nunique"})
+        .query("departamento_nombre > 1")
+    )
+    
+    print("\n¿localidad_id -> departamento_id?")
+    print(
+        establecimientos
+        .groupby("localidad_id")
+        .agg({"departamento_id": "nunique"})
+        .query("departamento_id > 1")
+    )
+    
+    print("\n¿localidad_id -> provincia_id?")
+    print(
+        establecimientos
+        .groupby("localidad_id")
+        .agg({"provincia_id": "nunique"})
+        .query("provincia_id > 1")
+    )
+    
+    print("\n¿localidad_id -> localidad_nombre?")
+    print(
+        establecimientos
+        .groupby("localidad_id")
+        .agg({"localidad_nombre": "nunique"})
+        .query("localidad_nombre > 1")
+    )
+    
+    print("\n¿establecimiento_id -> provincia_id?")
+    print(
+        establecimientos
+        .groupby("establecimiento_id")
+        .agg({"provincia_id": "nunique"})
+        .query("provincia_id > 1")
+    )
+    
+    print("\n¿establecimiento_id -> departamento_id?")
+    print(
+        establecimientos
+        .groupby("establecimiento_id")
+        .agg({"departamento_id": "nunique"})
+        .query("departamento_id > 1")
+    )
+
+#La conclusion de todo esto es que localidadid tiene problemas pues esta formado por:provinciaid, codloc, deptoid, codent
+#y vimos que hay algunos de esos que son null y en algunos pocos casos, (que lo vimos a ojo), estan mal cargados
+   
+        
 ver_valores_establecimientos(establecimientos)
 
 
@@ -584,27 +668,9 @@ establecimientos["origen_financiamiento"] = establecimientos["origen_financiamie
 })
 
 
-#cambio los Null por "Sin especificar" para evitar inconsistencias y erorres en las consultas
-establecimientos["sitio_web"] = establecimientos["sitio_web"].fillna("Sin especificar")
-establecimientos["codent"] = establecimientos["codent"].fillna("Sin especificar")
-
-
-#Anlizamos las dependencias funcionales
-establecimientos.groupby(["provincia_id", "departamento_id"])["departamento_nombre"].nunique() #Aca da que cada combinacion es unica, entonces (departamento_id, provincia_id) -> departamento_nombre
-establecimientos.groupby('localidad_id')[["departamento_id", "provincia_id", "localidad_nombre"]].nunique() #Lo mismo (localidad_id) -> (departamento_id, provincia_id, localidad_nombre)
-establecimientos.groupby("establecimiento_id")[["provincia_id", "departamento_id"]].nunique() # (establecimiento_id) -> (provincia_id, departamento_id)
-#Sobre tipologia: Esto lo repetimos con cada uno y lo unico que vimos es que la sigla determina el id
-#El resto no se relaciona
-#El estableimiento id determina todos individualmente
-#Luego, podemos quedarnos solo con el nombre que es lo que nos interesa
-establecimientos.groupby(["tipologia_nombre"])["tipologia_id"].nunique().loc[lambda x: x>1]
-
-#localidad = establecimientos[["localidad_id", "departamento_id", "provincia_id", "localidad_nombre"]]
-
-
 #Me gustaria cambiar el departmanto id aprovechando su relacion con provincia id
 establecimientos["depto_id"] = establecimientos["provincia_id"].astype(str).str.zfill(2) + establecimientos["departamento_id"].astype(str).str.zfill(3)
-departamentos = establecimientos[["depto_id", "departamento_nombre", "provincia_id"]]
+departamentos = establecimientos[["depto_id", "departamento_nombre", "provincia_id"]].drop_duplicates()
 establecimientos_limpio = establecimientos[["establecimiento_id", "establecimiento_nombre", "origen_financiamiento", "depto_id","tipologia_nombre"]]
 departamentos.to_csv(carpetaModelos / "departamentos.csv")
 establecimientos_limpio.to_csv(carpetaModelos / "establecimientos.csv")
@@ -627,115 +693,155 @@ establecimientos = pd.read_csv(carpetaModelos / "establecimientos.csv")
 #Hay que cambiar los rangos de edad, no se bien cual poner
 
 consulta = """
-            SELECT 
-                p.nombre AS provincia,
-        
-                CASE
-                    WHEN c.edad BETWEEN 0 AND 14 THEN '0-14'
-                    WHEN c.edad BETWEEN 15 AND 29 THEN '15-29'
-                    WHEN c.edad BETWEEN 30 AND 44 THEN '30-44'
-                    WHEN c.edad BETWEEN 45 AND 64 THEN '45-64'
-                    WHEN c.edad >= 65 THEN '65+'
-                END AS grupo_etario,
-        
-                SUM(
-                    CASE
-                        WHEN c.cobertura = 'Con cobertura'
-                         AND c.año = 2010
-                        THEN src.cantidad_mujeres + src.cantidad_hombres
-                        ELSE 0
-                    END
-                ) AS habitantes_con_cobertura_2010,
-        
-                SUM(
-                    CASE
-                        WHEN c.cobertura = 'Sin cobertura'
-                         AND c.año = 2010
-                        THEN src.cantidad_mujeres + src.cantidad_hombres
-                        ELSE 0
-                    END
-                ) AS habitantes_sin_cobertura_2010,
-        
-                SUM(
-                    CASE
-                        WHEN c.cobertura = 'Con cobertura'
-                         AND c.año = 2022
-                        THEN src.cantidad_mujeres + src.cantidad_hombres
-                        ELSE 0
-                    END
-                ) AS habitantes_con_cobertura_2022,
-        
-                SUM(
-                    CASE
-                        WHEN c.cobertura = 'Sin cobertura'
-                         AND c.año = 2022
-                        THEN src.cantidad_mujeres + src.cantidad_hombres
-                        ELSE 0
-                    END
-                ) AS habitantes_sin_cobertura_2022
-        
-            FROM censo c
-        
-            INNER JOIN se_registran_censo src
-                ON src.cobertura = c.cobertura
-                AND src.año = c.año
-                AND src.edad = c.edad
-        
-            INNER JOIN provincia p
-                ON p.codigo = src.provincia_id
-        
-            GROUP BY
-                p.nombre,
-                grupo_etario
-        
-            ORDER BY
-                p.nombre,
-                grupo_etario
-        """
+        SELECT
+        p.provincia,
+
+        CASE
+            WHEN src.edad BETWEEN 0 AND 14 THEN '0-14'
+            WHEN src.edad BETWEEN 15 AND 29 THEN '15-29'
+            WHEN src.edad BETWEEN 30 AND 44 THEN '30-44'
+            WHEN src.edad BETWEEN 45 AND 64 THEN '45-64'
+            WHEN src.edad >= 65 THEN '65+'
+        END AS grupo_etario,
+
+        SUM(
+            CASE
+                WHEN src.cobertura = 'Con cobertura'
+                 AND src.año = 2010
+                THEN src.cantidad_mujeres + src.cantidad_hombres
+                ELSE 0
+            END
+        ) AS habitantes_con_cobertura_2010,
+
+        SUM(
+            CASE
+                WHEN src.cobertura = 'Sin cobertura'
+                 AND src.año = 2010
+                THEN src.cantidad_mujeres + src.cantidad_hombres
+                ELSE 0
+            END
+        ) AS habitantes_sin_cobertura_2010,
+
+        SUM(
+            CASE
+                WHEN src.cobertura = 'Con cobertura'
+                 AND src.año = 2022
+                THEN src.cantidad_mujeres + src.cantidad_hombres
+                ELSE 0
+            END
+        ) AS habitantes_con_cobertura_2022,
+
+        SUM(
+            CASE
+                WHEN src.cobertura = 'Sin cobertura'
+                 AND src.año = 2022
+                THEN src.cantidad_mujeres + src.cantidad_hombres
+                ELSE 0
+            END
+        ) AS habitantes_sin_cobertura_2022
+
+    FROM se_registran_censos src
+
+    INNER JOIN provincias p
+        ON p.codigo = src.provincia_id
+
+    WHERE src.año IN (2010, 2022)
+
+    GROUP BY
+        p.provincia,
+        grupo_etario
+
+    ORDER BY
+        p.provincia,
+        grupo_etario
+"""
 
 dataframeResultado = dd.sql(consulta).df()
-dataframeResultado.to_csv(raiz / "consulta_cobertura_de_salud.csv", index=False)
 
+dataframeResultado.to_csv(
+    raiz / "consulta_cobertura_de_salud.csv",
+    index=False
+)
 
 #%% Establecimientos de terapia intensiva
-
 consulta = """
+    SELECT
+        depto_id,
+        COUNT(*) AS cantidad
+    FROM departamentos
+    GROUP BY depto_id
+    HAVING COUNT(*) > 1
+"""
+print(dd.sql(consulta).df())
+consulta = """
+    SELECT
+        COUNT(*) AS filas_join,
+        COUNT(DISTINCT e.establecimiento_id) AS establecimientos_distintos
+    FROM establecimientos e
+    INNER JOIN departamentos d
+        ON d.depto_id = e.depto_id
+"""
+print(dd.sql(consulta).df())
+consulta_establecimientos_terapia_intensiva = """
             SELECT 
-                p.nombre AS provincia, 
+                p.provincia, 
                 e.origen_financiamiento, 
                 COUNT(e.establecimiento_id) AS cantidad 
         
             FROM establecimientos e
         
             INNER JOIN departamentos d
-                ON d.depto_id = e.departamento_id
+                ON d.depto_id = e.depto_id
         
-            INNER JOIN provincia p
+            INNER JOIN provincias p
                 ON p.codigo = d.provincia_id
         
             WHERE e.origen_financiamiento IN ('Estatal', 'Privado') 
               AND LOWER(e.tipologia_nombre) LIKE '%terapia intensiva%'
         
             GROUP BY 
-                p.nombre, 
+                p.provincia, 
                 e.origen_financiamiento
         
             ORDER BY
-                p.nombre,
+                p.provincia,
                 e.origen_financiamiento
         """
 
-dataframeResultado = dd.sql(consulta).df()
+dataframeResultado = dd.sql(consulta_establecimientos_terapia_intensiva).df()
 
 dataframeResultado.to_csv(raiz / "consulta_establecimientos_terapia_intensiva.csv",index=False)
 
 #%% características de los nacimientos 
-
-
 consulta = """
+    SELECT
+        grupo_edad_madre,
+        tipo_parto,
+        año,
+        grupo_semanas_gestacion,
+        peso_nacimiento,
+        nivel_educativo_madre,
+        sexo,
+        COUNT(*) AS cantidad_filas
+    FROM nacidos
+    GROUP BY
+        grupo_edad_madre,
+        tipo_parto,
+        año,
+        grupo_semanas_gestacion,
+        peso_nacimiento,
+        nivel_educativo_madre,
+        sexo
+    HAVING COUNT(*) > 1
+"""
+
+df = dd.sql(consulta).df()
+print(df)
+
+consulta_caracteristicas_nacimientos = """
             SELECT 
-                p.nombre AS provincia,
-                n.grupo_edad,
+                p.provincia,
+                n.grupo_edad_madre,
                 n.año,
         
                 SUM(srn.cantidad) AS cantidad_nacidos,
@@ -768,29 +874,31 @@ consulta = """
             FROM nacidos n
         
             INNER JOIN se_registran_nacidos srn
-                ON srn.grupo_edad = n.grupo_edad
+                ON srn.grupo_edad_madre = n.grupo_edad_madre
                 AND srn.tipo_parto = n.tipo_parto
                 AND srn.año = n.año
-                AND srn.semanas_gestacion = n.semanas_gestacion
+                AND srn.grupo_semanas_gestacion = n.grupo_semanas_gestacion
                 AND srn.peso_nacimiento = n.peso_nacimiento
-                AND srn.nivel_educativo = n.nivel_educativo
+                AND srn.nivel_educativo_madre = n.nivel_educativo_madre
                 AND srn.sexo = n.sexo
         
-            INNER JOIN provincia p
-                ON p.codigo = srn.provincia_id
+            INNER JOIN provincias p
+                ON p.codigo = srn.provincia_residencia
         
+            WHERE n.grupo_edad_madre != 'Sin especificar'
+            
             GROUP BY
-                p.nombre,
-                n.grupo_edad,
+                p.provincia,
+                n.grupo_edad_madre,
                 n.año
         
             ORDER BY
-                p.nombre ASC,
-                n.grupo_edad ASC,
+                p.provincia ASC,
+                n.grupo_edad_madre ASC,
                 n.año ASC
         """
 
-dataframeResultado = dd.sql(consulta).df()
+dataframeResultado = dd.sql(consulta_caracteristicas_nacimientos).df()
 
 dataframeResultado.to_csv(
     raiz / "caracteristicas_nacimientos.csv",
@@ -798,82 +906,92 @@ dataframeResultado.to_csv(
 )
 
 #%% Tasa de fecundidad por provincia
-
 consulta = """
-            SELECT
-                p.nombre AS provincia,
-                n.grupo_edad_madre,
-        
-                1000.0 * n.cantidad_nacimientos / m.cantidad_mujeres
-                    AS tasa_fecundidad
-        
-            FROM (
-                SELECT
-                    srn.provincia_id,
-                    nac.grupo_edad_madre,
-                    SUM(srn.cantidad) AS cantidad_nacimientos
-        
-                FROM nacidos nac
-        
-                INNER JOIN se_registran_nacidos srn
-                    ON srn.grupo_edad = nac.grupo_edad_madre
-                    AND srn.tipo_parto = nac.tipo_parto
-                    AND srn.año = nac.año
-                    AND srn.semanas_gestacion = nac.semanas_gestacion
-                    AND srn.peso_nacimiento = nac.peso_nacimiento
-                    AND srn.nivel_educativo = nac.nivel_educativo
-                    AND srn.sexo = nac.sexo
-        
-                WHERE nac.año = 2022
-        
-                GROUP BY
-                    srn.provincia_id,
-                    nac.grupo_edad_madre
-            ) n
-        
-            INNER JOIN (
-                SELECT
-                    src.provincia_id,
-        
-                    CASE
-                        WHEN c.edad BETWEEN 0 AND 14 THEN 'Menor de 15'
-                        WHEN c.edad BETWEEN 15 AND 19 THEN '15 a 19'
-                        WHEN c.edad BETWEEN 20 AND 24 THEN '20 a 24'
-                        WHEN c.edad BETWEEN 25 AND 29 THEN '25 a 29'
-                        WHEN c.edad BETWEEN 30 AND 34 THEN '30 a 34'
-                        WHEN c.edad BETWEEN 35 AND 39 THEN '35 a 39'
-                        WHEN c.edad BETWEEN 40 AND 44 THEN '40 a 44'
-                        WHEN c.edad >= 45 THEN 'De 45 y más'
-                    END AS grupo_edad,
-        
-                    SUM(src.cantidad_mujeres) AS cantidad_mujeres
-        
-                FROM censo c
-        
-                INNER JOIN se_registran_censo src
-                    ON src.cobertura = c.cobertura
-                    AND src.año = c.año
-                    AND src.edad = c.edad
-        
-                WHERE c.año = 2022
-        
-                GROUP BY
-                    src.provincia_id,
-                    grupo_edad
-            ) m
-        
-                ON m.provincia_id = n.provincia_id
-                AND m.grupo_edad = n.grupo_edad_madre
-        
-            INNER JOIN provincia p
-                ON p.codigo = n.provincia_id
-        
-            ORDER BY
-                p.nombre,
-                n.grupo_edad_madre
-        """
+    SELECT
+        provincia_id,
+        año,
+        cobertura,
+        edad,
+        COUNT(*) AS cantidad_filas
+    FROM se_registran_censos
+    GROUP BY
+        provincia_id,
+        año,
+        cobertura,
+        edad
+    HAVING COUNT(*) > 1
+"""
+print(dd.sql(consulta).df())
+consulta_fecundidad = """
+                        SELECT
+                        p.provincia,
+                        n.grupo_edad_madre,
+                
+                        1000.0 * n.cantidad_nacimientos
+                        / NULLIF(m.cantidad_mujeres, 0) AS tasa_fecundidad
+                
+                    FROM (
+                        SELECT
+                            srn.provincia_residencia,
+                            nac.grupo_edad_madre,
+                            SUM(srn.cantidad) AS cantidad_nacimientos
+                
+                        FROM nacidos nac
+                
+                        INNER JOIN se_registran_nacidos srn
+                            ON srn.grupo_edad_madre = nac.grupo_edad_madre
+                            AND srn.tipo_parto = nac.tipo_parto
+                            AND srn.año = nac.año
+                            AND srn.grupo_semanas_gestacion = nac.grupo_semanas_gestacion
+                            AND srn.peso_nacimiento = nac.peso_nacimiento
+                            AND srn.nivel_educativo_madre = nac.nivel_educativo_madre
+                            AND srn.sexo = nac.sexo
+                
+                        WHERE nac.año = 2022
+                
+                        GROUP BY
+                            srn.provincia_residencia,
+                            nac.grupo_edad_madre
+                    ) n
+                
+                    INNER JOIN (
+                        SELECT
+                            src.provincia_id,
+                
+                            CASE
+                                WHEN src.edad BETWEEN 0 AND 14 THEN 'Menor de 15'
+                                WHEN src.edad BETWEEN 15 AND 19 THEN '15 a 19'
+                                WHEN src.edad BETWEEN 20 AND 24 THEN '20 a 24'
+                                WHEN src.edad BETWEEN 25 AND 29 THEN '25 a 29'
+                                WHEN src.edad BETWEEN 30 AND 34 THEN '30 a 34'
+                                WHEN src.edad BETWEEN 35 AND 39 THEN '35 a 39'
+                                WHEN src.edad BETWEEN 40 AND 44 THEN '40 a 44'
+                                WHEN src.edad >= 45 THEN 'De 45 y más'
+                            END AS grupo_edad,
+                
+                            SUM(src.cantidad_mujeres) AS cantidad_mujeres
+                
+                        FROM se_registran_censos src
+                
+                        WHERE src.año = 2022
+                
+                        GROUP BY
+                            src.provincia_id,
+                            grupo_edad
+                    ) m
+                
+                        ON m.provincia_id = n.provincia_residencia
+                        AND m.grupo_edad = n.grupo_edad_madre
+                
+                    INNER JOIN provincias p
+                        ON p.codigo = n.provincia_residencia
+                
+                    ORDER BY
+                        p.provincia,
+                        n.grupo_edad_madre
+                """
 
-dataframeResultado = dd.sql(consulta).df()
+dataframeResultado = dd.sql(consulta_fecundidad).df()
 
 dataframeResultado.to_csv(
     raiz / "tasa_fecundidad_provincia.csv",
@@ -882,98 +1000,100 @@ dataframeResultado.to_csv(
            
 #%% Cambios en la edad de las madres
 
-consulta = """
-            SELECT
-                p.nombre AS provincia,
-        
-                100.0 * SUM(
-                    CASE
-                        WHEN n.año = 2010
-                         AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                        THEN srn.cantidad
-                        ELSE 0
-                    END
-                ) / SUM(
-                    CASE
-                        WHEN n.año = 2010
-                        THEN srn.cantidad
-                        ELSE 0
-                    END
-                ) AS porcentaje_2010,
-        
-                100.0 * SUM(
-                    CASE
-                        WHEN n.año = 2022
-                         AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                        THEN srn.cantidad
-                        ELSE 0
-                    END
-                ) / SUM(
-                    CASE
-                        WHEN n.año = 2022
-                        THEN srn.cantidad
-                        ELSE 0
-                    END
-                ) AS porcentaje_2022,
-        
-                ABS(
-                    (
-                        100.0 * SUM(
-                            CASE
-                                WHEN n.año = 2022
-                                 AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                                THEN srn.cantidad
-                                ELSE 0
-                            END
-                        ) / SUM(
-                            CASE
-                                WHEN n.año = 2022
-                                THEN srn.cantidad
-                                ELSE 0
-                            END
-                        )
-                    )
-                    -
-                    (
-                        100.0 * SUM(
-                            CASE
-                                WHEN n.año = 2010
-                                 AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                                THEN srn.cantidad
-                                ELSE 0
-                            END
-                        ) / SUM(
-                            CASE
-                                WHEN n.año = 2010
-                                THEN srn.cantidad
-                                ELSE 0
-                            END
-                        )
-                    )
-                ) AS diferencia
-        
-            FROM nacidos n
-        
-            INNER JOIN se_registran_nacidos srn
-                ON srn.grupo_edad = n.grupo_edad_madre
-                AND srn.tipo_parto = n.tipo_parto
-                AND srn.año = n.año
-                AND srn.semanas_gestacion = n.semanas_gestacion
-                AND srn.peso_nacimiento = n.peso_nacimiento
-                AND srn.nivel_educativo = n.nivel_educativo
-                AND srn.sexo = n.sexo
-        
-            INNER JOIN provincia p
-                ON p.codigo = srn.provincia_id
-        
-            GROUP BY
-                p.nombre
-        
-            ORDER BY
-                diferencia DESC
-        """
+consulta_cambios_en_madres = """
+    SELECT
+        p.provincia,
 
-dataframeResultado = dd.sql(consulta).df()
+        100.0 * SUM(
+            CASE
+                WHEN n.año = 2010
+                 AND n.grupo_edad_madre IN ('Menor de 15', '15 a 19')
+                THEN srn.cantidad
+                ELSE 0
+            END
+        ) / NULLIF(
+            SUM(
+                CASE
+                    WHEN n.año = 2010
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ), 0
+        ) AS porcentaje_2010,
+
+        100.0 * SUM(
+            CASE
+                WHEN n.año = 2022
+                 AND n.grupo_edad_madre IN ('Menor de 15', '15 a 19')
+                THEN srn.cantidad
+                ELSE 0
+            END
+        ) / NULLIF(
+            SUM(
+                CASE
+                    WHEN n.año = 2022
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ), 0
+        ) AS porcentaje_2022,
+
+        (
+            100.0 * SUM(
+                CASE
+                    WHEN n.año = 2022
+                     AND n.grupo_edad_madre IN ('Menor de 15', '15 a 19')
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ) / NULLIF(
+                SUM(
+                    CASE
+                        WHEN n.año = 2022
+                        THEN srn.cantidad
+                        ELSE 0
+                    END
+                ), 0
+            )
+        )
+        -
+        (
+            100.0 * SUM(
+                CASE
+                    WHEN n.año = 2010
+                     AND n.grupo_edad_madre IN ('Menor de 15', '15 a 19')
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ) / NULLIF(
+                SUM(
+                    CASE
+                        WHEN n.año = 2010
+                        THEN srn.cantidad
+                        ELSE 0
+                    END
+                ), 0
+            )
+        ) AS cambio
+
+    FROM nacidos n
+
+    INNER JOIN se_registran_nacidos srn
+        ON srn.grupo_edad_madre = n.grupo_edad_madre
+        AND srn.tipo_parto = n.tipo_parto
+        AND srn.año = n.año
+        AND srn.grupo_semanas_gestacion = n.grupo_semanas_gestacion
+        AND srn.peso_nacimiento = n.peso_nacimiento
+        AND srn.nivel_educativo_madre = n.nivel_educativo_madre
+        AND srn.sexo = n.sexo
+
+    INNER JOIN provincias p
+        ON p.codigo = srn.provincia_residencia
+
+    GROUP BY p.provincia
+    ORDER BY cambio
+"""
+dataframeResultado = dd.sql(consulta_cambios_en_madres).df()
 
 dataframeResultado.to_csv(
     raiz / "consulta_cambios_en_madres.csv",
@@ -982,7 +1102,7 @@ dataframeResultado.to_csv(
 
 #%% Visualizaciones 
 #cantidad de habitantes por provincia
-consulta = """
+consulta_habitantes_provincia = """
             SELECT
             p.nombre AS provincia,
     
@@ -1021,5 +1141,5 @@ consulta = """
             cantidad_habitantes_2022 DESC
     """
 
-dataframeResultado = dd.sql(consulta).df()
+dataframeResultado = dd.sql(consulta_habitantes_provincia).df()
 print(dataframeResultado)
