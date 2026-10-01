@@ -97,8 +97,8 @@ pct_val_incompletos_establecimientos = """
 dataframeResultado = dd.sql(pct_val_incompletos_establecimientos).df()
 
 print(dataframeResultado) 
-
-# Atributo de calidad : INCONSISTENCIA
+#escribir conclusion y decision tomada
+# Atributo de calidad : CONSISTENCIA
 # mismo id tiene dos valores diferentes
 
 # Hay localidades que tienen el mismo id pero son distintas(hay variantes en el nombre), creemos que sigue siendo la misma localidad
@@ -124,7 +124,7 @@ pct_id_inconsistentes_establecimientos = """
 
                     
 dataframeResultado2 = dd.sql(pct_id_inconsistentes_establecimientos).df()
-
+#escribir conclusion y decision.
 print(dataframeResultado2)                  
 
 # Tabla nacidos
@@ -178,8 +178,11 @@ pct_val_incompletos_nacidos = """
 dataframeResultado3 = dd.sql(pct_val_incompletos_nacidos).df()
 
 print(dataframeResultado3) 
+#la conclusion de esto seria que nos quedamos con todo porque representa poco problema
 
+## Estaria buenisimo agregar el analisis de legibilidad que dijo guada del formato lista que tienen (daria un 100% que justifica el cambio)
 
+#%% Emprolijamos la tabla de los censos
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
 #Tambien notamos que por cada provincia habia una tabla distinta, nuestro objetivo ahora es juntarlo
@@ -189,16 +192,159 @@ print(dataframeResultado3)
 #Ademas debemos juntar las dos tablas de los censos 
 #Como adicional, vamos a retirar las columnas de varon y mujer y transformaremos las celdas de cobertura a: Con cobertura o sin cobertura, que es lo que nos interesa
 
-#%% Emprolijamos la tabla de los censos
+#Segun nuestro DER final, debemos hacer una tabla que relaciona los censos y las provincias.
 # normalizar los archivos de censo
 provincias = pd.read_csv(carpetaModelos / "provincias.csv")
+  
+def analizar_censo(censo):
+    print("=" * 60)
+    print("ANÁLISIS DEL CENSO")
+    print("=" * 60)
 
-def visualizar_datos(censo):
-    return 0 #llenar como corresponde, la idea es mostrar la justificacion de por que hacemos lo que hacemos en el bloque de abajo
-    
+    # ---------------------------------------------------------
+    # 1. Columnas y tipos de datos
+    # ---------------------------------------------------------
+    print("\n1. COLUMNAS Y TIPOS DE DATOS")
+    print("-" * 40)
+    print(censo.dtypes)
+
+    # ---------------------------------------------------------
+    # 2. Valores de cobertura
+    # ---------------------------------------------------------
+    print("\n2. VALORES DE COBERTURA")
+    print("-" * 40)
+    print(censo.iloc[:, 1].value_counts(dropna=False))
+
+    # ---------------------------------------------------------
+    # 3. Valores de edad
+    # ---------------------------------------------------------
+    print("\n3. VALORES DE EDAD")
+    print("-" * 40)
+    print(censo.iloc[:, 2].value_counts(dropna=False).head(30))
+
+    # ---------------------------------------------------------
+    # 4. Valores no numéricos en cantidad de mujeres
+    # ---------------------------------------------------------
+    print("\n4. CANTIDAD DE MUJERES")
+    print("-" * 40)
+
+    mujeres = censo.iloc[:, 4]
+
+    print("Valores nulos:", mujeres.isna().sum())
+    print("Valores '-':", (mujeres.astype(str).str.strip() == "-").sum())
+
+    mujeres_numericas = pd.to_numeric(mujeres, errors="coerce")
+
+    print(
+        "Valores que no son números:",
+        mujeres_numericas.isna().sum() - mujeres.isna().sum()
+    )
+
+    print("\nValores no numéricos encontrados:")
+    print(
+        mujeres[
+            mujeres_numericas.isna() & mujeres.notna()
+        ].value_counts()
+    )
+
+    # ---------------------------------------------------------
+    # 5. Valores no numéricos en cantidad de hombres
+    # ---------------------------------------------------------
+    print("\n5. CANTIDAD DE HOMBRES")
+    print("-" * 40)
+
+    hombres = censo.iloc[:, 3]
+
+    print("Valores nulos:", hombres.isna().sum())
+
+    hombres_numericos = pd.to_numeric(hombres, errors="coerce")
+
+    print(
+        "Valores que no son números:",
+        hombres_numericos.isna().sum() - hombres.isna().sum()
+    )
+
+    print("\nValores no numéricos encontrados:")
+    print(
+        hombres[
+            hombres_numericos.isna() & hombres.notna()
+        ].value_counts()
+    )
+
+    # ---------------------------------------------------------
+    # 6. Valores de total
+    # ---------------------------------------------------------
+    print("\n6. TOTAL")
+    print("-" * 40)
+
+    total = censo.iloc[:, 5]
+
+    print("Valores nulos:", total.isna().sum())
+
+    total_numerico = pd.to_numeric(total, errors="coerce")
+
+    print(
+        "Valores que no son números:",
+        total_numerico.isna().sum() - total.isna().sum()
+    )
+
+    print("\nValores no numéricos encontrados:")
+    print(
+        total[
+            total_numerico.isna() & total.notna()
+        ].value_counts()
+    )
+
+    # ---------------------------------------------------------
+    # 7. Filas con AREA
+    # ---------------------------------------------------------
+    print("\n7. FILAS QUE IDENTIFICAN PROVINCIAS")
+    print("-" * 40)
+
+    filas_area = censo[
+        censo.iloc[:, 1].astype(str).str.startswith("AREA")
+    ]
+
+    print("Cantidad de filas AREA:", len(filas_area))
+    print("\nEjemplos:")
+    print(filas_area.head(10))
+
+    # ---------------------------------------------------------
+    # 8. Filas que contienen TOTAL
+    # ---------------------------------------------------------
+    print("\n8. FILAS CON TOTAL")
+    print("-" * 40)
+
+    filas_total = censo[
+        censo.astype(str)
+        .apply(lambda columna:
+               columna.str.strip().str.lower().eq("total"))
+        .any(axis=1)
+    ]
+
+    print("Cantidad de filas con algún TOTAL:", len(filas_total))
+    print("\nEjemplos:")
+    print(filas_total.head(10))
+
+    # ---------------------------------------------------------
+    # 9. Valores nulos por columna
+    # ---------------------------------------------------------
+    print("\n9. VALORES NULOS POR COLUMNA")
+    print("-" * 40)
+    print(censo.isna().sum())
+
+    # ---------------------------------------------------------
+    # 10. Cantidad de filas y columnas
+    # ---------------------------------------------------------
+    print("\n10. DIMENSIONES")
+    print("-" * 40)
+    print("Filas:", censo.shape[0])
+    print("Columnas:", censo.shape[1])
+
+#Aca hay dos cosas para hacer: generar la tabla de Censos y la de la tabla que la relaciona con provincia 
 def normalizar_datos_censo(censo):
     censo_limpio = censo.drop(columns= 0) # eliminamos la primera columna que eran todos Nan
-    censo_limpio.columns =['cobertura', 'edad', 'varon', 'mujer', 'total'] # Definimos las columnas con los valores que queremos
+    censo_limpio.columns =['cobertura', 'edad', 'cantidad_hombres', 'cantidad_mujeres', 'total'] # Definimos las columnas con los valores que queremos
     
     censo_limpio['provincia'] = None #Iniciamos una nueva columna cuyos valores son NaN
     provincia_actual = None 
@@ -265,7 +411,9 @@ def normalizar_datos_censo(censo):
     (censo_limpio["cobertura"].astype(str).str.strip().str.lower() != "resumen")
 ]
     
-    censo_limpio["mujer"] = censo_limpio["mujer"].replace("-", 0)
+    censo_limpio["cantidad_mujeres"] = censo_limpio["cantidad_mujeres"].replace("-", 0)
+    censo_limpio["cantidad_hombres"] = censo_limpio["cantidad_hombres"].replace("-", 0)
+    
    
     return censo_limpio
     
@@ -280,13 +428,26 @@ dfcenso2010_limpio.to_csv(carpetaLimpias / "censo2010.csv")
 dfcenso2022_limpio["año"] = 2022
 dfcenso2010_limpio["año"] = 2010
 
-
-dffinal = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
-dffinal = dffinal.drop(columns = ["varon"]).dropna() #Sacamos la columna de total que era redundante
-dffinal.to_csv(carpetaModelos / "censos.csv")
+tablaRelacion = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
+tablaCensos = tablaRelacion.drop(columns = ["cantidad_mujeres", "cantidad_hombres", "total", "provincia_id"])
+tablaRelacion = tablaRelacion.drop(columns = ["total"]).dropna() #Sacamos la columna de total que era redundante
 
 #Chequeamos dependencias funcionales
-dffinal.groupby(["cobertura",  "edad", "provincia_id", "año"])["total"].nunique()
+tablaRelacion.groupby(["cobertura",  "edad", "provincia_id", "año"])[["cantidad_mujeres", "cantidad_hombres"]].nunique() 
+#Como no quedo bien, suponemos, logicamente que al cambiarla por Con cobertura y Sin cobertura, vamos a sumar los que son iguales
+tablaRelacion = (
+    tablaRelacion
+    .groupby(
+        ["cobertura", "edad", "provincia_id", "año"],
+        as_index=False
+    )[["cantidad_mujeres", "cantidad_hombres"]]
+    .sum()
+)
+
+tablaRelacion.to_csv(carpetaModelos / "se_registran_censos.csv")
+tablaCensos.to_csv(carpetaModelos / "censos.csv")
+#Volvemos a chequear
+tablaRelacion.groupby(["cobertura",  "edad", "provincia_id", "año"])[["cantidad_mujeres", "cantidad_hombres"]].nunique() 
 #Queda una clave primaria compuesta de: cobertura, edad, provincia_id, año
 
 
@@ -330,9 +491,9 @@ columnas_a_limpiar = [
 
 
 
-def modificar_censo(columnas, censo):
+def modificar_tabla(columnas, tabla):
     #renombrar columnas a columnas mas declarativas
-    censo = censo.rename(columns={
+    tabla = tabla.rename(columns={
         "PROVRES": "provincia_residencia",
         "TIPPARTO": "tipo_parto",
         "SEXO": "sexo",
@@ -345,42 +506,47 @@ def modificar_censo(columnas, censo):
     
     #sacamos el formato de lista que tienen los datos en esas columnas
     for columna in columnas:
-        censo[columna] = censo[columna].str.replace(
+        tabla[columna] = tabla[columna].str.replace(
             r"^\d+\.", "", regex=True
         ).str.strip()
         
     #Cambiamos los valores que no se entienden
-    censo["sexo"] = censo["sexo"].replace({
+    tabla["sexo"] = tabla["sexo"].replace({
         1: "Varón",
         2: "Mujer",
         9: "Sin especificar"
     })
-    censo["tipo_parto"] = censo["tipo_parto"].replace({
+    tabla["tipo_parto"] = tabla["tipo_parto"].replace({
         1: "Simple",
         2: "Múltiple",
         9: "Sin especificar"
     })
     
-    return censo
+    return tabla
 
 
-nacidos2022_limpio = modificar_censo(columnas_a_limpiar, nacidos2022)
+nacidos2022_limpio = modificar_tabla(columnas_a_limpiar, nacidos2022)
 nacidos2022_limpio["año"] = 2022
 nacidos2022_limpio.to_csv(carpetaLimpias / "nacidos2022.csv")
 
 
-nacidos2010_limpio = modificar_censo(columnas_a_limpiar, nacidos2010)
+nacidos2010_limpio = modificar_tabla(columnas_a_limpiar, nacidos2010)
 nacidos2010_limpio["año"] = 2010
 nacidos2010_limpio.to_csv(carpetaLimpias / "nacidos2010.csv")
 
 
-dffinal = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
+tablaRelacion2 = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
 
-dffinal.to_csv(carpetaModelos / "nacidos.csv")
+tablaRelacion2.to_csv(carpetaModelos / "se_registran_nacidos.csv")
 
-dffinal.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_edad_madre", "grupo_semanas_gestacion", "nivel_educativo_madre",  "peso_nacimiento", "año"])["cantidad"].nunique().loc[lambda x : x>1]
+tablaNacidos = tablaRelacion2.drop(columns = ["provincia_residencia", "cantidad"])
+tablaNacidos.to_csv(carpetaModelos / "nacidos.csv")
+#dependencia funcional
+tablaRelacion2.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_edad_madre", "grupo_semanas_gestacion", "nivel_educativo_madre",  "peso_nacimiento", "año"])["cantidad"].nunique().loc[lambda x : x>1]
 #Todas las columnas son una clave
-#%% CODIGO QUE TIENE QUE BORRARSE 
+
+
+#%% Tabla establecimientos
 
 # Analizamos tabla establecimientos
 def ver_valores_establecimientos(establecimientos):
@@ -434,9 +600,12 @@ establecimientos.groupby("establecimiento_id")[["provincia_id", "departamento_id
 establecimientos.groupby(["tipologia_nombre"])["tipologia_id"].nunique().loc[lambda x: x>1]
 
 #localidad = establecimientos[["localidad_id", "departamento_id", "provincia_id", "localidad_nombre"]]
-#localidad.to_csv('~/OneDrive/Documents/labo_datos/TP1/data/TablasModelo/localidad.csv')
-departamentos = establecimientos[["departamento_id", "departamento_nombre", "provincia_id"]]
-establecimientos_limpio = establecimientos[["establecimiento_id", "establecimiento_nombre", "origen_financiamiento", "departamento_id", "provincia_id" ,"tipologia_nombre"]]
+
+
+#Me gustaria cambiar el departmanto id aprovechando su relacion con provincia id
+establecimientos["depto_id"] = establecimientos["provincia_id"].astype(str).str.zfill(2) + establecimientos["departamento_id"].astype(str).str.zfill(3)
+departamentos = establecimientos[["depto_id", "departamento_nombre", "provincia_id"]]
+establecimientos_limpio = establecimientos[["establecimiento_id", "establecimiento_nombre", "origen_financiamiento", "depto_id","tipologia_nombre"]]
 departamentos.to_csv(carpetaModelos / "departamentos.csv")
 establecimientos_limpio.to_csv(carpetaModelos / "establecimientos.csv")
 
@@ -444,9 +613,11 @@ establecimientos_limpio.to_csv(carpetaModelos / "establecimientos.csv")
 
 #%% Consultas (archivos)
 censo = pd.read_csv(carpetaModelos / 'censos.csv')
+se_registran_censos = pd.read_csv(carpetaModelos / "se_registran_censos.csv")
 departamentos = pd.read_csv(carpetaModelos / 'departamentos.csv')
 provincias = pd.read_csv(carpetaModelos / "provincias.csv")
 nacidos = pd.read_csv(carpetaModelos / "nacidos.csv")
+se_registran_nacidos = pd.read_csv(carpetaModelos / "se_registran_nacidos.csv")
 establecimientos = pd.read_csv(carpetaModelos / "establecimientos.csv")
 
 
