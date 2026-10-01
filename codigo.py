@@ -52,7 +52,134 @@ provincias_tabla = provincias_tabla.rename(columns ={
 
 
 provincias_tabla.to_csv(carpetaModelos /'provincias.csv')
-#%% Emprolijamos la tabla de los censos
+
+#%% Mini analisis de atributos de calidad
+
+# Tabla establecimientos 
+
+# Atributo de calidad: COMPLETITUD
+# conteo de valores null en sitio web, codent y valores incompletos en domicilio
+
+pct_val_incompletos_establecimientos = """
+                                SELECT
+                                    COUNT(*) AS total_registros,
+                                    -- Sitio Web
+                                    SUM(
+                                        CASE
+                                            WHEN e.sitio_web IS NULL 
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_null_sitio_web,
+                                    ROUND(100.0 * cant_null_sitio_web / COUNT(*), 2) AS pct_null_web,
+                                    
+                                    -- Codent
+                                    SUM(
+                                        CASE
+                                            WHEN e.codent IS NULL 
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_null_codent,
+                                    ROUND(100.0 * cant_null_codent / COUNT(*), 2) AS pct_null_codent,
+                                    
+                                    -- Domicilio
+                                    SUM(
+                                        CASE
+                                            WHEN e.domicilio IS NULL OR LOWER(e.domicilio) LIKE '%sin%'
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_incompletos_domicilio,
+                                    ROUND(100.0 * cant_incompletos_domicilio / COUNT(*), 2) AS pct_incompletos_domicilio
+                                FROM establecimientosOriginal e
+                              
+                            
+                        """
+    
+dataframeResultado = dd.sql(pct_val_incompletos_establecimientos).df()
+
+print(dataframeResultado) 
+
+# Atributo de calidad : INCONSISTENCIA
+# mismo id tiene dos valores diferentes
+
+# Hay localidades que tienen el mismo id pero son distintas(hay variantes en el nombre), creemos que sigue siendo la misma localidad
+pct_id_inconsistentes_establecimientos = """
+                            SELECT
+                                COUNT(*) AS total_registros,
+                                SUM(
+                                    CASE
+                                        -- Mismo id distintas localidades(hay inconsistencias en localidad_nombre(pero en realidad es la misma))
+                                        WHEN e.localidad_id IN (
+                                            SELECT e.localidad_id
+                                            FROM establecimientosOriginal e
+                                            WHERE e.localidad_id IS NOT NULL
+                                            GROUP BY localidad_id
+                                            HAVING COUNT(DISTINCT localidad_nombre) > 1)
+                                        THEN 1
+                                        ELSE 0
+                                        END) AS cant_registros_afectados,
+                                        ROUND(100.0 * cant_registros_afectados / COUNT(*), 2) AS pct_localidadid_inconsistente
+                            FROM establecimientosOriginal e
+                            
+                        """
+
+                    
+dataframeResultado2 = dd.sql(pct_id_inconsistentes_establecimientos).df()
+
+print(dataframeResultado2)                  
+
+# Tabla nacidos
+
+# Atributo de calidad: COMPLETITUD
+# valores incompletos en columnas ITIEMGEST, IMEDAD, IMINSTRUC, IPESONAC en tabla nacidos2010
+
+# lo hicimos con nacidos2010 pero se puede hacer con la tabla general de nacidos
+
+pct_val_incompletos_nacidos = """
+                                SELECT
+                                    COUNT(*) AS total_registros,
+                                    -- ITIEMGEST
+                                    SUM(
+                                        CASE
+                                            WHEN n.ITIEMGEST IS NULL OR LOWER(n.ITIEMGEST) LIKE '%sin%'
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_incompleto_ITIEMGEST,
+                                    ROUND(100.0 * cant_incompleto_ITIEMGEST / COUNT(*), 2) AS pct_incompleto_ITIEMGEST,
+                                    
+                                    -- IMEDAD
+                                    SUM(
+                                        CASE
+                                            WHEN n.IMEDAD IS NULL OR LOWER(n.IMEDAD) LIKE '%sin%'
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_incompleto_IMEDAD,
+                                    ROUND(100.0 * cant_incompleto_IMEDAD / COUNT(*), 2) AS pct_incompleto_IMEDAD,
+                                    
+                                    -- IMINSTRUC
+                                    SUM(
+                                        CASE
+                                            WHEN n.IMINSTRUC IS NULL OR LOWER(n.IMINSTRUC) LIKE '%sin%'
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_incompleto_IMINSTRUC,
+                                    ROUND(100.0 * cant_incompleto_IMINSTRUC / COUNT(*), 2) AS pct_incompleto_IMINSTRUC,
+                                    
+                                    -- IPESONAC
+                                    SUM(
+                                        CASE
+                                            WHEN n.IPESONAC IS NULL OR LOWER(n.IPESONAC) LIKE '%sin%'
+                                            THEN 1 
+                                            ELSE 0 
+                                            END) AS cant_incompleto_IPESONAC,
+                                    ROUND(100.0 * cant_incompleto_IPESONAC / COUNT(*), 2) AS pct_incompleto_IPESONAC,
+                                FROM nacidos2010 n
+
+                         """
+dataframeResultado3 = dd.sql(pct_val_incompletos_nacidos).df()
+
+print(dataframeResultado3) 
+
+
 
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
@@ -63,7 +190,7 @@ provincias_tabla.to_csv(carpetaModelos /'provincias.csv')
 #Ademas debemos juntar las dos tablas de los censos 
 #Como adicional, vamos a retirar las columnas de varon y mujer y transformaremos las celdas de cobertura a: Con cobertura o sin cobertura, que es lo que nos interesa
 
-
+#%% Emprolijamos la tabla de los censos
 # normalizar los archivos de censo
 provincias = pd.read_csv(carpetaModelos / "provincias.csv")
 
@@ -202,13 +329,6 @@ columnas_a_limpiar = [
     "peso_nacimiento"
 ]
 
-# Creamos variable de analisis de calidad de los datos sin especificar, para luego usar en la funcion analizar_variable_calidad -- Esto es para el punto de análisis de calidad
-variables_calidad = [
-    "peso_nacimiento",
-    "grupo_edad_madre",
-    "grupo_semanas_gestacion",
-    "nivel_educativo_madre"
-]
 
 
 def modificar_censo(columnas, censo):
@@ -244,35 +364,15 @@ def modificar_censo(columnas, censo):
     
     return censo
 
-# ELIMINAR FUNCION
-def analizar_variables_calidad(variables_calidad, censo):
-    
-    for variable in variables_calidad:
-        
-        sin_especificar = censo.loc[
-             censo[variable] == "Sin especificar",
-            "cantidad"
-        ].sum()
-        
-        total = censo["cantidad"].sum()
-        
-        porcentaje = sin_especificar / total * 100
-        
-        print("Columna: ", variable)
-        print("Nacimientos sin especificar:", sin_especificar)
-        print("Porcentaje:", porcentaje)
-       
 
 nacidos2022_limpio = modificar_censo(columnas_a_limpiar, nacidos2022)
 nacidos2022_limpio["año"] = 2022
 nacidos2022_limpio.to_csv(carpetaLimpias / "nacidos2022.csv")
-analizar_variables_calidad(variables_calidad, nacidos2022_limpio )
 
 
 nacidos2010_limpio = modificar_censo(columnas_a_limpiar, nacidos2010)
 nacidos2010_limpio["año"] = 2010
 nacidos2010_limpio.to_csv(carpetaLimpias / "nacidos2010.csv")
-analizar_variables_calidad(variables_calidad, nacidos2010_limpio )
 
 
 dffinal = pd.concat([nacidos2022_limpio, nacidos2010_limpio])
@@ -282,22 +382,27 @@ dffinal.to_csv(carpetaModelos / "nacidos.csv")
 dffinal.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_edad_madre", "grupo_semanas_gestacion", "nivel_educativo_madre",  "peso_nacimiento", "año"])["cantidad"].nunique().loc[lambda x : x>1]
 #Todas las columnas son una clave
 #%% CODIGO QUE TIENE QUE BORRARSE 
-print('Columnas de tabla ========= \n')
-print(establecimientos.columns + "\n")
-print("\nInformación ======== \n")
-print(establecimientos.info)
-print("\nCantidad de datos vacios por columna =======\n")
-print(establecimientos.isna().sum()) #Aca vemos que en la oclumna de codent hay 816 Nan y en el sitioweb 33188, cosa que no aporta mucha informacion de lo que nos interesa
-#establecimientos[establecimientos['sitio_web'] =='<br>']
 
-print("\nHay duplicados? =======\n")
-print(establecimientos[establecimientos.duplicated(keep=False)]) #No hay repetidos
-print("\nValores de financiamiento =======\n")
-print(establecimientos["origen_financiamiento"].value_counts(dropna=False)) #Se ve bien
-print("\nValores de siglas de tipologia =====\n")
-print(establecimientos["tipologia_sigla"].value_counts(dropna=False))
-print("\nValores de nombres de tipologia =======\n")
-print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
+# Analizamos tabla establecimientos
+def ver_valores_establecimientos(establecimientos):
+    print('Columnas de tabla ========= \n')
+    print(establecimientos.columns + "\n")
+    print("\nInformación ======== \n")
+    print(establecimientos.info)
+    print("\nCantidad de datos vacios por columna =======\n")
+    print(establecimientos.isna().sum()) #Aca vemos que en la oclumna de codent hay 816 Nan y en el sitioweb 33188, cosa que no aporta mucha informacion de lo que nos interesa
+    #establecimientos[establecimientos['sitio_web'] =='<br>']
+    
+    print("\nHay duplicados? =======\n")
+    print(establecimientos[establecimientos.duplicated(keep=False)]) #No hay repetidos
+    print("\nValores de financiamiento =======\n")
+    print(establecimientos["origen_financiamiento"].value_counts(dropna=False)) #Se ve bien
+    print("\nValores de siglas de tipologia =====\n")
+    print(establecimientos["tipologia_sigla"].value_counts(dropna=False))
+    print("\nValores de nombres de tipologia =======\n")
+    print(establecimientos["tipologia_nombre"].value_counts(dropna=False))
+    
+ver_valores_establecimientos(establecimientos)
 
 
 establecimientos["origen_financiamiento"] = establecimientos["origen_financiamiento"].replace({
@@ -314,25 +419,10 @@ establecimientos["origen_financiamiento"] = establecimientos["origen_financiamie
 })
 
 
-
 #cambio los Null por "Sin especificar" para evitar inconsistencias y erorres en las consultas
 establecimientos["sitio_web"] = establecimientos["sitio_web"].fillna("Sin especificar")
 establecimientos["codent"] = establecimientos["codent"].fillna("Sin especificar")
 
-# Analisis de calidad: porcentaje de valores "Sin especificar", valores desconocidos. CAMBIAR
-def analisis_calidad_porcnull_establecimientos(columna,censo):
-    porcentaje_columna = (
-        (censo[columna] == "Sin especificar").sum()
-        / len(censo)
-        * 100
-    )
-    
-    return porcentaje_columna
-
-porcentaje_web = analisis_calidad_porcnull_establecimientos("sitio_web", establecimientos)
-print("Porcentaje de vacios de sitio web:", porcentaje_web)
-porcentaje_codent = analisis_calidad_porcnull_establecimientos("codent", establecimientos)
-print("Porcentaje de vacios de codent:", porcentaje_codent)
 
 #Anlizamos las dependencias funcionales
 establecimientos.groupby(["provincia_id", "departamento_id"])["departamento_nombre"].nunique() #Aca da que cada combinacion es unica, entonces (departamento_id, provincia_id) -> departamento_nombre
@@ -360,161 +450,6 @@ provincias = pd.read_csv(carpetaModelos / "provincias.csv")
 nacidos = pd.read_csv(carpetaModelos / "nacidos.csv")
 establecimientos = pd.read_csv(carpetaModelos / "establecimientos.csv")
 
-#%% Mini analisis de atributos de calidad
-
-# Tabla establecimientos 
-
-# Atributo de calidad: COMPLETITUD
-# conteo de valores null en sitio web, codent y valores incompletos en domicilio
-
-pct_val_incompletos_establecimientos = """
-                            WITH conteo_completitud AS(
-                                SELECT
-                                    COUNT(*) AS total_registros,
-                                    -- Sitio Web
-                                    SUM(
-                                        CASE
-                                            WHEN e.sitio_web IS NULL 
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_null_sitio_web,
-                                    ROUND(100.0 * cant_null_sitio_web / COUNT(*), 2) AS pct_null_web,
-                                    
-                                    -- Codent
-                                    SUM(
-                                        CASE
-                                            WHEN e.codent IS NULL 
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_null_codent,
-                                    ROUND(100.0 * cant_null_codent / COUNT(*), 2) AS pct_null_codent,
-                                    
-                                    -- Domicilio
-                                    SUM(
-                                        CASE
-                                            WHEN e.domicilio IS NULL OR LOWER(e.domicilio) LIKE '%sin%'
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_incompletos_domicilio,
-                                    ROUND(100.0 * cant_incompletos_domicilio / COUNT(*), 2) AS pct_incompletos_domicilio
-                                FROM establecimientosOriginal e
-                                
-                               ) -- Porcentaje total de la tabla
-                                SELECT 
-                                    total_registros,
-                                    cant_null_sitio_web,
-                                    pct_null_web,
-                                    cant_null_codent,
-                                    pct_null_codent,
-                                    cant_incompletos_domicilio,
-                                    pct_incompletos_domicilio,
-                                    ROUND(100.0 * (cant_null_sitio_web + cant_null_codent + cant_incompletos_domicilio) / total_registros, 2) AS porcentaje_completitud_total
-                                FROM conteo_completitud;
-                            
-                        """
-    
-dataframeResultado = dd.sql(pct_val_incompletos_establecimientos).df()
-
-print(dataframeResultado) 
-
-# Atributo de calidad : INCONSISTENCIA
-# mismo id tiene dos valores diferentes
-
-# Hay localidades que tienen el mismo id pero son distintas(hay variantes en el nombre), creemos que sigue siendo la misma localidad
-pct_id_inconsistentes_establecimientos = """
-                            SELECT
-                                COUNT(*) AS total_registros,
-                                SUM(
-                                    CASE
-                                        -- Mismo id distintas localidades(hay inconsistencias en localidad_nombre(pero en realidad es la misma))
-                                        WHEN e.localidad_id IN (
-                                            SELECT e.localidad_id
-                                            FROM establecimientosOriginal e
-                                            WHERE e.localidad_id IS NOT NULL
-                                            GROUP BY localidad_id
-                                            HAVING COUNT(DISTINCT localidad_nombre) > 1)
-                                        THEN 1
-                                        ELSE 0
-                                        END) AS cant_registros_afectados,
-                                        ROUND(100.0 * cant_registros_afectados / COUNT(*), 2) AS pct_localidadid_inconsistente
-                            FROM establecimientosOriginal e
-                            
-                        """
-
-                    
-dataframeResultado2 = dd.sql(pct_id_inconsistentes_establecimientos).df()
-
-print(dataframeResultado2)                  
-
-# Tabla nacidos
-
-# Atributo de calidad: COMPLETITUD
-
-pct_val_incompletos_nacidos = """
-                            WITH conteo_completitud AS(
-                                SELECT
-                                    COUNT(*) AS total_registros,
-                                    -- ITIEMGEST
-                                    SUM(
-                                        CASE
-                                            WHEN n.ITIEMGEST IS NULL OR LOWER(n.ITIEMGEST) LIKE '%sin%'
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_incompleto_ITIEMGEST,
-                                    ROUND(100.0 * cant_incompleto_ITIEMGEST / COUNT(*), 2) AS pct_incompleto_ITIEMGEST,
-                                    
-                                    -- IMEDAD
-                                    SUM(
-                                        CASE
-                                            WHEN n.IMEDAD IS NULL OR LOWER(n.IMEDAD) LIKE '%sin%'
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_incompleto_IMEDAD,
-                                    ROUND(100.0 * cant_incompleto_IMEDAD / COUNT(*), 2) AS pct_incompleto_IMEDAD,
-                                    
-                                    -- IMINSTRUC
-                                    SUM(
-                                        CASE
-                                            WHEN n.IMINSTRUC IS NULL OR LOWER(n.IMINSTRUC) LIKE '%sin%'
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_incompleto_IMINSTRUC,
-                                    ROUND(100.0 * cant_incompleto_IMINSTRUC / COUNT(*), 2) AS pct_incompleto_IMINSTRUC,
-                                    
-                                    -- IPESONAC
-                                    SUM(
-                                        CASE
-                                            WHEN n.IPESONAC IS NULL OR LOWER(n.IPESONAC) LIKE '%sin%'
-                                            THEN 1 
-                                            ELSE 0 
-                                            END) AS cant_incompleto_IPESONAC,
-                                    ROUND(100.0 * cant_incompleto_IPESONAC / COUNT(*), 2) AS pct_incompleto_IPESONAC,
-                                FROM nacidos2010 n
-                                )
-                            SELECT 
-                                total_registros,
-                                cant_incompleto_ITIEMGEST,
-                                pct_incompleto_ITIEMGEST,
-                                cant_incompleto_IMEDAD,
-                                pct_incompleto_IMEDAD,
-                                cant_incompleto_IMINSTRUC,
-                                pct_incompleto_IMINSTRUC,
-                                cant_incompleto_IPESONAC,
-                                pct_incompleto_IPESONAC,
-                                ROUND(100.0 * (cant_incompleto_ITIEMGEST + cant_incompleto_IMEDAD + cant_incompleto_IMINSTRUC + cant_incompleto_IPESONAC) / total_registros, 2) AS porcentaje_completitud_total
-                            FROM conteo_completitud;
-
-                         """
-dataframeResultado3 = dd.sql(pct_val_incompletos_nacidos).df()
-
-print(dataframeResultado3) 
-
-# Falta ver si hay INCONSISTENCIAS en nacidos, yo no encontre ninguna, solo encontre los valores incompletos
-
-# esto no se para que es, pero se puede sacar, no aporta nadad
-establecimientos['origen_financiamiento'].value_counts()
-nacidos2010["IPESONAC"].value_counts()
-nacidos2010["IMEDAD"].value_counts()
 
 
 #%% Cobertura de salud
@@ -782,3 +717,20 @@ dataframeResultado = dd.sql(consulta).df()
 dataframeResultado.to_csv(raiz / "consulta_cambios_en_madres.csv")
 
 #%% Visualizaciones 
+
+#cantidad de habitantes por provincia
+consulta = """
+            SELECT p.provincia, 
+            SUM(CASE WHEN c.año = 2010 THEN c.total ELSE 0 END) AS cantidad_habiantes_2010,
+            SUM(CASE WHEN c.año = 2022 THEN c.total ELSE 0 END) AS cantidad_habitantes_2022,
+            FROM censo c
+            INNER JOIN provincias p
+                ON p.codigo = c.provincia_id
+            WHERE c.año in(2010,2022)
+            GROUP BY p.provincia
+            ORDER BY cantidad_habitantes_2022 DESC
+            
+            """
+
+dataframeResultado = dd.sql(consulta).df()
+print(dataframeResultado)
