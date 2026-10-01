@@ -627,279 +627,399 @@ establecimientos = pd.read_csv(carpetaModelos / "establecimientos.csv")
 #Hay que cambiar los rangos de edad, no se bien cual poner
 
 consulta = """
-            SELECT p.provincia,
-            
+            SELECT 
+                p.nombre AS provincia,
+        
                 CASE
-                    WHEN c.edad BETWEEN 0 AND 15 THEN '0-14'
+                    WHEN c.edad BETWEEN 0 AND 14 THEN '0-14'
                     WHEN c.edad BETWEEN 15 AND 29 THEN '15-29'
                     WHEN c.edad BETWEEN 30 AND 44 THEN '30-44'
                     WHEN c.edad BETWEEN 45 AND 64 THEN '45-64'
                     WHEN c.edad >= 65 THEN '65+'
                 END AS grupo_etario,
-            
+        
                 SUM(
                     CASE
                         WHEN c.cobertura = 'Con cobertura'
                          AND c.año = 2010
-                        THEN c.total
+                        THEN src.cantidad_mujeres + src.cantidad_hombres
                         ELSE 0
                     END
                 ) AS habitantes_con_cobertura_2010,
-            
+        
                 SUM(
                     CASE
                         WHEN c.cobertura = 'Sin cobertura'
                          AND c.año = 2010
-                        THEN c.total
+                        THEN src.cantidad_mujeres + src.cantidad_hombres
                         ELSE 0
                     END
                 ) AS habitantes_sin_cobertura_2010,
-            
+        
                 SUM(
                     CASE
                         WHEN c.cobertura = 'Con cobertura'
                          AND c.año = 2022
-                        THEN c.total
+                        THEN src.cantidad_mujeres + src.cantidad_hombres
                         ELSE 0
                     END
                 ) AS habitantes_con_cobertura_2022,
-            
+        
                 SUM(
                     CASE
                         WHEN c.cobertura = 'Sin cobertura'
                          AND c.año = 2022
-                        THEN c.total
+                        THEN src.cantidad_mujeres + src.cantidad_hombres
                         ELSE 0
                     END
                 ) AS habitantes_sin_cobertura_2022
-            
+        
             FROM censo c
-            
-            INNER JOIN provincias p
-                ON p.codigo = c.provincia_id
-            
+        
+            INNER JOIN se_registran_censo src
+                ON src.cobertura = c.cobertura
+                AND src.año = c.año
+                AND src.edad = c.edad
+        
+            INNER JOIN provincia p
+                ON p.codigo = src.provincia_id
+        
             GROUP BY
-                p.provincia,
+                p.nombre,
                 grupo_etario
-            
+        
             ORDER BY
-                p.provincia,
+                p.nombre,
                 grupo_etario
-            """
-    
+        """
+
 dataframeResultado = dd.sql(consulta).df()
-dataframeResultado.to_csv(raiz / "consulta_cobertura_de_salud.csv")
+dataframeResultado.to_csv(raiz / "consulta_cobertura_de_salud.csv", index=False)
+
 
 #%% Establecimientos de terapia intensiva
 
 consulta = """
             SELECT 
-                p.provincia, 
+                p.nombre AS provincia, 
                 e.origen_financiamiento, 
-                COUNT(e.establecimiento_id) as cantidad 
+                COUNT(e.establecimiento_id) AS cantidad 
+        
             FROM establecimientos e
-            
-            INNER JOIN provincias as p ON p.codigo = e.provincia_id
-            
+        
+            INNER JOIN departamentos d
+                ON d.depto_id = e.departamento_id
+        
+            INNER JOIN provincia p
+                ON p.codigo = d.provincia_id
+        
             WHERE e.origen_financiamiento IN ('Estatal', 'Privado') 
-            AND LOWER(e.tipologia_nombre) LIKE '%terapia intensiva%'
-            
-            GROUP BY p.provincia, e.origen_financiamiento
-            
-            
+              AND LOWER(e.tipologia_nombre) LIKE '%terapia intensiva%'
+        
+            GROUP BY 
+                p.nombre, 
+                e.origen_financiamiento
+        
+            ORDER BY
+                p.nombre,
+                e.origen_financiamiento
+        """
 
-           """
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado.to_csv(raiz / "consulta_establecimientos_terapia_intensiva.csv")
+dataframeResultado.to_csv(raiz / "consulta_establecimientos_terapia_intensiva.csv",index=False)
 
 #%% características de los nacimientos 
 
 
 consulta = """
-        SELECT p.provincia, n.grupo_edad_madre, n.año,
-         SUM(n.cantidad) AS cantidad_nacidos,
-            SUM(
-                CASE
-                    WHEN n.peso_nacimiento = 'Menos de 2500 gramos'
-                    THEN n.cantidad
-                    ELSE 0
-                END
-            ) AS cantidad_bajo_peso,
-            100.0 * SUM(
-                CASE
-                    WHEN n.peso_nacimiento = 'Menos de 2500 gramos'
-                    THEN n.cantidad
-                    ELSE 0
-                END
-            )/ SUM(
-                CASE
-                    WHEN n.peso_nacimiento != 'Sin especificar'
-                    THEN n.cantidad
-                    ELSE 0
-                END
-            ) AS porcentaje_bajo_peso
+            SELECT 
+                p.nombre AS provincia,
+                n.grupo_edad,
+                n.año,
         
-        FROM nacidos n
+                SUM(srn.cantidad) AS cantidad_nacidos,
         
-        INNER JOIN provincias p ON p.codigo = n.provincia_residencia
+                SUM(
+                    CASE
+                        WHEN n.peso_nacimiento = 'Menos de 2500 gramos'
+                        THEN srn.cantidad
+                        ELSE 0
+                    END
+                ) AS cantidad_bajo_peso,
         
-        GROUP BY p.provincia, n.grupo_edad_madre, n.año
+                100.0 * SUM(
+                    CASE
+                        WHEN n.peso_nacimiento = 'Menos de 2500 gramos'
+                        THEN srn.cantidad
+                        ELSE 0
+                    END
+                ) / NULLIF(
+                    SUM(
+                        CASE
+                            WHEN n.peso_nacimiento != 'Sin especificar'
+                            THEN srn.cantidad
+                            ELSE 0
+                        END
+                    ),
+                    0
+                ) AS porcentaje_bajo_peso
         
-        ORDER BY p.provincia ASC, n.grupo_edad_madre ASC, n.año ASC
+            FROM nacidos n
         
-           """
+            INNER JOIN se_registran_nacidos srn
+                ON srn.grupo_edad = n.grupo_edad
+                AND srn.tipo_parto = n.tipo_parto
+                AND srn.año = n.año
+                AND srn.semanas_gestacion = n.semanas_gestacion
+                AND srn.peso_nacimiento = n.peso_nacimiento
+                AND srn.nivel_educativo = n.nivel_educativo
+                AND srn.sexo = n.sexo
+        
+            INNER JOIN provincia p
+                ON p.codigo = srn.provincia_id
+        
+            GROUP BY
+                p.nombre,
+                n.grupo_edad,
+                n.año
+        
+            ORDER BY
+                p.nombre ASC,
+                n.grupo_edad ASC,
+                n.año ASC
+        """
+
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado.to_csv(raiz / "caracteristicas_nacimientos.csv")
+dataframeResultado.to_csv(
+    raiz / "caracteristicas_nacimientos.csv",
+    index=False
+)
 
 #%% Tasa de fecundidad por provincia
 
-#habria que revisarla bien, le pude haber pifiado 
 consulta = """
             SELECT
-                p.provincia,
+                p.nombre AS provincia,
                 n.grupo_edad_madre,
-                1000.0 * SUM(n.cantidad) / c.mujer AS tasa_fecundidad
-            
-            FROM nacidos n
-            
-            INNER JOIN provincias p
-                ON p.codigo = n.provincia_residencia
-            
+        
+                1000.0 * n.cantidad_nacimientos / m.cantidad_mujeres
+                    AS tasa_fecundidad
+        
+            FROM (
+                SELECT
+                    srn.provincia_id,
+                    nac.grupo_edad_madre,
+                    SUM(srn.cantidad) AS cantidad_nacimientos
+        
+                FROM nacidos nac
+        
+                INNER JOIN se_registran_nacidos srn
+                    ON srn.grupo_edad = nac.grupo_edad_madre
+                    AND srn.tipo_parto = nac.tipo_parto
+                    AND srn.año = nac.año
+                    AND srn.semanas_gestacion = nac.semanas_gestacion
+                    AND srn.peso_nacimiento = nac.peso_nacimiento
+                    AND srn.nivel_educativo = nac.nivel_educativo
+                    AND srn.sexo = nac.sexo
+        
+                WHERE nac.año = 2022
+        
+                GROUP BY
+                    srn.provincia_id,
+                    nac.grupo_edad_madre
+            ) n
+        
             INNER JOIN (
                 SELECT
-                    provincia_id,
+                    src.provincia_id,
+        
                     CASE
-                        WHEN edad BETWEEN 0 AND 14 THEN 'Menor de 15'
-                        WHEN edad BETWEEN 15 AND 19 THEN '15 a 19'
-                        WHEN edad BETWEEN 20 AND 24 THEN '20 a 24'
-                        WHEN edad BETWEEN 25 AND 29 THEN '25 a 29'
-                        WHEN edad BETWEEN 30 AND 34 THEN '30 a 34'
-                        WHEN edad BETWEEN 35 AND 39 THEN '35 a 39'
-                        WHEN edad BETWEEN 40 AND 44 THEN '40 a 44'
-                        WHEN edad >= 49 THEN 'De 45 y más'
+                        WHEN c.edad BETWEEN 0 AND 14 THEN 'Menor de 15'
+                        WHEN c.edad BETWEEN 15 AND 19 THEN '15 a 19'
+                        WHEN c.edad BETWEEN 20 AND 24 THEN '20 a 24'
+                        WHEN c.edad BETWEEN 25 AND 29 THEN '25 a 29'
+                        WHEN c.edad BETWEEN 30 AND 34 THEN '30 a 34'
+                        WHEN c.edad BETWEEN 35 AND 39 THEN '35 a 39'
+                        WHEN c.edad BETWEEN 40 AND 44 THEN '40 a 44'
+                        WHEN c.edad >= 45 THEN 'De 45 y más'
                     END AS grupo_edad,
-                    SUM(mujer) AS mujer
-                FROM censo
-                WHERE año = 2022
+        
+                    SUM(src.cantidad_mujeres) AS cantidad_mujeres
+        
+                FROM censo c
+        
+                INNER JOIN se_registran_censo src
+                    ON src.cobertura = c.cobertura
+                    AND src.año = c.año
+                    AND src.edad = c.edad
+        
+                WHERE c.año = 2022
+        
                 GROUP BY
-                    provincia_id,
+                    src.provincia_id,
                     grupo_edad
-            ) c
-                ON c.provincia_id = n.provincia_residencia
-                AND c.grupo_edad = n.grupo_edad_madre
-            
-            WHERE n.año = 2022
-            
-            GROUP BY
-                p.provincia,
-                n.grupo_edad_madre,
-                c.mujer
-            
+            ) m
+        
+                ON m.provincia_id = n.provincia_id
+                AND m.grupo_edad = n.grupo_edad_madre
+        
+            INNER JOIN provincia p
+                ON p.codigo = n.provincia_id
+        
             ORDER BY
-                p.provincia,
+                p.nombre,
                 n.grupo_edad_madre
-            """
+        """
+
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado.to_csv(raiz / "tasa_fecundidad_provincia.csv")
+dataframeResultado.to_csv(
+    raiz / "tasa_fecundidad_provincia.csv",
+    index=False
+)
            
 #%% Cambios en la edad de las madres
 
 consulta = """
             SELECT
-                p.provincia,
-            
+                p.nombre AS provincia,
+        
                 100.0 * SUM(
                     CASE
                         WHEN n.año = 2010
-                         AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15') 
-                        THEN n.cantidad
+                         AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
+                        THEN srn.cantidad
                         ELSE 0
                     END
                 ) / SUM(
                     CASE
                         WHEN n.año = 2010
-                        THEN n.cantidad
+                        THEN srn.cantidad
                         ELSE 0
                     END
                 ) AS porcentaje_2010,
-            
+        
                 100.0 * SUM(
                     CASE
                         WHEN n.año = 2022
                          AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                        THEN n.cantidad
+                        THEN srn.cantidad
                         ELSE 0
                     END
                 ) / SUM(
                     CASE
                         WHEN n.año = 2022
-                        THEN n.cantidad
+                        THEN srn.cantidad
                         ELSE 0
                     END
                 ) AS porcentaje_2022,
-            
-                ABS((
-                    100.0 * SUM(
-                        CASE
-                            WHEN n.año = 2022
-                             AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                            THEN n.cantidad
-                            ELSE 0
-                        END
-                    ) / SUM(
-                        CASE
-                            WHEN n.año = 2022
-                            THEN n.cantidad
-                            ELSE 0
-                        END
+        
+                ABS(
+                    (
+                        100.0 * SUM(
+                            CASE
+                                WHEN n.año = 2022
+                                 AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
+                                THEN srn.cantidad
+                                ELSE 0
+                            END
+                        ) / SUM(
+                            CASE
+                                WHEN n.año = 2022
+                                THEN srn.cantidad
+                                ELSE 0
+                            END
+                        )
                     )
-                )-
-                (
-                    100.0 * SUM(
-                        CASE
-                            WHEN n.año = 2010
-                             AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
-                            THEN n.cantidad
-                            ELSE 0
-                        END
-                    ) / SUM(
-                        CASE
-                            WHEN n.año = 2010
-                            THEN n.cantidad
-                            ELSE 0
-                        END
+                    -
+                    (
+                        100.0 * SUM(
+                            CASE
+                                WHEN n.año = 2010
+                                 AND n.grupo_edad_madre IN ('15 a 19', 'Menor a 15')
+                                THEN srn.cantidad
+                                ELSE 0
+                            END
+                        ) / SUM(
+                            CASE
+                                WHEN n.año = 2010
+                                THEN srn.cantidad
+                                ELSE 0
+                            END
+                        )
                     )
-                )) AS diferencia
-            
+                ) AS diferencia
+        
             FROM nacidos n
-            INNER JOIN provincias p
-                ON p.codigo = n.provincia_residencia
-            
-            GROUP BY p.provincia
-            
-            ORDER BY diferencia DESC
-            """
+        
+            INNER JOIN se_registran_nacidos srn
+                ON srn.grupo_edad = n.grupo_edad_madre
+                AND srn.tipo_parto = n.tipo_parto
+                AND srn.año = n.año
+                AND srn.semanas_gestacion = n.semanas_gestacion
+                AND srn.peso_nacimiento = n.peso_nacimiento
+                AND srn.nivel_educativo = n.nivel_educativo
+                AND srn.sexo = n.sexo
+        
+            INNER JOIN provincia p
+                ON p.codigo = srn.provincia_id
+        
+            GROUP BY
+                p.nombre
+        
+            ORDER BY
+                diferencia DESC
+        """
+
 dataframeResultado = dd.sql(consulta).df()
 
-dataframeResultado.to_csv(raiz / "consulta_cambios_en_madres.csv")
+dataframeResultado.to_csv(
+    raiz / "consulta_cambios_en_madres.csv",
+    index=False
+)
 
 #%% Visualizaciones 
 #cantidad de habitantes por provincia
 consulta = """
-            SELECT p.provincia, 
-            SUM(CASE WHEN c.año = 2010 THEN c.total ELSE 0 END) AS cantidad_habiantes_2010,
-            SUM(CASE WHEN c.año = 2022 THEN c.total ELSE 0 END) AS cantidad_habitantes_2022,
-            FROM censo c
-            INNER JOIN provincias p
-                ON p.codigo = c.provincia_id
-            WHERE c.año in(2010,2022)
-            GROUP BY p.provincia
-            ORDER BY cantidad_habitantes_2022 DESC
-            
-            """
+            SELECT
+            p.nombre AS provincia,
+    
+            SUM(
+                CASE
+                    WHEN c.año = 2010
+                    THEN src.cantidad_mujeres + src.cantidad_hombres
+                    ELSE 0
+                END
+            ) AS cantidad_habitantes_2010,
+    
+            SUM(
+                CASE
+                    WHEN c.año = 2022
+                    THEN src.cantidad_mujeres + src.cantidad_hombres
+                    ELSE 0
+                END
+            ) AS cantidad_habitantes_2022
+    
+        FROM censo c
+    
+        INNER JOIN se_registran_censo src
+            ON src.cobertura = c.cobertura
+            AND src.año = c.año
+            AND src.edad = c.edad
+    
+        INNER JOIN provincia p
+            ON p.codigo = src.provincia_id
+    
+        WHERE c.año IN (2010, 2022)
+    
+        GROUP BY
+            p.nombre
+    
+        ORDER BY
+            cantidad_habitantes_2022 DESC
+    """
 
 dataframeResultado = dd.sql(consulta).df()
 print(dataframeResultado)
