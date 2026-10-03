@@ -1159,6 +1159,7 @@ consulta_habitantes_provincia = """
             cantidad_habitantes_2022 DESC
     """
 
+
 dataframeGrafico1 = dd.sql(consulta_habitantes_provincia).df()
 # print(dataframeGrafico1)
 
@@ -1208,13 +1209,277 @@ fig.savefig(carpetaGraficos / 'grafico_habitantes_provincia.png', bbox_inches='t
 # Cuidado con los sin especificar. Hay que tomar una decision que hacemos con los que no dicen las semanas de gestacion.
 # Hay codigo de provincia residencia que es 99, que probablemente sea sin provincia o del exterior y se pierden filas}
 # No nos importa que se pierdan pero si hay que aclararlo. 
-# Guarda con la division y que de en decimales, que no queden todos 0 por division entera. Duckdb no tendria q pasar.
+
+consulta_nacimientos_por_provincia = """
+            SELECT
+            p.provincia AS provincia,
+            
+            SUM(
+                CASE
+                    WHEN srn.año = 2010 AND srn.grupo_semanas_gestacion IN ['Menos de 22','22 a 23', '24 a 27', '28 a 31', '32 a 36']
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ) / SUM(
+                CASE
+                    WHEN srn.año = 2010
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ) AS cantidad_prematuros_2010,
+            ROUND(100 * cantidad_prematuros_2010, 2) AS pct_prematuros_2010,
+                
+            SUM(
+                CASE
+                    WHEN srn.año = 2022 AND srn.grupo_semanas_gestacion IN ['Menos de 22','22 a 23', '24 a 27', '28 a 31', '32 a 36']
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            )/ SUM(
+                CASE
+                    WHEN srn.año = 2022
+                    THEN srn.cantidad
+                    ELSE 0
+                END
+            ) AS cantidad_prematuros_2022,
+            ROUND(100 * cantidad_prematuros_2022, 2) AS pct_prematuros_2022,
+            
+        FROM se_registran_nacidos srn
+    
+    
+        INNER JOIN provincias p
+            ON p.codigo = srn.provincia_residencia
+        
+        WHERE grupo_semanas_gestacion != 'Sin especificar'
+        
+        GROUP BY
+            p.provincia,
+        
+        ORDER BY
+            pct_prematuros_2022 DESC
+    
+    """
 
 
+dataframeGrafico2 = dd.sql(consulta_nacimientos_por_provincia).df()
+
+# Cambiamos los nombres de las provincias largas para mayor prolijidad
+dataframeGrafico2["provincia"] = dataframeGrafico2["provincia"].replace({
+        "BUENOS AIRES": "BS.AS",
+        "CIUDAD DE BUENOS AIRES": "C.A.B.A",
+        "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR":"T.FUEGO",
+        "SANTIAGO DEL ESTERO": "S.ESTERO"
+    })
+
+fig, ax = plt.subplots(figsize = (8,4.8))
+
+dataframeGrafico2.plot(x = 'provincia', 
+                       y = ['pct_prematuros_2010','pct_prematuros_2022'], 
+                       kind = 'bar', 
+                       label = ['2010','2022'], ax = ax)
+
+ax.set_title('Porcentaje de prematuros (<37 semanas) por provincia en 2010 y 2022',fontweight='bold',fontsize=12, pad = 15)
+ax.set_xlabel('Provincia',fontsize='medium')
+ax.set_ylabel('Prematuros (%)',fontsize='medium') 
+ax.set_ylim(0,14)
+ax.spines[['top','right']].set_visible(False)
+
+plt.legend(title = 'Año')
+
+fig.savefig(carpetaGraficos / 'grafico_prematuros_por_provincia.png', bbox_inches='tight')
 
 #%% iii) Tasa de fecundidad por provincia en 2022
+# Primera parte, gráfico de fecundidad por provincia en el año 2022, calculada cada 1000 mujeres de 15 a 49 años, ordenada de menor a mayor.
+
+consulta_tasa_fecundidad_a = """
+        SELECT
+            p.provincia AS provincia,
+            
+            1000.0 * n.nacimientos / m.mujeres_de_15_a_49 AS tasa_fecundidad
+
+        FROM (
+            SELECT provincia_residencia, 
+            SUM(cantidad) AS nacimientos,
+            
+            FROM se_registran_nacidos
+            
+            WHERE año = 2022
+            GROUP BY provincia_residencia
+        ) AS n
+
+        INNER JOIN (
+            SELECT provincia_id, 
+            SUM(cantidad_mujeres) AS mujeres_de_15_a_49
+            
+            FROM se_registran_censos
+            
+            WHERE año = 2022 AND edad BETWEEN 15 AND 49
+            
+            GROUP BY provincia_id
+        ) AS m
+            ON m.provincia_id = n.provincia_residencia
+
+        INNER JOIN provincias p
+            ON p.codigo = n.provincia_residencia
+
+        ORDER BY tasa_fecundidad ASC
+    """
+
+dataframeGrafico3a = dd.sql(consulta_tasa_fecundidad_a).df()
+
+# Cambiamos los nombres de las provincias largas para mayor prolijidad
+dataframeGrafico3a["provincia"] = dataframeGrafico3a["provincia"].replace({
+        "BUENOS AIRES": "BS.AS",
+        "CIUDAD DE BUENOS AIRES": "C.A.B.A",
+        "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR":"T.FUEGO",
+        "SANTIAGO DEL ESTERO": "S.ESTERO"
+    })
+
+fig, ax = plt.subplots(figsize = (8,4.8))
+
+dataframeGrafico3a.plot(x = 'provincia', 
+                       y = 'tasa_fecundidad',color='C1', 
+                       kind = 'bar', 
+                       ax = ax)
+
+ax.set_title('Tasa de fecundidad por provincia 2022',fontweight='bold',fontsize=12, pad = 15)
+ax.set_xlabel('Provincia',fontsize='medium')
+ax.set_ylabel('Nacidos vivos cada 1000 mujeres de 15 a 49 años',fontsize='medium') 
+# ax.set_ylim(0,14)
+ax.spines[['top','right']].set_visible(False)
+ax.legend().set_visible(False)
+
+fig.savefig(carpetaGraficos / 'grafico_tasa_fecundidad_total_por_prov.png', bbox_inches='tight')
+
+# Vamos a complementarlo con el nivel educativo de la madre para compararlos y dar lugar a un analisis sobre si influye o no el nivel educativo con la cantidad de nacidos
+consulta_tasa_fecundidad_b = """
+        SELECT
+            p.provincia AS provincia,
+            
+            1000.0 * n.sin_especificar/ m.mujeres_de_15_a_49 AS tasa_sin_especificar,
+            1000.0 * n.secundaria_completa/ m.mujeres_de_15_a_49 AS tasa_secundaria_completa,
+            1000.0 * n.secundaria_incompleta/ m.mujeres_de_15_a_49 AS tasa_secundaria_incompleta,
+            1000.0 * n.hasta_primaria/ m.mujeres_de_15_a_49 AS tasa_hasta_primaria,
+
+
+        FROM (
+            SELECT provincia_residencia, 
+            SUM(cantidad) AS nacimientos,
+            
+            SUM(CASE 
+                WHEN nivel_educativo_madre = 'Sin especificar' 
+                THEN cantidad
+                ELSE 0
+                END
+                ) AS sin_especificar,
+            SUM(CASE 
+                WHEN nivel_educativo_madre = 'Secundario/Polimodal Completa y más' 
+                THEN cantidad
+                ELSE 0
+                END
+                ) AS secundaria_completa,
+            SUM(CASE 
+                WHEN nivel_educativo_madre = 'Secundaria/Polimodal Incompleta' 
+                THEN cantidad
+                ELSE 0
+                END
+                ) AS secundaria_incompleta,
+            SUM(CASE 
+                WHEN nivel_educativo_madre = 'Hasta Primaria/C.EGB Completa' 
+                THEN cantidad
+                ELSE 0
+                END
+                ) AS hasta_primaria,
+                
+        
+            FROM se_registran_nacidos
+            
+            WHERE año = 2022
+            GROUP BY provincia_residencia
+        ) AS n
+
+        INNER JOIN (
+            SELECT provincia_id, 
+            SUM(cantidad_mujeres) AS mujeres_de_15_a_49
+            
+            FROM se_registran_censos
+            
+            WHERE año = 2022 AND edad BETWEEN 15 AND 49
+            
+            GROUP BY provincia_id
+        ) AS m
+            ON m.provincia_id = n.provincia_residencia
+
+        INNER JOIN provincias p
+            ON p.codigo = n.provincia_residencia
+
+        ORDER BY n.nacimientos / m.mujeres_de_15_a_49 ASC
+    """
+dataframeGrafico3b = dd.sql(consulta_tasa_fecundidad_b).df()
+
+# Cambiamos los nombres de las provincias largas para mayor prolijidad
+dataframeGrafico3b["provincia"] = dataframeGrafico3b["provincia"].replace({
+        "BUENOS AIRES": "BS.AS",
+        "CIUDAD DE BUENOS AIRES": "C.A.B.A",
+        "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR":"T.FUEGO",
+        "SANTIAGO DEL ESTERO": "S.ESTERO"
+    })
+
+fig, ax = plt.subplots(figsize = (8,4.8))
+
+ax.bar(dataframeGrafico3b['provincia'], 
+       dataframeGrafico3b['tasa_secundaria_completa'],
+       label = 'Secundaria completa y más', 
+       color = '#d94801',
+       width = 0.7)
+
+ax.bar(dataframeGrafico3b['provincia'], 
+       dataframeGrafico3b['tasa_secundaria_incompleta'],
+       bottom = dataframeGrafico3b['tasa_secundaria_completa'],
+       label = 'Secundaria incompleta', 
+       color = '#fd8d3c',
+       width = 0.7)
+
+ax.bar(dataframeGrafico3b['provincia'], 
+       dataframeGrafico3b['tasa_hasta_primaria'],
+       bottom = dataframeGrafico3b['tasa_secundaria_completa'] + dataframeGrafico3b['tasa_secundaria_incompleta'],
+       label = 'Hasta primaria', 
+       color = '#fdd0a2',
+       width = 0.7)
+
+ax.bar(dataframeGrafico3b['provincia'], 
+       dataframeGrafico3b['tasa_sin_especificar'],
+       bottom =  dataframeGrafico3b['tasa_secundaria_completa'] + dataframeGrafico3b['tasa_secundaria_incompleta'] + dataframeGrafico3b['tasa_hasta_primaria'],
+       label = 'Sin especificar',
+       color = 'lightgray',
+       width = 0.7)
+
+
+
+ax.set_title('Tasa de fecundidad y nivel educativo de madres por provincia 2022',fontweight='bold',fontsize=12, pad = 15)
+ax.set_xlabel('Provincia',fontsize='medium')
+ax.set_ylabel('Nacidos vivos cada 1000 mujeres de 15 a 49 años',fontsize='medium') 
+ax.set_ylim(0,60)
+ax.set_xlim(-0.75,23.5)
+ax.tick_params(axis='x', rotation=90)
+ax.spines[['top','right']].set_visible(False)
+ax.legend()
+
+fig.savefig(carpetaGraficos / 'grafico_tasa_fecundidad_y_nivel_educativos.png', bbox_inches='tight')
 
 #%% iv) Peso al nacer según el nivel de instrucción de la madre
+
+test = """
+            SELECT provincia_residencia, 
+            nivel_educativo_madre,
+            SUM(cantidad) AS nacimientos,
+            
+            FROM se_registran_nacidos
+            
+            WHERE año = 2022 AND provincia_residencia = 90
+            GROUP BY provincia_residencia, nivel_educativo_madre
+"""
+dataframeResultado = dd.sql(test).df()
 
 #%% v) Distribución de establecimientos de salud
 
