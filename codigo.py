@@ -28,7 +28,10 @@ raiz = Path(__file__).parent
 carpetaOriginales = raiz / "data" / "TablasOriginales" #Fijense el tema de la carpeta, descarguense los archivos
 carpetaLimpias = raiz / "data" / "TablasLimpias"
 carpetaModelos = raiz /"data" / "TablasModelo"
+carpetaReportes = raiz / "Reportes"
+carpetaGraficos = raiz /"Graficos"
 
+#%%
 censo2010 = pd.read_excel(carpetaOriginales / "censo2010.xlsX", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
 censo2022 = pd.read_excel(carpetaOriginales / "censo2022.xlsX", header= None, skiprows= 15) #Lo mismo
 nacidos2010 = pd.read_csv(carpetaOriginales /  "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona asi que dejenlo asi
@@ -316,7 +319,7 @@ def analizar_censo(censo):
     print("Columnas:", censo.shape[1])
 
 #Aca hay dos cosas para hacer: generar la tabla de Censos y la de la tabla que la relaciona con provincia 
-def normalizar_datos_censo(censo):
+def normalizar_datos_censo(censo, es_2022):
     censo_limpio = censo.drop(columns= 0) # eliminamos la primera columna que eran todos Nan
     censo_limpio.columns =['cobertura', 'edad', 'cantidad_hombres', 'cantidad_mujeres', 'total'] # Definimos las columnas con los valores que queremos
     
@@ -391,6 +394,10 @@ def normalizar_datos_censo(censo):
     censo_limpio["cantidad_mujeres"] = censo_limpio["cantidad_mujeres"].replace("-", 0)
     censo_limpio["cantidad_hombres"] = censo_limpio["cantidad_hombres"].replace("-", 0)
     
+    #Aca por ultimo nos dimos cuenta que censo2022 muestra primero mujeres y censo2010 muestra primeros hombres, entonecs hay que intercambiar los valores de 2022
+    if(es_2022):
+        censo_limpio[["cantidad_hombres", "cantidad_mujeres"]] = censo_limpio[["cantidad_mujeres", "cantidad_hombres"]]
+    
    
     return censo_limpio
     
@@ -399,9 +406,9 @@ analizar_censo(censo2010)
 analizar_censo(censo2022)
 
 #dentro de la funcion encontramos mas cosas como que los nomrbes entre las tablas eran distintas (en un solo caso) pero esta todo bien comentado
-dfcenso2022_limpio = normalizar_datos_censo(censo2022)
+dfcenso2022_limpio = normalizar_datos_censo(censo2022, True)
 dfcenso2022_limpio.to_csv(carpetaLimpias / "censo2022.csv")
-dfcenso2010_limpio = normalizar_datos_censo(censo2010)
+dfcenso2010_limpio = normalizar_datos_censo(censo2010, False)
 dfcenso2010_limpio.to_csv(carpetaLimpias / "censo2010.csv")
 
 #Ahora agregamos la columna de año a cada uno y los juntamos en una misma tabla
@@ -762,7 +769,7 @@ consulta = """
 dataframeResultado = dd.sql(consulta).df()
 
 dataframeResultado.to_csv(
-    raiz / "consulta_cobertura_de_salud.csv",
+    carpetaReportes / "consulta_cobertura_de_salud.csv",
     index=False
 )
 
@@ -813,7 +820,7 @@ consulta_establecimientos_terapia_intensiva = """
 
 dataframeResultado = dd.sql(consulta_establecimientos_terapia_intensiva).df()
 
-dataframeResultado.to_csv(raiz / "consulta_establecimientos_terapia_intensiva.csv",index=False)
+dataframeResultado.to_csv(carpetaReportes / "consulta_establecimientos_terapia_intensiva.csv",index=False)
 
 #%% características de los nacimientos 
 consulta = """
@@ -904,7 +911,7 @@ consulta_caracteristicas_nacimientos = """
 dataframeResultado = dd.sql(consulta_caracteristicas_nacimientos).df()
 
 dataframeResultado.to_csv(
-    raiz / "caracteristicas_nacimientos.csv",
+    carpetaReportes / "caracteristicas_nacimientos.csv",
     index=False
 )
 
@@ -997,7 +1004,7 @@ consulta_fecundidad = """
 dataframeResultado = dd.sql(consulta_fecundidad).df()
 
 dataframeResultado.to_csv(
-    raiz / "tasa_fecundidad_provincia.csv",
+    carpetaReportes / "tasa_fecundidad_provincia.csv",
     index=False
 )
            
@@ -1099,7 +1106,7 @@ consulta_cambios_en_madres = """
 dataframeResultado = dd.sql(consulta_cambios_en_madres).df()
 
 dataframeResultado.to_csv(
-    raiz / "consulta_cambios_en_madres.csv",
+    carpetaReportes / "consulta_cambios_en_madres.csv",
     index=False
 )
 
@@ -1182,7 +1189,7 @@ ax.spines[['top','right']].set_visible(False)
 
 plt.legend(title = 'Año')
 
-fig.savefig(raiz / 'grafico_habitantes_provincia.png', bbox_inches='tight') #Guardamos la imagen en la carpeta ajustado a los bordes para que se lean los titulos.
+fig.savefig(carpetaGraficos / 'grafico_habitantes_provincia.png', bbox_inches='tight') #Guardamos la imagen en la carpeta ajustado a los bordes para que se lean los titulos.
 
 #%% ii) Nacimientos prematuros según provincia
 # Vamos a necesitar hacer un join de se_registran_nacidos con provincias para tener los nombres de las provincias
