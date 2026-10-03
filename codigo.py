@@ -29,15 +29,15 @@ carpetaOriginales = raiz / "data" / "TablasOriginales" #Fijense el tema de la ca
 carpetaLimpias = raiz / "data" / "TablasLimpias"
 carpetaModelos = raiz /"data" / "TablasModelo"
 
-censo2010 = pd.read_excel(carpetaOriginales / "censo2010.xlsx", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
-censo2022 = pd.read_excel(carpetaOriginales / "censo2022.xlsx", header= None, skiprows= 15) #Lo mismo
+censo2010 = pd.read_excel(carpetaOriginales / "censo2010.xlsX", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
+censo2022 = pd.read_excel(carpetaOriginales / "censo2022.xlsX", header= None, skiprows= 15) #Lo mismo
 nacidos2010 = pd.read_csv(carpetaOriginales /  "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona asi que dejenlo asi
 nacidos2022 = pd.read_csv(carpetaOriginales / "nacweb22_0.csv", sep= ";") #Tiene distinta separacion
 establecimientos = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
 establecimientosOriginal = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
 
 #%% Subimos archivos adicionales
-provincias = pd.read_excel(carpetaOriginales / "Listado De Provincias - 11-09-2026.xlsx")
+provincias = pd.read_excel(carpetaOriginales / "Listado de Provincias - 11-09-2026.xlsx")
 
 #%% Armo tabla de la provincia y los codigos
 #Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
@@ -325,20 +325,23 @@ def normalizar_datos_censo(censo):
     
     for i in range(len(censo_limpio)):
         fila = censo_limpio.iloc[i] 
-    
+        
         if str(fila.iloc[0]).startswith("AREA"): #En este punto sabemos que las provincias estaban separadas por "Area" en la columna de cobertura, y el nombre de la privncia en la columna de Edad
             provincia_actual = fila.iloc[1] #Nos quedamos con el nombre de la provincia
-    
+        elif str(fila.iloc[0]).startswith("RESUMEN"):#Sabemos que al final hay una sección resumen que no queremos incluir en la tabla limpia porque contiene información redundante, asi que le asignamos Nan
+            provincia_actual = None
+            
         censo_limpio.loc[i, "provincia"] = provincia_actual #Agregamos 
-    
-    
+        
     censo_limpio["provincia"] = censo_limpio["provincia"].str.upper()
 
-    #Notamos que en el censo de 2022 aparece Caba en vez de Ciudad Autonoma de Buenos Aires
-    #Lo pasamos a mayuscula para poder usar el DataFrame de provincias
+    #Notamos que en el censo de 2022 aparece Caba en vez de Ciudad Autonoma de Buenos Aires 
+    #Y en los censos dice que el area 94 es Tierra del fuego, y el archivo de provincias dice que es "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR"
+    #Los renombramos y pasamos a mayuscula para poder usar el DataFrame de provincias
     censo_limpio["provincia"] = censo_limpio["provincia"].replace({
         "CABA": "CIUDAD DE BUENOS AIRES",
-        "CIUDAD AUTÓNOMA DE BUENOS AIRES": "CIUDAD DE BUENOS AIRES"
+        "CIUDAD AUTÓNOMA DE BUENOS AIRES": "CIUDAD DE BUENOS AIRES",
+        "TIERRA DEL FUEGO": "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR"
     })
     
     censo_limpio = censo_limpio[
@@ -407,7 +410,7 @@ dfcenso2010_limpio["año"] = 2010
 
 tablaRelacion = pd.concat([dfcenso2010_limpio, dfcenso2022_limpio])
 tablaCensos = tablaRelacion.drop(columns = ["cantidad_mujeres", "cantidad_hombres", "total", "provincia_id"])
-tablaRelacion = tablaRelacion.drop(columns = ["total"]).dropna() #Sacamos la columna de total que era redundante
+tablaRelacion = tablaRelacion.drop(columns = ["total"]).dropna() #Sacamos información redundante: la columna de total y con el dropna desaparecen las filas después de "RESUMEN"
 
 #Chequeamos dependencias funcionales
 tablaRelacion.groupby(["cobertura",  "edad", "provincia_id", "año"])[["cantidad_mujeres", "cantidad_hombres"]].nunique() 
@@ -1100,46 +1103,113 @@ dataframeResultado.to_csv(
     index=False
 )
 
-#%% Visualizaciones 
-#cantidad de habitantes por provincia
+#%% Visualizaciones
+
+# i) Cantidad de habitantes por provincia
+
+# Tenemos que usar la tabla Modelo de se_registran_censo y unirla con Provincias para los nombres
+# agruparlos por nombre de provincia y año, crear una nueva columna que sea la suma de hombres y mujeres
+# sumarlos por provincia y año. Y nos quedamos finalmente con una tabla con el año, la cantidad 
+# y la provincia como columnas, y las filas serian la cantidad de habitantes por provincia en 2010 o 2022. 
+# Usaríamos un gráfico de barras agrupadas que tenga una barra de color distinto para cada año
+# por provincia. O sea, en el eje x van las provincias, y en el y la cantidad de habitantes.
+# Cuidado con la diferencia grande de habitantes (BSAS 17millones y Tierra del Fuego 200mil)
+# Hay que tomar una decision si usar escala logaritmica o hacer dos graficos por separado (no creo).
+# Se pueden ordenar las provincias de mneor a mayor población según un censo o capaz por orden alfabetico
+# Para que no se pisen los numeros encima de las barras los escribimos redondeado a millones, e inclinamos los nombres
+# del las provincias en el ejex (y seguro acortemos algunos largos como antartida e islas del atlan... a Ant. e islas)
+
 consulta_habitantes_provincia = """
             SELECT
-            p.nombre AS provincia,
+            p.provincia AS provincia,
     
             SUM(
                 CASE
-                    WHEN c.año = 2010
+                    WHEN src.año = 2010
                     THEN src.cantidad_mujeres + src.cantidad_hombres
                     ELSE 0
                 END
-            ) AS cantidad_habitantes_2010,
+            ) /1000000.0 AS cantidad_habitantes_2010,
     
             SUM(
                 CASE
-                    WHEN c.año = 2022
+                    WHEN src.año = 2022
                     THEN src.cantidad_mujeres + src.cantidad_hombres
                     ELSE 0
                 END
-            ) AS cantidad_habitantes_2022
+            ) /1000000.0 AS cantidad_habitantes_2022
+        
+        FROM se_registran_censos src
     
-        FROM censo c
     
-        INNER JOIN se_registran_censo src
-            ON src.cobertura = c.cobertura
-            AND src.año = c.año
-            AND src.edad = c.edad
-    
-        INNER JOIN provincia p
+        INNER JOIN provincias p
             ON p.codigo = src.provincia_id
     
-        WHERE c.año IN (2010, 2022)
-    
         GROUP BY
-            p.nombre
+            p.provincia
     
         ORDER BY
             cantidad_habitantes_2022 DESC
     """
 
-dataframeResultado = dd.sql(consulta_habitantes_provincia).df()
-print(dataframeResultado)
+dataframeGrafico1 = dd.sql(consulta_habitantes_provincia).df()
+# print(dataframeGrafico1)
+
+# print(dataframeGrafico1['cantidad_habitantes_2010'].sum())
+# print(dataframeGrafico1['cantidad_habitantes_2022'].sum())
+
+# Cambiamos los nombres de las provincias largas para mayor prolijidad
+dataframeGrafico1["provincia"] = dataframeGrafico1["provincia"].replace({
+        "BUENOS AIRES": "BS.AS",
+        "CIUDAD DE BUENOS AIRES": "C.A.B.A",
+        "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR":"T.FUEGO",
+        "SANTIAGO DEL ESTERO": "S.ESTERO"
+    })
+
+fig, ax = plt.subplots(figsize = (8,4.8))
+dataframeGrafico1.plot(x = 'provincia', 
+                       y = ['cantidad_habitantes_2010','cantidad_habitantes_2022'], 
+                       kind = 'bar', 
+                       label = ['2010','2022'], ax = ax)
+
+ax.set_title('Cantidad de habitantes por provincia en 2010 y 2022',fontweight='bold',fontsize=12, pad = 15)
+ax.set_xlabel('Provincia',fontsize='medium')
+ax.set_ylabel('Habitantes (millones, escala log)',fontsize='medium') 
+ax.set_yscale('log') #Usamos escala logaritmica para la visualización por la amplia diferencia de habitantes entre el que más tiene, y el que menos.
+ax.set_ylim(0.05,19) #Ajustamos los límites para que se vea bien T. Fuego
+ax.set_yticks([0.1, 0.2, 0.5, 1, 2, 5, 10, 20], labels=["0,1", "0,2", "0,5", "1", "2", "5", "10", "20"]) #Ponemos los ticks para que se entienda la escala
+ax.spines[['top','right']].set_visible(False)
+
+plt.legend(title = 'Año')
+
+fig.savefig(raiz / 'grafico_habitantes_provincia.png', bbox_inches='tight') #Guardamos la imagen en la carpeta ajustado a los bordes para que se lean los titulos.
+
+#%% ii) Nacimientos prematuros según provincia
+# Vamos a necesitar hacer un join de se_registran_nacidos con provincias para tener los nombres de las provincias
+# Los agrupamos por provincia. Nos quedamos con las columnas nombre_provincia, cantidad, año, semanas_gest.
+# Y vamos a tener que crear una nueva columna que haga la suma total de nacidos segun la provincia y el año. 
+# También vamos a tener que sumar después de hacer esa columna, todos las cantidades que tienen semanas_gestacion: 
+# "Menos de 22", "22 a 23", "24 a 27", "28 a 31", "32 a 36" y unificarlos en una sola que sea "Menores a 37".  Y otra
+# nueva columna que me diga el porcentaje (o sea hace el calculo de cantidad de esa fila / total provincia ese año * 100)
+# Seleccionamos quedarnos solo con las filas que se llaman "Menores a 37" y 
+# despues nos quedamos con las columnas: año, nombre_provincia, porcentaje (la nueva). 
+# Entonces cada fila representaría el porcentaje # de cada provincia por año (2010 o 2022),
+# obteniendo un total de 48 filas. Nuevamente usaría un grafico de barras agrupadas y tomaríamos decisiones muy 
+# parecidas al grafico anterior salvo la de escribir en millones el porcentaje y usar escala logaritmica porque no 
+# hacen falta. Se leen claros los porcentajes y el eje y iría de 0 a 100 (no es desproporcionado). 
+# Y ordenaríamos el eje x de la misma manera que en i)
+# Cuidado con los sin especificar. Hay que tomar una decision que hacemos con los que no dicen las semanas de gestacion.
+# Hay codigo de provincia residencia que es 99, que probablemente sea sin provincia o del exterior y se pierden filas}
+# No nos importa que se pierdan pero si hay que aclararlo. 
+# Guarda con la division y que de en decimales, que no queden todos 0 por division entera. Duckdb no tendria q pasar.
+
+
+
+#%% iii) Tasa de fecundidad por provincia en 2022
+
+#%% iv) Peso al nacer según el nivel de instrucción de la madre
+
+#%% v) Distribución de establecimientos de salud
+
+#%% vi) Gráfico a elección
+
