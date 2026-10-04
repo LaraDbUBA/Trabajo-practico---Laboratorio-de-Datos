@@ -16,6 +16,7 @@ import pandas as pd
 import duckdb as dd
 from pathlib import Path
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 #Ignoren esto es de un problema de mi carpeta local
 #import os
@@ -128,7 +129,9 @@ pct_id_inconsistentes_establecimientos = """
                     
 dataframeResultado2 = dd.sql(pct_id_inconsistentes_establecimientos).df()
 #escribir conclusion y decision.
-print(dataframeResultado2)                  
+print(dataframeResultado2)     
+
+             
 
 # Tabla nacidos
 
@@ -183,7 +186,55 @@ dataframeResultado3 = dd.sql(pct_val_incompletos_nacidos).df()
 print(dataframeResultado3) 
 #la conclusion de esto seria que nos quedamos con todo porque representa poco problema
 
-## Estaria buenisimo agregar el analisis de legibilidad que dijo guada del formato lista que tienen (daria un 100% que justifica el cambio)
+# hay indices en los nombres, en las columnas IMEDAD,ITIEMGEST, IMIINSTRUC, IPESONAC
+pct_inconsistentes_nacidos = """
+                            SELECT
+                                COUNT(*) AS total_registros,
+                                
+                                -- IMEDAD
+                                SUM(
+                                    CASE
+                                        WHEN REGEXP_MATCHES(n.IMEDAD, '^\d+\.')
+                                        THEN 1 
+                                        ELSE 0 
+                                        END) AS cant_inconsistente_IMEDAD,
+                               ROUND(100.0 * cant_inconsistente_IMEDAD / COUNT(*), 2) AS pct_inconsistente_IMEDAD,
+                           
+                                -- ITIEMGEST
+                                SUM(
+                                    CASE
+                                        WHEN REGEXP_MATCHES(n.ITIEMGEST, '^\d+\.')
+                                        THEN 1 
+                                        ELSE 0 
+                                        END) AS cant_inconsistente_ITIEMGEST,
+                                ROUND(100.0 * cant_inconsistente_ITIEMGEST / COUNT(*), 2) AS pct_inconsistente_ITIEMGEST,
+                                
+                                -- IMINSTRUC
+                                SUM(
+                                    CASE
+                                        WHEN REGEXP_MATCHES(n.IMINSTRUC, '^\d+\.')
+                                        THEN 1 
+                                        ELSE 0 
+                                        END) AS cant_inconsistente_IMINSTRUC,
+                                ROUND(100.0 * cant_inconsistente_IMINSTRUC / COUNT(*), 2) AS pct_inconsistente_IMINSTRUC,
+                                
+                                -- IPESONAC
+                                SUM(
+                                    CASE
+                                        WHEN REGEXP_MATCHES(n.IPESONAC, '^\d+\.')
+                                        THEN 1 
+                                        ELSE 0 
+                                        END) AS cant_inconsistente_IPESONAC,
+                               ROUND(100.0 * cant_inconsistente_IPESONAC / COUNT(*), 2) AS pct_inconsistente_IPESONAC,
+                            FROM nacidos2010 n
+                            
+                        """
+
+                    
+dataframeResultado4 = dd.sql(pct_inconsistentes_nacidos).df()
+#vemos que el 100% de los datos en esas columnas estan con un indice(1.Hasta.., 2.35 a 39) por eso cuando normalizamos la tabla nacidos los sacamos
+print(dataframeResultado4)     
+
 
 #%% Emprolijamos la tabla de los censos
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
@@ -1287,6 +1338,7 @@ ax.spines[['top','right']].set_visible(False)
 plt.legend(title = 'Año')
 
 fig.savefig(carpetaGraficos / 'grafico_prematuros_por_provincia.png', bbox_inches='tight')
+plt.show()
 
 #%% iii) Tasa de fecundidad por provincia en 2022
 # Primera parte, gráfico de fecundidad por provincia en el año 2022, calculada cada 1000 mujeres de 15 a 49 años, ordenada de menor a mayor.
@@ -1481,7 +1533,46 @@ test = """
 """
 dataframeResultado = dd.sql(test).df()
 
-#%% v) Distribución de establecimientos de salud
+#%% v) Distribución de establecimientos de salud por provincia
+
+distribucion_depto_prov = """
+        SELECT 
+            p.provincia,
+            d.depto_id,
+            d.departamento_nombre,
+            COUNT(e.establecimiento_id) AS cant_establecimientos
+        FROM departamentos d
+        INNER JOIN provincias p
+            ON d.provincia_id = p.codigo
+        LEFT JOIN establecimientos e
+            ON e.depto_id = d.depto_id
+        GROUP BY
+            p.provincia,
+            d.depto_id,
+            d.departamento_nombre
+        ORDER BY
+            provincia,
+            cant_establecimientos DESC;
+        """
+        
+df_boxplot = dd.sql(distribucion_depto_prov).df()
+
+# Gráfico 
+
+fig = plt.figure(figsize=(14, 7))
+
+sns.boxplot(
+    data=df_boxplot, 
+    x='provincia', 
+    y='cant_establecimientos')
+
+plt.xticks(rotation=90)
+plt.title('Distribución de establecimientos por departamento en cada provincia')
+plt.xlabel("Provincia")
+plt.ylabel("Cant. de establecimientos")
+plt.show()
+
+fig.savefig(carpetaGraficos / 'grafico_distribucion_establecimientos_por_departamento_en_provincia.png', bbox_inches='tight')
 
 #%% vi) Gráfico a elección
 
