@@ -1575,4 +1575,74 @@ plt.show()
 fig.savefig(carpetaGraficos / 'grafico_distribucion_establecimientos_por_departamento_en_provincia.png', bbox_inches='tight')
 
 #%% vi) Gráfico a elección
+# Grafico de dispersión por provincia y año que cruce acceso a la salud(cobertura) con caracteristica de nacimientos(peso)
+# Eje x: % de poblacion sin cobertura de salud
+# Eje y: % de nacimientos con bajo peso
+# cada punto es una provincia y el color del punto es el año(2010 o 2022)
 
+consulta_scatter2 = """
+    SELECT 
+        p.provincia,
+        c.año,
+        100.0 * c.sin_cobertura / (c.sin_cobertura + c.con_cobertura) AS pct_sin_cobertura,
+        n.pct_bajo_peso,
+        c.sin_cobertura + c.con_cobertura AS total_poblacion
+    FROM(
+        SELECT
+            provincia_id,
+            año,
+            SUM(
+                CASE
+                WHEN cobertura = 'Sin cobertura'
+                THEN cantidad_mujeres + cantidad_hombres
+                ELSE 0
+                END
+                ) AS sin_cobertura,
+            
+            SUM(
+                CASE
+                WHEN cobertura = 'Con cobertura'
+                THEN cantidad_mujeres + cantidad_hombres
+                ELSE 0
+                END
+                ) AS con_cobertura
+        FROM se_registran_censos 
+        GROUP BY provincia_id, año
+    ) c
+    INNER JOIN (
+        SELECT
+        provincia_residencia, año,
+        100.0 * SUM(CASE WHEN peso_nacimiento = 'Menos de 2500 gramos' THEN cantidad ELSE 0 END) / NULLIF(SUM(CASE WHEN peso_nacimiento != 'Sin especificar' THEN cantidad ELSE 0 END),0) AS pct_bajo_peso
+        FROM se_registran_nacidos 
+        GROUP BY provincia_residencia, año
+    ) n
+        ON n.provincia_residencia = c.provincia_id AND n.año = c.año
+    INNER JOIN provincias p
+        ON p.codigo = c.provincia_id
+    """
+    
+df_scatter2 = dd.sql(consulta_scatter2).df()
+
+df_scatter2["provincia"] = df_scatter2["provincia"].replace({
+    "BUENOS AIRES": "BS.AS",
+    "CIUDAD DE BUENOS AIRES": "C.A.B.A",
+    "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR": "T.FUEGO",
+    "SANTIAGO DEL ESTERO": "S.ESTERO"
+}) 
+
+g = sns.lmplot(data=df_scatter2, x='pct_sin_cobertura', y='pct_bajo_peso',
+               col='año', height=5, aspect=1.2,
+               scatter_kws={'alpha': 0.7}, line_kws={'color': 'gray'})
+
+for anio, ax in zip(g.col_names, g.axes.flat):
+    sub = df_scatter2[df_scatter2['año'] == anio]
+    for _, fila in sub.iterrows():
+        ax.annotate(fila['provincia'],
+                    (fila['pct_sin_cobertura'], fila['pct_bajo_peso']),
+                    xytext=(3, 3), textcoords='offset points', fontsize=7)
+f.set_axis_labels('% de población sin cobertura de salud', '% de nacimientos con bajo peso')
+f.figure.suptitle('Relación entre cobertura de salud y nacimientos con bajo peso por provincia', fontweight = 'bold', y=1.08)
+
+
+f.savefig(carpetaGraficos / 'grafico_relacion_cobertura_nacimientos.png', bbox_inches='tight')
+print(df_scatter2[['provincia', 'año', 'pct_sin_cobertura', 'pct_bajo_peso']].describe())
