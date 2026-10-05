@@ -16,7 +16,7 @@ import pandas as pd
 import duckdb as dd
 from pathlib import Path
 import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 #Ignoren esto es de un problema de mi carpeta local
 #import os
@@ -1551,29 +1551,48 @@ distribucion_depto_prov = """
             d.depto_id,
             d.departamento_nombre
         ORDER BY
-            provincia,
+            p.provincia,
             cant_establecimientos DESC;
         """
         
 df_boxplot = dd.sql(distribucion_depto_prov).df()
 
-# Gráfico 
+# Gráfico
 
-fig = plt.figure(figsize=(14, 7))
+df_boxplot["provincia"] = df_boxplot["provincia"].replace({
+    "BUENOS AIRES": "BS.AS",
+    "CIUDAD DE BUENOS AIRES": "C.A.B.A",
+    "TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR": "T.FUEGO",
+    "SANTIAGO DEL ESTERO": "S.ESTERO"
+})
 
-sns.boxplot(
-    data=df_boxplot, 
-    x='provincia', 
-    y='cant_establecimientos')
+fig, ax = plt.subplots(figsize=(14, 7))
 
-plt.xticks(rotation=90)
-plt.title('Distribución de establecimientos por departamento en cada provincia')
-plt.xlabel("Provincia")
-plt.ylabel("Cant. de establecimientos")
+nombres_provincias = df_boxplot["provincia"].unique()
+
+datos = [
+    df_boxplot[df_boxplot["provincia"] == provincia]["cant_establecimientos"]
+    for provincia in nombres_provincias
+]
+
+ax.boxplot(
+    datos,
+    tick_labels=nombres_provincias
+)
+
+ax.tick_params(axis="x", rotation=90)
+ax.set_title("Distribución de establecimientos por departamento en cada provincia")
+ax.set_xlabel("Provincia")
+ax.set_ylabel("Cant. de establecimientos")
+
+fig.tight_layout()
+
+fig.savefig(
+    carpetaGraficos / "grafico_distribucion_establecimientos_por_departamento_en_provincia.png",
+    bbox_inches="tight"
+)
+
 plt.show()
-
-fig.savefig(carpetaGraficos / 'grafico_distribucion_establecimientos_por_departamento_en_provincia.png', bbox_inches='tight')
-
 #%% vi) Gráfico a elección
 # Grafico de dispersión por provincia y año que cruce acceso a la salud(cobertura) con caracteristica de nacimientos(peso)
 # Eje x: % de poblacion sin cobertura de salud
@@ -1630,19 +1649,71 @@ df_scatter2["provincia"] = df_scatter2["provincia"].replace({
     "SANTIAGO DEL ESTERO": "S.ESTERO"
 }) 
 
-g = sns.lmplot(data=df_scatter2, x='pct_sin_cobertura', y='pct_bajo_peso',
-               col='año', height=5, aspect=1.2,
-               scatter_kws={'alpha': 0.7}, line_kws={'color': 'gray'})
+fig, ax = plt.subplots(figsize=(10, 6))
 
-for anio, ax in zip(g.col_names, g.axes.flat):
-    sub = df_scatter2[df_scatter2['año'] == anio]
+for anio in sorted(df_scatter2["año"].unique()):
+    sub = df_scatter2[df_scatter2["año"] == anio]
+
+    ax.scatter(
+        sub["pct_sin_cobertura"],
+        sub["pct_bajo_peso"],
+        alpha=0.7,
+        label=str(anio)
+    )
+
     for _, fila in sub.iterrows():
-        ax.annotate(fila['provincia'],
-                    (fila['pct_sin_cobertura'], fila['pct_bajo_peso']),
-                    xytext=(3, 3), textcoords='offset points', fontsize=7)
-f.set_axis_labels('% de población sin cobertura de salud', '% de nacimientos con bajo peso')
-f.figure.suptitle('Relación entre cobertura de salud y nacimientos con bajo peso por provincia', fontweight = 'bold', y=1.08)
+        ax.annotate(
+            fila["provincia"],
+            (fila["pct_sin_cobertura"], fila["pct_bajo_peso"]),
+            xytext=(3, 3),
+            textcoords="offset points",
+            fontsize=7
+        )
 
+ax.set_xlabel("% de población sin cobertura de salud")
+ax.set_ylabel("% de nacimientos con bajo peso")
+ax.set_title(
+    "Relación entre cobertura de salud y nacimientos con bajo peso por provincia",
+    fontweight="bold"
+)
 
-f.savefig(carpetaGraficos / 'grafico_relacion_cobertura_nacimientos.png', bbox_inches='tight')
-print(df_scatter2[['provincia', 'año', 'pct_sin_cobertura', 'pct_bajo_peso']].describe())
+ax.legend(title="Año")
+ax.grid(alpha=0.3)
+
+plt.tight_layout()
+
+fig.savefig(
+    carpetaGraficos / "grafico_relacion_cobertura_nacimientos.png",
+    bbox_inches="tight"
+)
+
+plt.show()
+#%% version sin provincias marcadas
+df_scatter2 = dd.sql(consulta_scatter2).df()
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+for anio in sorted(df_scatter2["año"].unique()):
+    ax.scatter(
+        df_scatter2[df_scatter2["año"] == anio]["pct_sin_cobertura"],
+        df_scatter2[df_scatter2["año"] == anio]["pct_bajo_peso"],
+        label=str(anio)
+    )
+
+ax.set_xlabel("% de población sin cobertura de salud")
+ax.set_ylabel("% de nacimientos con bajo peso")
+ax.set_title(
+    "Relación entre cobertura de salud y nacimientos con bajo peso por provincia"
+)
+
+ax.legend(title="Año")
+ax.grid(alpha=0.3)
+
+plt.tight_layout()
+
+fig.savefig(
+    carpetaGraficos / "grafico_relacion_cobertura_nacimientos.png",
+    bbox_inches="tight"
+)
+
+plt.show()
