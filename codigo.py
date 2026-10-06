@@ -1520,18 +1520,106 @@ ax.legend()
 fig.savefig(carpetaGraficos / 'grafico_tasa_fecundidad_y_nivel_educativos.png', bbox_inches='tight')
 
 #%% iv) Peso al nacer según el nivel de instrucción de la madre
+# DECISIONES Y MÁS:
+# - Se excluyen los "Sin especificar" de peso (es la variable que medimos) y de nivel
+#   educativo (no se pueden asignar a ningún nivel). Ojo: en Formosa y Corrientes son ~25%.
+# - Se agrupa por región para que el gráfico sea legible (6 regiones x 3 niveles en vez de 24 provincias x 3). Usamos las regiones estadísticas 
+#   del INDEC. Como los datos son provinciales y no se puede separar el conurbano de los datos de Buenos Aires (para formar la region GBA)
+#   CABA queda como región propia y el conurbano queda en Pampeana.
 
-test = """
-            SELECT provincia_residencia, 
-            nivel_educativo_madre,
-            SUM(cantidad) AS nacimientos,
+consulta_peso_nivel_instruccion = """
+    SELECT
+        r.region AS region,
+        
+        --Columna por porcentaje nivel educativo (bajo peso de ese nivel / total de nacidos de ese nivel)
+        
+        ROUND(
+            SUM(
+                CASE 
+                    WHEN r.nivel_educativo_madre = 'Hasta Primaria/C.EGB Completa' AND r.peso_nacimiento = 'Menos de 2500 gramos' THEN r.cantidad ELSE 0 END) * 100.0 
+                / 
+                    SUM(
+                        CASE
+                            WHEN r.nivel_educativo_madre = 'Hasta Primaria/C.EGB Completa' THEN r.cantidad ELSE 0 END)
+            , 2) AS pct_bajo_peso_primaria,
+
+        ROUND(
+            SUM(
+                CASE 
+                    WHEN r.nivel_educativo_madre = 'Secundaria/Polimodal Incompleta' AND r.peso_nacimiento = 'Menos de 2500 gramos' THEN r.cantidad ELSE 0 END) * 100.0 
+                / 
+                    SUM(
+                        CASE
+                            WHEN r.nivel_educativo_madre = 'Secundaria/Polimodal Incompleta' THEN r.cantidad ELSE 0 END)
+            , 2) AS pct_bajo_peso_secundaria_incompleta,
+
+        ROUND(
+            SUM(
+                CASE 
+                    WHEN r.nivel_educativo_madre = 'Secundario/Polimodal Completa y más' AND r.peso_nacimiento = 'Menos de 2500 gramos' THEN r.cantidad ELSE 0 END) * 100.0 
+                / 
+                    SUM(
+                        CASE
+                            WHEN r.nivel_educativo_madre = 'Secundario/Polimodal Completa y más' THEN r.cantidad ELSE 0 END)
+
+            , 2) AS pct_bajo_peso_secundaria_completa
+
+    --Tabla con regiones y sacamos 'Sin especificar'
+    
+    FROM (
+        SELECT
+            srn.nivel_educativo_madre,
+            srn.peso_nacimiento,
+            srn.cantidad,
             
-            FROM se_registran_nacidos
-            
-            WHERE año = 2022 AND provincia_residencia = 90
-            GROUP BY provincia_residencia, nivel_educativo_madre
-"""
-dataframeResultado = dd.sql(test).df()
+            CASE
+                WHEN p.provincia IN ('JUJUY','SALTA','TUCUMÁN','CATAMARCA','SANTIAGO DEL ESTERO', 'LA RIOJA') THEN 'NOA'
+                WHEN p.provincia IN ('MISIONES','CORRIENTES','FORMOSA','CHACO') THEN 'NEA'
+                WHEN p.provincia IN ('MENDOZA','SAN JUAN','SAN LUIS') THEN 'Cuyo'
+                WHEN p.provincia IN ('BUENOS AIRES','CÓRDOBA','LA PAMPA','SANTA FE','ENTRE RÍOS') THEN 'Pampeana'
+                WHEN p.provincia IN ('TIERRA DEL FUEGO, ANTÁRTIDA E ISLAS DEL ATLÁNTICO SUR','SANTA CRUZ','CHUBUT','RÍO NEGRO','NEUQUÉN') THEN 'Patagonia'
+                WHEN p.provincia IN ('CIUDAD DE BUENOS AIRES') THEN 'CABA'
+                END AS region
+
+                FROM se_registran_nacidos srn
+                
+                --Descartamos códigos 98 y 99 (Provincias sin especificar)
+                INNER JOIN provincias p
+                        ON p.codigo = srn.provincia_residencia
+                
+                WHERE srn.nivel_educativo_madre != 'Sin especificar' AND srn.peso_nacimiento != 'Sin especificar' AND srn.año = 2022
+                ) AS r
+
+    GROUP BY r.region
+    ORDER BY r.region
+    
+    """
+
+dataframeGrafico4 = dd.sql(consulta_peso_nivel_instruccion).df()
+
+# Barras agrupadas: una barra por nivel educativo dentro de cada región.
+# Mismos colores que el gráfico iii (misma variable): más oscuro = mayor nivel educativo.
+# Eje Y desde 0 para no exagerar diferencias; el techo en 12 deja lugar a la leyenda.
+
+fig, ax = plt.subplots(figsize = (8,4.8))
+
+dataframeGrafico4.plot(x = 'region', 
+                       y = ['pct_bajo_peso_primaria','pct_bajo_peso_secundaria_incompleta','pct_bajo_peso_secundaria_completa'], 
+                       kind = 'bar', 
+                       label = ['Hasta primaria','Secundaria incompleta','Secundaria completa'], 
+                       color = ['#fdd0a2', '#fd8d3c', '#d94801'],
+                       ax = ax)
+
+ax.set_title('Porcentaje nacidos bajo peso según nivel de instrucción madre por región',fontweight='bold',fontsize=12, pad = 15)
+ax.set_xlabel('Región (según INDEC + CABA)',fontsize='medium')
+ax.set_ylabel(' % Nacidos con bajo peso (<2500g)',fontsize='medium') 
+ax.set_ylim(0,12)
+ax.spines[['top','right']].set_visible(False)
+ax.tick_params(axis="x", rotation=0)
+
+
+fig.savefig(carpetaGraficos / 'grafico_pct_bajo_peso_segun_instruccion.png', bbox_inches='tight')
+# plt.show()
 
 #%% v) Distribución de establecimientos de salud por provincia
 
