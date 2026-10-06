@@ -5,28 +5,31 @@ Created on Fri Sep 11 10:23:09 2026
 Integrantes: Ayala Ignacio, Della Bonzana Lara, Ventroni Milena, Posse Lucila
 
 Descripcion: En el presente archivo se muestra el código realizado para limpiar datos, visualizarlos y 
-generar consultas 
+generar consultas. 
+La primera sección trata de la carga de datos, luego un analisis de calidad de las tablas de establecimientos y nacidos
 
-Otros datos:  :)
+Luego, se limpian y se preparan las tablas de nuestro modelo.
+
+Se recargan los datos desde la carpeta de TablaModelos
+
+Se hacen las consultas y por último los gráficos, para los cuales se hace una consulta para
+generar un dataframe con la intención de usarlo para el gráfico.
+
+Librerias usadas: pandas, duckdb, matplotlib.pyplot
+
+Comentarios: usamos pathlib para asegurarnos que se descargue localmente en la computadora de cada uno
 """
 
-#import sys 
-#print(sys.executable)
+
 import pandas as pd
 import duckdb as dd
 from pathlib import Path
 import matplotlib.pyplot as plt
 
 
-#Ignoren esto es de un problema de mi carpeta local
-#import os
-#os.chdir(r"C:\Users\della\OneDrive\Documents\labo_datos\TP1")
-
-#Observacion: Todo lo que esta escrito de lo que se decidio hacer con los datos tiene que figurar en el informe (Nacho o Lu)
-
 #%% Subimos archivos
 raiz = Path(__file__).parent
-carpetaOriginales = raiz / "data" / "TablasOriginales" #Fijense el tema de la carpeta, descarguense los archivos
+carpetaOriginales = raiz / "data" / "TablasOriginales" 
 carpetaLimpias = raiz / "data" / "TablasLimpias"
 carpetaModelos = raiz /"data" / "TablasModelo"
 carpetaReportes = raiz / "Reportes"
@@ -35,10 +38,10 @@ carpetaGraficos = raiz /"Graficos"
 #%%
 censo2010 = pd.read_excel(carpetaOriginales / "censo2010.xlsX", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
 censo2022 = pd.read_excel(carpetaOriginales / "censo2022.xlsX", header= None, skiprows= 15) #Lo mismo
-nacidos2010 = pd.read_csv(carpetaOriginales /  "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona asi que dejenlo asi
+nacidos2010 = pd.read_csv(carpetaOriginales /  "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona 
 nacidos2022 = pd.read_csv(carpetaOriginales / "nacweb22_0.csv", sep= ";") #Tiene distinta separacion
 establecimientos = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
-establecimientosOriginal = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
+establecimientosOriginal = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx") # habia un problema con los renombres, los separamos por las dudas
 
 #%% Subimos archivos adicionales
 provincias = pd.read_excel(carpetaOriginales / "Listado de Provincias - 11-09-2026.xlsx")
@@ -47,7 +50,7 @@ provincias = pd.read_excel(carpetaOriginales / "Listado de Provincias - 11-09-20
 #Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
 #De la tabla solo me interesa el codigo y el nombre de la provincia asi que
 provincias.columns
-provincias[(provincias['Código UTA 2010'] != provincias['Código UTA 2020'])] #son los mismos codigos
+provincias[(provincias['Código UTA 2010'] != provincias['Código UTA 2020'])] #como aparecen dos columnas de codigos, chequeamos que sean iguales
 provincias_tabla = provincias[['Nombre', 'Código UTA 2010']]
 provincias_tabla = provincias_tabla.rename(columns ={
     'Nombre': 'provincia',
@@ -67,7 +70,7 @@ provincias_tabla.to_csv(carpetaModelos /'provincias.csv')
 pct_val_incompletos_establecimientos = """
                                 SELECT
                                     COUNT(*) AS total_registros,
-                                    -- Sitio Web
+                                    
                                     SUM(
                                         CASE
                                             WHEN e.sitio_web IS NULL 
@@ -76,7 +79,7 @@ pct_val_incompletos_establecimientos = """
                                             END) AS cant_null_sitio_web,
                                     ROUND(100.0 * cant_null_sitio_web / COUNT(*), 2) AS pct_null_web,
                                     
-                                    -- Codent
+                                    
                                     SUM(
                                         CASE
                                             WHEN e.codent IS NULL 
@@ -85,7 +88,7 @@ pct_val_incompletos_establecimientos = """
                                             END) AS cant_null_codent,
                                     ROUND(100.0 * cant_null_codent / COUNT(*), 2) AS pct_null_codent,
                                     
-                                    -- Domicilio
+                                    
                                     SUM(
                                         CASE
                                             WHEN e.domicilio IS NULL OR LOWER(e.domicilio) LIKE '%sin%'
@@ -111,7 +114,6 @@ pct_id_inconsistentes_establecimientos = """
                                 COUNT(*) AS total_registros,
                                 SUM(
                                     CASE
-                                        -- Mismo id distintas localidades(hay inconsistencias en localidad_nombre(pero en realidad es la misma))
                                         WHEN e.localidad_id IN (
                                             SELECT e.localidad_id
                                             FROM establecimientosOriginal e
@@ -143,7 +145,6 @@ print(dataframeResultado2)
 pct_val_incompletos_nacidos = """
                                 SELECT
                                     COUNT(*) AS total_registros,
-                                    -- ITIEMGEST
                                     SUM(
                                         CASE
                                             WHEN n.ITIEMGEST IS NULL OR LOWER(n.ITIEMGEST) LIKE '%sin%'
@@ -152,7 +153,6 @@ pct_val_incompletos_nacidos = """
                                             END) AS cant_incompleto_ITIEMGEST,
                                     ROUND(100.0 * cant_incompleto_ITIEMGEST / COUNT(*), 2) AS pct_incompleto_ITIEMGEST,
                                     
-                                    -- IMEDAD
                                     SUM(
                                         CASE
                                             WHEN n.IMEDAD IS NULL OR LOWER(n.IMEDAD) LIKE '%sin%'
@@ -161,7 +161,6 @@ pct_val_incompletos_nacidos = """
                                             END) AS cant_incompleto_IMEDAD,
                                     ROUND(100.0 * cant_incompleto_IMEDAD / COUNT(*), 2) AS pct_incompleto_IMEDAD,
                                     
-                                    -- IMINSTRUC
                                     SUM(
                                         CASE
                                             WHEN n.IMINSTRUC IS NULL OR LOWER(n.IMINSTRUC) LIKE '%sin%'
@@ -170,7 +169,6 @@ pct_val_incompletos_nacidos = """
                                             END) AS cant_incompleto_IMINSTRUC,
                                     ROUND(100.0 * cant_incompleto_IMINSTRUC / COUNT(*), 2) AS pct_incompleto_IMINSTRUC,
                                     
-                                    -- IPESONAC
                                     SUM(
                                         CASE
                                             WHEN n.IPESONAC IS NULL OR LOWER(n.IPESONAC) LIKE '%sin%'
@@ -187,11 +185,13 @@ print(dataframeResultado3)
 #la conclusion de esto seria que nos quedamos con todo porque representa poco problema
 
 # hay indices en los nombres, en las columnas IMEDAD,ITIEMGEST, IMIINSTRUC, IPESONAC
+#Comentario: REGEXP_MATCHES no es una funcion vista en clase, pero se uso para no tener que escribir 10 veces n.IMEDAD LIKE '0.' OR ... OR ... OR 
+#funciona asi: se pregunta el valor de IMEDAD empieza con uno o más números seguidos de un punto?
+#entonces compara ^ es que arranca, \d es un digito, + es uno o mas digitos \. el punto literal
 pct_inconsistentes_nacidos = """
                             SELECT
                                 COUNT(*) AS total_registros,
                                 
-                                -- IMEDAD
                                 SUM(
                                     CASE
                                         WHEN REGEXP_MATCHES(n.IMEDAD, '^\d+\.')
@@ -200,7 +200,6 @@ pct_inconsistentes_nacidos = """
                                         END) AS cant_inconsistente_IMEDAD,
                                ROUND(100.0 * cant_inconsistente_IMEDAD / COUNT(*), 2) AS pct_inconsistente_IMEDAD,
                            
-                                -- ITIEMGEST
                                 SUM(
                                     CASE
                                         WHEN REGEXP_MATCHES(n.ITIEMGEST, '^\d+\.')
@@ -209,7 +208,6 @@ pct_inconsistentes_nacidos = """
                                         END) AS cant_inconsistente_ITIEMGEST,
                                 ROUND(100.0 * cant_inconsistente_ITIEMGEST / COUNT(*), 2) AS pct_inconsistente_ITIEMGEST,
                                 
-                                -- IMINSTRUC
                                 SUM(
                                     CASE
                                         WHEN REGEXP_MATCHES(n.IMINSTRUC, '^\d+\.')
@@ -218,7 +216,6 @@ pct_inconsistentes_nacidos = """
                                         END) AS cant_inconsistente_IMINSTRUC,
                                 ROUND(100.0 * cant_inconsistente_IMINSTRUC / COUNT(*), 2) AS pct_inconsistente_IMINSTRUC,
                                 
-                                -- IPESONAC
                                 SUM(
                                     CASE
                                         WHEN REGEXP_MATCHES(n.IPESONAC, '^\d+\.')
@@ -251,6 +248,7 @@ print(dataframeResultado4)
 provincias = pd.read_csv(carpetaModelos / "provincias.csv")
   
 #el objetivo de esta funcion es resumir un poco el analisis que hicimos porque fuimos y vinimos con la limpieza de datos
+#es para que cuando lo corran se vea bonito y no desprolijo
 def analizar_censo(censo):
     print("=" * 60)
     print("ANÁLISIS DEL CENSO")
@@ -349,8 +347,8 @@ def analizar_censo(censo):
 
     filas_total = censo[
         censo.astype(str)
-        .apply(lambda columna:
-               columna.str.strip().str.lower().eq("total"))
+        .apply(lambda columna: 
+               columna.str.strip().str.lower().eq("total")) #para poder compararlos les saco el espacio en blanco al principio y al final, los convierto en minuscula y eq pregunta si son iguales
         .any(axis=1)
     ]
 
@@ -1333,7 +1331,7 @@ ax.set_title('Porcentaje de prematuros (<37 semanas) por provincia en 2010 y 202
 ax.set_xlabel('Provincia',fontsize='medium')
 ax.set_ylabel('Prematuros (%)',fontsize='medium') 
 ax.set_ylim(0,14)
-ax.spines[['top','right']].set_visible(False)
+ax.spines[['top','right']].set_visible(False) #sacamos bordes
 
 plt.legend(title = 'Año')
 
@@ -1398,7 +1396,7 @@ ax.set_title('Tasa de fecundidad por provincia 2022',fontweight='bold',fontsize=
 ax.set_xlabel('Provincia',fontsize='medium')
 ax.set_ylabel('Nacidos vivos cada 1000 mujeres de 15 a 49 años',fontsize='medium') 
 # ax.set_ylim(0,14)
-ax.spines[['top','right']].set_visible(False)
+ax.spines[['top','right']].set_visible(False) #saco bordes
 ax.legend().set_visible(False)
 
 fig.savefig(carpetaGraficos / 'grafico_tasa_fecundidad_total_por_prov.png', bbox_inches='tight')
