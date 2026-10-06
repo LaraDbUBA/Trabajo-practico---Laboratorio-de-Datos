@@ -2,16 +2,15 @@
 """
 Created on Fri Sep 11 10:23:09 2026
 
+Laboratorio de Datos - Comisión A
+Grupo: Normalizados
 Integrantes: Ayala Ignacio, Della Bonzana Lara, Ventroni Milena, Posse Lucila
 
 Descripcion: En el presente archivo se muestra el código realizado para limpiar datos, visualizarlos y 
-generar consultas. 
-La primera sección trata de la carga de datos, luego un analisis de calidad de las tablas de establecimientos y nacidos
+generar consultas. La primera sección trata de la carga de datos, luego un analisis de calidad de las 
+tablas de establecimientos y nacidos
 
-Luego, se limpian y se preparan las tablas de nuestro modelo.
-
-Se recargan los datos desde la carpeta de TablaModelos
-
+Luego,una sección donde se limpian y se preparan las tablas de nuestro modelo.
 Se hacen las consultas y por último los gráficos, para los cuales se hace una consulta para
 generar un dataframe con la intención de usarlo para el gráfico.
 
@@ -35,7 +34,7 @@ carpetaModelos = raiz /"data" / "TablasModelo"
 carpetaReportes = raiz / "Reportes"
 carpetaGraficos = raiz /"Graficos"
 
-#%%
+#%% cargamos desde tablas originales
 censo2010 = pd.read_excel(carpetaOriginales / "censo2010.xlsX", header= None, skiprows= 15) #Son la cantidad de filas innecesarias con info extra
 censo2022 = pd.read_excel(carpetaOriginales / "censo2022.xlsX", header= None, skiprows= 15) #Lo mismo
 nacidos2010 = pd.read_csv(carpetaOriginales /  "nacweb10.csv" , encoding= 'latin-1') #Tiene latin-1 porque saltaba un error, lo vi en un chico de reddit y funciona 
@@ -43,10 +42,10 @@ nacidos2022 = pd.read_csv(carpetaOriginales / "nacweb22_0.csv", sep= ";") #Tiene
 establecimientos = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx")
 establecimientosOriginal = pd.read_excel(carpetaOriginales / "establecimientos-asistenciales-asentados-registro-federal-refes-20220404.xlsx") # habia un problema con los renombres, los separamos por las dudas
 
-#%% Subimos archivos adicionales
+#%% subo provincias
 provincias = pd.read_excel(carpetaOriginales / "Listado de Provincias - 11-09-2026.xlsx")
 
-#%% Armo tabla de la provincia y los codigos
+#%% preparamos la tabla de provincias para el modelo
 #Vamos a utilziar la tabla que encontramos de provincias para relacionar las tablas anteriores, pues aparecen los codigos de provincia en algunas de estas
 #De la tabla solo me interesa el codigo y el nombre de la provincia asi que
 provincias.columns
@@ -233,7 +232,7 @@ dataframeResultado4 = dd.sql(pct_inconsistentes_nacidos).df()
 print(dataframeResultado4)     
 
 
-#%% Emprolijamos la tabla de los censos
+#%% preparamos tablas relacionadas a censos
 #Observacion: En este excel, tenemos una gran cantidad de filas que no porporcionan informacion, 
 #fueron eliminadas con skiprows, eliminamos tambien el header que no era util pues decia A,B,C,..
 #Tambien notamos que por cada provincia habia una tabla distinta, nuestro objetivo ahora es juntarlo
@@ -429,7 +428,7 @@ def normalizar_datos_censo(censo, es_2022):
         "No tiene obra social, prepaga ni plan estatal": "Sin cobertura",
         "No tiene obra social, prepaga o plan estatal": "Sin cobertura"
         })
-    #Hay que ver si es valida para la materia
+    
     
     #Sacamos la pseudo tablita de los totales (la podemos calcular nosotros a mano, es redundante)
     censo_limpio = censo_limpio[
@@ -487,7 +486,7 @@ tablaRelacion.groupby(["cobertura",  "edad", "provincia_id", "año"])[["cantidad
 #Queda una clave primaria compuesta de: cobertura, edad, provincia_id, año
 
 
-#%%Analizamos la tabla de nacidos de 2022 y nacidos 2010
+#%% preparamos y analizamos tabals relacionadas a nacidos
 #Aca podemos ver que no es tan obvio lo que nos quiere expresar el csv
 
 def ver_valores_nacidos(nacidos):
@@ -596,7 +595,7 @@ tablaRelacion2.groupby(["provincia_residencia", "tipo_parto", "sexo", "grupo_eda
 #Todas las columnas son una clave
 
 
-#%% Tabla establecimientos
+#%% preparamos tabla de establecimientos y departamento
 
 # Analizamos tabla establecimientos
 def ver_valores_establecimientos(establecimientos):
